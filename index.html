@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopier – Dreifach-Kopierer mit Protokoll</title>
+<style>
+  :root {
+    --primary:   #2C3E50;
+    --success:   #27AE60;
+    --info:      #3498DB;
+    --warning:   #F39C12;
+    --danger:    #E74C3C;
+    --light:     #ECF0F1;
+    --bg:        #F5F5F5;
+    --white:     #FFFFFF;
+    --text:      #2C3E50;
+    --muted:     #7F8C8D;
+    --border:    #BDC3C7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 48px 40px 40px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  header p.tagline {
+    font-size: 16px;
+    color: var(--light);
+    margin-bottom: 28px;
+  }
+  .btn-download {
+    display: inline-block;
+    background: var(--success);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 32px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .btn-download:hover { background: #219150; }
+
+  /* ── NAV ── */
+  nav {
+    background: #34495E;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 12px 22px;
+    font-size: 13px;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    border-bottom: 3px solid var(--info);
+    padding-bottom: 8px;
+    margin: 48px 0 20px;
+  }
+  h2:first-child { margin-top: 0; }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 18px 0 6px;
+  }
+
+  p { margin-bottom: 12px; }
+
+  /* ── FEATURE CARDS ── */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .feature-card {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 24px 20px;
+    border-top: 4px solid var(--info);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  }
+  .feature-card .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .feature-card h3 { margin-top: 0; }
+  .feature-card p  { font-size: 13px; color: var(--muted); margin: 0; }
+
+  /* ── SCREENSHOTS ── */
+  .screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .screenshots img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    display: block;
+  }
+
+  /* ── SYSREQ TABLE ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 14px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 10px 16px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 9px 16px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+
+  /* ── NOTICE BOXES ── */
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 14px 18px;
+    border-radius: 3px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 14px 18px;
+    border-radius: 3px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 14px 18px;
+    border-radius: 3px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+
+  /* ── CHANGELOG ── */
+  .changelog-item {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--success);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .changelog-item h3 { margin: 0 0 8px; }
+  .changelog-item p  { font-size: 13px; color: var(--muted); margin: 0; }
+
+  /* ── DONATE ── */
+  .donate-box {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 28px 32px;
+    text-align: center;
+    border-top: 4px solid var(--warning);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    margin-top: 20px;
+  }
+  .donate-box p { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+  .btn-donate {
+    display: inline-block;
+    background: var(--warning);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 28px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .btn-donate:hover { background: #d68910; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 22px 40px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  footer strong { color: var(--white); }
+  footer a { color: var(--light); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopier</h1>
+  <p class="tagline">Dreifach-Kopierer mit Protokoll &nbsp;&ndash;&nbsp; Dateien in einem Durchlauf auf bis zu drei Ziele verteilen</p>
+  <a class="btn-download" href="https://github.com/SattlerIT/sit-3kopier/releases">⬇ Download aktuelle Version</a>
+</header>
+
+<nav>
+  <a href="#leistung">Leistungsmerkmale</a>
+  <a href="#screenshots">Screenshots</a>
+  <a href="#download">Download</a>
+  <a href="#system">Systemanforderungen</a>
+  <a href="#sicherheit">Sicherheitshinweis</a>
+  <a href="#changelog">Changelog</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+<main>
+
+  <h2 id="leistung">Leistungsmerkmale</h2>
+
+  <div class="features">
+    <div class="feature-card">
+      <span class="icon">📋</span>
+      <h3>Drei Aufträge</h3>
+      <p>Bis zu drei unabhängige Kopier- oder Verschiebe-Aufträge in einem einzigen Durchlauf &ndash; ideal für NAS, USB-Sticks und Cloud-Verzeichnisse.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">⚙️</span>
+      <h3>Optionen pro Auftrag</h3>
+      <p>Überschreiben (immer oder nur wenn neuer) und Verschieben lassen sich für jeden Auftrag separat einstellen.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">💾</span>
+      <h3>Profile</h3>
+      <p>Kopier-Konfigurationen als <code>.3ko</code>-Profile speichern und per Mausklick wechseln &ndash; alle Pfade und Optionen werden mitgesichert.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📊</span>
+      <h3>Fortschritt &amp; Statistik</h3>
+      <p>Fortschrittsbalken mit Restzeit-Schätzung, laufende Statistik und detaillierte Protokolldateien für Kopier- und Fehlervorgänge.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">💻</span>
+      <h3>Herunterfahren</h3>
+      <p>Optional: PC nach fehlerfreiem Abschluss automatisch herunterfahren &ndash; mit Bestätigungsdialog.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔄</span>
+      <h3>Einstellungen merken</h3>
+      <p>Alle Pfade, Aktiv-Status und Optionen werden beim Beenden automatisch gespeichert und beim nächsten Start wiederhergestellt.</p>
+    </div>
+  </div>
+
+  <h2 id="screenshots">Screenshots</h2>
+  <div class="screenshots">
+    <img src="screenshot-3kopier.png" alt="S-IT-3Kopier Hauptfenster">
+  </div>
+
+  <h2 id="download">Download &amp; Dokumentation</h2>
+  <p>Die aktuelle Version und die Hilfe-Datei findest du im <a href="https://github.com/SattlerIT/sit-3kopier/releases">Release-Bereich auf GitHub</a>.</p>
+
+  <div class="ok">
+    <strong>Portabel:</strong> Einfach die ZIP entpacken &ndash; kein Installer erforderlich. Das Tool läuft direkt aus dem entpackten Verzeichnis oder von einem USB-Stick. Die INI-Datei und Profile werden automatisch im Programmverzeichnis angelegt.
+  </div>
+
+  <h2 id="system">Systemanforderungen</h2>
+  <table>
+    <tr><th>Komponente</th><th>Anforderung</th></tr>
+    <tr><td>Betriebssystem</td><td>Windows 10 / Windows 11 (64-Bit)</td></tr>
+    <tr><td>Rechte</td><td>Keine Administratorrechte erforderlich</td></tr>
+    <tr><td>Installation</td><td>Keine &ndash; ZIP entpacken und starten</td></tr>
+    <tr><td>Lieferumfang</td><td>EXE und HTML-Hilfe-Datei</td></tr>
+  </table>
+
+  <h2 id="sicherheit">Sicherheits- und Installationshinweis</h2>
+
+  <h3>Hinweis zu Virenscannern &amp; SmartScreen</h3>
+  <p>Da es sich um unabhängig entwickelte Windows-Tools handelt, kann es vorkommen, dass Windows SmartScreen oder installierte Internet-Security-Programme die Datei zunächst als unbekannt einstufen.</p>
+  <p>In diesem Fall fügen Sie das Programm bitte als <strong>vertrauenswürdig</strong> bzw. als <strong>Ausnahme</strong> in Ihrer Sicherheitssoftware hinzu. Gegebenenfalls muss der Windows SmartScreen-Filter einmalig bestätigt oder vorübergehend deaktiviert werden.</p>
+
+  <div class="warn">
+    Alle bereitgestellten Dateien stammen direkt von <strong>Sattler IT-Service</strong> und werden ausschließlich über die offizielle GitHub-Seite veröffentlicht. <strong>Tipp:</strong> Nach der ersten Freigabe läuft das Tool in der Regel dauerhaft ohne weitere Warnmeldungen.
+  </div>
+
+  <h2 id="changelog">Neu in Version 3.2.0</h2>
+
+  <div class="changelog-item">
+    <h3>Einstellungen vollständig gespeichert</h3>
+    <p>Alle Pfade, Aktiv-Status, Überschreiben/Verschieben-Optionen und Herunterfahren werden beim Beenden automatisch in der INI gesichert und beim nächsten Start wiederhergestellt.</p>
+  </div>
+  <div class="changelog-item">
+    <h3>Profile um Optionen erweitert</h3>
+    <p>Gespeicherte <code>.3ko</code>-Profile enthalten jetzt auch die Überschreiben- und Verschieben-Einstellungen je Auftrag.</p>
+  </div>
+  <div class="changelog-item">
+    <h3>Zielverzeichnis-Handling verbessert</h3>
+    <p>Das Zielverzeichnis wird jetzt vor der Prüfung angelegt &ndash; nicht mehr erreichbare oder neu zu erstellende Pfade werden sauber behandelt.</p>
+  </div>
+  <div class="changelog-item">
+    <h3>Netzwerkpfade ohne Hänger</h3>
+    <p>Die Datenmengberechnung überspringt Netzwerkpfade (<code>\\...</code>) und nicht erreichbare Laufwerke ohne einzufrieren.</p>
+  </div>
+  <div class="changelog-item">
+    <h3>Optische Korrekturen</h3>
+    <p>Header-Abstände, Label-Breiten und Checkbox-Positionen überarbeitet. Profilname-Eingabefenster vergrößert.</p>
+  </div>
+
+  <h2 id="kontakt">Kontakt / Impressum</h2>
+  <p>Hans Udo Sattler &nbsp;&middot;&nbsp; Sattler IT-Service &nbsp;&middot;&nbsp; Greifenstein &nbsp;&middot;&nbsp; Deutschland</p>
+
+  <div class="donate-box">
+    <h3>Hat Ihnen dieses Tool geholfen?</h3>
+    <p>S-IT-3Kopier wird kostenlos entwickelt und gepflegt.<br>Eine kleine Spende hilft dabei, die Tools weiterzuentwickeln. Herzlichen Dank! 🙏</p>
+    <a class="btn-donate" href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR">☕ Spende via PayPal</a>
+    <p style="margin-top:14px; font-size:13px;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  <strong>&copy; 2026 Hans Udo Sattler &nbsp;&middot;&nbsp; Sattler IT-Service, Greifenstein</strong><br>
+  Alle Rechte vorbehalten &nbsp;&middot;&nbsp; <a href="https://github.com/SattlerIT/sit-3kopier">GitHub</a>
+</footer>
+
+</body>
+</html>
