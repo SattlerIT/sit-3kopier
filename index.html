@@ -220,6 +220,26 @@
   }
   .btn-donate:hover { background: #d68910; }
 
+  /* ── LIGHTBOX ── */
+  .screenshots img { cursor: zoom-in; }
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+  .lightbox-overlay.active { display: flex; }
+  .lightbox-overlay img {
+    max-width: 92vw;
+    max-height: 92vh;
+    border-radius: 6px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  }
+
   /* ── FOOTER ── */
   footer {
     background: var(--primary);
@@ -353,10 +373,27 @@
 
 </main>
 
-<footer style="margin-top:40px; text-align:center; font-size:14px; color:#ffffff;">
-  © 2026 Hans Udo Sattler · Sattler IT-Service ·
-  <a href="impressum.html" style="color:#ffffff; text-decoration:underline;">Impressum</a>
+<footer>
+  © 2026 Hans Udo Sattler &nbsp;·&nbsp; Sattler IT-Service &nbsp;·&nbsp;
+  <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+  <a href="https://sattlerit.github.io/sattlerit-tools/">🏠 Tool-Übersicht</a>
 </footer>
 
+<div class="lightbox-overlay" id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+  const overlay = document.getElementById('lightbox');
+  const lbImg   = document.getElementById('lightbox-img');
+  document.querySelectorAll('.screenshots img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      overlay.classList.add('active');
+    });
+  });
+  overlay.addEventListener('click', () => overlay.classList.remove('active'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+</script>
 </body>
 </html>
