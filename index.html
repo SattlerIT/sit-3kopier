@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S-IT-3Kopier – Kostenloses Kopiertool für Windows - Dreifach-Kopierer mit Protokoll</title>
-<link rel="icon" type="image/x-icon" href="s-it-icon140.ico">  
+<title>S-IT-3Kopier – Dreifach-Kopierer mit Protokoll</title>
 <style>
   :root {
     --primary:   #2C3E50;
@@ -220,26 +219,6 @@
   }
   .btn-donate:hover { background: #d68910; }
 
-  /* ── LIGHTBOX ── */
-  .screenshots img { cursor: zoom-in; }
-  .lightbox-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    cursor: zoom-out;
-  }
-  .lightbox-overlay.active { display: flex; }
-  .lightbox-overlay img {
-    max-width: 92vw;
-    max-height: 92vh;
-    border-radius: 6px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-  }
-
   /* ── FOOTER ── */
   footer {
     background: var(--primary);
@@ -267,7 +246,7 @@
   <a href="#download">Download</a>
   <a href="#system">Systemanforderungen</a>
   <a href="#sicherheit">Sicherheitshinweis</a>
-  <a href="#changelog">Changelog</a>
+  <a href="#changelog">Changelog 3.2.1</a>
   <a href="#kontakt">Kontakt</a>
 </nav>
 
@@ -339,23 +318,26 @@
     Alle bereitgestellten Dateien stammen direkt von <strong>Sattler IT-Service</strong> und werden ausschließlich über die offizielle GitHub-Seite veröffentlicht. <strong>Tipp:</strong> Nach der ersten Freigabe läuft das Tool in der Regel dauerhaft ohne weitere Warnmeldungen.
   </div>
 
-  <h2 id="changelog">Neu in Version 3.2.0</h2>
+  <h2 id="changelog">Neu in Version 3.2.1</h2>
 
   <div class="changelog-item">
-    <h3>Einstellungen vollständig gespeichert</h3>
-    <p>Alle Pfade, Aktiv-Status, Überschreiben/Verschieben-Optionen und Herunterfahren werden beim Beenden automatisch in der INI gesichert und beim nächsten Start wiederhergestellt.</p>
+    <h3>Lange Pfade erkannt und gemeldet</h3>
+    <p>Dateien mit Zielpfaden ab 260 Zeichen (Windows MAX_PATH-Limit) werden automatisch erkannt. Ein Warnfenster zeigt den betroffenen Pfad an und öffnet den Windows-Explorer direkt im ersten Unterordner &ndash; zur sofortigen Korrektur. Betroffene Dateien werden im Fehler-Protokoll vermerkt.</p>
   </div>
   <div class="changelog-item">
-    <h3>Profile um Optionen erweitert</h3>
-    <p>Gespeicherte <code>.3ko</code>-Profile enthalten jetzt auch die Überschreiben- und Verschieben-Einstellungen je Auftrag.</p>
+    <h3>Datenmenge auch bei langen Pfaden korrekt</h3>
+    <p>Dateien mit zu langen Pfaden wurden bisher in der Datenmenge-Anzeige und im Fortschrittsbalken nicht gezählt. Dies ist jetzt behoben.</p>
+  </div>
+
+  <h2 id="changelog-prev">Version 3.2.0</h2>
+
+  <div class="changelog-item">
+    <h3>Profile und Einstellungen vollständig gespeichert</h3>
+    <p>Überschreiben/Verschieben-Optionen je Auftrag werden jetzt sowohl in der INI als auch in <code>.3ko</code>-Profilen gesichert und beim Laden wiederhergestellt.</p>
   </div>
   <div class="changelog-item">
-    <h3>Zielverzeichnis-Handling verbessert</h3>
-    <p>Das Zielverzeichnis wird jetzt vor der Prüfung angelegt &ndash; nicht mehr erreichbare oder neu zu erstellende Pfade werden sauber behandelt.</p>
-  </div>
-  <div class="changelog-item">
-    <h3>Netzwerkpfade ohne Hänger</h3>
-    <p>Die Datenmengberechnung überspringt Netzwerkpfade (<code>\\...</code>) und nicht erreichbare Laufwerke ohne einzufrieren.</p>
+    <h3>Zielverzeichnis-Handling und Netzwerkpfade</h3>
+    <p>Zielverzeichnisse werden vor der Prüfung angelegt. Netzwerkpfade (<code>\\...</code>) werden bei der Datenmengberechnung übersprungen, ohne einzufrieren.</p>
   </div>
   <div class="changelog-item">
     <h3>Optische Korrekturen</h3>
@@ -363,7 +345,8 @@
   </div>
 
   <h2 id="kontakt">Kontakt / Impressum</h2>
- 
+  <p>Hans Udo Sattler &nbsp;&middot;&nbsp; Sattler IT-Service &nbsp;&middot;&nbsp; Greifenstein &nbsp;&middot;&nbsp; Deutschland</p>
+
   <div class="donate-box">
     <h3>Hat Ihnen dieses Tool geholfen?</h3>
     <p>S-IT-3Kopier wird kostenlos entwickelt und gepflegt.<br>Eine kleine Spende hilft dabei, die Tools weiterzuentwickeln. Herzlichen Dank! 🙏</p>
@@ -374,26 +357,9 @@
 </main>
 
 <footer>
-  © 2026 Hans Udo Sattler &nbsp;·&nbsp; Sattler IT-Service &nbsp;·&nbsp;
-  <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
-  <a href="https://sattlerit.github.io/sattlerit-tools/">🏠 Tool-Übersicht</a>
+  <strong>&copy; 2026 Hans Udo Sattler &nbsp;&middot;&nbsp; Sattler IT-Service, Greifenstein</strong><br>
+  Alle Rechte vorbehalten &nbsp;&middot;&nbsp; <a href="https://github.com/SattlerIT/sit-3kopier">GitHub</a>
 </footer>
 
-<div class="lightbox-overlay" id="lightbox">
-  <img id="lightbox-img" src="" alt="">
-</div>
-<script>
-  const overlay = document.getElementById('lightbox');
-  const lbImg   = document.getElementById('lightbox-img');
-  document.querySelectorAll('.screenshots img').forEach(img => {
-    img.addEventListener('click', () => {
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      overlay.classList.add('active');
-    });
-  });
-  overlay.addEventListener('click', () => overlay.classList.remove('active'));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') overlay.classList.remove('active'); });
-</script>
 </body>
 </html>
