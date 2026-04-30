@@ -321,12 +321,16 @@
   <h2 id="changelog">Neu in Version 3.2.1</h2>
 
   <div class="changelog-item">
-    <h3>Lange Pfade erkannt und gemeldet</h3>
-    <p>Dateien mit Zielpfaden ab 260 Zeichen (Windows MAX_PATH-Limit) werden automatisch erkannt. Ein Warnfenster zeigt den betroffenen Pfad an und öffnet den Windows-Explorer direkt im ersten Unterordner &ndash; zur sofortigen Korrektur. Betroffene Dateien werden im Fehler-Protokoll vermerkt.</p>
+    <h3>Automatische Behandlung langer Pfade (MAX_PATH)</h3>
+    <p>Zielpfade ab 260 Zeichen werden automatisch gekürzt &ndash; zuerst der Dateiname, bei Bedarf auch der letzte Unterordner. Die Dateiendung bleibt immer erhalten. Gekürzte Namen erhalten die Markierung <code>-3k</code>. Die Quelldatei bleibt unverändert. Protokoll und Abschlussfenster zeigen die Anzahl gekürzter Dateien (<em>✂ Gekürzt</em>).</p>
   </div>
   <div class="changelog-item">
     <h3>Datenmenge auch bei langen Pfaden korrekt</h3>
     <p>Dateien mit zu langen Pfaden wurden bisher in der Datenmenge-Anzeige und im Fortschrittsbalken nicht gezählt. Dies ist jetzt behoben.</p>
+  </div>
+  <div class="changelog-item">
+    <h3>Log-Größe automatisch begrenzt</h3>
+    <p>Protokoll- und Fehler-Log werden beim Start automatisch auf 512&nbsp;KB begrenzt. Älteste Einträge werden dabei vorne entfernt &ndash; aktuelle Läufe bleiben immer erhalten.</p>
   </div>
 
   <h2 id="changelog-prev">Version 3.2.0</h2>
