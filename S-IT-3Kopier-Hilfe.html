@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopier – Hilfe</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 18px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopier &ndash; Hilfe &amp; Dokumentation</h1>
+  <p>Version v3.3.1 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<nav>
+  <a href="#uebersicht">Übersicht</a>
+  <a href="#auftraege">Aufträge</a>
+  <a href="#optionen">Optionen</a>
+  <a href="#einstellungen">Einstellungen</a>
+  <a href="#ablauf">Ablauf</a>
+  <a href="#pfadlaenge">Lange Pfade</a>
+  <a href="#ergebnis">Ergebnis</a>
+  <a href="#log">Log</a>
+</nav>
+
+<main>
+
+  <h2 id="uebersicht">Übersicht</h2>
+  <p><strong>S-IT-3Kopier</strong> ist ein Dreifach-Kopierer mit Protokoll. Er ermöglicht bis zu drei unabhängige Kopier- oder Verschiebeaufträge in einem einzigen Durchlauf &ndash; ideal zum Verteilen von Dateien auf NAS-Laufwerke, Cloud-Verzeichnisse (z.&nbsp;B. pCloud) oder andere Zielmedien.</p>
+
+  <div class="note">
+    <strong>Typischer Einsatz:</strong> Quelldaten von einem lokalen Ordner gleichzeitig auf mehrere Ziele kopieren &ndash; z.&nbsp;B. NAS 1, NAS 2 und pCloud &ndash; ohne den Vorgang dreimal manuell starten zu müssen.
+  </div>
+
+  <div class="ok">
+    <strong>Python-Version:</strong> Ab Version v3.3.1 läuft 3Kopier auf einer neuen, technischen Grundlage (Python statt AutoIt). Bedienung und Ablauf sind unverändert &ndash; die Oberfläche kopiert jetzt aber im Hintergrund, bleibt also auch bei sehr vielen Dateien oder langsamen Netzlaufwerken durchgehend reaktionsfähig (Fenster friert nicht mehr ein).
+  </div>
+
+  <h2 id="auftraege">Aufträge konfigurieren</h2>
+  <p>Das Programm unterstützt drei unabhängige Kopieraufträge (A1, A2, A3). Jeder Auftrag besteht aus einem Quell- und einem Zielverzeichnis und kann einzeln aktiviert oder deaktiviert werden.</p>
+
+  <h3>Aktiv-Checkbox</h3>
+  <p>Nur aktivierte Aufträge (Haken bei <strong>aktiv</strong>) werden beim Start verarbeitet. Deaktivierte Aufträge werden vollständig übersprungen, bleiben aber mit ihren Pfaden gespeichert.</p>
+
+  <h3>Quelle wählen</h3>
+  <p>Klicken Sie auf <strong>📁 Quelle</strong>, um den Quellordner für den jeweiligen Auftrag auszuwählen. Der Pfad wird automatisch in der INI-Datei gespeichert und beim nächsten Programmstart wiederhergestellt.</p>
+
+  <h3>Ziel wählen</h3>
+  <p>Klicken Sie auf <strong>📁 Ziel</strong>, um das Zielverzeichnis festzulegen. Das Zielverzeichnis muss nicht vorab existieren &ndash; es wird beim Kopiervorgang automatisch angelegt.</p>
+
+  <div class="note">
+    <strong>Datenmenge:</strong> Der Bereich <em>Datenmengen</em> zeigt die aktuelle Größe jedes aktiven Quellordners an. Klicken Sie auf <strong>🔄 Aktualisieren</strong>, um die Anzeige nach Änderungen zu erneuern.
+  </div>
+
+  <h2 id="optionen">Optionen</h2>
+
+  <h3>Überschreiben (pro Auftrag)</h3>
+  <p>Ist diese Option aktiviert, werden vorhandene Dateien im Ziel <strong>immer</strong> überschrieben &ndash; unabhängig vom Datum. Ohne diese Option werden Zieldateien nur überschrieben, wenn die Quelldatei <em>neuer</em> ist. Ist die Zieldatei gleich alt oder aktueller, wird sie übersprungen.</p>
+
+  <h3>Verschieben (pro Auftrag)</h3>
+  <p>Ist diese Option aktiviert, werden Dateien <strong>verschoben</strong> statt kopiert. Die Quelldatei wird nach erfolgreichem Transfer gelöscht. Leere Quellordner werden nach dem Verschieben automatisch entfernt.</p>
+
+  <div class="warn">
+    <strong>Hinweis beim Verschieben:</strong> Dateien werden aus dem Quellordner entfernt. Prüfen Sie vor dem ersten Einsatz, ob das gewünschte Verhalten ist. Bei Fehlern verbleibt die Quelldatei unverändert.
+  </div>
+
+  <h3>Herunterfahren nach dem Kopieren</h3>
+  <p>Wenn diese Option aktiviert ist und der Kopiervorgang <strong>fehlerfrei</strong> abgeschlossen wurde, fragt das Programm, ob der Computer heruntergefahren werden soll. Bei Fehlern wird die Abfrage nicht gezeigt.</p>
+
+  <h2 id="einstellungen">Einstellungen</h2>
+  <p>Über das Zahnrad-Symbol <strong>⚙</strong> oben rechts im Programmfenster (neben <strong>? HILFE</strong>) öffnet sich der Einstellungen-Dialog.</p>
+
+  <h3>Skalierung der Oberfläche</h3>
+  <p>Zur Auswahl stehen feste Stufen von <strong>90&nbsp;%</strong> bis <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Die aktuell gewählte Stufe ist hervorgehoben. Nach Klick auf <strong>Übernehmen</strong> baut sich die Oberfläche in der neuen Größe neu auf &ndash; alle Texte, Buttons und Abstände skalieren proportional mit.</p>
+
+  <div class="note">
+    <strong>Feste Fenstergröße:</strong> Das Programmfenster lässt sich bewusst nicht mit der Maus an den Ecken vergrößern oder verkleinern (anders als bei vielen Windows-Programmen üblich). Das verhindert verzerrte oder abgeschnittene Anzeigen. Wird eine größere Darstellung gewünscht, einfach eine höhere Skalierungsstufe wählen.
+  </div>
+
+  <h2 id="ablauf">Ablauf</h2>
+
+  <h3>1. Aufträge konfigurieren</h3>
+  <p>Setzen Sie für jeden gewünschten Auftrag Quelle, Ziel und die zugehörigen Optionen. Aktivieren Sie den Auftrag mit der <strong>aktiv</strong>-Checkbox.</p>
+
+  <h3>2. Start drücken</h3>
+  <p>Das Programm zählt zunächst alle Dateien in den aktiven Quellordnern, um den Fortschrittsbalken korrekt zu befüllen. Anschließend werden die Aufträge der Reihe nach (A1, A2, A3) abgearbeitet.</p>
+
+  <h3>3. Fortschritt beobachten</h3>
+  <p>Der Fortschrittsbalken, die Statuszeile und die Statistik werden während des Vorgangs laufend aktualisiert. Die Statuszeile zeigt auch eine geschätzte Restzeit an, sobald genügend Daten vorliegen.</p>
+
+  <h3>4. Abbruch</h3>
+  <p>Mit <strong>⏹ Stop</strong> oder der <strong>ESC</strong>-Taste kann der Vorgang sauber abgebrochen werden. Bereits verarbeitete Dateien bleiben erhalten.</p>
+
+  <h2 id="pfadlaenge">Lange Pfade (MAX_PATH)</h2>
+  <p>Windows erlaubt standardmäßig keine Dateipfade mit mehr als 260 Zeichen (sog. <strong>MAX_PATH-Limit</strong>). Dateien mit zu langen Zielpfaden können weder kopiert noch verschoben werden &ndash; dies betrifft besonders Dateien in tief verschachtelten Ordnern mit langen Namen, wie sie häufig bei Download-Ordnern vorkommen.</p>
+
+  <p>3Kopier erkennt solche Dateien automatisch und kürzt den Dateinamen im Ziel so weit wie nötig, damit der Vorgang trotzdem durchläuft.</p>
+
+  <div class="ok">
+    <strong>Automatische Kürzung:</strong> Ist der Zielpfad zu lang, wird zunächst der Dateiname im Ziel gekürzt &ndash; gerade so viel, dass der Pfad unter 260 Zeichen bleibt. Reicht das nicht aus, wird zusätzlich der letzte Unterordner im Zielpfad gekürzt. Die Dateiendung bleibt dabei immer erhalten. Gekürzte Namen werden mit der Markierung <code>-3k</code> versehen, z.&nbsp;B. <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Quelldatei bleibt unverändert:</strong> Nur der Zielpfad wird angepasst. Die Originaldatei auf dem Quellsystem behält ihren Namen. Im Protokoll wird der ursprüngliche und der gekürzte Zielpfad dokumentiert.
+  </div>
+
+  <div class="note">
+    <strong>Statistik:</strong> Die Anzahl automatisch gekürzter Dateien wird in der Statuszeile als <em>✂ Gekürzt</em> angezeigt und im Abschlussfenster sowie im Protokoll ausgewiesen.
+  </div>
+
+  <div class="note">
+    <strong>Datenmengen-Anzeige:</strong> Dateien mit zu langen Pfaden werden in der Datenmenge-Anzeige und im Fortschrittsbalken berücksichtigt, auch wenn ihre genaue Größe nicht ermittelt werden kann.
+  </div>
+
+  <div class="note">
+    <strong>Nicht zu verwechseln &ndash; Anzeige-Kürzung in der Oberfläche:</strong> Bei sehr langen Quell-/Zielpfaden wird die Anzeige in den Auftragsfeldern selbst (Anfang&hellip;Ende) verkürzt dargestellt, z.&nbsp;B. <code>H:\Download\&hellip;\Ablage</code>. Das ist rein optisch und unabhängig von der oben beschriebenen <code>-3k</code>-Kürzung: intern wird immer der vollständige Pfad verwendet. Der komplette Pfad wird als Tooltip angezeigt, wenn man mit der Maus über das Feld fährt.
+  </div>
+
+  <h2 id="ergebnis">Ergebnis</h2>
+
+  <table>
+    <tr>
+      <th>Angabe</th>
+      <th>Bedeutung</th>
+    </tr>
+    <tr>
+      <td><strong>Kopiert</strong></td>
+      <td>Neue Dateien, die im Ziel noch nicht vorhanden waren und kopiert wurden</td>
+    </tr>
+    <tr>
+      <td><strong>Überschrieben</strong></td>
+      <td>Dateien, die im Ziel bereits existierten und aktualisiert wurden</td>
+    </tr>
+    <tr>
+      <td><strong>Verschoben</strong></td>
+      <td>Dateien, die von der Quelle ins Ziel verschoben wurden (Option &bdquo;Verschieben&ldquo;)</td>
+    </tr>
+    <tr>
+      <td><strong>Übersprungen</strong></td>
+      <td>Dateien, die im Ziel bereits aktueller waren und nicht verändert wurden</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Gekürzt</strong></td>
+      <td>Dateien, deren Zielpfad das MAX_PATH-Limit überschritt und automatisch gekürzt wurde (Markierung <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Fehler</strong></td>
+      <td>Dateien, die nicht kopiert oder verschoben werden konnten (Details im Fehler-Log)</td>
+    </tr>
+    <tr>
+      <td><strong>Daten</strong></td>
+      <td>Gesamtmenge der verarbeiteten Daten</td>
+    </tr>
+    <tr>
+      <td><strong>Zeit</strong></td>
+      <td>Gesamtdauer des Kopiervorgangs (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="log">Log-Dateien</h2>
+  <p>3Kopier führt zwei separate Protokolldateien im Programmverzeichnis:</p>
+
+  <h3>📋 Protokoll (<code>3Kopier-Protokoll.log</code>)</h3>
+  <p>Öffnen Sie das Protokoll über <strong>📋 Log</strong>. Es enthält:</p>
+  <ul>
+    <li>Datum und Uhrzeit jedes Kopiervorgangs</li>
+    <li>Quelle und Ziel jedes Auftrags sowie die gewählten Optionen</li>
+    <li>Jede verarbeitete Datei mit Aktion (kopiert, überschrieben, verschoben, übersprungen)</li>
+    <li>Abschlusszusammenfassung mit Statistik und Laufzeit</li>
+  </ul>
+
+  <h3>⚠ Fehler-Protokoll (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Öffnen Sie das Fehler-Protokoll über <strong>⚠ Fehler</strong>. Es enthält ausschließlich Fehlermeldungen mit Zeitstempel, damit Probleme schnell gefunden werden können.</p>
+
+  <div class="warn">
+    <strong>Bei langen Kopiervorgängen:</strong> Das Programm kann bei sehr vielen Dateien oder langsamen Laufwerken (z.&nbsp;B. Netzlaufwerke, USB) etwas Zeit brauchen &ndash; die Oberfläche bleibt dabei aber durchgehend reaktionsfähig (Python-Version) und friert nicht mehr ein. Mit <strong>⏹ Stop</strong> oder <strong>ESC</strong> kann der Vorgang sauber abgebrochen werden.
+  </div>
+
+  <div class="note">
+    <strong>Log-Größe:</strong> Beide Protokolldateien werden automatisch begrenzt. Überschreitet eine Datei 512&nbsp;KB, werden beim nächsten Start die ältesten Einträge vorne abgeschnitten. Die aktuellen Läufe bleiben immer erhalten.
+  </div>
+
+  <div class="ok">
+    <strong>INI-Datei (<code>3Kopier.ini</code>):</strong> Alle Einstellungen werden beim Programmende automatisch gespeichert und beim nächsten Start wiederhergestellt &ndash; darunter Quell- und Zielpfade, der Aktiv-Status der drei Aufträge, die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag, die Option <em>Herunterfahren</em> sowie die gewählte <em>Skalierungsstufe</em>. Eine manuelle Konfiguration ist nicht nötig.
+  </div>
+
+  <div class="note">
+    <strong>Profile (<code>.3ko</code>-Dateien):</strong> Beim Speichern eines Profils werden ebenfalls alle Pfade, der Aktiv-Status sowie die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag gesichert. Die Option <em>Herunterfahren</em> ist eine globale Einstellung und wird nicht im Profil, sondern nur in der INI-Datei gespeichert.
+  </div>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Hat Ihnen dieses Tool geholfen?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      Der S-IT-3Kopier wird kostenlos entwickelt und gepflegt.<br>
+      Eine kleine Spende hilft dabei, das Tool weiterzuentwickeln. Herzlichen Dank! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Spende via PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Kopier &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+
+</body>
+</html>
