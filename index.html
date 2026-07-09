@@ -334,7 +334,7 @@
 <div class="hero">
   <div class="hero-inner">
     <div>
-      <h1>Drei Verzeichnisse in einem Durchlauf<br>auf drei Zielverzeichnisse kopieren</h1>
+      <h1>Dateien in einem Durchlauf<br>auf bis zu drei Ziele verteilen</h1>
       <p>S-IT-3Kopier kopiert oder verschiebt Dateien aus einer Quelle gleichzeitig auf bis zu drei unabhängige Ziele – ideal für NAS-Laufwerke, USB-Sticks und Cloud-Verzeichnisse (z. B. pCloud). Mit Profilen, Fortschrittsanzeige und ausführlichem Protokoll. Seit Version 3.3.1 auf Python umgestellt – die Oberfläche bleibt jetzt auch bei sehr vielen Dateien durchgehend reaktionsfähig.</p>
       <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.1/sit-3kopier_latest.zip" class="btn-download">⬇ Download v3.3.1</a>
       <a href="https://github.com/SattlerIT/sit-3kopier/releases" class="btn-secondary">Alle Versionen</a>
@@ -353,7 +353,7 @@
     <div class="card">
       <div class="card-icon">📋</div>
       <h3>Drei Aufträge</h3>
-      <p>Bis zu drei unabhängige Kopier- oder Verschiebe-Aufträge in einem einzigen Durchlauf – ideal für NAS, USB-Sticks und Cloud-Verzeichnisse.</p>
+      <p>Bis zu drei unabhängige Kopier- oder Verschiebe-Aufträge in einem einzigen Durchlauf – ideal für NAS, USB-Sticks und Cloud-Verzeichnisse. Praxis-Tipp: Da die Anzahl der <strong>Profile</strong> unbegrenzt ist, sind effektiv beliebig viele unabhängige Kopieraufgaben möglich – nicht nur drei.</p>
     </div>
     <div class="card">
       <div class="card-icon">⚙️</div>
@@ -363,17 +363,17 @@
     <div class="card">
       <div class="card-icon">💾</div>
       <h3>Profile</h3>
-      <p>Kopier-Konfigurationen als <code>.3ko</code>-Profile speichern und per Mausklick wechseln – alle Pfade und Optionen werden mitgesichert.</p>
+      <p>Kopier-Konfigurationen als <code>.3ko</code>-Profile speichern. Die Auswahl im Dropdown lädt sofort – ein separater "Laden"-Klick ist nicht mehr nötig.</p>
     </div>
     <div class="card">
       <div class="card-icon">📊</div>
-      <h3>Fortschritt &amp; Statistik</h3>
-      <p>Fortschrittsbalken mit Restzeit-Schätzung, laufende Statistik und detaillierte Protokolldateien für Kopier- und Fehlervorgänge.</p>
+      <h3>Blockweise Kopie &amp; echter Fortschritt <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Dateien werden in Blöcken kopiert statt in einem Rutsch – der Fortschrittsbalken bewegt sich dadurch sichtbar auch <em>innerhalb</em> einer einzelnen sehr großen Datei, und "Stop" wirkt sofort, statt erst nach deren Abschluss.</p>
     </div>
     <div class="card">
       <div class="card-icon">🖥</div>
-      <h3>Skalierbare Oberfläche <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
-      <p>Feste Skalierungsstufen von 90–200 % über die Einstellungen (⚙). Die Oberfläche kopiert im Hintergrund und bleibt auch bei sehr vielen Dateien oder langsamen Netzlaufwerken reaktionsfähig.</p>
+      <h3>Skalierbare Oberfläche</h3>
+      <p>Feste Skalierungsstufen von 90–200 % über die Einstellungen (⚙). Zusätzlich einstellbar: wie lange Protokolle aufbewahrt werden (1 Tag bis unbegrenzt), inklusive Sofort-Aufräumen-Funktion.</p>
     </div>
     <div class="card">
       <div class="card-icon">💻</div>
@@ -385,6 +385,11 @@
       <h3>Einstellungen merken</h3>
       <p>Alle Pfade, Aktiv-Status und Optionen werden beim Beenden automatisch gespeichert und beim nächsten Start wiederhergestellt.</p>
     </div>
+    <div class="card" style="border-top-color:var(--orange)">
+      <div class="card-icon">🕐</div>
+      <h3>Automatische Zeitsteuerung <span style="font-size:10px;font-weight:700;color:#fff;background:var(--orange);padding:1px 7px;border-radius:10px;vertical-align:middle">VOLLVERSION</span></h3>
+      <p>Profile automatisch nach Zeitplan im Hintergrund ausführen (täglich, an bestimmten Wochentagen oder im Intervall) – inklusive Silent-Modus und Tray-Betrieb. Details weiter unten bei <a href="#vollversion" style="color:var(--blue)">Vollversion</a>.</p>
+    </div>
   </div>
 
   <!-- SCREENSHOTS -->
@@ -394,15 +399,11 @@
       <img src="screenshot-3kopier.png" alt="S-IT-3Kopier Hauptfenster">
       <div class="gallery-caption">Hauptfenster mit drei Aufträgen, Fortschritt und Protokoll</div>
     </div>
-    <div class="gallery-item" onclick="openLightbox(this)">
-      <img src="screenshot-3kopier-einstellungen.png" alt="S-IT-3Kopier Einstellungen mit Skalierung">
-      <div class="gallery-caption">Einstellungen: feste Skalierungsstufen von 90–200 %</div>
-    </div>
   </div>
 
   <!-- DOWNLOAD -->
   <div class="section-title">⬇ Download &amp; Dokumentation</div>
-  <p style="font-size:14px; margin-bottom:16px;">Die aktuelle Version gibt es im <a href="https://github.com/SattlerIT/sit-3kopier/releases" style="color:var(--blue)">Release-Bereich auf GitHub</a> (als ZIP, Hilfe-Datei und Lizenz liegen bei). Zum direkten Ansehen: <a href="S-IT-3Kopier-Hilfe.html" style="color:var(--blue)">Hilfe-Datei</a> &nbsp;·&nbsp; <a href="Lizenz.txt" style="color:var(--blue)">Lizenz.txt</a></p>
+  <p style="font-size:14px; margin-bottom:16px;">Die aktuelle Version und die Hilfe-Datei findest du im <a href="https://github.com/SattlerIT/sit-3kopier/releases" style="color:var(--blue)">Release-Bereich auf GitHub</a>.</p>
 
   <div class="ok-box">
     <strong>Portabel:</strong> Einfach die ZIP entpacken – kein Installer erforderlich. Das Tool läuft direkt aus dem entpackten Verzeichnis oder von einem USB-Stick. Die INI-Datei und Profile werden automatisch im Programmverzeichnis angelegt.
@@ -443,10 +444,15 @@
       <ul>
         <li>Kompletter Wechsel von AutoIt auf Python – Bedienung und Ablauf unverändert, bestehende <code>3Kopier.ini</code>- und <code>.3ko</code>-Profildateien funktionieren ohne Anpassung weiter</li>
         <li>Kopiervorgänge laufen jetzt im Hintergrund – die Oberfläche bleibt auch bei sehr vielen Dateien oder langsamen Netzlaufwerken durchgehend reaktionsfähig</li>
-        <li>Neue Einstellungen (⚙): Skalierung der Oberfläche in festen Stufen von 90–200 %</li>
+        <li>Dateien werden blockweise kopiert statt in einem Rutsch – Fortschrittsbalken bewegt sich dadurch auch innerhalb einer einzelnen großen Datei sichtbar weiter, "Stop" wirkt sofort</li>
+        <li>Profil-Auswahl im Dropdown lädt sofort – der separate "Laden"-Knopf entfällt</li>
+        <li>Ergebnisfenster überarbeitet: eigene Spalte je Auftrag mit Quelle, Ziel und Statistik</li>
+        <li>Neue Einstellungen (⚙): Skalierung der Oberfläche in festen Stufen von 90–200 %, Aufbewahrungsfrist für Protokolle (1 Tag bis unbegrenzt) mit Sofort-Aufräumen-Funktion</li>
+        <li>Protokolle liegen jetzt als eigene Datei je Lauf im Unterordner <code>Logs</code>, statt einer einzigen wachsenden Sammeldatei</li>
         <li>Sehr lange Pfade werden in den Auftragsfeldern automatisch verkürzt angezeigt (Anfang…Ende), der volle Pfad erscheint als Tooltip – intern bleibt immer der komplette Pfad erhalten</li>
         <li>Kleinere Layout-Korrekturen (Ausrichtung, Lesbarkeit)</li>
         <li><code>Lizenz.txt</code> liegt jetzt bei</li>
+        <li>Neu erhältlich: <a href="#vollversion" style="color:var(--blue)">Vollversion mit automatischer Zeitsteuerung</a></li>
       </ul>
     </div>
     <div class="changelog-entry">
@@ -467,6 +473,47 @@
     </div>
   </div>
 
+  <!-- VOLLVERSION -->
+  <div class="section-title" id="vollversion">🕐 Vollversion mit automatischer Zeitsteuerung</div>
+  <p style="font-size:14px; margin-bottom:16px;">
+    Die kostenlose Version oben deckt bereits den kompletten manuellen Kopierbetrieb ab. Wer Profile
+    <strong>automatisch im Hintergrund</strong> laufen lassen möchte – z. B. jeden Abend um 20 Uhr, alle
+    4 Stunden oder nur an bestimmten Wochentagen – benötigt zusätzlich die Vollversion.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">📅</div>
+      <h3>Zeitpläne je Profil</h3>
+      <p>Beliebig viele Profile mit jeweils eigenem Zeitplan (täglich, an bestimmten Wochentagen oder im festen Intervall) – effektiv unbegrenzt viele automatisierte Kopieraufgaben.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔇</div>
+      <h3>Silent-Modus</h3>
+      <p>Automatische Läufe können komplett ohne Fenster im Hintergrund laufen – nur bei einem echten Fehler (z. B. Quelle/Ziel nicht erreichbar) gibt es eine kurze Meldung.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗔</div>
+      <h3>Eigenständiges Aktionsfenster</h3>
+      <p>Läuft ein Zeitplan nicht-silent, öffnet sich ein eigenes kleines Fortschrittsfenster – das Hauptfenster mit deiner aktuellen Arbeit bleibt dabei komplett unberührt.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📌</div>
+      <h3>Tray &amp; Autostart</h3>
+      <p>Bei aktivem Zeitplan läuft 3Kopier im Hintergrund weiter, statt sich beim Schließen zu beenden, und startet bei Bedarf automatisch mit Windows.</p>
+    </div>
+  </div>
+
+  <div class="info-box" style="text-align:center; margin-top:20px;">
+    <strong>📧 Interesse an der Vollversion?</strong><br>
+    Kurze Anfrage per E-Mail genügt – Rückmeldung mit weiteren Details und Bestellablauf folgt persönlich:<br><br>
+    <a href="mailto:tool-entwicklung@sattler-it.de?subject=Anfrage%20S-IT-3Kopier%20Vollversion&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20S-IT-3Kopier-Vollversion%20mit%20Zeitsteuerung.%0A%0AName%2FFirma%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe"
+       style="background:var(--orange);color:#fff;padding:10px 24px;border-radius:4px;
+              text-decoration:none;font-size:14px;font-weight:600; display:inline-block;">
+      ✉ Vollversion anfragen
+    </a>
+  </div>
+
   <!-- DONATION -->
   <div class="info-box" style="text-align:center">
     <strong>☕ S-IT-Tools gefallen dir?</strong><br>
@@ -483,7 +530,7 @@
 <!-- FOOTER -->
 <footer>
   © 2026 Sattler IT-Service, Greifenstein &nbsp;•&nbsp; Autor: Hans Udo Sattler &nbsp;•&nbsp;
-  <a href="Lizenz.txt">Lizenz</a> &nbsp;•&nbsp;
+  <a href="https://github.com/SattlerIT/sit-3kopier/blob/main/Lizenz.txt">Lizenz</a> &nbsp;•&nbsp;
   <a href="https://sattlerit.github.io/sattlerit-tools/">Tool-Übersicht</a> &nbsp;•&nbsp;
   <a href="https://sattlerit.github.io/sattlerit-tools/impressum.html">Impressum</a>
 </footer>
