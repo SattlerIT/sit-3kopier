@@ -36,12 +36,13 @@
     background: #34495E;
     padding: 0 40px;
     display: flex;
+    flex-wrap: wrap;
     gap: 0;
   }
   nav a {
     color: var(--light);
     text-decoration: none;
-    padding: 11px 18px;
+    padding: 11px 16px;
     font-size: 13px;
     display: inline-block;
     transition: background 0.2s;
@@ -143,24 +144,31 @@
   <a href="#uebersicht">Übersicht</a>
   <a href="#auftraege">Aufträge</a>
   <a href="#optionen">Optionen</a>
+  <a href="#profile">Profile</a>
   <a href="#einstellungen">Einstellungen</a>
   <a href="#ablauf">Ablauf</a>
+  <a href="#zeitsteuerung">Zeitsteuerung</a>
+  <a href="#hintergrund">Hintergrundbetrieb</a>
   <a href="#pfadlaenge">Lange Pfade</a>
   <a href="#ergebnis">Ergebnis</a>
-  <a href="#log">Log</a>
+  <a href="#log">Protokolle</a>
 </nav>
 
 <main>
 
   <h2 id="uebersicht">Übersicht</h2>
-  <p><strong>S-IT-3Kopier</strong> ist ein Dreifach-Kopierer mit Protokoll. Er ermöglicht bis zu drei unabhängige Kopier- oder Verschiebeaufträge in einem einzigen Durchlauf &ndash; ideal zum Verteilen von Dateien auf NAS-Laufwerke, Cloud-Verzeichnisse (z.&nbsp;B. pCloud) oder andere Zielmedien.</p>
+  <p><strong>S-IT-3Kopier</strong> ist ein Dreifach-Kopierer mit Protokoll und Zeitsteuerung. Er ermöglicht bis zu drei unabhängige Kopier- oder Verschiebeaufträge in einem einzigen Durchlauf &ndash; ideal zum Verteilen von Dateien auf NAS-Laufwerke, Cloud-Verzeichnisse (z.&nbsp;B. pCloud) oder andere Zielmedien. Zusätzlich lassen sich Profile automatisch nach Zeitplan im Hintergrund ausführen, ganz ohne manuelles Zutun.</p>
 
   <div class="note">
-    <strong>Typischer Einsatz:</strong> Quelldaten von einem lokalen Ordner gleichzeitig auf mehrere Ziele kopieren &ndash; z.&nbsp;B. NAS 1, NAS 2 und pCloud &ndash; ohne den Vorgang dreimal manuell starten zu müssen.
+    <strong>Typischer Einsatz:</strong> Quelldaten von einem lokalen Ordner gleichzeitig auf mehrere Ziele kopieren &ndash; z.&nbsp;B. NAS 1, NAS 2 und pCloud &ndash; entweder auf Knopfdruck oder automatisch jeden Abend zu einer festen Uhrzeit.
   </div>
 
   <div class="ok">
-    <strong>Python-Version:</strong> Ab Version v3.3.1 läuft 3Kopier auf einer neuen, technischen Grundlage (Python statt AutoIt). Bedienung und Ablauf sind unverändert &ndash; die Oberfläche kopiert jetzt aber im Hintergrund, bleibt also auch bei sehr vielen Dateien oder langsamen Netzlaufwerken durchgehend reaktionsfähig (Fenster friert nicht mehr ein).
+    <strong>💡 Praxis-Tipp &ndash; nicht wirklich auf drei Aufträge begrenzt:</strong> Ein einzelner Lauf verarbeitet zwar maximal drei Quelle-Ziel-Paare gleichzeitig &ndash; aber die Anzahl der <strong>Profile</strong> ist unbegrenzt, und jedes Profil kann einen <strong>eigenen Zeitplan</strong> bekommen (siehe Abschnitt <a href="#zeitsteuerung">Zeitsteuerung</a>). In der Praxis bedeutet das: beliebig viele unabhängige Kopieraufgaben, jede mit eigenen drei Quell-/Zielpaaren, jede zu ihrer eigenen Uhrzeit oder ihrem eigenen Intervall &ndash; alle laufen automatisch im Hintergrund, ganz ohne dass man sie einzeln anstoßen muss. Beispiel: ein Profil &bdquo;Fotos&ldquo; täglich um 20 Uhr, ein Profil &bdquo;Buchhaltung&ldquo; alle 4 Stunden, ein Profil &bdquo;Wochenbackup&ldquo; nur samstags &ndash; alles gleichzeitig eingerichtet und unabhängig voneinander aktiv.
+  </div>
+
+  <div class="ok">
+    <strong>Python-Version:</strong> 3Kopier läuft auf einer modernen technischen Grundlage (Python statt AutoIt). Kopiervorgänge laufen im Hintergrund, die Oberfläche bleibt auch bei sehr vielen Dateien oder langsamen Netzlaufwerken durchgehend reaktionsfähig (friert nicht ein). Große einzelne Dateien werden blockweise kopiert &ndash; der Fortschrittsbalken bewegt sich dadurch auch sichtbar innerhalb einer einzigen sehr großen Datei, und <strong>⏹ Stop</strong> wirkt sofort, auch mitten in einer großen Datei.
   </div>
 
   <h2 id="auftraege">Aufträge konfigurieren</h2>
@@ -170,10 +178,10 @@
   <p>Nur aktivierte Aufträge (Haken bei <strong>aktiv</strong>) werden beim Start verarbeitet. Deaktivierte Aufträge werden vollständig übersprungen, bleiben aber mit ihren Pfaden gespeichert.</p>
 
   <h3>Quelle wählen</h3>
-  <p>Klicken Sie auf <strong>📁 Quelle</strong>, um den Quellordner für den jeweiligen Auftrag auszuwählen. Der Pfad wird automatisch in der INI-Datei gespeichert und beim nächsten Programmstart wiederhergestellt.</p>
+  <p>Klicken Sie auf <strong>📁 Quelle</strong>, um den Quellordner für den jeweiligen Auftrag auszuwählen. Der Dialog merkt sich getrennt von der Zielauswahl den zuletzt gewählten Quellordner &ndash; beim nächsten Klick auf <strong>Quelle</strong> (egal bei welchem Auftrag) startet die Auswahl wieder dort.</p>
 
   <h3>Ziel wählen</h3>
-  <p>Klicken Sie auf <strong>📁 Ziel</strong>, um das Zielverzeichnis festzulegen. Das Zielverzeichnis muss nicht vorab existieren &ndash; es wird beim Kopiervorgang automatisch angelegt.</p>
+  <p>Klicken Sie auf <strong>📁 Ziel</strong>, um das Zielverzeichnis festzulegen. Das Zielverzeichnis muss nicht vorab existieren &ndash; es wird beim Kopiervorgang automatisch angelegt. Auch hier merkt sich der Dialog getrennt von der Quellauswahl den zuletzt gewählten Zielordner.</p>
 
   <div class="note">
     <strong>Datenmenge:</strong> Der Bereich <em>Datenmengen</em> zeigt die aktuelle Größe jedes aktiven Quellordners an. Klicken Sie auf <strong>🔄 Aktualisieren</strong>, um die Anzeige nach Änderungen zu erneuern.
@@ -185,38 +193,110 @@
   <p>Ist diese Option aktiviert, werden vorhandene Dateien im Ziel <strong>immer</strong> überschrieben &ndash; unabhängig vom Datum. Ohne diese Option werden Zieldateien nur überschrieben, wenn die Quelldatei <em>neuer</em> ist. Ist die Zieldatei gleich alt oder aktueller, wird sie übersprungen.</p>
 
   <h3>Verschieben (pro Auftrag)</h3>
-  <p>Ist diese Option aktiviert, werden Dateien <strong>verschoben</strong> statt kopiert. Die Quelldatei wird nach erfolgreichem Transfer gelöscht. Leere Quellordner werden nach dem Verschieben automatisch entfernt.</p>
+  <p>Ist diese Option aktiviert, werden Dateien <strong>verschoben</strong> statt kopiert. Die Quelldatei wird erst gelöscht, nachdem sie vollständig und unversehrt im Ziel angekommen ist. Leere Quellordner werden nach dem Verschieben automatisch entfernt.</p>
 
   <div class="warn">
-    <strong>Hinweis beim Verschieben:</strong> Dateien werden aus dem Quellordner entfernt. Prüfen Sie vor dem ersten Einsatz, ob das gewünschte Verhalten ist. Bei Fehlern verbleibt die Quelldatei unverändert.
+    <strong>Hinweis beim Verschieben:</strong> Dateien werden aus dem Quellordner entfernt. Prüfen Sie vor dem ersten Einsatz, ob das gewünschte Verhalten ist. Bei Fehlern oder einem Abbruch mitten im Vorgang verbleibt die Quelldatei garantiert unverändert &ndash; gelöscht wird erst nach vollständig erfolgreicher Übertragung.
   </div>
 
   <h3>Herunterfahren nach dem Kopieren</h3>
-  <p>Wenn diese Option aktiviert ist und der Kopiervorgang <strong>fehlerfrei</strong> abgeschlossen wurde, fragt das Programm, ob der Computer heruntergefahren werden soll. Bei Fehlern wird die Abfrage nicht gezeigt.</p>
+  <p>Wenn diese Option aktiviert ist und der Kopiervorgang <strong>fehlerfrei</strong> abgeschlossen wurde, fragt das Programm, ob der Computer heruntergefahren werden soll. Bei Fehlern wird die Abfrage nicht gezeigt. Bei automatischen Läufen über die Zeitsteuerung gilt diese Option nicht.</p>
+
+  <h2 id="profile">Profile</h2>
+  <p>Ein Profil speichert die komplette Konfiguration aller drei Aufträge (Quelle, Ziel, Optionen, Aktiv-Status) unter einem Namen, um sie jederzeit wieder abzurufen &ndash; auch als Grundlage für die Zeitsteuerung.</p>
+
+  <h3>Profil auswählen</h3>
+  <p>Ein Klick auf einen Eintrag im Profil-Dropdown lädt das Profil <strong>sofort</strong> &ndash; ein separater &bdquo;Laden&ldquo;-Knopf ist nicht mehr nötig.</p>
+
+  <div class="warn">
+    <strong>Achtung bei ungespeicherten Änderungen:</strong> Da die Auswahl sofort lädt, gehen noch nicht gespeicherte Änderungen an den Auftragsfeldern beim Wechsel auf ein anderes Profil verloren. Mit <strong>💾 Speichern</strong> vorher sichern, falls gewünscht.
+  </div>
+
+  <h3>Profil speichern / neu / löschen</h3>
+  <p><strong>💾 Speichern</strong> sichert die aktuelle Konfiguration unter dem gewählten Namen. <strong>➕ Neu</strong> fragt nach einem Namen und leert danach alle drei Aufträge komplett &ndash; so beginnt ein neues Profil garantiert bei null, ohne Reste eines vorher geladenen Profils. <strong>🗑 Löschen</strong> entfernt das gewählte Profil endgültig.</p>
 
   <h2 id="einstellungen">Einstellungen</h2>
   <p>Über das Zahnrad-Symbol <strong>⚙</strong> oben rechts im Programmfenster (neben <strong>? HILFE</strong>) öffnet sich der Einstellungen-Dialog.</p>
 
   <h3>Skalierung der Oberfläche</h3>
-  <p>Zur Auswahl stehen feste Stufen von <strong>90&nbsp;%</strong> bis <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Die aktuell gewählte Stufe ist hervorgehoben. Nach Klick auf <strong>Übernehmen</strong> baut sich die Oberfläche in der neuen Größe neu auf &ndash; alle Texte, Buttons und Abstände skalieren proportional mit.</p>
+  <p>Zur Auswahl stehen feste Stufen von <strong>90&nbsp;%</strong> bis <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Die aktuell gewählte Stufe ist hervorgehoben. Nach Klick auf <strong>Übernehmen</strong> baut sich die Oberfläche in der neuen Größe neu auf.</p>
 
   <div class="note">
-    <strong>Feste Fenstergröße:</strong> Das Programmfenster lässt sich bewusst nicht mit der Maus an den Ecken vergrößern oder verkleinern (anders als bei vielen Windows-Programmen üblich). Das verhindert verzerrte oder abgeschnittene Anzeigen. Wird eine größere Darstellung gewünscht, einfach eine höhere Skalierungsstufe wählen.
+    <strong>Feste Fenstergröße:</strong> Das Programmfenster lässt sich bewusst nicht mit der Maus an den Ecken vergrößern oder verkleinern. Das verhindert verzerrte oder abgeschnittene Anzeigen. Wird eine größere Darstellung gewünscht, einfach eine höhere Skalierungsstufe wählen.
   </div>
 
-  <h2 id="ablauf">Ablauf</h2>
+  <h3>Protokolle aufbewahren für</h3>
+  <p>Legt fest, wie lange abgeschlossene Protokoll-Dateien (siehe Abschnitt <a href="#log">Protokolle</a>) automatisch aufbewahrt werden, bevor sie beim nächsten Programmstart gelöscht werden. Zur Wahl stehen feste Stufen von <strong>1 Tag</strong> bis <strong>365 Tage</strong> sowie <strong>∞ (Unbegrenzt)</strong> &ndash; dann wird nichts automatisch gelöscht.</p>
+
+  <p>Der Knopf <strong>🗑 Jetzt aufräumen</strong> wendet die gewählte Frist sofort an, ohne auf den nächsten Programmstart zu warten.</p>
+
+  <h2 id="ablauf">Ablauf eines manuellen Kopiervorgangs</h2>
 
   <h3>1. Aufträge konfigurieren</h3>
   <p>Setzen Sie für jeden gewünschten Auftrag Quelle, Ziel und die zugehörigen Optionen. Aktivieren Sie den Auftrag mit der <strong>aktiv</strong>-Checkbox.</p>
 
   <h3>2. Start drücken</h3>
-  <p>Das Programm zählt zunächst alle Dateien in den aktiven Quellordnern, um den Fortschrittsbalken korrekt zu befüllen. Anschließend werden die Aufträge der Reihe nach (A1, A2, A3) abgearbeitet.</p>
+  <p>Das Programm zählt zunächst alle Dateien in den aktiven Quellordnern, um den Fortschrittsbalken korrekt zu befüllen. Diese Zählphase lässt sich bereits mit <strong>⏹ Stop</strong> abbrechen und zeigt bei sehr vielen Dateien eine laufende Zwischenmeldung, statt wie eingefroren zu wirken. Anschließend werden die Aufträge der Reihe nach (A1, A2, A3) abgearbeitet.</p>
 
   <h3>3. Fortschritt beobachten</h3>
-  <p>Der Fortschrittsbalken, die Statuszeile und die Statistik werden während des Vorgangs laufend aktualisiert. Die Statuszeile zeigt auch eine geschätzte Restzeit an, sobald genügend Daten vorliegen.</p>
+  <p>Der Fortschrittsbalken, die Statuszeile und die Statistik werden während des Vorgangs laufend aktualisiert. Bei einer einzelnen sehr großen Datei bewegt sich der Balken auch innerhalb dieser einen Datei sichtbar weiter, statt bis zu ihrem Abschluss stehen zu bleiben. Die Statuszeile zeigt zudem eine geschätzte Restzeit an, sobald genügend Daten vorliegen.</p>
 
   <h3>4. Abbruch</h3>
-  <p>Mit <strong>⏹ Stop</strong> oder der <strong>ESC</strong>-Taste kann der Vorgang sauber abgebrochen werden. Bereits verarbeitete Dateien bleiben erhalten.</p>
+  <p>Mit <strong>⏹ Stop</strong> oder der <strong>ESC</strong>-Taste kann der Vorgang jederzeit sauber abgebrochen werden &ndash; auch mitten in einer großen Datei. Bereits vollständig verarbeitete Dateien bleiben erhalten; eine gerade erst angefangene, noch unvollständige Zieldatei wird automatisch entfernt, es bleibt also nie ein Torso liegen.</p>
+
+  <h3>5. Ergebnisfenster</h3>
+  <p>Nach Abschluss öffnet sich ein Ergebnisfenster mit der Statistik je Auftrag &ndash; Details dazu im Abschnitt <a href="#ergebnis">Ergebnis</a>.</p>
+
+  <h2 id="zeitsteuerung">Zeitsteuerung</h2>
+  <p>Über den Knopf <strong>🕐 Zeitsteuerung</strong> im Hauptfenster öffnet sich ein eigenes Fenster, in dem beliebig viele Profile automatisch nach Zeitplan laufen können &ndash; auch mehrmals täglich oder in festen Intervallen.</p>
+
+  <h3>Zeitplan anlegen</h3>
+  <p>Mit <strong>➕ Neu</strong> ein Profil auswählen und einen Auslöser festlegen:</p>
+  <ul>
+    <li><strong>Täglich</strong> &ndash; feste Uhrzeit, jeden Tag</li>
+    <li><strong>Wochentage</strong> &ndash; feste Uhrzeit, nur an ausgewählten Wochentagen</li>
+    <li><strong>Intervall</strong> &ndash; alle X Stunden, unabhängig von der Uhrzeit</li>
+  </ul>
+  <p>Mit <strong>✏</strong> lässt sich ein bestehender Zeitplan jederzeit bearbeiten, mit <strong>🗑</strong> löschen. Über die Checkbox <strong>Aktiv</strong> im Bearbeiten-Dialog kann ein Zeitplan vorübergehend pausiert werden, ohne ihn zu löschen.</p>
+
+  <h3>🔍 Simulation / ▶ Start (manuelles Testen)</h3>
+  <p>Jede Zeitplan-Zeile hat zwei Knöpfe zum sofortigen, manuellen Testen &ndash; unabhängig vom eigentlichen Zeitplan:</p>
+  <ul>
+    <li><strong>🔍 Simulation</strong> &ndash; zeigt genau, was passieren würde (welche Dateien kopiert, überschrieben, übersprungen &hellip; würden), <strong>ohne</strong> tatsächlich etwas zu verändern. Nichts wird kopiert, verschoben oder gelöscht.</li>
+    <li><strong>▶ Start</strong> &ndash; führt den Auftrag sofort echt aus.</li>
+  </ul>
+  <div class="note">
+    Diese beiden Knöpfe zeigen <strong>immer</strong> das Aktionsfenster mit Fortschritt und danach das Ergebnisfenster &ndash; unabhängig davon, ob für diesen Zeitplan der Silent-Modus aktiviert ist. Der Silent-Modus (siehe unten) gilt ausschließlich für automatisch ausgelöste Läufe, nicht für manuelles Testen per Klick.
+  </div>
+
+  <h3>🔇 Silent-Modus</h3>
+  <p>Im Bearbeiten-Dialog (✏ bzw. beim Anlegen mit ➕ Neu) lässt sich pro Zeitplan der <strong>Silent-Modus</strong> aktivieren. Ist er eingeschaltet, läuft ein <strong>automatisch</strong> (durch den Zeitplan) ausgelöster Lauf komplett ohne jedes Fenster ab:</p>
+  <ul>
+    <li>War alles in Ordnung (auch wenn nichts zu kopieren war), bleibt es <strong>vollständig still</strong> &ndash; kein Fenster, keine Meldung.</li>
+    <li>Trat ein <strong>echter Fehler</strong> auf (z.&nbsp;B. Quelle oder Ziel nicht erreichbar), erscheint eine kurze, unaufdringliche Meldung mit Verweis auf das betroffene Protokoll.</li>
+  </ul>
+  <p>Ein Zeitplan mit aktivem Silent-Modus ist in der Liste zusätzlich mit dem Symbol <strong>🔇</strong> gekennzeichnet.</p>
+
+  <h3>Eigenständiges Aktionsfenster</h3>
+  <p>Läuft ein Zeitplan (nicht-silent, egal ob automatisch oder manuell per Simulation/Start getestet), öffnet sich ein <strong>eigenes kleines Fenster</strong> mit Fortschrittsbalken, Statistik und einem eigenen <strong>⏹ Stop</strong>-Knopf.</p>
+  <div class="ok">
+    <strong>Wichtig:</strong> Das Hauptfenster mit den Auftragskarten bleibt dabei <strong>komplett unberührt</strong> &ndash; eigene, noch nicht gespeicherte Arbeit am Hauptfenster wird durch einen automatisch startenden Zeitplan nie überschrieben oder gestört.
+  </div>
+
+  <h2 id="hintergrund">Hintergrundbetrieb, Tray &amp; Autostart</h2>
+
+  <h3>Fenster schließen</h3>
+  <p>Existiert mindestens ein <strong>aktiver</strong> Zeitplan, schließt der (X)-Knopf des Hauptfensters das Programm nicht &ndash; stattdessen verschwindet nur das Fenster, das Programm läuft im Hintergrund weiter (erkennbar am Symbol in der Windows-Taskleiste, im sogenannten Infobereich/Tray). So bleibt die Zeitsteuerung aktiv, auch wenn niemand das Fenster offen hält.</p>
+  <p>Existiert <strong>kein</strong> aktiver Zeitplan, beendet der (X)-Knopf das Programm ganz normal.</p>
+
+  <h3>Wieder öffnen</h3>
+  <p>Rechtsklick auf das Tray-Symbol öffnet ein kleines Menü mit <strong>Öffnen</strong> (zeigt das Fenster wieder) und <strong>Beenden</strong> (beendet das Programm endgültig, auch mit aktivem Zeitplan).</p>
+
+  <h3>Autostart</h3>
+  <p>Sobald mindestens ein aktiver Zeitplan existiert, trägt sich 3Kopier automatisch in den Windows-Autostart ein &ndash; es startet dann beim Anmelden direkt minimiert im Hintergrund, ohne das Fenster zu zeigen. Wird der letzte aktive Zeitplan gelöscht oder deaktiviert, entfernt sich der Autostart-Eintrag ebenso automatisch wieder.</p>
+
+  <h3>Nur eine Instanz gleichzeitig</h3>
+  <p>Wird 3Kopier ein zweites Mal gestartet, während bereits eine Instanz läuft (auch unsichtbar im Hintergrund), öffnet sich <strong>kein</strong> zweites Fenster. Stattdessen wird die bereits laufende Instanz automatisch wieder sichtbar gemacht.</p>
 
   <h2 id="pfadlaenge">Lange Pfade (MAX_PATH)</h2>
   <p>Windows erlaubt standardmäßig keine Dateipfade mit mehr als 260 Zeichen (sog. <strong>MAX_PATH-Limit</strong>). Dateien mit zu langen Zielpfaden können weder kopiert noch verschoben werden &ndash; dies betrifft besonders Dateien in tief verschachtelten Ordnern mit langen Namen, wie sie häufig bei Download-Ordnern vorkommen.</p>
@@ -232,18 +312,17 @@
   </div>
 
   <div class="note">
-    <strong>Statistik:</strong> Die Anzahl automatisch gekürzter Dateien wird in der Statuszeile als <em>✂ Gekürzt</em> angezeigt und im Abschlussfenster sowie im Protokoll ausgewiesen.
+    <strong>Nicht zu verwechseln &ndash; Anzeige-Kürzung in der Oberfläche:</strong> Bei sehr langen Quell-/Zielpfaden wird die Anzeige in den Auftragsfeldern selbst (Anfang&hellip;Ende) verkürzt dargestellt, z.&nbsp;B. <code>H:\Download\&hellip;\Ablage</code>. Das ist rein optisch: intern wird immer der vollständige Pfad verwendet. Der komplette Pfad wird als Tooltip angezeigt, wenn man mit der Maus über das Feld fährt.
   </div>
 
-  <div class="note">
-    <strong>Datenmengen-Anzeige:</strong> Dateien mit zu langen Pfaden werden in der Datenmenge-Anzeige und im Fortschrittsbalken berücksichtigt, auch wenn ihre genaue Größe nicht ermittelt werden kann.
-  </div>
+  <h2 id="ergebnis">Ergebnisfenster</h2>
+  <p>Nach jedem abgeschlossenen (oder abgebrochenen) Lauf öffnet sich ein Ergebnisfenster &ndash; mit einer eigenen Spalte pro aktivem Auftrag, damit auf einen Blick klar ist, was wohin passiert ist:</p>
 
-  <div class="note">
-    <strong>Nicht zu verwechseln &ndash; Anzeige-Kürzung in der Oberfläche:</strong> Bei sehr langen Quell-/Zielpfaden wird die Anzeige in den Auftragsfeldern selbst (Anfang&hellip;Ende) verkürzt dargestellt, z.&nbsp;B. <code>H:\Download\&hellip;\Ablage</code>. Das ist rein optisch und unabhängig von der oben beschriebenen <code>-3k</code>-Kürzung: intern wird immer der vollständige Pfad verwendet. Der komplette Pfad wird als Tooltip angezeigt, wenn man mit der Maus über das Feld fährt.
-  </div>
-
-  <h2 id="ergebnis">Ergebnis</h2>
+  <ul>
+    <li>Jede Spalte zeigt <strong>Quelle und Ziel</strong> des jeweiligen Auftrags sowie dessen eigene Statistik</li>
+    <li>Darunter eine <strong>Gesamt-Zusammenfassung</strong> über alle Aufträge (Datenmenge, Zeit, Fehleranzahl)</li>
+    <li>Bei einer Simulation ist jede Zeile als &bdquo;würde &hellip;&ldquo; formuliert, zusätzlich ein deutlicher Hinweis, dass nichts real verändert wurde</li>
+  </ul>
 
   <table>
     <tr>
@@ -272,11 +351,11 @@
     </tr>
     <tr>
       <td><strong>Fehler</strong></td>
-      <td>Dateien, die nicht kopiert oder verschoben werden konnten (Details im Fehler-Log)</td>
+      <td>Dateien bzw. Aufträge, die nicht verarbeitet werden konnten (Details am Ende des jeweiligen Protokolls)</td>
     </tr>
     <tr>
       <td><strong>Daten</strong></td>
-      <td>Gesamtmenge der verarbeiteten Daten</td>
+      <td>Verarbeitete Datenmenge (je Auftrag bzw. gesamt)</td>
     </tr>
     <tr>
       <td><strong>Zeit</strong></td>
@@ -284,36 +363,75 @@
     </tr>
   </table>
 
-  <h2 id="log">Log-Dateien</h2>
-  <p>3Kopier führt zwei separate Protokolldateien im Programmverzeichnis:</p>
+  <h2 id="log">Protokolle</h2>
+  <p>Für jeden Lauf &ndash; ob manuell oder per Zeitsteuerung, echt oder Simulation &ndash; wird eine <strong>eigene Protokolldatei</strong> im Unterordner <code>Logs</code> angelegt, statt einer einzigen, endlos wachsenden Sammeldatei.</p>
 
-  <h3>📋 Protokoll (<code>3Kopier-Protokoll.log</code>)</h3>
-  <p>Öffnen Sie das Protokoll über <strong>📋 Log</strong>. Es enthält:</p>
+  <h3>Dateiname</h3>
+  <p>Jede Protokolldatei heißt <code>Profilname_Zeitstempel_Art.log</code>, zum Beispiel:</p>
   <ul>
-    <li>Datum und Uhrzeit jedes Kopiervorgangs</li>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; ein echter Lauf des Profils &bdquo;MMDownload&ldquo;</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; eine Simulation des Profils &bdquo;3Test&ldquo;</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; ein Start ohne geladenes Profil</li>
+  </ul>
+  <p>Über <strong>📋 Log</strong> im Hauptfenster öffnet sich der <code>Logs</code>-Ordner direkt im Windows-Explorer.</p>
+
+  <h3>Inhalt einer Protokolldatei</h3>
+  <ul>
+    <li>Datum, Uhrzeit und Profilname des Laufs</li>
     <li>Quelle und Ziel jedes Auftrags sowie die gewählten Optionen</li>
     <li>Jede verarbeitete Datei mit Aktion (kopiert, überschrieben, verschoben, übersprungen)</li>
     <li>Abschlusszusammenfassung mit Statistik und Laufzeit</li>
+    <li>Traten Fehler auf, stehen diese als eigener Abschnitt <strong>&bdquo;=== FEHLER ===&ldquo;</strong> ganz am Ende der Datei</li>
   </ul>
 
-  <h3>⚠ Fehler-Protokoll (<code>3Kopier-Fehler.log</code>)</h3>
-  <p>Öffnen Sie das Fehler-Protokoll über <strong>⚠ Fehler</strong>. Es enthält ausschließlich Fehlermeldungen mit Zeitstempel, damit Probleme schnell gefunden werden können.</p>
-
-  <div class="warn">
-    <strong>Bei langen Kopiervorgängen:</strong> Das Programm kann bei sehr vielen Dateien oder langsamen Laufwerken (z.&nbsp;B. Netzlaufwerke, USB) etwas Zeit brauchen &ndash; die Oberfläche bleibt dabei aber durchgehend reaktionsfähig (Python-Version) und friert nicht mehr ein. Mit <strong>⏹ Stop</strong> oder <strong>ESC</strong> kann der Vorgang sauber abgebrochen werden.
-  </div>
-
   <div class="note">
-    <strong>Log-Größe:</strong> Beide Protokolldateien werden automatisch begrenzt. Überschreitet eine Datei 512&nbsp;KB, werden beim nächsten Start die ältesten Einträge vorne abgeschnitten. Die aktuellen Läufe bleiben immer erhalten.
+    <strong>Aufbewahrung:</strong> Wie lange Protokolldateien aufbewahrt werden, bevor sie automatisch gelöscht werden, lässt sich unter <a href="#einstellungen">Einstellungen</a> festlegen (1 Tag bis 365 Tage, oder unbegrenzt).
   </div>
+
+  <h3>⚠ Fehler-Protokoll (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Diese separate Datei im Programmverzeichnis (über <strong>⚠ Fehler</strong> erreichbar) enthält ausschließlich <strong>Programmfehler</strong>, die nicht zu einem bestimmten Kopiervorgang gehören &ndash; zum Beispiel, wenn das Zeitsteuerungs-Modul nicht geladen werden konnte. Fehler innerhalb eines Kopiervorgangs stehen dagegen, wie oben beschrieben, direkt am Ende der jeweiligen Lauf-Protokolldatei.</p>
 
   <div class="ok">
-    <strong>INI-Datei (<code>3Kopier.ini</code>):</strong> Alle Einstellungen werden beim Programmende automatisch gespeichert und beim nächsten Start wiederhergestellt &ndash; darunter Quell- und Zielpfade, der Aktiv-Status der drei Aufträge, die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag, die Option <em>Herunterfahren</em> sowie die gewählte <em>Skalierungsstufe</em>. Eine manuelle Konfiguration ist nicht nötig.
+    <strong>INI-Datei (<code>3Kopier.ini</code>):</strong> Alle Einstellungen werden beim Programmende automatisch gespeichert und beim nächsten Start wiederhergestellt &ndash; darunter Quell- und Zielpfade, der Aktiv-Status der drei Aufträge, die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag, die Option <em>Herunterfahren</em>, die zuletzt verwendeten Quell-/Zielordner für die Auswahl-Dialoge, die gewählte <em>Skalierungsstufe</em> sowie die Aufbewahrungsfrist für Protokolle. Eine manuelle Konfiguration ist nicht nötig.
   </div>
 
   <div class="note">
-    <strong>Profile (<code>.3ko</code>-Dateien):</strong> Beim Speichern eines Profils werden ebenfalls alle Pfade, der Aktiv-Status sowie die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag gesichert. Die Option <em>Herunterfahren</em> ist eine globale Einstellung und wird nicht im Profil, sondern nur in der INI-Datei gespeichert.
+    <strong>Profile (<code>.3ko</code>-Dateien):</strong> Beim Speichern eines Profils werden alle Pfade, der Aktiv-Status sowie die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag gesichert. Die Option <em>Herunterfahren</em> ist eine globale Einstellung und wird nicht im Profil, sondern nur in der INI-Datei gespeichert.
   </div>
+
+  <div class="note">
+    <strong>Zeitplan-Datei (<code>3Kopier-Zeitplan.ini</code>):</strong> Alle angelegten Zeitpläne (Profil, Auslöser, Silent-Modus, Aktiv-Status) werden hier gespeichert und beim nächsten Start automatisch wieder geladen.
+  </div>
+
+  <h3>Übersicht: Dateien &amp; Ordner im Programmverzeichnis</h3>
+  <p>Alle folgenden Dateien und Ordner entstehen automatisch beim Betrieb &ndash; nichts davon muss von Hand angelegt oder mitgeliefert werden:</p>
+
+  <table>
+    <tr>
+      <th>Datei / Ordner</th>
+      <th>Inhalt</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Allgemeine Einstellungen: Auftragsfelder, Optionen, zuletzt verwendete Ordner, Skalierung, Aufbewahrungsfrist</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Alle angelegten Zeitpläne mit Profil, Auslöser, Silent-Modus und Aktiv-Status</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Programmfehler, die zu keinem bestimmten Kopiervorgang gehören</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (Ordner)</td>
+      <td>Eine eigene Protokolldatei je Lauf &ndash; siehe <a href="#log">Protokolle</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Selbst angelegte Profile (je eine Datei pro Profilname)</td>
+    </tr>
+  </table>
 
   <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
     <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
