@@ -385,10 +385,25 @@
       <h3>Einstellungen merken</h3>
       <p>Alle Pfade, Aktiv-Status und Optionen werden beim Beenden automatisch gespeichert und beim nächsten Start wiederhergestellt.</p>
     </div>
-    <div class="card" style="border-top-color:var(--orange)">
+    <div class="card">
       <div class="card-icon">🕐</div>
-      <h3>Automatische Zeitsteuerung <span style="font-size:10px;font-weight:700;color:#fff;background:var(--orange);padding:1px 7px;border-radius:10px;vertical-align:middle">VOLLVERSION</span></h3>
-      <p>Profile automatisch nach Zeitplan im Hintergrund ausführen (täglich, an bestimmten Wochentagen oder im Intervall) – inklusive Silent-Modus und Tray-Betrieb. Details weiter unten bei <a href="#vollversion" style="color:var(--blue)">Vollversion</a>.</p>
+      <h3>Automatische Zeitsteuerung <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Beliebig viele Profile mit jeweils eigenem Zeitplan (täglich, an bestimmten Wochentagen oder im festen Intervall) – effektiv unbegrenzt viele automatisierte Kopieraufgaben, ganz ohne manuelles Zutun.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔇</div>
+      <h3>Silent-Modus <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Automatische Läufe können komplett ohne Fenster im Hintergrund laufen – nur bei einem echten Fehler (z. B. Quelle/Ziel nicht erreichbar) gibt es eine kurze Meldung.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗔</div>
+      <h3>Eigenständiges Aktionsfenster <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Läuft ein Zeitplan nicht-silent, öffnet sich ein eigenes kleines Fortschrittsfenster – das Hauptfenster mit deiner aktuellen Arbeit bleibt dabei komplett unberührt.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📌</div>
+      <h3>Tray &amp; Autostart <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Bei aktivem Zeitplan läuft 3Kopier im Hintergrund weiter, statt sich beim Schließen zu beenden, und startet bei Bedarf automatisch mit Windows.</p>
     </div>
   </div>
 
@@ -401,7 +416,7 @@
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshot-3kopier-zeitsteuerung.png" alt="S-IT-3Kopier Zeitsteuerung">
-      <div class="gallery-caption">Zeitsteuerung: beliebig viele Profile mit eigenem Zeitplan (Vollversion)</div>
+      <div class="gallery-caption">Zeitsteuerung: beliebig viele Profile mit eigenem Zeitplan</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshot-3kopier-einstellungen.png" alt="S-IT-3Kopier Einstellungen">
@@ -464,7 +479,7 @@
         <li>Sehr lange Pfade werden in den Auftragsfeldern automatisch verkürzt angezeigt (Anfang…Ende), der volle Pfad erscheint als Tooltip – intern bleibt immer der komplette Pfad erhalten</li>
         <li>Kleinere Layout-Korrekturen (Ausrichtung, Lesbarkeit)</li>
         <li><code>Lizenz.txt</code> liegt jetzt bei</li>
-        <li>Neu erhältlich: <a href="#vollversion" style="color:var(--blue)">Vollversion mit automatischer Zeitsteuerung</a></li>
+        <li>Neu: automatische Zeitsteuerung – Profile nach Zeitplan im Hintergrund ausführen, inklusive Silent-Modus und Tray-Betrieb mit Autostart</li>
       </ul>
     </div>
     <div class="changelog-entry">
@@ -485,45 +500,11 @@
     </div>
   </div>
 
-  <!-- VOLLVERSION -->
-  <div class="section-title" id="vollversion">🕐 Vollversion mit automatischer Zeitsteuerung</div>
-  <p style="font-size:14px; margin-bottom:16px;">
-    Die kostenlose Version oben deckt bereits den kompletten manuellen Kopierbetrieb ab. Wer Profile
-    <strong>automatisch im Hintergrund</strong> laufen lassen möchte – z. B. jeden Abend um 20 Uhr, alle
-    4 Stunden oder nur an bestimmten Wochentagen – benötigt zusätzlich die Vollversion.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon">📅</div>
-      <h3>Zeitpläne je Profil</h3>
-      <p>Beliebig viele Profile mit jeweils eigenem Zeitplan (täglich, an bestimmten Wochentagen oder im festen Intervall) – effektiv unbegrenzt viele automatisierte Kopieraufgaben.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🔇</div>
-      <h3>Silent-Modus</h3>
-      <p>Automatische Läufe können komplett ohne Fenster im Hintergrund laufen – nur bei einem echten Fehler (z. B. Quelle/Ziel nicht erreichbar) gibt es eine kurze Meldung.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">🗔</div>
-      <h3>Eigenständiges Aktionsfenster</h3>
-      <p>Läuft ein Zeitplan nicht-silent, öffnet sich ein eigenes kleines Fortschrittsfenster – das Hauptfenster mit deiner aktuellen Arbeit bleibt dabei komplett unberührt.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">📌</div>
-      <h3>Tray &amp; Autostart</h3>
-      <p>Bei aktivem Zeitplan läuft 3Kopier im Hintergrund weiter, statt sich beim Schließen zu beenden, und startet bei Bedarf automatisch mit Windows.</p>
-    </div>
-  </div>
-
-  <div class="info-box" style="text-align:center; margin-top:20px;">
-    <strong>📧 Interesse an der Vollversion?</strong><br>
-    Kurze Anfrage per E-Mail genügt – Rückmeldung mit weiteren Details und Bestellablauf folgt persönlich:<br><br>
-    <a href="mailto:tool-entwicklung@sattler-it.de?subject=Anfrage%20S-IT-3Kopier%20Vollversion&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20die%20S-IT-3Kopier-Vollversion%20mit%20Zeitsteuerung.%0A%0AName%2FFirma%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe"
-       style="background:var(--orange);color:#fff;padding:10px 24px;border-radius:4px;
-              text-decoration:none;font-size:14px;font-weight:600; display:inline-block;">
-      ✉ Vollversion anfragen
-    </a>
+  <!-- FIRMENKUNDEN -->
+  <div class="info-box" style="text-align:center; margin-top:20px; font-size:12px; color:var(--muted);">
+    Sie setzen 3Kopier gewerblich ein und wünschen persönliche Unterstützung bei der Einrichtung?
+    <a href="mailto:tool-entwicklung@sattler-it.de?subject=Anfrage%20S-IT-3Kopier%20f%C3%BCr%20Unternehmen&body=Hallo%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20persönliche%20Unterst%C3%BCtzung%20rund%20um%20S-IT-3Kopier%20f%C3%BCr%20mein%20Unternehmen.%0A%0AName%2FFirma%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe"
+       style="color:var(--blue)">Kurze Anfrage per E-Mail</a> genügt.
   </div>
 
   <!-- DONATION -->
