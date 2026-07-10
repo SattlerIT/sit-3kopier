@@ -1,9 +1,11 @@
 # S-IT-3Kopier
 
-**Portabler Dreifach-Kopierer mit Profilen und Protokoll für Windows**
+**Portabler Dreifach-Kopierer mit Profilen, Protokoll und Zeitsteuerung für Windows**
 
 Bis zu drei unabhängige Kopier- oder Verschiebe-Aufträge in einem einzigen Durchlauf –
 ideal zum Verteilen von Dateien auf NAS-Laufwerke, USB-Sticks oder Cloud-Verzeichnisse.
+Beliebig viele Profile lassen sich zusätzlich automatisch nach Zeitplan im Hintergrund
+ausführen – effektiv unbegrenzt viele automatisierte Kopieraufgaben.
 
 ---
 
@@ -15,8 +17,13 @@ ideal zum Verteilen von Dateien auf NAS-Laufwerke, USB-Sticks oder Cloud-Verzeic
 
 - 📋 **Drei Aufträge** – Quelle, Ziel und Optionen je Auftrag unabhängig konfigurierbar
 - ⚙️ **Optionen pro Auftrag** – Überschreiben (immer oder nur wenn neuer) und Verschieben
-- 💾 **Profile** – Konfigurationen als `.3ko`-Dateien speichern und per Klick laden
-- 📊 **Fortschritt & Statistik** – Fortschrittsbalken, Restzeit-Schätzung, Protokolldateien
+- 💾 **Profile** – Konfigurationen als `.3ko`-Dateien speichern, Auswahl im Dropdown lädt sofort
+- 📊 **Blockweise Kopie & echter Fortschritt** – Fortschrittsbalken bewegt sich auch innerhalb einer einzelnen großen Datei, „Stop" wirkt sofort
+- 🕐 **Automatische Zeitsteuerung** – Profile nach Zeitplan (täglich, an bestimmten Wochentagen oder im Intervall) im Hintergrund ausführen
+- 🔇 **Silent-Modus** – automatische Läufe komplett ohne Fenster, Meldung nur bei echten Fehlern
+- 🗔 **Eigenständiges Aktionsfenster** – Hauptfenster bleibt während automatischer Läufe unberührt
+- 📌 **Tray & Autostart** – läuft bei aktivem Zeitplan im Hintergrund weiter, startet bei Bedarf automatisch mit Windows
+- 🖥 **Skalierbare Oberfläche** – feste Stufen von 90–200 %, einstellbare Protokoll-Aufbewahrung
 - 💻 **Herunterfahren** – optional nach fehlerfreiem Abschluss
 - 🔄 **Einstellungen merken** – alle Pfade und Optionen werden beim Beenden gespeichert
 
