@@ -1,0 +1,49 @@
+============================================================
+ S-IT-3Kopier – Haftungsausschluss (Disclaimer)
+ © 2026 Sattler IT-Service, Greifenstein · Hans Udo Sattler
+============================================================
+
+Alle Angaben ohne Gewähr. Irrtümer vorbehalten.
+
+S-IT-3Kopier ist ein kostenloses Werkzeug zum Kopieren von
+Dateien und Ordnern, wahlweise manuell oder automatisch nach
+Zeitplan. Das Tool arbeitet nach bestem Wissen zuverlässig,
+eine fehlerfreie Funktion auf jedem System und in jeder
+Konstellation kann jedoch nicht zugesichert werden.
+
+1. Keine Zusicherung der Vollständigkeit
+   Kopiervorgänge, insbesondere automatisierte Läufe nach
+   Zeitplan, sind keine Zusicherung dafür, dass alle Dateien
+   vollständig, unverändert und fehlerfrei übertragen wurden.
+   Netzwerkprobleme, nicht erreichbare Laufwerke, gesperrte
+   Dateien oder Systemfehler können einzelne Kopiervorgänge
+   beeinträchtigen oder verhindern.
+
+2. Kein Ersatz für ein Backup-Konzept
+   S-IT-3Kopier kopiert Dateien, ist aber kein vollwertiges
+   Backup-Programm mit Versionierung oder Wiederherstellungs-
+   Garantie. Es ersetzt kein durchdachtes, redundantes
+   Sicherungskonzept.
+
+3. Nutzung auf eigene Verantwortung
+   Die Verwendung des Tools, insbesondere die Einrichtung von
+   Zeitplänen mit automatischem Überschreiben oder Verschieben
+   von Dateien, erfolgt auf eigene Verantwortung. Für Ergebnisse
+   und Entscheidungen, die auf Basis der Kopiervorgänge oder
+   Protokolle getroffen werden, wird keine Verantwortung
+   übernommen.
+
+4. Haftungsausschluss
+   Eine Haftung für Schäden, Datenverluste oder Vermögens-
+   schäden, die aus der Nutzung des Tools oder seiner Ergebnisse
+   entstehen, ist – soweit gesetzlich zulässig – ausgeschlossen.
+
+5. Backups bleiben unerlässlich
+   Verlassen Sie sich bei wichtigen Daten nicht allein auf
+   S-IT-3Kopier. Erstellen Sie unabhängig davon regelmäßig
+   unabhängige Sicherungskopien Ihrer Daten.
+
+------------------------------------------------------------
+Kontakt:       tool-entwicklung@sattler-it.de
+Projektseite:  https://sattlerit.github.io/sit-3kopier/
+------------------------------------------------------------
