@@ -144,6 +144,7 @@
   <a href="#uebersicht">Übersicht</a>
   <a href="#auftraege">Aufträge</a>
   <a href="#optionen">Optionen</a>
+  <a href="#ausschluss">Ausschluss</a>
   <a href="#profile">Profile</a>
   <a href="#einstellungen">Einstellungen</a>
   <a href="#ablauf">Ablauf</a>
@@ -184,7 +185,11 @@
   <p>Klicken Sie auf <strong>📁 Ziel</strong>, um das Zielverzeichnis festzulegen. Das Zielverzeichnis muss nicht vorab existieren &ndash; es wird beim Kopiervorgang automatisch angelegt. Auch hier merkt sich der Dialog getrennt von der Quellauswahl den zuletzt gewählten Zielordner.</p>
 
   <div class="note">
-    <strong>Datenmenge:</strong> Der Bereich <em>Datenmengen</em> zeigt die aktuelle Größe jedes aktiven Quellordners an. Klicken Sie auf <strong>🔄 Aktualisieren</strong>, um die Anzeige nach Änderungen zu erneuern.
+    <strong>Datenmenge:</strong> Der Bereich <em>Datenmengen</em> zeigt die aktuelle Größe jedes aktiven Quellordners an. Klicken Sie auf <strong>🔄 Aktualisieren</strong>, um die Anzeige nach Änderungen zu erneuern. Die Berechnung läuft im Hintergrund &ndash; solange sie läuft, erscheint <em>(wird berechnet…)</em>, und die Oberfläche bleibt die ganze Zeit bedienbar.
+  </div>
+
+  <div class="note">
+    <strong>Netzwerk- und NAS-Pfade:</strong> UNC-Pfade der Form <code>\\Server\Freigabe</code> werden vollständig unterstützt &ndash; als Quelle wie als Ziel. Für Netzwerkquellen wird die Datenmenge bewusst <strong>nicht</strong> vorab durchgezählt (das kann bei großen Freigaben lange dauern); stattdessen erscheint <em>(Netzwerk)</em>. Der eigentliche Kopiervorgang läuft trotzdem ganz normal.
   </div>
 
   <h2 id="optionen">Optionen</h2>
@@ -199,8 +204,34 @@
     <strong>Hinweis beim Verschieben:</strong> Dateien werden aus dem Quellordner entfernt. Prüfen Sie vor dem ersten Einsatz, ob das gewünschte Verhalten ist. Bei Fehlern oder einem Abbruch mitten im Vorgang verbleibt die Quelldatei garantiert unverändert &ndash; gelöscht wird erst nach vollständig erfolgreicher Übertragung.
   </div>
 
-  <h3>Herunterfahren nach dem Kopieren</h3>
-  <p>Wenn diese Option aktiviert ist und der Kopiervorgang <strong>fehlerfrei</strong> abgeschlossen wurde, fragt das Programm, ob der Computer heruntergefahren werden soll. Bei Fehlern wird die Abfrage nicht gezeigt. Bei automatischen Läufen über die Zeitsteuerung gilt diese Option nicht.</p>
+  <h3>Nach dem Kopieren: Herunterfahren oder Ruhemodus</h3>
+  <p>Im Bereich <strong>💻 Nach dem Kopieren</strong> stehen zwei Optionen zur Wahl: <strong>Herunterfahren</strong> und <strong>Ruhemodus</strong>. Ist eine davon aktiviert und der Kopiervorgang wurde <strong>fehlerfrei</strong> abgeschlossen, fragt das Programm nach, ob der Computer heruntergefahren bzw. in den Ruhemodus versetzt werden soll. Bei Fehlern oder einem Abbruch wird die Abfrage nicht gezeigt.</p>
+  <p>Die beiden Optionen <strong>schließen sich gegenseitig aus</strong> &ndash; wird die eine angehakt, wird die andere automatisch abgewählt. Der Ruhemodus nutzt die Energieverwaltung von Windows; ob der Rechner dabei in den Energiesparmodus (Standby) oder in den Ruhezustand geht, hängt von den Windows-Energieeinstellungen ab.</p>
+  <div class="note">
+    Bei automatischen Läufen über die Zeitsteuerung gelten diese beiden Optionen nicht &ndash; sie wirken nur bei manuell gestarteten Kopiervorgängen.
+  </div>
+
+  <h2 id="ausschluss">Dateien und Ordner ausschließen</h2>
+  <p>Über den Knopf <strong>🚫</strong> in der Profilleiste (rechts neben <strong>🗑 Löschen</strong>) lassen sich bestimmte Dateien und ganze Ordner vom Kopieren ausnehmen. Das ist besonders nützlich, um temporäre Dateien, Systemdateien und die oft riesigen Cache-Ordner der Browser gar nicht erst mitzukopieren &ndash; oder um große Sicherungs-/Image-Dateien fernzuhalten, damit im Ziel kein unnötiger Datenfriedhof entsteht.</p>
+
+  <div class="note">
+    <strong>Zwei Arten von Einträgen:</strong> <em>Datei-Muster</em> mit Platzhaltern (z.&nbsp;B. <code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) treffen auf einzelne Dateien zu. <em>Ordnernamen</em> (z.&nbsp;B. <code>cache2</code>, <code>GPUCache</code>) schließen einen kompletten Ordner samt aller Unterordner aus &ndash; dieser wird beim Kopieren gar nicht erst betreten, was bei großen Cache-Bäumen zusätzlich Zeit spart.
+  </div>
+
+  <h3>Standard-Ausschlüsse</h3>
+  <p>Beim ersten Start legt das Programm die Datei <code>3Kopier-Ausschluss.ini</code> mit sinnvollen Vorgaben an: temporäre Dateien (Windows, Office, LibreOffice/OpenOffice), Windows-Systemdateien, die Cache-Ordner der gängigen Browser (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) sowie große Image-Formate wie <code>*.iso</code>, <code>*.nrg</code> oder <code>*.tib</code>. Diese Standardliste gilt zunächst für alle Profile. Über den Knopf <strong>Standard-Liste öffnen</strong> im Ausschluss-Fenster lässt sie sich jederzeit direkt bearbeiten.</p>
+
+  <h3>Pro Profil anpassen</h3>
+  <p>Das Ausschluss-Fenster bezieht sich immer auf das gerade geladene Profil (bei einem Lauf ohne Profil auf „Manuell&ldquo;). Zwei Anpassungen sind möglich:</p>
+  <ul>
+    <li><strong>Standard-Eintrag deaktivieren:</strong> In der Liste der Standard-Ausschlüsse den Haken entfernen &ndash; dann gilt dieser Eintrag für dieses eine Profil nicht mehr. Beispiel: In einem Backup-Profil, das ausdrücklich auch ISO-Dateien sichern soll, den Haken bei <code>*.iso</code> entfernen.</li>
+    <li><strong>Eigene Ausschlüsse ergänzen:</strong> Im Textfeld darunter zusätzliche Einträge angeben, einen pro Zeile &ndash; gemischt aus Datei-Mustern und Ordnernamen (z.&nbsp;B. <code>*.mp4</code> oder <code>Downloads</code>).</li>
+  </ul>
+  <p>Die tatsächlich wirksame Liste ergibt sich also aus: <em>Standardliste &minus; für dieses Profil entfernte Einträge + eigene Zusätze</em>.</p>
+
+  <div class="note">
+    <strong>Im Protokoll:</strong> Ausgeschlossene Dateien und Ordner werden als eigene Kategorie <em>Ausgeschlossen</em> gezählt &ndash; getrennt von übersprungenen Dateien &ndash; und erscheinen so im Fazit, in der Verzeichnis-Zusammenfassung und im Ergebnisfenster.
+  </div>
 
   <h2 id="profile">Profile</h2>
   <p>Ein Profil speichert die komplette Konfiguration aller drei Aufträge (Quelle, Ziel, Optionen, Aktiv-Status) unter einem Namen, um sie jederzeit wieder abzurufen &ndash; auch als Grundlage für die Zeitsteuerung.</p>
@@ -214,6 +245,10 @@
 
   <h3>Profil speichern / neu / löschen</h3>
   <p><strong>💾 Speichern</strong> sichert die aktuelle Konfiguration unter dem gewählten Namen. <strong>➕ Neu</strong> fragt nach einem Namen und leert danach alle drei Aufträge komplett &ndash; so beginnt ein neues Profil garantiert bei null, ohne Reste eines vorher geladenen Profils. <strong>🗑 Löschen</strong> entfernt das gewählte Profil endgültig.</p>
+
+  <div class="warn">
+    <strong>Profil wird in der Zeitsteuerung verwendet:</strong> Speichern Sie ein Profil, das in einem aktiven Zeitplan eingetragen ist, weist das Programm mit einem Hinweisfenster darauf hin. Grund: Die Zeitsteuerung merkt sich nur den <strong>Profilnamen</strong> und lädt das Profil bei jedem Lauf frisch. Die gerade gespeicherten Änderungen (Quellen, Ziele, Optionen) gelten damit automatisch auch für die zeitgesteuerten Läufe dieses Profils. Der Hinweis lässt sich abbrechen, falls das nicht gewollt war.
+  </div>
 
   <h2 id="einstellungen">Einstellungen</h2>
   <p>Über das Zahnrad-Symbol <strong>⚙</strong> oben rechts im Programmfenster (neben <strong>? HILFE</strong>) öffnet sich der Einstellungen-Dialog.</p>
@@ -348,6 +383,10 @@
     <tr>
       <td><strong>✂ Gekürzt</strong></td>
       <td>Dateien, deren Zielpfad das MAX_PATH-Limit überschritt und automatisch gekürzt wurde (Markierung <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Ausgeschlossen</strong></td>
+      <td>Dateien und Ordner, die laut Ausschluss-Liste übersprungen wurden (siehe Abschnitt <a href="#ausschluss">Ausschluss</a>)</td>
     </tr>
     <tr>
       <td><strong>Fehler</strong></td>
