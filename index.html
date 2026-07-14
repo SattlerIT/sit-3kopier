@@ -361,6 +361,11 @@
       <p>Überschreiben (immer oder nur wenn neuer) und Verschieben lassen sich für jeden Auftrag separat einstellen.</p>
     </div>
     <div class="card">
+      <div class="card-icon">🚫</div>
+      <h3>Dateien &amp; Ordner ausschließen <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Bestimmte Dateien (z. B. <code>*.tmp</code>, <code>*.iso</code>) und ganze Ordner (z. B. Browser-Caches) vom Kopieren ausnehmen. Mit sinnvollen Vorgaben ab Werk, pro Profil anpassbar. Ausgeschlossene Cache-Ordner werden komplett übersprungen – das spart bei Browser-Profilen spürbar Zeit.</p>
+    </div>
+    <div class="card">
       <div class="card-icon">💾</div>
       <h3>Profile</h3>
       <p>Kopier-Konfigurationen als <code>.3ko</code>-Profile speichern. Die Auswahl im Dropdown lädt sofort – ein separater "Laden"-Klick ist nicht mehr nötig.</p>
@@ -377,8 +382,8 @@
     </div>
     <div class="card">
       <div class="card-icon">💻</div>
-      <h3>Herunterfahren</h3>
-      <p>Optional: PC nach fehlerfreiem Abschluss automatisch herunterfahren – mit Bestätigungsdialog.</p>
+      <h3>Herunterfahren oder Ruhemodus <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Optional: PC nach fehlerfreiem Abschluss automatisch herunterfahren oder in den Ruhemodus versetzen – mit Bestätigungsdialog. Beide Optionen schließen sich gegenseitig aus.</p>
     </div>
     <div class="card">
       <div class="card-icon">🔄</div>
@@ -480,6 +485,11 @@
         <li>Kleinere Layout-Korrekturen (Ausrichtung, Lesbarkeit)</li>
         <li><code>Lizenz.txt</code> liegt jetzt bei</li>
         <li>Neu: automatische Zeitsteuerung – Profile nach Zeitplan im Hintergrund ausführen, inklusive Silent-Modus und Tray-Betrieb mit Autostart</li>
+        <li>Neu: Ausschluss-Liste – Dateien und ganze Ordner (z. B. Browser-Caches, temporäre Dateien, große Image-Formate) vom Kopieren ausnehmen; mit Vorgaben ab Werk, pro Profil anpassbar</li>
+        <li>Neu: Ruhemodus nach dem Kopieren als Alternative zum Herunterfahren (beide Optionen schließen sich gegenseitig aus)</li>
+        <li>Neu: Hinweis beim Speichern eines Profils, das in einem aktiven Zeitplan verwendet wird – so bleibt klar, dass die Änderung auch die automatischen Läufe betrifft</li>
+        <li>Protokoll gestrafft: eine Zusammenfassung je Verzeichnis statt einer Zeile pro Datei, und das Ergebnis-Fazit steht jetzt oben statt am Ende</li>
+        <li>Netzwerk-/NAS-Pfade (UNC) verbessert: korrekte Pfadschreibweise bei der Auswahl, Datenmengen-Berechnung im Hintergrund – die Oberfläche friert dabei nicht mehr ein</li>
       </ul>
     </div>
     <div class="changelog-entry">
