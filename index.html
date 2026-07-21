@@ -98,6 +98,35 @@
       transition: background .2s;
     }
     .btn-download:hover { background: #219a52; }
+    .btn-download-alt {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-left: 12px;
+      transition: background .2s;
+    }
+    .btn-download-alt:hover { background: #219a52; }
+    .btn-row-download { display: flex; gap: 12px; }
+    .btn-row-download .btn-download,
+    .btn-row-download .btn-download-alt {
+      flex: 1 1 0;
+      margin-left: 0;
+      text-align: center;
+      max-width: 260px;
+    }
+    .btn-hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--light);
+      opacity: .75;
+    }
     .btn-secondary {
       display: inline-block;
       background: transparent;
@@ -336,8 +365,14 @@
     <div>
       <h1>Das universelle Kopiertool<br>&ndash; Beliebig viele Ziele in 3er-Paketen, vollautomatisch nach Zeitplan</h1>
       <p>S-IT-3Kopier kopiert oder verschiebt Dateien in bis zu drei unabhängigen Quelle-Ziel-Paaren gleichzeitig – ideal für NAS-Laufwerke, USB-Sticks und Cloud-Verzeichnisse (z. B. pCloud). Mit Profilen, Fortschrittsanzeige und ausführlichem Protokoll. Beliebig viele Profile lassen sich zusätzlich automatisch nach Zeitplan im Hintergrund ausführen – einmal eingerichtet, läuft die Sicherung von allein.</p>
-      <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.1/sit-3kopier_latest.zip" class="btn-download">⬇ Download v3.3.1</a>
-      <a href="https://github.com/SattlerIT/sit-3kopier/releases" class="btn-secondary">Alle Versionen</a>
+      <div class="btn-row-download">
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.1/sit-3kopier_latest.zip" class="btn-download">⬇ Download (portabel)</a>
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.1/sit-3kopier_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
+      </div>
+      <div style="margin-top:16px;">
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases" class="btn-secondary" style="margin-left:0;">Alle Versionen</a>
+      </div>
+      <span class="btn-hint">Version 3.3.1 · „Portabel“ direkt entpacken und starten, kein Setup nötig · „Mit Setup“ installiert 3Kopier mit Eintrag in der Windows-Programmliste und Deinstaller</span>
     </div>
     <div class="hero-screenshot">
       <img src="screenshot-3kopier.png" alt="S-IT-3Kopier Hauptfenster">
