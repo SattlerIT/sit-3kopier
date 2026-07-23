@@ -137,7 +137,7 @@
 
 <header>
   <h1>S-IT-3Kopier &ndash; Hilfe &amp; Dokumentation</h1>
-  <p>Version v3.3.1 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+  <p>Version v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
 </header>
 
 <nav>
@@ -177,6 +177,9 @@
 
   <h3>Aktiv-Checkbox</h3>
   <p>Nur aktivierte Aufträge (Haken bei <strong>aktiv</strong>) werden beim Start verarbeitet. Deaktivierte Aufträge werden vollständig übersprungen, bleiben aber mit ihren Pfaden gespeichert.</p>
+
+  <h3>🔰 Auftragsfilter</h3>
+  <p>Rechts in der Kopfzeile jeder Auftragskarte sitzt das Symbol <strong>🔰</strong>. Darüber lassen sich Filter festlegen, die <strong>nur für diesen einen Auftrag</strong> gelten: zusätzliche Ausschlüsse und die NUR-Regel (&bdquo;nur bestimmte Dateitypen kopieren&ldquo;). Das Symbol leuchtet grün, sobald für den Auftrag eine Regel gesetzt ist &ndash; ausgegraut bedeutet: keine auftragsbezogenen Filter aktiv. Details im Abschnitt <a href="#ausschluss">Ausschluss</a>.</p>
 
   <h3>Quelle wählen</h3>
   <p>Klicken Sie auf <strong>📁 Quelle</strong>, um den Quellordner für den jeweiligen Auftrag auszuwählen. Der Dialog merkt sich getrennt von der Zielauswahl den zuletzt gewählten Quellordner &ndash; beim nächsten Klick auf <strong>Quelle</strong> (egal bei welchem Auftrag) startet die Auswahl wieder dort.</p>
@@ -229,6 +232,18 @@
   </ul>
   <p>Die tatsächlich wirksame Liste ergibt sich also aus: <em>Standardliste &minus; für dieses Profil entfernte Einträge + eigene Zusätze</em>.</p>
 
+  <h3>Pro Auftrag anpassen: das 🔰-Symbol</h3>
+  <p>Zusätzlich zu den profilweiten Regeln kann jeder der drei Aufträge <strong>eigene</strong> Filter bekommen. Ein Klick auf das <strong>🔰</strong>-Symbol in der Kopfzeile der Auftragskarte öffnet einen kleinen Dialog mit zwei Feldern (mehrere Einträge jeweils mit <code>|</code> trennen):</p>
+  <ul>
+    <li><strong>Zusätzliche Ausschlüsse nur für diesen Auftrag:</strong> z.&nbsp;B. <code>*.iso | cache2</code> &ndash; wirkt wie ein Zusatz-Eintrag im Ausschluss-Fenster, gilt aber nur bei diesem Auftrag. Ordnernamen sind wie gewohnt ohne Platzhalter möglich.</li>
+    <li><strong>NUR-Regel (&bdquo;alles außer&ldquo;):</strong> Stehen hier Muster, kopiert dieser Auftrag <strong>ausschließlich</strong> passende Dateien &ndash; alles andere wird ausgeschlossen. Beispiel: Auftrag&nbsp;1 <code>*.pdf</code>, Auftrag&nbsp;2 <code>*.jpg</code>, Auftrag&nbsp;3 <code>*.mp4</code> &ndash; so sortiert ein einziger Lauf einen gemischten Ordner nach Dateitypen auf drei Ziele. Ein leeres Feld schaltet die Regel ab. Bequem: <code>pdf</code> oder <code>.pdf</code> genügt, das Programm ergänzt selbst zu <code>*.pdf</code>.</li>
+  </ul>
+  <p>Die NUR-Regel wirkt nur auf Dateien &ndash; die Ordnerstruktur wird weiterhin normal durchlaufen, sodass passende Dateien auch in Unterordnern gefunden werden. Die so ausgefilterten Dateien zählen im Ergebnis zur Kategorie <em>Ausgeschlossen</em>.</p>
+
+  <div class="note">
+    <strong>Vorrang:</strong> Die profilweiten Ausschlüsse gelten immer zusätzlich. Eine <code>*.tmp</code>-Datei bleibt also auch bei &bdquo;Nur <code>*.tmp</code>&ldquo; außen vor, solange der Standard-Eintrag <code>*.tmp</code> nicht für das Profil deaktiviert wurde.
+  </div>
+
   <div class="note">
     <strong>Im Protokoll:</strong> Ausgeschlossene Dateien und Ordner werden als eigene Kategorie <em>Ausgeschlossen</em> gezählt &ndash; getrennt von übersprungenen Dateien &ndash; und erscheinen so im Fazit, in der Verzeichnis-Zusammenfassung und im Ergebnisfenster.
   </div>
@@ -265,6 +280,14 @@
 
   <p>Der Knopf <strong>🗑 Jetzt aufräumen</strong> wendet die gewählte Frist sofort an, ohne auf den nächsten Programmstart zu warten.</p>
 
+  <h3>Protokoll-Umfang</h3>
+  <p>Bestimmt, wie ausführlich die Protokolldatei eines Laufs ausfällt:</p>
+  <ul>
+    <li><strong>Kompakt</strong> (Voreinstellung): Je Auftrag steht <strong>eine Summenzeile</strong> im Protokoll (kopiert, überschrieben, übersprungen usw. samt Datenmenge) &ndash; keine einzelnen Verzeichnis-Zeilen. Zusammen mit dem Fazit am Dateianfang bleibt das Protokoll damit immer eine kurze, lesbare Zusammenfassung, egal wie viele tausend Dateien und Ordner verarbeitet wurden.</li>
+    <li><strong>Ausführlich:</strong> Zusätzlich wird eine Zeile je Verzeichnis geschrieben (Dateizahl, Aktionen, Datenmenge) &ndash; nützlich für die Fehlersuche, wenn nachvollzogen werden soll, was in einem bestimmten Ordner passiert ist oder warum eine Datei nicht kopiert wurde.</li>
+  </ul>
+  <p>Die Einstellung wirkt sofort auf den nächsten Lauf &ndash; auch auf zeitgesteuerte. Fehler werden in beiden Modi immer vollständig protokolliert, ebenso automatische Pfad-Kürzungen (MAX_PATH).</p>
+
   <h2 id="ablauf">Ablauf eines manuellen Kopiervorgangs</h2>
 
   <h3>1. Aufträge konfigurieren</h3>
@@ -274,7 +297,7 @@
   <p>Das Programm zählt zunächst alle Dateien in den aktiven Quellordnern, um den Fortschrittsbalken korrekt zu befüllen. Diese Zählphase lässt sich bereits mit <strong>⏹ Stop</strong> abbrechen und zeigt bei sehr vielen Dateien eine laufende Zwischenmeldung, statt wie eingefroren zu wirken. Anschließend werden die Aufträge der Reihe nach (A1, A2, A3) abgearbeitet.</p>
 
   <h3>3. Fortschritt beobachten</h3>
-  <p>Der Fortschrittsbalken, die Statuszeile und die Statistik werden während des Vorgangs laufend aktualisiert. Bei einer einzelnen sehr großen Datei bewegt sich der Balken auch innerhalb dieser einen Datei sichtbar weiter, statt bis zu ihrem Abschluss stehen zu bleiben. Die Statuszeile zeigt zudem eine geschätzte Restzeit an, sobald genügend Daten vorliegen.</p>
+  <p>Der Fortschrittsbalken, die Statuszeile und die Statistik werden während des Vorgangs laufend aktualisiert. Bei einer einzelnen sehr großen Datei bewegt sich der Balken auch innerhalb dieser einen Datei sichtbar weiter, statt bis zu ihrem Abschluss stehen zu bleiben. Die Statuszeile zeigt zudem eine geschätzte Restzeit an, sobald genügend Daten vorliegen, sowie die aktuelle Kopiergeschwindigkeit (z.&nbsp;B. <code>157.4 MB/s</code>) &ndash; berechnet als gleitender Durchschnitt der letzten Sekunden, damit die Zahl bei wechselnden Dateigrößen ruhig bleibt. Beides gilt auch für das Fortschrittsfenster der Zeitsteuerung. In der Simulation entfällt die Geschwindigkeitsanzeige, da dort nichts wirklich kopiert wird.</p>
 
   <h3>4. Abbruch</h3>
   <p>Mit <strong>⏹ Stop</strong> oder der <strong>ESC</strong>-Taste kann der Vorgang jederzeit sauber abgebrochen werden &ndash; auch mitten in einer großen Datei. Bereits vollständig verarbeitete Dateien bleiben erhalten; eine gerade erst angefangene, noch unvollständige Zieldatei wird automatisch entfernt, es bleibt also nie ein Torso liegen.</p>
@@ -313,9 +336,16 @@
   <p>Ein Zeitplan mit aktivem Silent-Modus ist in der Liste zusätzlich mit dem Symbol <strong>🔇</strong> gekennzeichnet.</p>
 
   <h3>Eigenständiges Aktionsfenster</h3>
-  <p>Läuft ein Zeitplan (nicht-silent, egal ob automatisch oder manuell per Simulation/Start getestet), öffnet sich ein <strong>eigenes kleines Fenster</strong> mit Fortschrittsbalken, Statistik und einem eigenen <strong>⏹ Stop</strong>-Knopf.</p>
+  <p>Läuft ein Zeitplan (nicht-silent, egal ob automatisch oder manuell per Simulation/Start getestet), öffnet sich ein <strong>eigenes kleines Fenster</strong> mit Fortschrittsbalken, Statistik und einem eigenen <strong>⏹ Stop</strong>-Knopf. Das Fenster erscheint auch, wenn 3Kopier nur im Hintergrund (Tray) läuft, hat einen <strong>eigenen Eintrag in der Taskleiste</strong> und lässt sich <strong>minimieren</strong>, falls es auf dem Bildschirm gerade stört &ndash; der Lauf arbeitet dann unsichtbar weiter.</p>
   <div class="ok">
     <strong>Wichtig:</strong> Das Hauptfenster mit den Auftragskarten bleibt dabei <strong>komplett unberührt</strong> &ndash; eigene, noch nicht gespeicherte Arbeit am Hauptfenster wird durch einen automatisch startenden Zeitplan nie überschrieben oder gestört.
+  </div>
+
+  <h3>Warteschlange bei überlappenden Läufen</h3>
+  <p>Es läuft immer nur <strong>ein</strong> Kopiervorgang zur Zeit. Wird ein Zeitplan fällig, während noch ein anderer Vorgang läuft (ein anderer Zeitplan oder ein manuell gestarteter Lauf), geht der fällige Lauf <strong>nicht verloren</strong>: Er wird in eine <strong>Warteschlange</strong> gestellt und startet automatisch, sobald der laufende Vorgang abgeschlossen ist. Sind mehrere Zeitpläne auf dieselbe Uhrzeit gelegt, werden sie auf diese Weise <strong>nacheinander vollständig abgearbeitet</strong>. Das Warten und Nachstarten wird im Fehler-Protokoll (<code>3Kopier-Fehler.log</code>) dokumentiert; ein aus der Warteschlange gestarteter Lauf ist in seinem Aktionsfenster mit dem Zusatz <em>(aus Warteschlange)</em> gekennzeichnet.</p>
+  <p>Damit das auch <strong>unbeaufsichtigt</strong> (z.&nbsp;B. nachts) funktioniert, wartet das Ergebnisfenster eines zeitgesteuerten Laufs <strong>nicht</strong> auf ein &bdquo;OK&ldquo;: Es bleibt einfach stehen, und der nächste Lauf aus der Warteschlange startet automatisch. Am Morgen zeigen die stehen gebliebenen Ergebnisfenster dann der Reihe nach, was in der Nacht passiert ist.</p>
+  <div class="note">
+    <strong>Abbruch trifft nur den laufenden Vorgang:</strong> Wird ein Lauf mit <strong>⏹ Stop</strong> abgebrochen, arbeiten die wartenden Läufe der Warteschlange anschließend ganz normal weiter &ndash; jeder in seinem eigenen Aktionsfenster mit eigenem <strong>⏹ Stop</strong>-Knopf. Ein abgebrochener Lauf ist in seiner Protokolldatei am Kopf <strong>&bdquo;FAZIT (ABGEBROCHEN)&ldquo;</strong> zu erkennen.
   </div>
 
   <h2 id="hintergrund">Hintergrundbetrieb, Tray &amp; Autostart</h2>
@@ -416,11 +446,11 @@
 
   <h3>Inhalt einer Protokolldatei</h3>
   <ul>
+    <li>Das <strong>Fazit</strong> mit Gesamtstatistik und Laufzeit steht ganz oben &ndash; das Ergebnis ist ohne Scrollen sichtbar</li>
     <li>Datum, Uhrzeit und Profilname des Laufs</li>
     <li>Quelle und Ziel jedes Auftrags sowie die gewählten Optionen</li>
-    <li>Jede verarbeitete Datei mit Aktion (kopiert, überschrieben, verschoben, übersprungen)</li>
-    <li>Abschlusszusammenfassung mit Statistik und Laufzeit</li>
-    <li>Traten Fehler auf, stehen diese als eigener Abschnitt <strong>&bdquo;=== FEHLER ===&ldquo;</strong> ganz am Ende der Datei</li>
+    <li>Eine <strong>Summenzeile je Auftrag</strong> (Aktionen und Datenmenge); im Modus <em>Ausführlich</em> zusätzlich eine <strong>Zusammenfassung je Verzeichnis</strong> statt einer Zeile pro Datei (siehe <a href="#einstellungen">Einstellungen &rarr; Protokoll-Umfang</a>)</li>
+    <li>Traten Fehler auf, stehen diese zusätzlich als eigener Abschnitt <strong>&bdquo;=== FEHLER ===&ldquo;</strong> ganz am Ende der Datei &ndash; in beiden Modi vollständig</li>
   </ul>
 
   <div class="note">
@@ -431,7 +461,7 @@
   <p>Diese separate Datei im Programmverzeichnis (über <strong>⚠ Fehler</strong> erreichbar) enthält ausschließlich <strong>Programmfehler</strong>, die nicht zu einem bestimmten Kopiervorgang gehören &ndash; zum Beispiel, wenn das Zeitsteuerungs-Modul nicht geladen werden konnte. Fehler innerhalb eines Kopiervorgangs stehen dagegen, wie oben beschrieben, direkt am Ende der jeweiligen Lauf-Protokolldatei.</p>
 
   <div class="ok">
-    <strong>INI-Datei (<code>3Kopier.ini</code>):</strong> Alle Einstellungen werden beim Programmende automatisch gespeichert und beim nächsten Start wiederhergestellt &ndash; darunter Quell- und Zielpfade, der Aktiv-Status der drei Aufträge, die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag, die Option <em>Herunterfahren</em>, die zuletzt verwendeten Quell-/Zielordner für die Auswahl-Dialoge, die gewählte <em>Skalierungsstufe</em> sowie die Aufbewahrungsfrist für Protokolle. Eine manuelle Konfiguration ist nicht nötig.
+    <strong>INI-Datei (<code>3Kopier.ini</code>):</strong> Alle Einstellungen werden beim Programmende automatisch gespeichert und beim nächsten Start wiederhergestellt &ndash; darunter Quell- und Zielpfade, der Aktiv-Status der drei Aufträge, die Optionen <em>Überschreiben</em> und <em>Verschieben</em> je Auftrag, die Option <em>Herunterfahren</em>, die zuletzt verwendeten Quell-/Zielordner für die Auswahl-Dialoge, die gewählte <em>Skalierungsstufe</em>, die Aufbewahrungsfrist für Protokolle sowie der <em>Protokoll-Umfang</em> (Kompakt/Ausführlich). Eine manuelle Konfiguration ist nicht nötig.
   </div>
 
   <div class="note">

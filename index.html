@@ -366,13 +366,13 @@
       <h1>Das universelle Kopiertool<br>&ndash; Beliebig viele Ziele in 3er-Paketen, vollautomatisch nach Zeitplan</h1>
       <p>S-IT-3Kopier kopiert oder verschiebt Dateien in bis zu drei unabhängigen Quelle-Ziel-Paaren gleichzeitig – ideal für NAS-Laufwerke, USB-Sticks und Cloud-Verzeichnisse (z. B. pCloud). Mit Profilen, Fortschrittsanzeige und ausführlichem Protokoll. Beliebig viele Profile lassen sich zusätzlich automatisch nach Zeitplan im Hintergrund ausführen – einmal eingerichtet, läuft die Sicherung von allein.</p>
       <div class="btn-row-download">
-        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.1/sit-3kopier_latest.zip" class="btn-download">⬇ Download (portabel)</a>
-        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.1/sit-3kopier_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.2/sit-3kopier_latest.zip" class="btn-download">⬇ Download (portabel)</a>
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.2/sit-3kopier_setup.zip" class="btn-download-alt">⬇ Download (mit Setup)</a>
       </div>
       <div style="margin-top:16px;">
         <a href="https://github.com/SattlerIT/sit-3kopier/releases" class="btn-secondary" style="margin-left:0;">Alle Versionen</a>
       </div>
-      <span class="btn-hint">Version 3.3.1 · „Portabel“ direkt entpacken und starten, kein Setup nötig · „Mit Setup“ installiert 3Kopier mit Eintrag in der Windows-Programmliste und Deinstaller</span>
+      <span class="btn-hint">Version 3.3.2 · „Portabel“ direkt entpacken und starten, kein Setup nötig · „Mit Setup“ installiert 3Kopier mit Eintrag in der Windows-Programmliste und Deinstaller</span>
     </div>
     <div class="hero-screenshot">
       <img src="screenshot-3kopier.png" alt="S-IT-3Kopier Hauptfenster">
@@ -393,7 +393,7 @@
     <div class="card">
       <div class="card-icon">⚙️</div>
       <h3>Optionen pro Auftrag</h3>
-      <p>Überschreiben (immer oder nur wenn neuer) und Verschieben lassen sich für jeden Auftrag separat einstellen.</p>
+      <p>Überschreiben (immer oder nur wenn neuer) und Verschieben lassen sich für jeden Auftrag separat einstellen. Über das 🔰-Symbol an der Auftragskarte lassen sich zudem je Auftrag Dateien ausschließen oder <strong>nur</strong> ausgewählte Dateitypen kopieren (z.&nbsp;B. Auftrag&nbsp;1 nur <code>*.pdf</code>, Auftrag&nbsp;2 nur <code>*.jpg</code>).</p>
     </div>
     <div class="card">
       <div class="card-icon">🚫</div>
@@ -506,6 +506,19 @@
   <!-- CHANGELOG -->
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v3.3.2 <span>Juli 2026</span></div>
+      <ul>
+        <li>Neu: Geschwindigkeitsanzeige – die Statuszeile zeigt während des Kopierens die aktuelle Übertragungsrate (z. B. <code>157.4 MB/s</code>), als gleitender Durchschnitt der letzten Sekunden; gilt auch für das Fortschrittsfenster der Zeitsteuerung</li>
+        <li>Neu: Auftragsfilter (🔰) – jeder der drei Aufträge kann eigene Filter bekommen: zusätzliche Ausschlüsse nur für diesen Auftrag sowie eine NUR-Regel ("nur bestimmte Dateitypen kopieren, alles andere ausschließen"). Beispiel: Auftrag 1 nur <code>*.pdf</code>, Auftrag 2 nur <code>*.jpg</code>, Auftrag 3 nur <code>*.mp4</code></li>
+        <li>Das 🔰-Symbol an der Auftragskarte zeigt den Zustand: grün, sobald für den Auftrag eine Regel gesetzt ist – ausgegraut, wenn nicht</li>
+        <li>Bequeme Eingabe der NUR-Regel: <code>pdf</code> oder <code>.pdf</code> genügt, das Programm ergänzt selbst zu <code>*.pdf</code></li>
+        <li>Profilweite Ausschlüsse gelten weiterhin zusätzlich zu den Auftragsfiltern – bestehende Ausschluss-Konfigurationen funktionieren unverändert weiter</li>
+        <li>Neu: Protokoll-Umfang wählbar (⚙ Einstellungen) – <strong>Kompakt</strong> (Voreinstellung) schreibt eine Summenzeile je Auftrag samt Datenmenge, das Protokoll bleibt damit immer eine kurze Zusammenfassung; <strong>Ausführlich</strong> ergänzt eine Zeile je Verzeichnis. Fehler stehen in beiden Modi immer vollständig im Protokoll</li>
+        <li>Neu: Warteschlange für die Zeitsteuerung – wird ein Zeitplan fällig, während noch ein anderer Kopiervorgang läuft, geht er nicht mehr verloren, sondern startet automatisch nach dessen Abschluss; mehrere auf dieselbe Uhrzeit gelegte Zeitpläne werden nacheinander vollständig abgearbeitet. Ergebnisfenster zeitgesteuerter Läufe bleiben stehen, ohne den nächsten Lauf zu blockieren; ⏹ Stop bricht nur den laufenden Vorgang ab, die übrigen laufen weiter – wichtig für unbeaufsichtigte Sicherungen über Nacht</li>
+        <li>Verbessert: Das Aktionsfenster der Zeitsteuerung erscheint jetzt auch im reinen Tray-Betrieb, hat einen eigenen Taskleisten-Eintrag und lässt sich minimieren; abgebrochene Läufe sind im Protokoll klar als „FAZIT (ABGEBROCHEN)" gekennzeichnet</li>
+      </ul>
+    </div>
     <div class="changelog-entry">
       <div class="changelog-version">v3.3.1 <span>Juli 2026 &middot; Wechsel auf Python</span></div>
       <ul>
