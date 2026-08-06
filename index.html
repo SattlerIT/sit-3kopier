@@ -401,6 +401,11 @@
       <p>Bestimmte Dateien (z. B. <code>*.tmp</code>, <code>*.iso</code>) und ganze Ordner (z. B. Browser-Caches) vom Kopieren ausnehmen. Mit sinnvollen Vorgaben ab Werk, pro Profil anpassbar. Ausgeschlossene Cache-Ordner werden komplett übersprungen – das spart bei Browser-Profilen spürbar Zeit.</p>
     </div>
     <div class="card">
+      <div class="card-icon">🛡</div>
+      <h3>Netzwerk &amp; Zeitstempel <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+      <p>Über NAS- und Netzlaufwerke hinweg weichen Datei-Zeitstempel technisch bedingt oft um ein bis zwei Sekunden ab. Damit unveränderte Dateien im Modus „nur wenn neuer“ dadurch nicht bei jedem Lauf sinnlos neu kopiert werden, gleicht 3Kopier das mit einer Toleranz von zwei Sekunden aus – je Profil über das 🛡-Symbol einstellbar (Automatisch / Immer / Aus).</p>
+    </div>
+    <div class="card">
       <div class="card-icon">💾</div>
       <h3>Profile</h3>
       <p>Kopier-Konfigurationen als <code>.3ko</code>-Profile speichern. Die Auswahl im Dropdown lädt sofort – ein separater "Laden"-Klick ist nicht mehr nötig.</p>
@@ -438,7 +443,7 @@
     <div class="card">
       <div class="card-icon">🗔</div>
       <h3>Eigenständiges Aktionsfenster <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
-      <p>Läuft ein Zeitplan nicht-silent, öffnet sich ein eigenes kleines Fortschrittsfenster – das Hauptfenster mit deiner aktuellen Arbeit bleibt dabei komplett unberührt.</p>
+      <p>Läuft ein Zeitplan nicht-silent, öffnet sich ein eigenes kleines Fortschrittsfenster – das Hauptfenster mit deiner aktuellen Arbeit bleibt dabei komplett unberührt. Das Fenster hat einen eigenen Taskleisten-Eintrag und lässt sich minimieren; das Schließen-Kreuz (X) wirkt wie „Stop“ und bricht nur diesen einen Lauf ab.</p>
     </div>
     <div class="card">
       <div class="card-icon">📌</div>
@@ -457,6 +462,14 @@
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshot-3kopier-zeitsteuerung.png" alt="S-IT-3Kopier Zeitsteuerung">
       <div class="gallery-caption">Zeitsteuerung: beliebig viele Profile mit eigenem Zeitplan</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshot-3kopier-ausschluss.png" alt="S-IT-3Kopier Ausschluss-Liste">
+      <div class="gallery-caption">Ausschluss-Liste: Standard-Ausschlüsse und zusätzliche Filter je Profil</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="screenshot-3kopier-zeitstempel.png" alt="S-IT-3Kopier Netzwerk &amp; Zeitstempel">
+      <div class="gallery-caption">Netzwerk &amp; Zeitstempel: Drift-Toleranz je Profil für NAS- und Netzlaufwerke</div>
     </div>
     <div class="gallery-item" onclick="openLightbox(this)">
       <img src="screenshot-3kopier-einstellungen.png" alt="S-IT-3Kopier Einstellungen">
@@ -507,37 +520,34 @@
   <div class="section-title">📋 Changelog</div>
   <div class="changelog">
     <div class="changelog-entry">
+      <div class="changelog-version">v3.3.2.8 <span>August 2026</span></div>
+      <ul>
+        <li>Neu: Zeitstempel-Toleranz gegen Drift auf NAS- und Netzlaufwerken – im Modus „nur wenn neuer" werden unveränderte Dateien nicht mehr durch Sekunden-Abweichungen der Zeitstempel fälschlich als neuer erkannt und bei jedem Lauf neu kopiert (Toleranz von 2 Sekunden, wie bei Robocopy /FFT)</li>
+        <li>Neu: 🛡-Symbol je Profil (neben 🚫) – stellt diese Toleranz ein (Automatisch / Immer / Aus); „Automatisch" wirkt nur bei <code>\\</code>-Netzwerkpfaden und ist voreingestellt, „Immer" hilft bei als Laufwerksbuchstabe eingebundenen Netzlaufwerken (<code>X:</code>, <code>Y:</code> …)</li>
+        <li>Verbessert: Pfade in der Auftragsübersicht werden nicht mehr am Rand abgeschnitten, sondern sauber gekürzt angezeigt (Anfang…Ende); der vollständige Pfad steht im Tooltip</li>
+        <li>Behoben: Das Aktionsfenster ließ sich beim Start aus dem geöffneten Zeitsteuerungs-Fenster nicht minimieren; das Schließen-Kreuz (X) wirkt jetzt wie ⏹ Stop und bricht nur diesen einen Lauf sauber ab</li>
+      </ul>
+    </div>
+    <div class="changelog-entry">
       <div class="changelog-version">v3.3.2 <span>Juli 2026</span></div>
       <ul>
-        <li>Neu: Geschwindigkeitsanzeige – die Statuszeile zeigt während des Kopierens die aktuelle Übertragungsrate (z. B. <code>157.4 MB/s</code>), als gleitender Durchschnitt der letzten Sekunden; gilt auch für das Fortschrittsfenster der Zeitsteuerung</li>
-        <li>Neu: Auftragsfilter (🔰) – jeder der drei Aufträge kann eigene Filter bekommen: zusätzliche Ausschlüsse nur für diesen Auftrag sowie eine NUR-Regel ("nur bestimmte Dateitypen kopieren, alles andere ausschließen"). Beispiel: Auftrag 1 nur <code>*.pdf</code>, Auftrag 2 nur <code>*.jpg</code>, Auftrag 3 nur <code>*.mp4</code></li>
-        <li>Das 🔰-Symbol an der Auftragskarte zeigt den Zustand: grün, sobald für den Auftrag eine Regel gesetzt ist – ausgegraut, wenn nicht</li>
-        <li>Bequeme Eingabe der NUR-Regel: <code>pdf</code> oder <code>.pdf</code> genügt, das Programm ergänzt selbst zu <code>*.pdf</code></li>
-        <li>Profilweite Ausschlüsse gelten weiterhin zusätzlich zu den Auftragsfiltern – bestehende Ausschluss-Konfigurationen funktionieren unverändert weiter</li>
-        <li>Neu: Protokoll-Umfang wählbar (⚙ Einstellungen) – <strong>Kompakt</strong> (Voreinstellung) schreibt eine Summenzeile je Auftrag samt Datenmenge, das Protokoll bleibt damit immer eine kurze Zusammenfassung; <strong>Ausführlich</strong> ergänzt eine Zeile je Verzeichnis. Fehler stehen in beiden Modi immer vollständig im Protokoll</li>
-        <li>Neu: Warteschlange für die Zeitsteuerung – wird ein Zeitplan fällig, während noch ein anderer Kopiervorgang läuft, geht er nicht mehr verloren, sondern startet automatisch nach dessen Abschluss; mehrere auf dieselbe Uhrzeit gelegte Zeitpläne werden nacheinander vollständig abgearbeitet. Ergebnisfenster zeitgesteuerter Läufe bleiben stehen, ohne den nächsten Lauf zu blockieren; ⏹ Stop bricht nur den laufenden Vorgang ab, die übrigen laufen weiter – wichtig für unbeaufsichtigte Sicherungen über Nacht</li>
-        <li>Verbessert: Das Aktionsfenster der Zeitsteuerung erscheint jetzt auch im reinen Tray-Betrieb, hat einen eigenen Taskleisten-Eintrag und lässt sich minimieren; abgebrochene Läufe sind im Protokoll klar als „FAZIT (ABGEBROCHEN)" gekennzeichnet</li>
+        <li>Neu: Geschwindigkeitsanzeige – die Statuszeile zeigt während des Kopierens die aktuelle Übertragungsrate (z. B. <code>157.4 MB/s</code>), auch im Fortschrittsfenster der Zeitsteuerung</li>
+        <li>Neu: Auftragsfilter (🔰) je Auftrag – zusätzliche Ausschlüsse nur für diesen Auftrag oder eine NUR-Regel („nur bestimmte Dateitypen kopieren"), z. B. Auftrag 1 nur <code>*.pdf</code>. Das 🔰-Symbol wird grün, sobald eine Regel gesetzt ist; profilweite Ausschlüsse gelten weiterhin zusätzlich</li>
+        <li>Neu: Protokoll-Umfang wählbar (⚙) – <strong>Kompakt</strong> (Voreinstellung) mit einer Summenzeile je Auftrag, <strong>Ausführlich</strong> mit einer Zeile je Verzeichnis; Fehler stehen immer vollständig im Protokoll</li>
+        <li>Neu: Warteschlange für die Zeitsteuerung – kollidierende Läufe gehen nicht mehr verloren, sondern laufen nacheinander; Ergebnisfenster blockieren den nächsten Lauf nicht, ⏹ Stop bricht nur den laufenden ab. Das Aktionsfenster erscheint auch im Tray-Betrieb und lässt sich minimieren; Abbrüche stehen im Protokoll als „FAZIT (ABGEBROCHEN)"</li>
       </ul>
     </div>
     <div class="changelog-entry">
       <div class="changelog-version">v3.3.1 <span>Juli 2026 &middot; Wechsel auf Python</span></div>
       <ul>
         <li>Kompletter Wechsel von AutoIt auf Python – Bedienung und Ablauf unverändert, bestehende <code>3Kopier.ini</code>- und <code>.3ko</code>-Profildateien funktionieren ohne Anpassung weiter</li>
-        <li>Kopiervorgänge laufen jetzt im Hintergrund – die Oberfläche bleibt auch bei sehr vielen Dateien oder langsamen Netzlaufwerken durchgehend reaktionsfähig</li>
-        <li>Dateien werden blockweise kopiert statt in einem Rutsch – Fortschrittsbalken bewegt sich dadurch auch innerhalb einer einzelnen großen Datei sichtbar weiter, "Stop" wirkt sofort</li>
-        <li>Profil-Auswahl im Dropdown lädt sofort – der separate "Laden"-Knopf entfällt</li>
-        <li>Ergebnisfenster überarbeitet: eigene Spalte je Auftrag mit Quelle, Ziel und Statistik</li>
-        <li>Neue Einstellungen (⚙): Skalierung der Oberfläche in festen Stufen von 90–200 %, Aufbewahrungsfrist für Protokolle (1 Tag bis unbegrenzt) mit Sofort-Aufräumen-Funktion</li>
-        <li>Protokolle liegen jetzt als eigene Datei je Lauf im Unterordner <code>Logs</code>, statt einer einzigen wachsenden Sammeldatei</li>
-        <li>Sehr lange Pfade werden in den Auftragsfeldern automatisch verkürzt angezeigt (Anfang…Ende), der volle Pfad erscheint als Tooltip – intern bleibt immer der komplette Pfad erhalten</li>
-        <li>Kleinere Layout-Korrekturen (Ausrichtung, Lesbarkeit)</li>
-        <li><code>Lizenz.txt</code> liegt jetzt bei</li>
+        <li>Kopiervorgänge laufen im Hintergrund – die Oberfläche bleibt auch bei sehr vielen Dateien oder langsamen Netzlaufwerken reaktionsfähig; blockweise Kopie, „Stop" wirkt sofort</li>
         <li>Neu: automatische Zeitsteuerung – Profile nach Zeitplan im Hintergrund ausführen, inklusive Silent-Modus und Tray-Betrieb mit Autostart</li>
-        <li>Neu: Ausschluss-Liste – Dateien und ganze Ordner (z. B. Browser-Caches, temporäre Dateien, große Image-Formate) vom Kopieren ausnehmen; mit Vorgaben ab Werk, pro Profil anpassbar</li>
+        <li>Neu: Ausschluss-Liste – Dateien und ganze Ordner (Browser-Caches, temporäre Dateien, große Image-Formate) vom Kopieren ausnehmen; mit Vorgaben ab Werk, pro Profil anpassbar</li>
         <li>Neu: Ruhemodus nach dem Kopieren als Alternative zum Herunterfahren (beide Optionen schließen sich gegenseitig aus)</li>
-        <li>Neu: Hinweis beim Speichern eines Profils, das in einem aktiven Zeitplan verwendet wird – so bleibt klar, dass die Änderung auch die automatischen Läufe betrifft</li>
-        <li>Protokoll gestrafft: eine Zusammenfassung je Verzeichnis statt einer Zeile pro Datei, und das Ergebnis-Fazit steht jetzt oben statt am Ende</li>
-        <li>Netzwerk-/NAS-Pfade (UNC) verbessert: korrekte Pfadschreibweise bei der Auswahl, Datenmengen-Berechnung im Hintergrund – die Oberfläche friert dabei nicht mehr ein</li>
+        <li>Neue Einstellungen (⚙): Skalierung 90–200 %, Protokoll-Aufbewahrung (1 Tag bis unbegrenzt) mit Sofort-Aufräumen; Protokolle jetzt als eigene Datei je Lauf im Ordner <code>Logs</code></li>
+        <li>Ergebnisfenster überarbeitet (eigene Spalte je Auftrag); Profil-Dropdown lädt sofort ohne „Laden"-Knopf; sehr lange Pfade werden verkürzt angezeigt (Anfang…Ende), voller Pfad im Tooltip</li>
+        <li>Netzwerk-/NAS-Pfade (UNC) verbessert, Datenmengen-Berechnung ohne Einfrieren; Ergebnis-Fazit steht jetzt oben; kleinere Layout-Korrekturen; <code>Lizenz.txt</code> liegt bei</li>
       </ul>
     </div>
     <div class="changelog-entry">
