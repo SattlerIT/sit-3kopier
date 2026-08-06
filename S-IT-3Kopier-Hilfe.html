@@ -188,6 +188,10 @@
   <p>Klicken Sie auf <strong>📁 Ziel</strong>, um das Zielverzeichnis festzulegen. Das Zielverzeichnis muss nicht vorab existieren &ndash; es wird beim Kopiervorgang automatisch angelegt. Auch hier merkt sich der Dialog getrennt von der Quellauswahl den zuletzt gewählten Zielordner.</p>
 
   <div class="note">
+    <strong>Anzeige langer Pfade:</strong> Passt ein Pfad nicht vollständig in das Anzeigefeld, wird er sauber gekürzt dargestellt (Anfang&hellip;Ende) statt am Rand abgeschnitten. Der <strong>vollständige Pfad</strong> erscheint, sobald Sie mit der Maus darüber verweilen (Tooltip); intern arbeitet 3Kopier immer mit dem kompletten Pfad.
+  </div>
+
+  <div class="note">
     <strong>Datenmenge:</strong> Der Bereich <em>Datenmengen</em> zeigt die aktuelle Größe jedes aktiven Quellordners an. Klicken Sie auf <strong>🔄 Aktualisieren</strong>, um die Anzeige nach Änderungen zu erneuern. Die Berechnung läuft im Hintergrund &ndash; solange sie läuft, erscheint <em>(wird berechnet…)</em>, und die Oberfläche bleibt die ganze Zeit bedienbar.
   </div>
 
@@ -199,6 +203,9 @@
 
   <h3>Überschreiben (pro Auftrag)</h3>
   <p>Ist diese Option aktiviert, werden vorhandene Dateien im Ziel <strong>immer</strong> überschrieben &ndash; unabhängig vom Datum. Ohne diese Option werden Zieldateien nur überschrieben, wenn die Quelldatei <em>neuer</em> ist. Ist die Zieldatei gleich alt oder aktueller, wird sie übersprungen.</p>
+  <div class="note">
+    <strong>Zeitstempel-Toleranz bei Netzlaufwerken:</strong> Über NAS- und Netzlaufwerke hinweg weichen die Datei-Zeitstempel technisch bedingt oft um ein bis zwei Sekunden ab. Ohne Toleranz würden unveränderte Dateien im Modus &bdquo;nur wenn neuer&ldquo; dadurch fälschlich als neuer gelten und bei jedem Lauf erneut kopiert. 3Kopier gleicht das mit einer Toleranz von zwei Sekunden aus &ndash; einstellbar je Profil über das <a href="#profile">🛡-Symbol</a>.
+  </div>
 
   <h3>Verschieben (pro Auftrag)</h3>
   <p>Ist diese Option aktiviert, werden Dateien <strong>verschoben</strong> statt kopiert. Die Quelldatei wird erst gelöscht, nachdem sie vollständig und unversehrt im Ziel angekommen ist. Leere Quellordner werden nach dem Verschieben automatisch entfernt.</p>
@@ -264,6 +271,15 @@
   <div class="warn">
     <strong>Profil wird in der Zeitsteuerung verwendet:</strong> Speichern Sie ein Profil, das in einem aktiven Zeitplan eingetragen ist, weist das Programm mit einem Hinweisfenster darauf hin. Grund: Die Zeitsteuerung merkt sich nur den <strong>Profilnamen</strong> und lädt das Profil bei jedem Lauf frisch. Die gerade gespeicherten Änderungen (Quellen, Ziele, Optionen) gelten damit automatisch auch für die zeitgesteuerten Läufe dieses Profils. Der Hinweis lässt sich abbrechen, falls das nicht gewollt war.
   </div>
+
+  <h3>🛡 Netzwerk &amp; Zeitstempel <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEU</span></h3>
+  <p>Das <strong>🛡-Symbol</strong> in der Profilleiste (neben 🚫) öffnet die Zeitstempel-Einstellung für das aktuelle Profil. Sie steuert, wie im Modus <em>&bdquo;nur wenn neuer&ldquo;</em> (Überschreiben-Haken nicht gesetzt) entschieden wird, ob eine Datei wirklich neuer ist &ndash; und verhindert, dass unveränderte Dateien auf NAS- und Netzlaufwerken durch Zeitstempel-Abweichungen bei jedem Lauf sinnlos neu kopiert werden.</p>
+  <ul>
+    <li><strong>Automatisch</strong> (Voreinstellung): Die Zwei-Sekunden-Toleranz wirkt nur dann, wenn Quelle oder Ziel ein Netzwerkpfad der Form <code>\\Server\Freigabe</code> ist. Bei rein lokalen Kopien wird exakt verglichen.</li>
+    <li><strong>Immer</strong>: Die Toleranz wirkt immer &ndash; auch lokal. Sinnvoll für <strong>als Laufwerksbuchstabe eingebundene Netzlaufwerke</strong> (z.&nbsp;B. <code>X:</code>), die &bdquo;Automatisch&ldquo; nicht als Netzwerk erkennt.</li>
+    <li><strong>Aus</strong>: Exakter Vergleich ohne Toleranz.</li>
+  </ul>
+  <p>Die Einstellung wird je Profil gespeichert. Der Dialog zeigt außerdem an, welche der drei Aufträge gerade einen Netzwerkpfad verwenden.</p>
 
   <h2 id="einstellungen">Einstellungen</h2>
   <p>Über das Zahnrad-Symbol <strong>⚙</strong> oben rechts im Programmfenster (neben <strong>? HILFE</strong>) öffnet sich der Einstellungen-Dialog.</p>
@@ -336,7 +352,8 @@
   <p>Ein Zeitplan mit aktivem Silent-Modus ist in der Liste zusätzlich mit dem Symbol <strong>🔇</strong> gekennzeichnet.</p>
 
   <h3>Eigenständiges Aktionsfenster</h3>
-  <p>Läuft ein Zeitplan (nicht-silent, egal ob automatisch oder manuell per Simulation/Start getestet), öffnet sich ein <strong>eigenes kleines Fenster</strong> mit Fortschrittsbalken, Statistik und einem eigenen <strong>⏹ Stop</strong>-Knopf. Das Fenster erscheint auch, wenn 3Kopier nur im Hintergrund (Tray) läuft, hat einen <strong>eigenen Eintrag in der Taskleiste</strong> und lässt sich <strong>minimieren</strong>, falls es auf dem Bildschirm gerade stört &ndash; der Lauf arbeitet dann unsichtbar weiter.</p>
+  <p>Läuft ein Zeitplan (nicht-silent, egal ob automatisch oder manuell per Simulation/Start getestet), öffnet sich ein <strong>eigenes kleines Fenster</strong> mit Fortschrittsbalken, Statistik und einem eigenen <strong>⏹ Stop</strong>-Knopf. Das Fenster erscheint auch, wenn 3Kopier nur im Hintergrund (Tray) läuft, hat einen <strong>eigenen Eintrag in der Taskleiste</strong> und lässt sich <strong>minimieren</strong>, falls es auf dem Bildschirm gerade stört &ndash; der Lauf arbeitet dann unsichtbar weiter. Das gilt auch, wenn Sie den Lauf aus dem geöffneten Zeitsteuerungs-Fenster heraus starten.</p>
+  <p>Das <strong>Schließen-Kreuz (X)</strong> des Aktionsfensters wirkt wie <strong>⏹ Stop</strong>: Es bricht ausschließlich diesen einen Lauf sauber ab &ndash; der Lauf läuft danach nicht unsichtbar im Hintergrund weiter.</p>
   <div class="ok">
     <strong>Wichtig:</strong> Das Hauptfenster mit den Auftragskarten bleibt dabei <strong>komplett unberührt</strong> &ndash; eigene, noch nicht gespeicherte Arbeit am Hauptfenster wird durch einen automatisch startenden Zeitplan nie überschrieben oder gestört.
   </div>
