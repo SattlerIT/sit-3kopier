@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Copiar – Ayuda</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Copiar &ndash; Ayuda y documentación</h1>
+  <p>Versión v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Idioma:</span>
+  <a href="S-IT-3Kopier-Hilfe.html"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#FFCE00"/><rect width="21" height="9.33" fill="#DD0000"/><rect width="21" height="4.67" fill="#000000"/></svg> Deutsch</a>
+  <a href="S-IT-3Copy-Help.html"><svg width="21" height="14" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#FFFFFF" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#FFFFFF" stroke-width="13"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg> English</a>
+  <a href="S-IT-3Copier-Aide.html"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#ED2939"/><rect width="14" height="14" fill="#FFFFFF"/><rect width="7" height="14" fill="#002395"/></svg> Français</a>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#AA151B"/><rect y="3.5" width="21" height="7" fill="#F1BF00"/></svg> Español</span>
+</div>
+
+<nav>
+  <a href="#resumen">Resumen</a>
+  <a href="#tareas">Tareas</a>
+  <a href="#opciones">Opciones</a>
+  <a href="#exclusiones">Exclusiones</a>
+  <a href="#perfiles">Perfiles</a>
+  <a href="#ajustes">Ajustes</a>
+  <a href="#ejecucion">Ejecución</a>
+  <a href="#programador">Programador</a>
+  <a href="#segundoplano">Segundo plano</a>
+  <a href="#rutaslargas">Rutas largas</a>
+  <a href="#resultado">Resultado</a>
+  <a href="#registros">Registros</a>
+</nav>
+
+<main>
+
+  <h2 id="resumen">Resumen</h2>
+  <p><strong>S-IT-3Copiar</strong> es un copiador triple con registro y programador. Ejecuta hasta tres tareas independientes de copia o movimiento en una sola pasada &ndash; ideal para repartir archivos en unidades NAS, carpetas en la nube (pCloud, por ejemplo) u otros destinos. Además, los perfiles pueden ejecutarse automáticamente según un horario, en segundo plano y sin intervención alguna.</p>
+
+  <div class="note">
+    <strong>Uso habitual:</strong> copiar los datos de una carpeta local a varios destinos a la vez &ndash; NAS 1, NAS 2 y pCloud, por ejemplo &ndash; ya sea pulsando un botón o automáticamente cada tarde a una hora fija.
+  </div>
+
+  <div class="ok">
+    <strong>💡 En la práctica, no está realmente limitado a tres tareas:</strong> una ejecución procesa como máximo tres pares origen/destino a la vez, pero el número de <strong>perfiles</strong> es ilimitado y cada perfil puede tener <strong>su propio horario</strong> (véase la sección <a href="#programador">Programador</a>). En la práctica: tantas tareas de copia independientes como se quiera, cada una con sus tres pares origen/destino, cada una a su hora o con su propio intervalo &ndash; todas se ejecutan automáticamente en segundo plano, sin tener que lanzarlas una por una. Por ejemplo: un perfil «Fotos» a diario a las 20:00, un perfil «Contabilidad» cada 4 horas, un perfil «Copia semanal» solo los sábados &ndash; todos configurados a la vez y activos de forma independiente.
+  </div>
+
+  <div class="ok">
+    <strong>Versión Python:</strong> 3Copiar se apoya en una base técnica moderna (Python en lugar de AutoIt). Las copias se realizan en segundo plano y la interfaz sigue respondiendo en todo momento, incluso con muchísimos archivos o unidades de red lentas (no se congela). Los archivos grandes se copian por bloques: la barra de progreso avanza de forma visible incluso dentro de un único archivo muy grande, y <strong>⏹ Parar</strong> surte efecto de inmediato, también en mitad de un archivo grande.
+  </div>
+
+  <h2 id="tareas">Configurar las tareas</h2>
+  <p>El programa admite tres tareas de copia independientes (A1, A2, A3). Cada tarea consta de una carpeta de origen y otra de destino y puede activarse o desactivarse por separado.</p>
+
+  <h3>La casilla «activa»</h3>
+  <p>Solo se procesan al iniciar las tareas marcadas como <strong>activa</strong>. Las tareas desactivadas se omiten por completo, pero conservan sus rutas guardadas.</p>
+
+  <h3>🔰 Filtro de tarea</h3>
+  <p>A la derecha del encabezado de cada tarjeta de tarea se encuentra el símbolo <strong>🔰</strong>. Permite definir filtros que se aplican <strong>solo a esa tarea</strong>: exclusiones adicionales y la regla SOLO («copiar únicamente determinados tipos de archivo»). El símbolo se ilumina en verde en cuanto hay una regla definida para la tarea &ndash; atenuado significa que no hay filtros propios activos. Detalles en la sección <a href="#exclusiones">Exclusiones</a>.</p>
+
+  <h3>Elegir el origen</h3>
+  <p>Pulse <strong>📁 Origen</strong> para elegir la carpeta de origen de esa tarea. El cuadro de diálogo recuerda la última carpeta de origen por separado de la selección de destino &ndash; al pulsar de nuevo <strong>Origen</strong> (en cualquier tarea), la selección vuelve a empezar ahí.</p>
+
+  <h3>Elegir el destino</h3>
+  <p>Pulse <strong>📁 Destino</strong> para fijar la carpeta de destino. No hace falta que exista de antemano &ndash; se crea automáticamente durante la copia. También aquí el cuadro de diálogo recuerda la última carpeta de destino por separado de la selección de origen.</p>
+
+  <div class="note">
+    <strong>Visualización de rutas largas:</strong> si una ruta no cabe entera en el campo, se muestra acortada de forma limpia (principio&hellip;final) en lugar de cortada por el borde. La <strong>ruta completa</strong> aparece al detener el ratón sobre ella (información emergente); internamente, 3Copiar trabaja siempre con la ruta íntegra.
+  </div>
+
+  <div class="note">
+    <strong>Volumen de datos:</strong> la zona <em>Volumen de datos</em> muestra el tamaño actual de cada carpeta de origen activa. Pulse <strong>🔄 Actualizar</strong> para renovar la información tras hacer cambios. El cálculo se realiza en segundo plano &ndash; mientras tanto aparece <em>(calculando…)</em> y la interfaz sigue siendo utilizable.
+  </div>
+
+  <div class="note">
+    <strong>Rutas de red y NAS:</strong> las rutas UNC de la forma <code>\\Servidor\Recurso</code> son totalmente compatibles, tanto de origen como de destino. Para los orígenes en red, el volumen de datos no se calcula de antemano de forma deliberada (en recursos grandes puede tardar mucho); en su lugar aparece <em>(red)</em>. La copia en sí se desarrolla con toda normalidad.
+  </div>
+
+  <h2 id="opciones">Opciones</h2>
+
+  <h3>Sobrescribir (por tarea)</h3>
+  <p>Con esta opción activada, los archivos existentes en el destino se sobrescriben <strong>siempre</strong>, sea cual sea su fecha. Sin ella, los archivos de destino solo se sobrescriben cuando el archivo de origen es <em>más reciente</em>. Si el archivo de destino tiene la misma antigüedad o es más nuevo, se omite.</p>
+  <div class="note">
+    <strong>Tolerancia de marca de tiempo en unidades de red:</strong> entre unidades NAS y de red, las marcas de tiempo de los archivos difieren a menudo en uno o dos segundos por motivos técnicos. Sin tolerancia, archivos no modificados se considerarían erróneamente más recientes en el modo «solo si es más reciente» y se copiarían de nuevo en cada ejecución. 3Copiar lo compensa con una tolerancia de dos segundos &ndash; ajustable por perfil mediante el <a href="#perfiles">símbolo 🛡</a>.
+  </div>
+
+  <h3>Mover (por tarea)</h3>
+  <p>Con esta opción activada, los archivos se <strong>mueven</strong> en lugar de copiarse. El archivo de origen solo se borra después de haber llegado al destino completo e intacto. Las carpetas de origen que quedan vacías se eliminan automáticamente tras el movimiento.</p>
+
+  <div class="warn">
+    <strong>Aviso al mover:</strong> los archivos se retiran de la carpeta de origen. Compruebe antes del primer uso que ese es el comportamiento deseado. Si se produce un error o se interrumpe el proceso a medias, el archivo de origen queda garantizado sin cambios &ndash; el borrado solo ocurre tras una transferencia completamente correcta.
+  </div>
+
+  <h3>Después de copiar: apagar o suspender</h3>
+  <p>La zona <strong>💻 Después de copiar</strong> ofrece dos opciones: <strong>Apagar</strong> y <strong>Suspender</strong>. Si una de ellas está activada y la copia terminó <strong>sin errores</strong>, el programa pregunta si debe apagarse o suspenderse el equipo. Tras errores o una interrupción, la pregunta no aparece.</p>
+  <p>Las dos opciones <strong>se excluyen mutuamente</strong> &ndash; al marcar una se desmarca la otra. La suspensión utiliza la administración de energía de Windows; que el equipo pase a suspensión o a hibernación depende de la configuración de energía de Windows.</p>
+  <div class="note">
+    Estas dos opciones no se aplican a las ejecuciones automáticas del programador &ndash; solo surten efecto en las copias iniciadas a mano.
+  </div>
+
+  <h2 id="exclusiones">Excluir archivos y carpetas</h2>
+  <p>El botón <strong>🚫</strong> de la barra de perfiles (junto a <strong>🗑 Eliminar</strong>) permite dejar fuera de la copia determinados archivos y carpetas enteras. Resulta especialmente útil para no copiar siquiera los archivos temporales, los archivos de sistema y las a menudo enormes carpetas de caché de los navegadores &ndash; o para mantener a raya archivos grandes de copia de seguridad e imagen, de modo que en el destino no se acumulen datos innecesarios.</p>
+
+  <div class="note">
+    <strong>Dos clases de entrada:</strong> los <em>patrones de archivo</em> con comodines (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) se refieren a archivos concretos. Los <em>nombres de carpeta</em> (<code>cache2</code>, <code>GPUCache</code>) excluyen una carpeta entera con todas sus subcarpetas &ndash; ni siquiera se entra en ella durante la copia, lo que además ahorra tiempo en árboles de caché grandes.
+  </div>
+
+  <h3>Exclusiones estándar</h3>
+  <p>En el primer inicio, el programa crea el archivo <code>3Kopier-Ausschluss.ini</code> con valores predeterminados razonables: archivos temporales (Windows, Office, LibreOffice/OpenOffice), archivos de sistema de Windows, las carpetas de caché de los navegadores habituales (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) y formatos de imagen grandes como <code>*.iso</code>, <code>*.nrg</code> o <code>*.tib</code>. Esta lista estándar rige al principio para todos los perfiles. El botón <strong>Abrir lista estándar</strong> de la ventana de exclusiones permite editarla en cualquier momento.</p>
+
+  <h3>Ajustar por perfil</h3>
+  <p>La ventana de exclusiones se refiere siempre al perfil cargado en ese momento (a «Manuell» en una ejecución sin perfil). Son posibles dos ajustes:</p>
+  <ul>
+    <li><strong>Desactivar una entrada estándar:</strong> quite su marca en la lista de exclusiones estándar &ndash; esa entrada deja entonces de aplicarse a ese perfil. Ejemplo: en un perfil de copia de seguridad que sí deba incluir archivos ISO, quite la marca de <code>*.iso</code>.</li>
+    <li><strong>Añadir exclusiones propias:</strong> indique entradas adicionales en el campo de texto inferior, una por línea &ndash; mezclando patrones de archivo y nombres de carpeta (<code>*.mp4</code> o <code>Downloads</code>, por ejemplo).</li>
+  </ul>
+  <p>La lista que realmente se aplica resulta, por tanto, de: <em>lista estándar &minus; entradas retiradas para ese perfil + sus propios añadidos</em>.</p>
+
+  <h3>Ajustar por tarea: el símbolo 🔰</h3>
+  <p>Además de las reglas de todo el perfil, cada una de las tres tareas puede tener filtros <strong>propios</strong>. Al pulsar el símbolo <strong>🔰</strong> en el encabezado de una tarjeta de tarea se abre un pequeño cuadro de diálogo con dos campos (separe varias entradas con <code>|</code>):</p>
+  <ul>
+    <li><strong>Exclusiones adicionales solo para esta tarea:</strong> <code>*.iso | cache2</code>, por ejemplo &ndash; funciona como una entrada añadida en la ventana de exclusiones, pero rige únicamente para esa tarea. Los nombres de carpeta se escriben sin comodines, como de costumbre.</li>
+    <li><strong>Regla SOLO («todo excepto»):</strong> si este campo contiene patrones, la tarea copia <strong>exclusivamente</strong> los archivos que coincidan &ndash; todo lo demás queda excluido. Ejemplo: tarea&nbsp;1 <code>*.pdf</code>, tarea&nbsp;2 <code>*.jpg</code>, tarea&nbsp;3 <code>*.mp4</code> &ndash; así una sola ejecución clasifica una carpeta mixta por tipo de archivo en tres destinos. Un campo vacío desactiva la regla. Cómodo: basta con <code>pdf</code> o <code>.pdf</code>, el programa lo completa a <code>*.pdf</code>.</li>
+  </ul>
+  <p>La regla SOLO se aplica únicamente a los archivos &ndash; la estructura de carpetas se recorre con normalidad, de modo que los archivos coincidentes también se encuentran en subcarpetas. Los archivos filtrados así cuentan en el resultado dentro de la categoría <em>Excluidos</em>.</p>
+
+  <div class="note">
+    <strong>Prioridad:</strong> las exclusiones de todo el perfil se aplican siempre además. Un archivo <code>*.tmp</code> queda fuera incluso con «solo <code>*.tmp</code>», mientras la entrada estándar <code>*.tmp</code> no se haya desactivado para ese perfil.
+  </div>
+
+  <div class="note">
+    <strong>En el registro:</strong> los archivos y carpetas excluidos se cuentan en una categoría propia, <em>Excluidos</em> &ndash; separada de los archivos omitidos &ndash; y aparecen como tal en el balance, en el resumen por carpeta y en la ventana de resultado.
+  </div>
+
+  <h2 id="perfiles">Perfiles</h2>
+  <p>Un perfil guarda bajo un nombre la configuración completa de las tres tareas (origen, destino, opciones, estado activo) para poder recuperarla en cualquier momento &ndash; y como base para el programador.</p>
+
+  <h3>Seleccionar un perfil</h3>
+  <p>Al pulsar una entrada de la lista desplegable, el perfil se carga <strong>de inmediato</strong> &ndash; ya no hace falta un botón «Cargar» aparte.</p>
+
+  <div class="warn">
+    <strong>Cuidado con los cambios sin guardar:</strong> como la selección carga enseguida, los cambios en los campos de las tareas que aún no se hayan guardado se pierden al cambiar de perfil. Guárdelos antes con <strong>💾 Guardar</strong> si desea conservarlos.
+  </div>
+
+  <h3>Guardar / nuevo / eliminar</h3>
+  <p><strong>💾 Guardar</strong> almacena la configuración actual con el nombre elegido. <strong>➕ Nuevo</strong> pide un nombre y vacía después las tres tareas por completo &ndash; así un perfil nuevo empieza siempre de cero, sin restos de un perfil cargado antes. <strong>🗑 Eliminar</strong> borra definitivamente el perfil seleccionado.</p>
+
+  <div class="warn">
+    <strong>Perfil utilizado por el programador:</strong> si guarda un perfil que figura en un horario activo, el programa lo advierte con un aviso. El motivo: el programador solo recuerda el <strong>nombre del perfil</strong> y lo carga de nuevo en cada ejecución. Los cambios recién guardados (orígenes, destinos, opciones) rigen por tanto también para las ejecuciones programadas de ese perfil. El aviso puede cancelarse si no era esa la intención.
+  </div>
+
+  <h3>🛡 Red y marcas de tiempo</h3>
+  <p>El <strong>símbolo 🛡</strong> de la barra de perfiles (junto a 🚫) abre el ajuste de marcas de tiempo del perfil actual. Determina cómo decide el modo <em>«solo si es más reciente»</em> (casilla Sobrescribir sin marcar) si un archivo es realmente más nuevo &ndash; y evita que archivos sin cambios en unidades NAS y de red se copien de nuevo en cada ejecución por diferencias de marca de tiempo.</p>
+  <ul>
+    <li><strong>Automático</strong> (predeterminado): la tolerancia de dos segundos solo se aplica cuando el origen o el destino es una ruta de red de la forma <code>\\Servidor\Recurso</code>. Las copias puramente locales se comparan de forma exacta.</li>
+    <li><strong>Siempre</strong>: la tolerancia se aplica siempre, también en local. Útil para <strong>unidades de red asignadas a una letra</strong> (<code>X:</code>, por ejemplo), que el modo «Automático» no reconoce como red.</li>
+    <li><strong>Desactivado</strong>: comparación exacta, sin tolerancia.</li>
+  </ul>
+  <p>El ajuste se guarda por perfil. El cuadro de diálogo muestra además cuáles de las tres tareas están usando una ruta de red.</p>
+
+  <h2 id="ajustes">Ajustes</h2>
+  <p>El símbolo de engranaje <strong>⚙</strong> arriba a la derecha de la ventana del programa (junto a <strong>? AYUDA</strong>) abre el cuadro de diálogo de ajustes.</p>
+
+  <h3>Idioma</h3>
+  <p>3Copiar habla varios idiomas. El idioma se elige normalmente ya durante la instalación; aquí puede cambiarse en cualquier momento. Se ofrecen todos los idiomas para los que hay un archivo de idioma junto al programa &ndash; cada uno con su bandera, para que la elección siga siendo clara incluso cuando la interfaz esté en un idioma que usted no lee.</p>
+
+  <p>El nombre del programa cambia con el idioma: <strong>3Kopier</strong> en alemán, <strong>3Copy</strong> en inglés, <strong>3Copier</strong> en francés, <strong>3Copiar</strong> en español. El nombre en pantalla cambia, pues, con el idioma; los archivos del disco conservan sus nombres (<code>3Kopier.ini</code>, perfiles con la extensión <code>.3ko</code>, los registros en la carpeta <code>Logs</code>). Cambiar de idioma no altera, por tanto, sus ajustes, perfiles ni filtros.</p>
+
+  <div class="note">
+    <strong>Efectivo tras reiniciar:</strong> igual que la escala, el idioma solo surte efecto cuando la ventana del programa se reconstruye. Una copia en curso nunca se interrumpe &ndash; el nuevo idioma aparece entonces en el siguiente inicio normal.
+  </div>
+
+  <p>Los demás idiomas llegan como paquetes de idioma verificados de Sattler IT-Service y aparecen automáticamente en la selección una vez instalados. Los archivos de idioma suministrados están cifrados, igual que el módulo del programador: así se garantiza que los textos que usted lee en el programa son exactamente los que se entregaron.</p>
+
+  <h3>Escala de la interfaz</h3>
+  <p>Se ofrecen niveles fijos del <strong>90&nbsp;%</strong> al <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). El nivel actual aparece resaltado. Tras pulsar <strong>Aplicar</strong>, la interfaz se reconstruye con el nuevo tamaño.</p>
+
+  <div class="note">
+    <strong>Tamaño de ventana fijo:</strong> la ventana del programa no puede redimensionarse con el ratón por las esquinas, y es intencionado. Así se evitan representaciones deformadas o cortadas. Si desea una vista más grande, elija sencillamente un nivel de escala superior.
+  </div>
+
+  <h3>Conservar los registros durante</h3>
+  <p>Fija cuánto tiempo se conservan automáticamente los archivos de registro terminados (véase la sección <a href="#registros">Registros</a>) antes de borrarse en el siguiente inicio del programa. Hay niveles fijos de <strong>1 día</strong> a <strong>365 días</strong>, además de <strong>∞ (ilimitado)</strong> &ndash; en ese caso no se borra nada automáticamente.</p>
+
+  <p>El botón <strong>🗑 Limpiar ahora</strong> aplica el plazo elegido de inmediato, sin esperar al siguiente inicio.</p>
+
+  <h3>Nivel de detalle del registro</h3>
+  <p>Determina hasta qué punto es detallado el archivo de registro de una ejecución:</p>
+  <ul>
+    <li><strong>Compacto</strong> (predeterminado): <strong>una línea de resumen</strong> por tarea en el registro (copiados, sobrescritos, omitidos, etc., con el volumen de datos) &ndash; sin líneas por carpeta. Junto con el balance al principio del archivo, el registro sigue siendo así un resumen breve y legible, por muchos miles de archivos y carpetas que se hayan procesado.</li>
+    <li><strong>Detallado:</strong> además se escribe una línea por carpeta (número de archivos, acciones, volumen de datos) &ndash; útil para localizar problemas, cuando hay que entender qué ocurrió en una carpeta concreta o por qué no se copió un archivo.</li>
+  </ul>
+  <p>El ajuste surte efecto ya en la siguiente ejecución, también en las programadas. Los errores se registran siempre por completo en ambos modos, igual que los acortamientos automáticos de ruta (MAX_PATH).</p>
+
+  <h2 id="ejecucion">Ejecutar una copia manualmente</h2>
+
+  <h3>1. Configurar las tareas</h3>
+  <p>Fije origen, destino y las opciones correspondientes en cada tarea que desee. Actívela con la casilla <strong>activa</strong>.</p>
+
+  <h3>2. Pulsar Iniciar</h3>
+  <p>El programa cuenta primero todos los archivos de las carpetas de origen activas para llenar correctamente la barra de progreso. Esta fase de recuento ya puede interrumpirse con <strong>⏹ Parar</strong> y, cuando hay muchísimos archivos, muestra un aviso intermedio en curso en lugar de parecer congelada. Después, las tareas se procesan una tras otra (A1, A2, A3).</p>
+
+  <h3>3. Seguir el progreso</h3>
+  <p>La barra de progreso, la línea de estado y las estadísticas se actualizan continuamente durante la ejecución. Con un único archivo muy grande, la barra sigue avanzando de forma visible dentro de ese archivo, en lugar de detenerse hasta terminarlo. La línea de estado indica además un tiempo restante estimado en cuanto hay datos suficientes, así como la velocidad de copia del momento (<code>157.4 MB/s</code>, por ejemplo) &ndash; calculada como media móvil de los últimos segundos, para que la cifra se mantenga estable cuando varían los tamaños de archivo. Ambas cosas valen también para la ventana de progreso del programador. En la simulación no hay indicación de velocidad, ya que allí no se copia nada realmente.</p>
+
+  <h3>4. Interrumpir</h3>
+  <p>Con <strong>⏹ Parar</strong> o la tecla <strong>ESC</strong> se interrumpe limpiamente la ejecución en cualquier momento &ndash; incluso en mitad de un archivo grande. Los archivos ya procesados por completo se conservan; un archivo de destino recién empezado y aún incompleto se elimina automáticamente, de modo que nunca queda un resto a medias.</p>
+
+  <h3>5. Ventana de resultado</h3>
+  <p>Al terminar se abre una ventana de resultado con las estadísticas por tarea &ndash; detalles en la sección <a href="#resultado">Resultado</a>.</p>
+
+  <h2 id="programador">Programador</h2>
+  <p>El botón <strong>🕐 Programador</strong> de la ventana principal abre una ventana propia en la que cualquier número de perfiles puede ejecutarse automáticamente según un horario &ndash; varias veces al día o a intervalos fijos.</p>
+
+  <h3>Crear un horario</h3>
+  <p>Con <strong>➕ Nuevo</strong>, elija un perfil y fije un disparador:</p>
+  <ul>
+    <li><strong>Diario</strong> &ndash; hora fija, todos los días</li>
+    <li><strong>Días de la semana</strong> &ndash; hora fija, solo los días elegidos</li>
+    <li><strong>Intervalo</strong> &ndash; cada X horas, con independencia de la hora</li>
+  </ul>
+  <p>Con <strong>✏</strong> se modifica un horario existente en cualquier momento y con <strong>🗑</strong> se elimina. La casilla <strong>Activo</strong> del cuadro de edición pausa un horario temporalmente sin borrarlo.</p>
+
+  <h3>🔍 Simulación / ▶ Iniciar (prueba manual)</h3>
+  <p>Cada línea de horario tiene dos botones para una prueba inmediata, al margen del horario en sí:</p>
+  <ul>
+    <li><strong>🔍 Simulación</strong> &ndash; muestra exactamente qué ocurriría (qué archivos se copiarían, sobrescribirían, omitirían&hellip;) <strong>sin</strong> cambiar nada. No se copia, mueve ni borra nada.</li>
+    <li><strong>▶ Iniciar</strong> &ndash; ejecuta la tarea de verdad, al momento.</li>
+  </ul>
+  <div class="note">
+    Estos dos botones muestran <strong>siempre</strong> la ventana de progreso y después la de resultado &ndash; esté o no activado el modo silencioso para ese horario. El modo silencioso (véase más abajo) solo afecta a las ejecuciones disparadas automáticamente, nunca a las pruebas manuales.
+  </div>
+
+  <h3>🔇 Modo silencioso</h3>
+  <p>En el cuadro de edición (✏, o al crear con ➕ Nuevo) puede activarse el <strong>modo silencioso</strong> por horario. Con él activado, una ejecución disparada <strong>automáticamente</strong> por el horario transcurre sin ventana alguna:</p>
+  <ul>
+    <li>Si todo fue bien (incluso si no había nada que copiar), el programa permanece <strong>completamente en silencio</strong> &ndash; ninguna ventana, ningún aviso.</li>
+    <li>Si se produjo un <strong>error real</strong> (origen o destino inaccesible, por ejemplo), aparece un aviso breve y discreto que remite al registro correspondiente.</li>
+  </ul>
+  <p>Un horario con modo silencioso activado se señala en la lista con el símbolo <strong>🔇</strong>.</p>
+
+  <h3>Una ventana de progreso independiente</h3>
+  <p>Cuando se ejecuta un horario (fuera del modo silencioso, ya sea de forma automática o probado a mano con Simulación/Iniciar), se abre una <strong>pequeña ventana propia</strong> con barra de progreso, estadísticas y su propio botón <strong>⏹ Parar</strong>. La ventana aparece incluso si 3Copiar solo está en segundo plano (área de notificación), tiene su <strong>propia entrada en la barra de tareas</strong> y puede <strong>minimizarse</strong> si molesta &ndash; la ejecución continúa entonces sin verse. Lo mismo vale si inicia la ejecución desde la ventana del programador.</p>
+  <p>La <strong>cruz de cierre (X)</strong> de esa ventana actúa como <strong>⏹ Parar</strong>: interrumpe limpiamente solo esa ejecución &ndash; que no sigue después de forma invisible en segundo plano.</p>
+  <div class="ok">
+    <strong>Importante:</strong> la ventana principal con las tarjetas de tarea permanece <strong>completamente intacta</strong> &ndash; su trabajo aún sin guardar nunca se sobrescribe ni se ve perturbado por un horario que arranque automáticamente.
+  </div>
+
+  <h3>La cola cuando las ejecuciones se solapan</h3>
+  <p>Solo se ejecuta <strong>una</strong> copia a la vez. Si un horario vence mientras otra ejecución sigue en marcha (otro horario o una copia iniciada a mano), la ejecución pendiente <strong>no se pierde</strong>: pasa a una <strong>cola</strong> y arranca automáticamente en cuanto termina la que estaba en curso. Varios horarios fijados a la misma hora se <strong>procesan así uno tras otro, cada uno por completo</strong>. La espera y el arranque posterior quedan documentados en el registro de errores (<code>3Kopier-Fehler.log</code>); una ejecución iniciada desde la cola se señala en su ventana de progreso con la coletilla <em>(desde la cola)</em>.</p>
+  <p>Para que esto funcione también <strong>sin vigilancia</strong> (de noche, por ejemplo), la ventana de resultado de una ejecución programada <strong>no</strong> espera un «Aceptar»: sencillamente permanece abierta y la siguiente ejecución de la cola arranca automáticamente. Por la mañana, las ventanas de resultado que han quedado abiertas muestran, una tras otra, lo ocurrido durante la noche.</p>
+  <div class="note">
+    <strong>La interrupción afecta solo a la ejecución en curso:</strong> si una ejecución se detiene con <strong>⏹ Parar</strong>, las que esperan en la cola continúan después con toda normalidad &ndash; cada una en su propia ventana de progreso y con su propio botón <strong>⏹ Parar</strong>. Una ejecución interrumpida se reconoce por la indicación <strong>«FAZIT (ABGEBROCHEN)»</strong> al principio de su archivo de registro.
+  </div>
+
+  <h2 id="segundoplano">Funcionamiento en segundo plano, área de notificación e inicio automático</h2>
+
+  <h3>Cerrar la ventana</h3>
+  <p>Si existe al menos un horario <strong>activo</strong>, el botón (X) de la ventana principal no cierra el programa &ndash; solo desaparece la ventana y el programa sigue en segundo plano (se reconoce por el icono en el área de notificación de la barra de tareas de Windows). Así el programador se mantiene activo aunque nadie deje la ventana abierta.</p>
+  <p>Si <strong>no</strong> hay ningún horario activo, el botón (X) cierra el programa con normalidad.</p>
+
+  <h3>Volver a abrirla</h3>
+  <p>Al hacer clic con el botón derecho en el icono del área de notificación se abre un pequeño menú con <strong>Abrir</strong> (vuelve a mostrar la ventana) y <strong>Salir</strong> (cierra el programa definitivamente, incluso con un horario activo).</p>
+
+  <h3>Inicio automático</h3>
+  <p>En cuanto existe al menos un horario activo, 3Copiar se registra automáticamente en el inicio de Windows &ndash; arranca entonces minimizado en segundo plano al iniciar sesión, sin mostrar la ventana. Cuando se elimina o desactiva el último horario activo, el registro de inicio automático se retira igual de automáticamente.</p>
+
+  <h3>Una sola instancia a la vez</h3>
+  <p>Si 3Copiar se inicia una segunda vez mientras ya hay una instancia en marcha (también invisible en segundo plano), <strong>no</strong> se abre una segunda ventana. En su lugar, la instancia que ya se estaba ejecutando se vuelve visible.</p>
+
+  <h2 id="rutaslargas">Rutas largas (MAX_PATH)</h2>
+  <p>De forma predeterminada, Windows no admite rutas de archivo de más de 260 caracteres (el <strong>límite MAX_PATH</strong>). Los archivos cuya ruta de destino es demasiado larga no pueden copiarse ni moverse &ndash; afecta sobre todo a archivos en carpetas muy anidadas con nombres largos, como suele ocurrir en las carpetas de descargas.</p>
+
+  <p>3Copiar detecta esos archivos automáticamente y acorta el nombre del archivo en el destino lo necesario para que la operación se complete igualmente.</p>
+
+  <div class="ok">
+    <strong>Acortamiento automático:</strong> si la ruta de destino es demasiado larga, primero se acorta el nombre del archivo en el destino &ndash; justo lo suficiente para que la ruta quede por debajo de 260 caracteres. Si no basta, se acorta además la última subcarpeta de la ruta de destino. La extensión del archivo se conserva siempre. Los nombres acortados llevan la marca <code>-3k</code>, por ejemplo <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>El archivo de origen no se toca:</strong> solo se adapta la ruta de destino. El archivo original conserva su nombre. En el registro se documentan tanto la ruta de destino original como la acortada.
+  </div>
+
+  <div class="note">
+    <strong>No confundir con el acortamiento en pantalla:</strong> con rutas de origen o destino muy largas, la visualización en los campos de las tareas se muestra acortada (principio&hellip;final), por ejemplo <code>H:\Download\&hellip;\Archivo</code>. Es puramente visual: internamente se usa siempre la ruta completa. La ruta entera aparece como información emergente al pasar el ratón por encima.
+  </div>
+
+  <h2 id="resultado">Ventana de resultado</h2>
+  <p>Tras cada ejecución terminada (o interrumpida) se abre una ventana de resultado &ndash; con una columna por tarea activa, para ver de un vistazo qué ha ido a dónde:</p>
+
+  <ul>
+    <li>Cada columna muestra el <strong>origen y el destino</strong> de esa tarea junto con sus propias estadísticas</li>
+    <li>Debajo, un <strong>resumen global</strong> de todas las tareas (volumen de datos, tiempo, número de errores)</li>
+    <li>En una simulación, cada línea se formula en condicional («se copiarían»), con un aviso claro de que no se ha cambiado nada realmente</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Dato</th>
+      <th>Significado</th>
+    </tr>
+    <tr>
+      <td><strong>Copiados</strong></td>
+      <td>Archivos nuevos que aún no existían en el destino y se han copiado</td>
+    </tr>
+    <tr>
+      <td><strong>Sobrescritos</strong></td>
+      <td>Archivos que ya existían en el destino y se han actualizado</td>
+    </tr>
+    <tr>
+      <td><strong>Movidos</strong></td>
+      <td>Archivos trasladados del origen al destino (opción «Mover»)</td>
+    </tr>
+    <tr>
+      <td><strong>Omitidos</strong></td>
+      <td>Archivos que en el destino ya eran más recientes y se han dejado sin cambios</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Acortados</strong></td>
+      <td>Archivos cuya ruta de destino superaba el límite MAX_PATH y se acortó automáticamente (marca <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Excluidos</strong></td>
+      <td>Archivos y carpetas omitidos según la lista de exclusiones (véase la sección <a href="#exclusiones">Exclusiones</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Errores</strong></td>
+      <td>Archivos o tareas que no se pudieron procesar (detalles al final del registro correspondiente)</td>
+    </tr>
+    <tr>
+      <td><strong>Datos</strong></td>
+      <td>Volumen de datos procesado (por tarea y en total)</td>
+    </tr>
+    <tr>
+      <td><strong>Tiempo</strong></td>
+      <td>Duración total de la copia (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="registros">Registros</h2>
+  <p>Para cada ejecución &ndash; manual o programada, real o simulada &ndash; se crea un <strong>archivo de registro propio</strong> en la subcarpeta <code>Logs</code>, en lugar de un único archivo que crecería sin fin.</p>
+
+  <h3>Nombre de archivo</h3>
+  <p>Cada archivo de registro se llama <code>NombreDePerfil_marcaDeTiempo_tipo.log</code>, por ejemplo:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; una ejecución real del perfil «MMDownload»</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; una simulación del perfil «3Test»</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; una ejecución sin perfil cargado</li>
+  </ul>
+  <p><strong>📋 Registro</strong> en la ventana principal abre la carpeta <code>Logs</code> directamente en el Explorador de Windows.</p>
+
+  <div class="note">
+    <strong>Los nombres de archivo son iguales en todos los idiomas:</strong> una ejecución sin perfil se archiva siempre como <code>Manuell</code>, y los archivos de configuración conservan igualmente sus nombres alemanes. Es intencionado: así una misma instalación vuelve a encontrar sus ajustes, perfiles y filtros tras un cambio de idioma, y un registro que usted envíe se lee de inmediato.
+  </div>
+
+  <h3>Contenido de un archivo de registro</h3>
+  <ul>
+    <li>El <strong>balance</strong>, con las estadísticas globales y la duración, está arriba del todo &ndash; el resultado se ve sin desplazarse</li>
+    <li>Fecha, hora y nombre del perfil de la ejecución</li>
+    <li>Origen y destino de cada tarea, junto con las opciones elegidas</li>
+    <li>Una <strong>línea de resumen por tarea</strong> (acciones y volumen de datos); en modo <em>Detallado</em>, además un <strong>resumen por carpeta</strong> en lugar de una línea por archivo (véase <a href="#ajustes">Ajustes &rarr; Nivel de detalle del registro</a>)</li>
+    <li>Si se produjeron errores, figuran además en una sección propia <strong>«=== FEHLER ===»</strong> al final del archivo &ndash; completos, en ambos modos</li>
+  </ul>
+
+  <div class="note">
+    <strong>Conservación:</strong> cuánto tiempo se conservan los registros antes de borrarse automáticamente se ajusta en <a href="#ajustes">Ajustes</a> (de 1 día a 365 días, o ilimitado).
+  </div>
+
+  <h3>⚠ Registro de errores (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Este archivo aparte, situado en la carpeta del programa (accesible con <strong>⚠ Errores</strong>), contiene únicamente <strong>errores del programa</strong> que no pertenecen a ninguna copia concreta &ndash; por ejemplo cuando no se pudo cargar el módulo del programador. Los errores ocurridos dentro de una copia figuran, como se ha descrito, al final del registro de esa ejecución.</p>
+
+  <div class="ok">
+    <strong>Archivo INI (<code>3Kopier.ini</code>):</strong> todos los ajustes se guardan automáticamente al cerrar el programa y se restablecen en el siguiente inicio &ndash; entre ellos las rutas de origen y destino, el estado activo de las tres tareas, las opciones <em>Sobrescribir</em> y <em>Mover</em> de cada tarea, la opción <em>Apagar</em>, las últimas carpetas de origen y destino usadas en los cuadros de selección, el <em>nivel de escala</em> elegido, el <em>idioma</em> configurado, el plazo de conservación de los registros y el <em>nivel de detalle del registro</em> (compacto/detallado). No hace falta ninguna configuración manual.
+  </div>
+
+  <div class="note">
+    <strong>Perfiles (archivos <code>.3ko</code>):</strong> al guardar un perfil se conservan todas las rutas, el estado activo y las opciones <em>Sobrescribir</em> y <em>Mover</em> de cada tarea. La opción <em>Apagar</em> es un ajuste global y se guarda solo en el archivo INI, no en el perfil.
+  </div>
+
+  <div class="note">
+    <strong>Archivo de horarios (<code>3Kopier-Zeitplan.ini</code>):</strong> todos los horarios creados (perfil, disparador, modo silencioso, estado activo) se guardan aquí y se cargan de nuevo automáticamente en el siguiente inicio.
+  </div>
+
+  <h3>Vista general: archivos y carpetas en la carpeta del programa</h3>
+  <p>Todos los archivos y carpetas siguientes se crean automáticamente durante el uso &ndash; ninguno hay que crearlo a mano ni entregarlo con el programa:</p>
+
+  <table>
+    <tr>
+      <th>Archivo / carpeta</th>
+      <th>Contenido</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Ajustes generales: campos de las tareas, opciones, últimas carpetas usadas, escala, idioma, plazo de conservación</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Todos los horarios creados, con perfil, disparador, modo silencioso y estado activo</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Errores del programa que no pertenecen a ninguna copia concreta</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (carpeta)</td>
+      <td>Un archivo de registro por ejecución &ndash; véase <a href="#registros">Registros</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Los perfiles que usted crea (un archivo por nombre de perfil)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      ¿Le ha resultado útil esta herramienta?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Copiar se desarrolla y se mantiene de forma gratuita.<br>
+      Una pequeña donación ayuda a seguir mejorándola. ¡Muchas gracias! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Donar con PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Copiar &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

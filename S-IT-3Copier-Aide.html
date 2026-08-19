@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Copier – Aide</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Copier &ndash; Aide &amp; documentation</h1>
+  <p>Version v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Langue&nbsp;:</span>
+  <a href="S-IT-3Kopier-Hilfe.html"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#FFCE00"/><rect width="21" height="9.33" fill="#DD0000"/><rect width="21" height="4.67" fill="#000000"/></svg> Deutsch</a>
+  <a href="S-IT-3Copy-Help.html"><svg width="21" height="14" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#FFFFFF" stroke-width="8"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#FFFFFF" stroke-width="13"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="8"/></svg> English</a>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#ED2939"/><rect width="14" height="14" fill="#FFFFFF"/><rect width="7" height="14" fill="#002395"/></svg> Français</span>
+  <a href="S-IT-3Copiar-Ayuda.html"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#AA151B"/><rect y="3.5" width="21" height="7" fill="#F1BF00"/></svg> Español</a>
+</div>
+
+<nav>
+  <a href="#apercu">Aperçu</a>
+  <a href="#taches">Tâches</a>
+  <a href="#options">Options</a>
+  <a href="#exclusions">Exclusions</a>
+  <a href="#profils">Profils</a>
+  <a href="#reglages">Réglages</a>
+  <a href="#execution">Exécution</a>
+  <a href="#planificateur">Planificateur</a>
+  <a href="#arriereplan">Arrière-plan</a>
+  <a href="#cheminslongs">Chemins longs</a>
+  <a href="#resultat">Résultat</a>
+  <a href="#journaux">Journaux</a>
+</nav>
+
+<main>
+
+  <h2 id="apercu">Aperçu</h2>
+  <p><strong>S-IT-3Copier</strong> est un copieur triple doté d&rsquo;un journal et d&rsquo;un planificateur. Il exécute jusqu&rsquo;à trois tâches de copie ou de déplacement indépendantes en un seul passage &ndash; idéal pour répartir des fichiers vers des disques NAS, des dossiers en nuage (pCloud, par exemple) ou tout autre support cible. De plus, des profils peuvent s&rsquo;exécuter automatiquement selon un horaire, en arrière-plan et sans la moindre intervention.</p>
+
+  <div class="note">
+    <strong>Usage typique&nbsp;:</strong> copier les données d&rsquo;un dossier local vers plusieurs cibles à la fois &ndash; NAS 1, NAS 2 et pCloud, par exemple &ndash; soit d&rsquo;une pression sur un bouton, soit automatiquement chaque soir à heure fixe.
+  </div>
+
+  <div class="ok">
+    <strong>💡 En pratique &ndash; pas vraiment limité à trois tâches&nbsp;:</strong> une exécution traite au maximum trois paires source/cible à la fois, mais le nombre de <strong>profils</strong> est illimité et chaque profil peut recevoir <strong>son propre horaire</strong> (voir la section <a href="#planificateur">Planificateur</a>). En pratique&nbsp;: autant de travaux de copie indépendants que vous le souhaitez, chacun avec ses trois paires source/cible, chacun à son heure ou à son intervalle &ndash; tous s&rsquo;exécutant automatiquement en arrière-plan, sans devoir être lancés un par un. Par exemple&nbsp;: un profil «&nbsp;Photos&nbsp;» tous les jours à 20&nbsp;h, un profil «&nbsp;Comptabilité&nbsp;» toutes les 4 heures, un profil «&nbsp;Sauvegarde hebdomadaire&nbsp;» le samedi uniquement &ndash; tous configurés en même temps et actifs indépendamment les uns des autres.
+  </div>
+
+  <div class="ok">
+    <strong>Version Python&nbsp;:</strong> 3Copier repose sur une base technique moderne (Python au lieu d&rsquo;AutoIt). Les copies s&rsquo;effectuent en arrière-plan&nbsp;; l&rsquo;interface reste réactive en permanence, même avec un très grand nombre de fichiers ou des lecteurs réseau lents (elle ne se fige pas). Les fichiers volumineux sont copiés par blocs&nbsp;: la barre de progression avance donc visiblement même à l&rsquo;intérieur d&rsquo;un seul très gros fichier, et <strong>⏹ Stop</strong> agit immédiatement, y compris au milieu d&rsquo;un gros fichier.
+  </div>
+
+  <h2 id="taches">Configurer les tâches</h2>
+  <p>Le programme gère trois tâches de copie indépendantes (A1, A2, A3). Chaque tâche se compose d&rsquo;un dossier source et d&rsquo;un dossier cible et peut être activée ou désactivée individuellement.</p>
+
+  <h3>La case «&nbsp;active&nbsp;»</h3>
+  <p>Seules les tâches cochées comme <strong>active</strong> sont traitées au démarrage. Les tâches désactivées sont entièrement ignorées, mais leurs chemins restent enregistrés.</p>
+
+  <h3>🔰 Filtre de tâche</h3>
+  <p>À droite de l&rsquo;en-tête de chaque carte de tâche se trouve le symbole <strong>🔰</strong>. Il permet de définir des filtres qui ne s&rsquo;appliquent <strong>qu&rsquo;à cette seule tâche</strong>&nbsp;: exclusions supplémentaires et règle UNIQUEMENT («&nbsp;ne copier que certains types de fichiers&nbsp;»). Le symbole s&rsquo;allume en vert dès qu&rsquo;une règle est définie pour la tâche &ndash; grisé, il signifie qu&rsquo;aucun filtre propre à la tâche n&rsquo;est actif. Détails dans la section <a href="#exclusions">Exclusions</a>.</p>
+
+  <h3>Choisir la source</h3>
+  <p>Cliquez sur <strong>📁 Source</strong> pour choisir le dossier source de la tâche. La boîte de dialogue retient le dernier dossier source séparément de la sélection de cible &ndash; au clic suivant sur <strong>Source</strong> (quelle que soit la tâche), la sélection repart de là.</p>
+
+  <h3>Choisir la cible</h3>
+  <p>Cliquez sur <strong>📁 Cible</strong> pour définir le dossier cible. Celui-ci n&rsquo;a pas besoin d&rsquo;exister au préalable &ndash; il est créé automatiquement pendant la copie. Là encore, la boîte de dialogue retient le dernier dossier cible séparément de la sélection de source.</p>
+
+  <div class="note">
+    <strong>Affichage des chemins longs&nbsp;:</strong> si un chemin n&rsquo;entre pas entièrement dans le champ, il est raccourci proprement (début&hellip;fin) au lieu d&rsquo;être coupé au bord. Le <strong>chemin complet</strong> apparaît lorsque la souris s&rsquo;attarde dessus (info-bulle)&nbsp;; en interne, 3Copier travaille toujours avec le chemin entier.
+  </div>
+
+  <div class="note">
+    <strong>Volume de données&nbsp;:</strong> la zone <em>Volume de données</em> indique la taille actuelle de chaque dossier source actif. Cliquez sur <strong>🔄 Actualiser</strong> pour mettre l&rsquo;affichage à jour après des modifications. Le calcul s&rsquo;effectue en arrière-plan &ndash; pendant ce temps, <em>(calcul en cours…)</em> s&rsquo;affiche et l&rsquo;interface reste utilisable.
+  </div>
+
+  <div class="note">
+    <strong>Chemins réseau et NAS&nbsp;:</strong> les chemins UNC de la forme <code>\\Serveur\Partage</code> sont pris en charge intégralement &ndash; en source comme en cible. Pour les sources réseau, le volume de données n&rsquo;est délibérément <strong>pas</strong> calculé à l&rsquo;avance (sur de grands partages, cela peut être long)&nbsp;; <em>(réseau)</em> s&rsquo;affiche à la place. La copie elle-même se déroule tout à fait normalement.
+  </div>
+
+  <h2 id="options">Options</h2>
+
+  <h3>Écraser (par tâche)</h3>
+  <p>Lorsque cette option est activée, les fichiers présents dans la cible sont <strong>toujours</strong> écrasés, quelle que soit leur date. Sans elle, les fichiers cibles ne sont écrasés que si le fichier source est <em>plus récent</em>. Si le fichier cible a le même âge ou est plus récent, il est ignoré.</p>
+  <div class="note">
+    <strong>Tolérance d&rsquo;horodatage sur les lecteurs réseau&nbsp;:</strong> d&rsquo;un NAS ou d&rsquo;un lecteur réseau à l&rsquo;autre, les horodatages des fichiers diffèrent souvent d&rsquo;une à deux secondes pour des raisons techniques. Sans tolérance, des fichiers inchangés seraient donc considérés à tort comme plus récents en mode «&nbsp;seulement si plus récent&nbsp;» et recopiés à chaque exécution. 3Copier compense cela par une tolérance de deux secondes &ndash; réglable par profil via le <a href="#profils">symbole 🛡</a>.
+  </div>
+
+  <h3>Déplacer (par tâche)</h3>
+  <p>Lorsque cette option est activée, les fichiers sont <strong>déplacés</strong> au lieu d&rsquo;être copiés. Le fichier source n&rsquo;est supprimé qu&rsquo;après être arrivé dans la cible, complet et intact. Les dossiers sources vidés sont supprimés automatiquement après le déplacement.</p>
+
+  <div class="warn">
+    <strong>À noter lors d&rsquo;un déplacement&nbsp;:</strong> les fichiers sont retirés du dossier source. Vérifiez avant la première utilisation que c&rsquo;est bien le comportement souhaité. En cas d&rsquo;erreur ou d&rsquo;arrêt en cours de route, le fichier source reste garanti inchangé &ndash; la suppression n&rsquo;intervient qu&rsquo;après un transfert entièrement réussi.
+  </div>
+
+  <h3>Après la copie&nbsp;: arrêt ou mise en veille</h3>
+  <p>La zone <strong>💻 Après la copie</strong> propose deux options&nbsp;: <strong>Arrêter</strong> et <strong>Mise en veille</strong>. Si l&rsquo;une d&rsquo;elles est active et que la copie s&rsquo;est terminée <strong>sans erreur</strong>, le programme demande si l&rsquo;ordinateur doit être arrêté ou mis en veille. Après des erreurs ou un arrêt manuel, la question n&rsquo;est pas posée.</p>
+  <p>Les deux options <strong>s&rsquo;excluent mutuellement</strong> &ndash; cocher l&rsquo;une décoche l&rsquo;autre. La mise en veille utilise la gestion d&rsquo;énergie de Windows&nbsp;; que la machine passe en veille simple ou en veille prolongée dépend de vos réglages d&rsquo;alimentation Windows.</p>
+  <div class="note">
+    Ces deux options ne s&rsquo;appliquent pas aux exécutions automatiques du planificateur &ndash; elles n&rsquo;agissent que sur les copies lancées à la main.
+  </div>
+
+  <h2 id="exclusions">Exclure des fichiers et des dossiers</h2>
+  <p>Le bouton <strong>🚫</strong> de la barre de profils (à côté de <strong>🗑 Supprimer</strong>) permet d&rsquo;écarter certains fichiers et des dossiers entiers de la copie. C&rsquo;est particulièrement utile pour ne pas copier du tout les fichiers temporaires, les fichiers système et les dossiers de cache souvent énormes des navigateurs &ndash; ou pour tenir à l&rsquo;écart de gros fichiers de sauvegarde et d&rsquo;image, afin qu&rsquo;aucun amas de données inutile ne s&rsquo;accumule dans la cible.</p>
+
+  <div class="note">
+    <strong>Deux sortes d&rsquo;entrées&nbsp;:</strong> les <em>motifs de fichiers</em> avec caractères génériques (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) visent des fichiers isolés. Les <em>noms de dossiers</em> (<code>cache2</code>, <code>GPUCache</code>) excluent un dossier entier avec tous ses sous-dossiers &ndash; celui-ci n&rsquo;est même pas parcouru pendant la copie, ce qui fait gagner du temps sur les grandes arborescences de cache.
+  </div>
+
+  <h3>Exclusions standard</h3>
+  <p>Au premier démarrage, le programme crée le fichier <code>3Kopier-Ausschluss.ini</code> avec des valeurs par défaut judicieuses&nbsp;: fichiers temporaires (Windows, Office, LibreOffice/OpenOffice), fichiers système Windows, dossiers de cache des navigateurs courants (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) ainsi que les grands formats d&rsquo;image tels que <code>*.iso</code>, <code>*.nrg</code> ou <code>*.tib</code>. Cette liste standard vaut d&rsquo;abord pour tous les profils. Le bouton <strong>Ouvrir la liste standard</strong> de la fenêtre d&rsquo;exclusion permet de la modifier à tout moment.</p>
+
+  <h3>Adapter par profil</h3>
+  <p>La fenêtre d&rsquo;exclusion se rapporte toujours au profil actuellement chargé (à «&nbsp;Manuell&nbsp;» pour une exécution sans profil). Deux adaptations sont possibles&nbsp;:</p>
+  <ul>
+    <li><strong>Désactiver une entrée standard&nbsp;:</strong> décochez-la dans la liste des exclusions standard &ndash; elle ne s&rsquo;applique alors plus à ce profil. Exemple&nbsp;: dans un profil de sauvegarde censé inclure les fichiers ISO, décochez <code>*.iso</code>.</li>
+    <li><strong>Ajouter vos propres exclusions&nbsp;:</strong> saisissez des entrées supplémentaires dans le champ situé en dessous, une par ligne &ndash; motifs de fichiers et noms de dossiers mêlés (<code>*.mp4</code> ou <code>Downloads</code>, par exemple).</li>
+  </ul>
+  <p>La liste effectivement appliquée est donc&nbsp;: <em>liste standard &minus; entrées retirées pour ce profil + vos ajouts</em>.</p>
+
+  <h3>Adapter par tâche&nbsp;: le symbole 🔰</h3>
+  <p>En plus des règles valables pour tout le profil, chacune des trois tâches peut recevoir <strong>ses propres</strong> filtres. Un clic sur le symbole <strong>🔰</strong> dans l&rsquo;en-tête d&rsquo;une carte de tâche ouvre une petite boîte de dialogue à deux champs (séparez plusieurs entrées par <code>|</code>)&nbsp;:</p>
+  <ul>
+    <li><strong>Exclusions supplémentaires pour cette tâche uniquement&nbsp;:</strong> <code>*.iso | cache2</code>, par exemple &ndash; cela agit comme une entrée supplémentaire de la fenêtre d&rsquo;exclusion, mais ne vaut que pour cette tâche. Les noms de dossiers s&rsquo;écrivent sans caractère générique, comme d&rsquo;habitude.</li>
+    <li><strong>Règle UNIQUEMENT («&nbsp;tout sauf&nbsp;»)&nbsp;:</strong> si ce champ contient des motifs, la tâche ne copie <strong>que</strong> les fichiers correspondants &ndash; tout le reste est exclu. Exemple&nbsp;: tâche&nbsp;1 <code>*.pdf</code>, tâche&nbsp;2 <code>*.jpg</code>, tâche&nbsp;3 <code>*.mp4</code> &ndash; une seule exécution trie ainsi un dossier mixte par type de fichier vers trois cibles. Un champ vide désactive la règle. Pratique&nbsp;: <code>pdf</code> ou <code>.pdf</code> suffit, le programme complète lui-même en <code>*.pdf</code>.</li>
+  </ul>
+  <p>La règle UNIQUEMENT ne s&rsquo;applique qu&rsquo;aux fichiers &ndash; l&rsquo;arborescence des dossiers continue d&rsquo;être parcourue normalement, si bien que les fichiers correspondants sont aussi trouvés dans les sous-dossiers. Les fichiers ainsi écartés comptent dans la catégorie <em>Exclus</em> du résultat.</p>
+
+  <div class="note">
+    <strong>Priorité&nbsp;:</strong> les exclusions valables pour tout le profil s&rsquo;appliquent toujours en plus. Un fichier <code>*.tmp</code> reste donc écarté même avec «&nbsp;uniquement <code>*.tmp</code>&nbsp;», tant que l&rsquo;entrée standard <code>*.tmp</code> n&rsquo;a pas été désactivée pour le profil.
+  </div>
+
+  <div class="note">
+    <strong>Dans le journal&nbsp;:</strong> les fichiers et dossiers exclus sont comptés dans une catégorie distincte <em>Exclus</em> &ndash; séparément des fichiers ignorés &ndash; et apparaissent comme tels dans le bilan, dans le récapitulatif par dossier et dans la fenêtre de résultat.
+  </div>
+
+  <h2 id="profils">Profils</h2>
+  <p>Un profil enregistre sous un nom la configuration complète des trois tâches (source, cible, options, état actif), afin de la rappeler à tout moment &ndash; et de servir de base au planificateur.</p>
+
+  <h3>Choisir un profil</h3>
+  <p>Un clic sur une entrée de la liste déroulante charge le profil <strong>immédiatement</strong> &ndash; un bouton «&nbsp;Charger&nbsp;» distinct n&rsquo;est plus nécessaire.</p>
+
+  <div class="warn">
+    <strong>Attention aux modifications non enregistrées&nbsp;:</strong> comme la sélection charge aussitôt, les modifications apportées aux champs des tâches et non encore enregistrées sont perdues lors du passage à un autre profil. Enregistrez-les au préalable avec <strong>💾 Enregistrer</strong> si vous souhaitez les conserver.
+  </div>
+
+  <h3>Enregistrer / nouveau / supprimer</h3>
+  <p><strong>💾 Enregistrer</strong> sauvegarde la configuration actuelle sous le nom choisi. <strong>➕ Nouveau</strong> demande un nom puis vide entièrement les trois tâches &ndash; un nouveau profil part ainsi toujours de zéro, sans reste d&rsquo;un profil chargé auparavant. <strong>🗑 Supprimer</strong> retire définitivement le profil sélectionné.</p>
+
+  <div class="warn">
+    <strong>Profil utilisé par le planificateur&nbsp;:</strong> si vous enregistrez un profil inscrit dans un horaire actif, le programme le signale par un message. La raison&nbsp;: le planificateur ne retient que le <strong>nom du profil</strong> et recharge celui-ci à chaque exécution. Les modifications que vous venez d&rsquo;enregistrer (sources, cibles, options) valent donc aussi pour les exécutions planifiées de ce profil. Le message peut être annulé si ce n&rsquo;était pas l&rsquo;intention.
+  </div>
+
+  <h3>🛡 Réseau &amp; horodatage</h3>
+  <p>Le <strong>symbole 🛡</strong> de la barre de profils (à côté de 🚫) ouvre le réglage d&rsquo;horodatage du profil courant. Il détermine comment le mode <em>«&nbsp;seulement si plus récent&nbsp;»</em> (case Écraser non cochée) décide qu&rsquo;un fichier est réellement plus récent &ndash; et évite que des fichiers inchangés sur des NAS et lecteurs réseau soient recopiés à chaque exécution à cause d&rsquo;écarts d&rsquo;horodatage.</p>
+  <ul>
+    <li><strong>Automatique</strong> (par défaut)&nbsp;: la tolérance de deux secondes ne s&rsquo;applique que si la source ou la cible est un chemin réseau de la forme <code>\\Serveur\Partage</code>. Les copies purement locales sont comparées à l&rsquo;identique.</li>
+    <li><strong>Toujours</strong>&nbsp;: la tolérance s&rsquo;applique toujours, y compris en local. Utile pour les <strong>lecteurs réseau montés sur une lettre</strong> (<code>X:</code>, par exemple), que le mode «&nbsp;Automatique&nbsp;» ne reconnaît pas comme réseau.</li>
+    <li><strong>Désactivé</strong>&nbsp;: comparaison exacte, sans tolérance.</li>
+  </ul>
+  <p>Le réglage est enregistré par profil. La boîte de dialogue indique en outre laquelle des trois tâches utilise actuellement un chemin réseau.</p>
+
+  <h2 id="reglages">Réglages</h2>
+  <p>Le symbole d&rsquo;engrenage <strong>⚙</strong> en haut à droite de la fenêtre du programme (à côté de <strong>? AIDE</strong>) ouvre la boîte de dialogue des réglages.</p>
+
+  <h3>Langue</h3>
+  <p>3Copier parle plusieurs langues. La langue est en général choisie dès l&rsquo;installation&nbsp;; elle se change ici à tout moment. Sont proposées toutes les langues pour lesquelles un fichier de langue se trouve à côté du programme &ndash; chacune avec son drapeau, afin que le choix reste clair même lorsque l&rsquo;interface affichée est dans une langue que vous ne lisez pas.</p>
+
+  <p>Le nom du programme change avec la langue&nbsp;: <strong>3Kopier</strong> en allemand, <strong>3Copy</strong> en anglais, <strong>3Copier</strong> en français, <strong>3Copiar</strong> en espagnol. Le nom à l&rsquo;écran change donc avec la langue&nbsp;; les fichiers sur le disque conservent leurs noms (<code>3Kopier.ini</code>, profils avec l&rsquo;extension <code>.3ko</code>, journaux dans le dossier <code>Logs</code>). Changer de langue ne modifie donc rien à vos réglages, profils et filtres.</p>
+
+  <div class="note">
+    <strong>Effectif après un redémarrage&nbsp;:</strong> comme la mise à l&rsquo;échelle, la langue ne prend effet qu&rsquo;au moment où la fenêtre du programme se reconstruit. Une copie en cours n&rsquo;est jamais interrompue &ndash; la nouvelle langue apparaît alors au prochain démarrage normal.
+  </div>
+
+  <p>D&rsquo;autres langues arrivent sous forme de paquets linguistiques vérifiés de Sattler IT-Service et apparaissent automatiquement dans la sélection une fois installés. Les fichiers de langue livrés sont chiffrés, tout comme le module de planification&nbsp;: les textes que vous lisez dans le programme sont ainsi exactement ceux qui ont été livrés.</p>
+
+  <h3>Mise à l&rsquo;échelle de l&rsquo;interface</h3>
+  <p>Des paliers fixes de <strong>90&nbsp;%</strong> à <strong>200&nbsp;%</strong> sont proposés (90, 100, 125, 150, 175, 200). Le palier en cours est mis en évidence. Après un clic sur <strong>Appliquer</strong>, l&rsquo;interface se reconstruit à la nouvelle taille.</p>
+
+  <div class="note">
+    <strong>Taille de fenêtre fixe&nbsp;:</strong> la fenêtre du programme ne peut délibérément pas être redimensionnée à la souris par ses coins. Cela évite les affichages déformés ou tronqués. Pour un affichage plus grand, choisissez simplement un palier supérieur.
+  </div>
+
+  <h3>Conserver les journaux pendant</h3>
+  <p>Détermine combien de temps les fichiers journaux terminés (voir la section <a href="#journaux">Journaux</a>) sont conservés automatiquement avant d&rsquo;être supprimés au démarrage suivant. Des paliers fixes de <strong>1 jour</strong> à <strong>365 jours</strong> sont proposés, ainsi que <strong>∞ (illimité)</strong> &ndash; rien n&rsquo;est alors supprimé automatiquement.</p>
+
+  <p>Le bouton <strong>🗑 Nettoyer maintenant</strong> applique le délai choisi immédiatement, sans attendre le prochain démarrage.</p>
+
+  <h3>Niveau de détail du journal</h3>
+  <p>Détermine le degré de détail du fichier journal d&rsquo;une exécution&nbsp;:</p>
+  <ul>
+    <li><strong>Compact</strong> (par défaut)&nbsp;: <strong>une ligne de synthèse</strong> par tâche dans le journal (copiés, écrasés, ignorés, etc., volume de données compris) &ndash; aucune ligne par dossier. Avec le bilan placé en tête de fichier, le journal reste ainsi un résumé court et lisible, quel que soit le nombre de milliers de fichiers et de dossiers traités.</li>
+    <li><strong>Détaillé</strong>&nbsp;: une ligne par dossier est écrite en plus (nombre de fichiers, actions, volume de données) &ndash; utile pour le dépannage, lorsqu&rsquo;il faut comprendre ce qui s&rsquo;est passé dans un dossier précis ou pourquoi un fichier n&rsquo;a pas été copié.</li>
+  </ul>
+  <p>Le réglage prend effet dès l&rsquo;exécution suivante, y compris pour les exécutions planifiées. Les erreurs sont toujours consignées intégralement dans les deux modes, de même que les raccourcissements automatiques de chemin (MAX_PATH).</p>
+
+  <h2 id="execution">Exécuter une copie manuellement</h2>
+
+  <h3>1. Configurer les tâches</h3>
+  <p>Définissez la source, la cible et les options voulues pour chaque tâche. Activez la tâche à l&rsquo;aide de la case <strong>active</strong>.</p>
+
+  <h3>2. Appuyer sur Démarrer</h3>
+  <p>Le programme compte d&rsquo;abord tous les fichiers des dossiers sources actifs afin de remplir correctement la barre de progression. Cette phase de comptage peut déjà être interrompue par <strong>⏹ Stop</strong> et affiche un message intermédiaire lorsqu&rsquo;il y a beaucoup de fichiers, au lieu de paraître figée. Les tâches sont ensuite traitées l&rsquo;une après l&rsquo;autre (A1, A2, A3).</p>
+
+  <h3>3. Suivre la progression</h3>
+  <p>La barre de progression, la ligne d&rsquo;état et les statistiques sont actualisées en continu pendant l&rsquo;exécution. Avec un fichier isolé très volumineux, la barre continue d&rsquo;avancer visiblement à l&rsquo;intérieur de ce seul fichier, au lieu de rester immobile jusqu&rsquo;à sa fin. La ligne d&rsquo;état indique en outre une durée restante estimée dès que les données le permettent, ainsi que la vitesse de copie du moment (<code>157.4 MB/s</code>, par exemple) &ndash; calculée en moyenne glissante sur les dernières secondes, afin que le chiffre reste stable quand la taille des fichiers varie. Les deux valent aussi pour la fenêtre de progression du planificateur. En simulation, l&rsquo;affichage de la vitesse disparaît, puisque rien n&rsquo;y est réellement copié.</p>
+
+  <h3>4. Interrompre</h3>
+  <p><strong>⏹ Stop</strong> ou la touche <strong>ÉCHAP</strong> interrompt proprement l&rsquo;exécution à tout moment &ndash; même au milieu d&rsquo;un gros fichier. Les fichiers déjà traités intégralement sont conservés&nbsp;; un fichier cible à peine commencé et encore incomplet est supprimé automatiquement, aucun tronçon ne reste donc jamais en place.</p>
+
+  <h3>5. Fenêtre de résultat</h3>
+  <p>Une fois l&rsquo;exécution terminée, une fenêtre de résultat s&rsquo;ouvre avec les statistiques par tâche &ndash; détails dans la section <a href="#resultat">Résultat</a>.</p>
+
+  <h2 id="planificateur">Planificateur</h2>
+  <p>Le bouton <strong>🕐 Planificateur</strong> de la fenêtre principale ouvre une fenêtre distincte dans laquelle un nombre quelconque de profils peuvent s&rsquo;exécuter automatiquement selon un horaire &ndash; plusieurs fois par jour ou à intervalles fixes.</p>
+
+  <h3>Créer un horaire</h3>
+  <p>Avec <strong>➕ Nouveau</strong>, choisissez un profil et définissez un déclencheur&nbsp;:</p>
+  <ul>
+    <li><strong>Quotidien</strong> &ndash; heure fixe, tous les jours</li>
+    <li><strong>Jours de la semaine</strong> &ndash; heure fixe, uniquement les jours choisis</li>
+    <li><strong>Intervalle</strong> &ndash; toutes les X heures, indépendamment de l&rsquo;heure</li>
+  </ul>
+  <p><strong>✏</strong> permet de modifier un horaire existant à tout moment, <strong>🗑</strong> de le supprimer. La case <strong>Actif</strong> de la boîte de dialogue de modification met un horaire en pause sans le supprimer.</p>
+
+  <h3>🔍 Simulation / ▶ Démarrer (essai manuel)</h3>
+  <p>Chaque ligne d&rsquo;horaire possède deux boutons pour un essai immédiat, indépendamment de l&rsquo;horaire lui-même&nbsp;:</p>
+  <ul>
+    <li><strong>🔍 Simulation</strong> &ndash; montre exactement ce qui se passerait (quels fichiers seraient copiés, écrasés, ignorés&hellip;) <strong>sans</strong> rien modifier. Rien n&rsquo;est copié, déplacé ni supprimé.</li>
+    <li><strong>▶ Démarrer</strong> &ndash; exécute la tâche pour de bon, immédiatement.</li>
+  </ul>
+  <div class="note">
+    Ces deux boutons affichent <strong>toujours</strong> la fenêtre de progression puis la fenêtre de résultat &ndash; que le mode silencieux soit activé ou non pour cet horaire. Le mode silencieux (voir ci-dessous) ne concerne que les exécutions déclenchées automatiquement, jamais les essais manuels.
+  </div>
+
+  <h3>🔇 Mode silencieux</h3>
+  <p>Dans la boîte de dialogue de modification (✏, ou lors de la création avec ➕ Nouveau), le <strong>mode silencieux</strong> peut être activé par horaire. Lorsqu&rsquo;il est actif, une exécution déclenchée <strong>automatiquement</strong> par l&rsquo;horaire se déroule sans aucune fenêtre&nbsp;:</p>
+  <ul>
+    <li>Si tout s&rsquo;est bien passé (y compris s&rsquo;il n&rsquo;y avait rien à copier), le programme reste <strong>totalement silencieux</strong> &ndash; aucune fenêtre, aucun message.</li>
+    <li>Si une <strong>véritable erreur</strong> est survenue (source ou cible inaccessible, par exemple), un message bref et discret apparaît, renvoyant au journal concerné.</li>
+  </ul>
+  <p>Un horaire en mode silencieux est signalé dans la liste par le symbole <strong>🔇</strong>.</p>
+
+  <h3>Une fenêtre de progression autonome</h3>
+  <p>Lorsqu&rsquo;un horaire s&rsquo;exécute (hors mode silencieux, qu&rsquo;il soit déclenché automatiquement ou essayé à la main par Simulation/Démarrer), une <strong>petite fenêtre distincte</strong> s&rsquo;ouvre, avec barre de progression, statistiques et son propre bouton <strong>⏹ Stop</strong>. Cette fenêtre apparaît même lorsque 3Copier ne tourne qu&rsquo;en arrière-plan (zone de notification), possède sa <strong>propre entrée dans la barre des tâches</strong> et peut être <strong>réduite</strong> si elle gêne &ndash; l&rsquo;exécution se poursuit alors sans être visible. Il en va de même lorsque vous lancez l&rsquo;exécution depuis la fenêtre du planificateur.</p>
+  <p>La <strong>croix de fermeture (X)</strong> de cette fenêtre agit comme <strong>⏹ Stop</strong>&nbsp;: elle interrompt proprement cette seule exécution &ndash; celle-ci ne se poursuit pas invisiblement en arrière-plan.</p>
+  <div class="ok">
+    <strong>Important&nbsp;:</strong> la fenêtre principale avec les cartes de tâches reste <strong>totalement intacte</strong> &ndash; votre travail en cours, non encore enregistré, n&rsquo;est jamais écrasé ni perturbé par un horaire qui démarre automatiquement.
+  </div>
+
+  <h3>La file d&rsquo;attente en cas de chevauchement</h3>
+  <p>Une seule copie s&rsquo;exécute à la fois. Si un horaire arrive à échéance alors qu&rsquo;une autre exécution est encore en cours (un autre horaire ou une copie lancée à la main), l&rsquo;exécution due n&rsquo;est <strong>pas perdue</strong>&nbsp;: elle est placée dans une <strong>file d&rsquo;attente</strong> et démarre automatiquement dès que l&rsquo;exécution en cours est terminée. Plusieurs horaires réglés à la même heure sont ainsi <strong>traités l&rsquo;un après l&rsquo;autre, chacun intégralement</strong>. L&rsquo;attente et le démarrage différé sont consignés dans le journal d&rsquo;erreurs (<code>3Kopier-Fehler.log</code>)&nbsp;; une exécution issue de la file est signalée par la mention <em>(depuis la file d&rsquo;attente)</em> dans sa fenêtre de progression.</p>
+  <p>Pour que cela fonctionne aussi <strong>sans surveillance</strong> (la nuit, par exemple), la fenêtre de résultat d&rsquo;une exécution planifiée n&rsquo;attend <strong>pas</strong> de «&nbsp;OK&nbsp;»&nbsp;: elle reste simplement ouverte et l&rsquo;exécution suivante de la file démarre automatiquement. Au matin, les fenêtres de résultat restées ouvertes montrent, l&rsquo;une après l&rsquo;autre, ce qui s&rsquo;est passé pendant la nuit.</p>
+  <div class="note">
+    <strong>L&rsquo;interruption ne touche que l&rsquo;exécution en cours&nbsp;:</strong> si une exécution est arrêtée par <strong>⏹ Stop</strong>, celles qui attendent dans la file se poursuivent ensuite tout à fait normalement &ndash; chacune dans sa propre fenêtre de progression avec son propre bouton <strong>⏹ Stop</strong>. Une exécution interrompue se reconnaît à la mention <strong>«&nbsp;FAZIT (ABGEBROCHEN)&nbsp;»</strong> en tête de son fichier journal.
+  </div>
+
+  <h2 id="arriereplan">Fonctionnement en arrière-plan, zone de notification &amp; démarrage automatique</h2>
+
+  <h3>Fermer la fenêtre</h3>
+  <p>S&rsquo;il existe au moins un horaire <strong>actif</strong>, le bouton (X) de la fenêtre principale ne ferme pas le programme &ndash; seule la fenêtre disparaît, le programme continue en arrière-plan (reconnaissable à l&rsquo;icône dans la zone de notification de la barre des tâches Windows). Le planificateur reste ainsi actif même si personne ne garde la fenêtre ouverte.</p>
+  <p>S&rsquo;il n&rsquo;existe <strong>aucun</strong> horaire actif, le bouton (X) quitte le programme normalement.</p>
+
+  <h3>Rouvrir la fenêtre</h3>
+  <p>Un clic droit sur l&rsquo;icône de la zone de notification ouvre un petit menu avec <strong>Ouvrir</strong> (affiche à nouveau la fenêtre) et <strong>Quitter</strong> (quitte définitivement le programme, même avec un horaire actif).</p>
+
+  <h3>Démarrage automatique</h3>
+  <p>Dès qu&rsquo;il existe au moins un horaire actif, 3Copier s&rsquo;inscrit automatiquement au démarrage de Windows &ndash; il se lance alors réduit en arrière-plan à l&rsquo;ouverture de session, sans afficher la fenêtre. Lorsque le dernier horaire actif est supprimé ou désactivé, l&rsquo;inscription au démarrage se retire tout aussi automatiquement.</p>
+
+  <h3>Une seule instance à la fois</h3>
+  <p>Si 3Copier est lancé une seconde fois alors qu&rsquo;une instance tourne déjà (y compris invisible en arrière-plan), <strong>aucune</strong> seconde fenêtre ne s&rsquo;ouvre. L&rsquo;instance déjà en cours est rendue visible à la place.</p>
+
+  <h2 id="cheminslongs">Chemins longs (MAX_PATH)</h2>
+  <p>Par défaut, Windows n&rsquo;autorise pas les chemins de fichiers de plus de 260 caractères (la <strong>limite MAX_PATH</strong>). Les fichiers dont le chemin cible est trop long ne peuvent être ni copiés ni déplacés &ndash; cela touche surtout les fichiers situés dans des dossiers très imbriqués aux noms longs, comme on en trouve souvent dans les dossiers de téléchargement.</p>
+
+  <p>3Copier détecte ces fichiers automatiquement et raccourcit le nom du fichier dans la cible autant qu&rsquo;il le faut pour que l&rsquo;opération aboutisse malgré tout.</p>
+
+  <div class="ok">
+    <strong>Raccourcissement automatique&nbsp;:</strong> si le chemin cible est trop long, le nom du fichier dans la cible est raccourci en premier &ndash; juste assez pour que le chemin reste sous 260 caractères. Si cela ne suffit pas, le dernier sous-dossier du chemin cible est raccourci à son tour. L&rsquo;extension du fichier est toujours conservée. Les noms raccourcis reçoivent la marque <code>-3k</code>, par exemple <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Le fichier source reste inchangé&nbsp;:</strong> seul le chemin cible est adapté. Le fichier d&rsquo;origine conserve son nom. Le chemin cible d&rsquo;origine et sa version raccourcie sont tous deux consignés dans le journal.
+  </div>
+
+  <div class="note">
+    <strong>À ne pas confondre &ndash; le raccourcissement à l&rsquo;affichage&nbsp;:</strong> avec des chemins source ou cible très longs, l&rsquo;affichage dans les champs des tâches est raccourci (début&hellip;fin), par exemple <code>H:\Download\&hellip;\Archive</code>. C&rsquo;est purement visuel&nbsp;: en interne, le chemin complet est toujours utilisé. Le chemin entier apparaît en info-bulle au passage de la souris.
+  </div>
+
+  <h2 id="resultat">Fenêtre de résultat</h2>
+  <p>Après chaque exécution terminée (ou interrompue), une fenêtre de résultat s&rsquo;ouvre &ndash; avec une colonne par tâche active, afin de voir d&rsquo;un coup d&rsquo;œil ce qui est allé où&nbsp;:</p>
+
+  <ul>
+    <li>Chaque colonne indique la <strong>source et la cible</strong> de la tâche ainsi que ses propres statistiques</li>
+    <li>En dessous, un <strong>récapitulatif global</strong> de toutes les tâches (volume de données, durée, nombre d&rsquo;erreurs)</li>
+    <li>En simulation, chaque ligne est formulée au conditionnel («&nbsp;seraient&nbsp;»), avec une mention claire indiquant que rien n&rsquo;a été modifié réellement</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Indication</th>
+      <th>Signification</th>
+    </tr>
+    <tr>
+      <td><strong>Copiés</strong></td>
+      <td>Nouveaux fichiers qui n&rsquo;existaient pas encore dans la cible et ont été copiés</td>
+    </tr>
+    <tr>
+      <td><strong>Écrasés</strong></td>
+      <td>Fichiers qui existaient déjà dans la cible et ont été mis à jour</td>
+    </tr>
+    <tr>
+      <td><strong>Déplacés</strong></td>
+      <td>Fichiers déplacés de la source vers la cible (option «&nbsp;Déplacer&nbsp;»)</td>
+    </tr>
+    <tr>
+      <td><strong>Ignorés</strong></td>
+      <td>Fichiers déjà plus récents dans la cible et laissés inchangés</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Raccourcis</strong></td>
+      <td>Fichiers dont le chemin cible dépassait la limite MAX_PATH et a été raccourci automatiquement (marque <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Exclus</strong></td>
+      <td>Fichiers et dossiers écartés d&rsquo;après la liste d&rsquo;exclusion (voir la section <a href="#exclusions">Exclusions</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Erreurs</strong></td>
+      <td>Fichiers ou tâches qui n&rsquo;ont pas pu être traités (détails à la fin du journal concerné)</td>
+    </tr>
+    <tr>
+      <td><strong>Données</strong></td>
+      <td>Volume de données traité (par tâche et au total)</td>
+    </tr>
+    <tr>
+      <td><strong>Durée</strong></td>
+      <td>Durée totale de la copie (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="journaux">Journaux</h2>
+  <p>Pour chaque exécution &ndash; manuelle ou planifiée, réelle ou simulée &ndash; un <strong>fichier journal distinct</strong> est créé dans le sous-dossier <code>Logs</code>, au lieu d&rsquo;un unique fichier qui grandirait sans fin.</p>
+
+  <h3>Nom de fichier</h3>
+  <p>Chaque fichier journal porte le nom <code>NomDuProfil_horodatage_type.log</code>, par exemple&nbsp;:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; une exécution réelle du profil «&nbsp;MMDownload&nbsp;»</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; une simulation du profil «&nbsp;3Test&nbsp;»</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; une exécution sans profil chargé</li>
+  </ul>
+  <p><strong>📋 Journal</strong> dans la fenêtre principale ouvre le dossier <code>Logs</code> directement dans l&rsquo;Explorateur Windows.</p>
+
+  <div class="note">
+    <strong>Les noms de fichiers restent identiques dans toutes les langues&nbsp;:</strong> une exécution sans profil est toujours enregistrée sous <code>Manuell</code>, et les fichiers de réglages conservent également leurs noms allemands. C&rsquo;est voulu&nbsp;: une même installation retrouve ainsi ses réglages, profils et filtres après un changement de langue, et un journal que vous envoyez reste immédiatement lisible.
+  </div>
+
+  <h3>Contenu d&rsquo;un fichier journal</h3>
+  <ul>
+    <li>Le <strong>bilan</strong>, avec les statistiques globales et la durée, se trouve tout en haut &ndash; le résultat est visible sans faire défiler</li>
+    <li>Date, heure et nom du profil de l&rsquo;exécution</li>
+    <li>Source et cible de chaque tâche ainsi que les options choisies</li>
+    <li>Une <strong>ligne de synthèse par tâche</strong> (actions et volume de données)&nbsp;; en mode <em>Détaillé</em>, en plus un <strong>récapitulatif par dossier</strong> au lieu d&rsquo;une ligne par fichier (voir <a href="#reglages">Réglages &rarr; Niveau de détail du journal</a>)</li>
+    <li>Si des erreurs sont survenues, elles figurent en outre dans une section distincte <strong>«&nbsp;=== FEHLER ===&nbsp;»</strong> tout à la fin du fichier &ndash; intégralement, dans les deux modes</li>
+  </ul>
+
+  <div class="note">
+    <strong>Conservation&nbsp;:</strong> la durée de conservation des journaux avant leur suppression automatique se règle sous <a href="#reglages">Réglages</a> (1 jour à 365 jours, ou illimité).
+  </div>
+
+  <h3>⚠ Journal d&rsquo;erreurs (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Ce fichier distinct, situé dans le dossier du programme (accessible par <strong>⚠ Erreurs</strong>), ne contient que des <strong>erreurs du programme</strong> qui ne se rapportent à aucune copie précise &ndash; par exemple lorsque le module de planification n&rsquo;a pas pu être chargé. Les erreurs survenues pendant une copie figurent, comme décrit ci-dessus, à la fin du journal de l&rsquo;exécution concernée.</p>
+
+  <div class="ok">
+    <strong>Fichier INI (<code>3Kopier.ini</code>)&nbsp;:</strong> tous les réglages sont enregistrés automatiquement à la fermeture du programme et rétablis au démarrage suivant &ndash; parmi eux les chemins source et cible, l&rsquo;état actif des trois tâches, les options <em>Écraser</em> et <em>Déplacer</em> par tâche, l&rsquo;option <em>Arrêter</em>, les derniers dossiers source et cible utilisés dans les boîtes de dialogue, le <em>palier de mise à l&rsquo;échelle</em> choisi, la <em>langue</em> réglée, le délai de conservation des journaux ainsi que le <em>niveau de détail du journal</em> (compact/détaillé). Aucune configuration manuelle n&rsquo;est nécessaire.
+  </div>
+
+  <div class="note">
+    <strong>Profils (fichiers <code>.3ko</code>)&nbsp;:</strong> l&rsquo;enregistrement d&rsquo;un profil conserve tous les chemins, l&rsquo;état actif ainsi que les options <em>Écraser</em> et <em>Déplacer</em> de chaque tâche. L&rsquo;option <em>Arrêter</em> est un réglage global&nbsp;: elle est enregistrée uniquement dans le fichier INI, pas dans le profil.
+  </div>
+
+  <div class="note">
+    <strong>Fichier d&rsquo;horaires (<code>3Kopier-Zeitplan.ini</code>)&nbsp;:</strong> tous les horaires créés (profil, déclencheur, mode silencieux, état actif) y sont enregistrés et rechargés automatiquement au démarrage suivant.
+  </div>
+
+  <h3>Vue d&rsquo;ensemble&nbsp;: fichiers &amp; dossiers du répertoire du programme</h3>
+  <p>Tous les fichiers et dossiers suivants sont créés automatiquement pendant l&rsquo;utilisation &ndash; aucun ne doit être créé à la main ni livré avec le programme&nbsp;:</p>
+
+  <table>
+    <tr>
+      <th>Fichier / dossier</th>
+      <th>Contenu</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Réglages généraux&nbsp;: champs des tâches, options, derniers dossiers utilisés, mise à l&rsquo;échelle, langue, délai de conservation</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Tous les horaires créés, avec profil, déclencheur, mode silencieux et état actif</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Erreurs du programme ne se rapportant à aucune copie précise</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (dossier)</td>
+      <td>Un fichier journal par exécution &ndash; voir <a href="#journaux">Journaux</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Les profils que vous créez (un fichier par nom de profil)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Cet outil vous a-t-il été utile&nbsp;?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Copier est développé et entretenu gratuitement.<br>
+      Un petit don aide à le faire évoluer. Merci beaucoup&nbsp;! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Faire un don via PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Copier &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Auteur&nbsp;: Hans Udo Sattler
+</footer>
+
+</body>
+</html>
