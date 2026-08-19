@@ -2,6 +2,14 @@
 
 Alle nennenswerten Änderungen an S-IT-3Kopier, neueste zuerst.
 
+## v3.3.2.9 — August 2026 · Internationale Fassung
+
+- **Neu:** Das Tool spricht vier Sprachen – Deutsch, Englisch, Französisch und Spanisch. Die Sprache wird bei der Installation gewählt und lässt sich jederzeit unter ⚙ umstellen; die Auswahl zeigt zu jeder Sprache die zugehörige Flagge. Der Programmname wechselt mit: 3Kopier, 3Copy, 3Copier, 3Copiar.
+- Übersetzt sind Oberfläche, alle Dialoge, die Meldungen während des Kopierens, die Zeitsteuerung und die Protokolle. Zu jeder Sprache gibt es eine eigene Hilfeseite; die Seiten sind untereinander verlinkt.
+- Dateinamen und Einstellungen bleiben in allen Sprachen gleich (`3Kopier.ini`, Profile als `.3ko`, Ordner `Logs`) – ein Sprachwechsel ändert nichts an vorhandenen Profilen, Filtern und Einstellungen.
+- **Verbessert:** Die Einstellungen (⚙) stehen jetzt zweispaltig – links Sprache und Skalierung, rechts Protokoll-Aufbewahrung und -Umfang. Das Fenster ist dadurch deutlich niedriger und passt auch bei hoher Skalierung vollständig auf den Bildschirm.
+- **Verbessert:** Die Knöpfe der Profilleiste richten sich nach der Länge ihrer Beschriftung, damit der Text in jeder Sprache genügend Rand hat.
+
 ## v3.3.2.8 — August 2026
 
 - **Neu:** Zeitstempel-Toleranz gegen Drift auf NAS- und Netzlaufwerken – im Modus „nur wenn neuer" werden unveränderte Dateien nicht mehr durch Sekunden-Abweichungen der Zeitstempel fälschlich als neuer erkannt und bei jedem Lauf neu kopiert (Toleranz von 2 Sekunden, wie bei Robocopy /FFT).

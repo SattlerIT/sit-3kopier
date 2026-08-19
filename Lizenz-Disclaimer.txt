@@ -1,0 +1,256 @@
+======================================================================
+ S-IT-3Kopier / 3Copy / 3Copier / 3Copiar
+ Lizenz und Haftungsausschluss
+ License and disclaimer - Licence et clause de non-responsabilite
+ Licencia y aviso legal
+ (c) 2026 Sattler IT-Service, Greifenstein - Hans Udo Sattler
+======================================================================
+
+ DEUTSCH .... Seite 1        FRANCAIS ... Seite 3
+ ENGLISH .... Seite 2        ESPANOL .... Seite 4
+
+
+======================================================================
+ DEUTSCH
+======================================================================
+
+LIZENZ - S-IT-3Kopier
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - kostenlose Nutzung und Weitergabe erlaubt.
+Kommerzielle Weiterverwendung oder Modifikation ohne
+Genehmigung nicht gestattet.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+HAFTUNGSAUSSCHLUSS (DISCLAIMER)
+
+Alle Angaben ohne Gewaehr. Irrtuemer vorbehalten.
+
+S-IT-3Kopier ist ein kostenloses Werkzeug zum Kopieren von
+Dateien und Ordnern, wahlweise manuell oder automatisch nach
+Zeitplan. Das Tool arbeitet nach bestem Wissen zuverlaessig,
+eine fehlerfreie Funktion auf jedem System und in jeder
+Konstellation kann jedoch nicht zugesichert werden.
+
+1. Keine Zusicherung der Vollstaendigkeit
+   Kopiervorgaenge, insbesondere automatisierte Laeufe nach
+   Zeitplan, sind keine Zusicherung dafuer, dass alle Dateien
+   vollstaendig, unveraendert und fehlerfrei uebertragen wurden.
+   Netzwerkprobleme, nicht erreichbare Laufwerke, gesperrte
+   Dateien oder Systemfehler koennen einzelne Kopiervorgaenge
+   beeintraechtigen oder verhindern.
+
+2. Kein Ersatz fuer ein Backup-Konzept
+   S-IT-3Kopier kopiert Dateien, ist aber kein vollwertiges
+   Backup-Programm mit Versionierung oder Wiederherstellungs-
+   Garantie. Es ersetzt kein durchdachtes, redundantes
+   Sicherungskonzept.
+
+3. Nutzung auf eigene Verantwortung
+   Die Verwendung des Tools, insbesondere die Einrichtung von
+   Zeitplaenen mit automatischem Ueberschreiben oder Verschieben
+   von Dateien, erfolgt auf eigene Verantwortung. Fuer Ergebnisse
+   und Entscheidungen, die auf Basis der Kopiervorgaenge oder
+   Protokolle getroffen werden, wird keine Verantwortung
+   uebernommen.
+
+4. Haftungsausschluss
+   Eine Haftung fuer Schaeden, Datenverluste oder Vermoegens-
+   schaeden, die aus der Nutzung des Tools oder seiner Ergebnisse
+   entstehen, ist - soweit gesetzlich zulaessig - ausgeschlossen.
+
+5. Backups bleiben unerlaesslich
+   Verlassen Sie sich bei wichtigen Daten nicht allein auf
+   S-IT-3Kopier. Erstellen Sie unabhaengig davon regelmaessig
+   unabhaengige Sicherungskopien Ihrer Daten.
+
+----------------------------------------------------------------------
+Kontakt:       tool-entwicklung@sattler-it.de
+Projektseite:  https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ ENGLISH
+======================================================================
+
+LICENCE - S-IT-3Copy
+(c) 2026 Sattler IT-Service, Greifenstein
+Author: Hans Udo Sattler
+
+Freeware - free to use and to pass on.
+Commercial reuse or modification is not permitted without
+permission.
+Contact: tool-entwicklung@sattler-it.de
+
+
+DISCLAIMER
+
+All information is provided without warranty. Errors excepted.
+
+S-IT-3Copy is a free tool for copying files and folders,
+either manually or automatically on a schedule. The tool works
+reliably to the best of our knowledge; faultless operation on
+every system and in every constellation cannot, however, be
+guaranteed.
+
+1. No assurance of completeness
+   Copy runs, and automated scheduled runs in particular, are
+   no assurance that all files have been transferred completely,
+   unchanged and without error. Network problems, unreachable
+   drives, locked files or system faults can impair or prevent
+   individual copy runs.
+
+2. No substitute for a backup strategy
+   S-IT-3Copy copies files, but it is not a full backup program
+   with versioning or a restore guarantee. It does not replace a
+   well-considered, redundant backup strategy.
+
+3. Use at your own responsibility
+   Using the tool - and setting up schedules that automatically
+   overwrite or move files in particular - is at your own
+   responsibility. No responsibility is accepted for results or
+   decisions based on the copy runs or the logs.
+
+4. Exclusion of liability
+   Liability for damage, data loss or financial loss arising
+   from the use of the tool or its results is excluded as far as
+   the law permits.
+
+5. Backups remain essential
+   Do not rely on S-IT-3Copy alone for important data. Create
+   independent backup copies of your data regularly, separately
+   from this tool.
+
+----------------------------------------------------------------------
+Contact:      tool-entwicklung@sattler-it.de
+Project page: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ FRANCAIS
+======================================================================
+
+LICENCE - S-IT-3Copier
+(c) 2026 Sattler IT-Service, Greifenstein
+Auteur : Hans Udo Sattler
+
+Logiciel gratuit - utilisation et diffusion libres et gratuites.
+Toute reutilisation commerciale ou modification sans
+autorisation est interdite.
+Contact : tool-entwicklung@sattler-it.de
+
+
+CLAUSE DE NON-RESPONSABILITE
+
+Toutes les indications sont donnees sans garantie. Sauf erreur.
+
+S-IT-3Copier est un outil gratuit de copie de fichiers et de
+dossiers, au choix manuellement ou automatiquement selon un
+horaire. L'outil fonctionne de maniere fiable en l'etat des
+connaissances ; un fonctionnement exempt d'erreur sur chaque
+systeme et dans chaque configuration ne peut toutefois pas
+etre garanti.
+
+1. Aucune garantie d'exhaustivite
+   Les copies, et en particulier les executions automatiques
+   planifiees, ne garantissent pas que tous les fichiers ont ete
+   transferes integralement, sans modification et sans erreur.
+   Des problemes de reseau, des lecteurs inaccessibles, des
+   fichiers verrouilles ou des defauts du systeme peuvent
+   perturber ou empecher certaines copies.
+
+2. Ne remplace pas une strategie de sauvegarde
+   S-IT-3Copier copie des fichiers, mais n'est pas un programme
+   de sauvegarde complet avec versionnage ni garantie de
+   restauration. Il ne remplace pas une strategie de sauvegarde
+   reflechie et redondante.
+
+3. Utilisation sous votre propre responsabilite
+   L'utilisation de l'outil - et en particulier la creation
+   d'horaires qui ecrasent ou deplacent automatiquement des
+   fichiers - se fait sous votre propre responsabilite. Aucune
+   responsabilite n'est assumee pour les resultats et les
+   decisions fondes sur les copies ou sur les journaux.
+
+4. Exclusion de responsabilite
+   Toute responsabilite pour des dommages, des pertes de donnees
+   ou des prejudices financiers resultant de l'utilisation de
+   l'outil ou de ses resultats est exclue dans les limites
+   permises par la loi.
+
+5. Les sauvegardes restent indispensables
+   Pour vos donnees importantes, ne vous fiez pas au seul
+   S-IT-3Copier. Creez regulierement, et independamment de cet
+   outil, des copies de sauvegarde de vos donnees.
+
+----------------------------------------------------------------------
+Contact :          tool-entwicklung@sattler-it.de
+Page du projet :   https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ ESPANOL
+======================================================================
+
+LICENCIA - S-IT-3Copiar
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Software gratuito: uso y distribucion libres y sin coste.
+No se permite la reutilizacion comercial ni la modificacion
+sin autorizacion.
+Contacto: tool-entwicklung@sattler-it.de
+
+
+AVISO LEGAL
+
+Todos los datos se facilitan sin garantia. Salvo error.
+
+S-IT-3Copiar es una herramienta gratuita para copiar archivos
+y carpetas, ya sea manualmente o de forma automatica segun un
+horario. La herramienta funciona de manera fiable segun nuestro
+mejor saber; no obstante, no puede garantizarse un
+funcionamiento sin errores en todos los sistemas y en todas las
+configuraciones.
+
+1. Sin garantia de integridad
+   Las copias, y en especial las ejecuciones automaticas
+   programadas, no garantizan que todos los archivos se hayan
+   transferido de forma completa, sin cambios y sin errores.
+   Problemas de red, unidades inaccesibles, archivos bloqueados
+   o fallos del sistema pueden afectar o impedir determinadas
+   copias.
+
+2. No sustituye a un plan de copias de seguridad
+   S-IT-3Copiar copia archivos, pero no es un programa completo
+   de copia de seguridad con versionado ni garantia de
+   restauracion. No sustituye a un plan de respaldo meditado y
+   redundante.
+
+3. Uso bajo su propia responsabilidad
+   El uso de la herramienta, y en particular la creacion de
+   horarios que sobrescriben o mueven archivos automaticamente,
+   corre por su propia cuenta. No se asume responsabilidad
+   alguna por los resultados ni por las decisiones que se tomen
+   a partir de las copias o de los registros.
+
+4. Exclusion de responsabilidad
+   Queda excluida, en la medida en que lo permita la ley, toda
+   responsabilidad por danos, perdidas de datos o perjuicios
+   economicos derivados del uso de la herramienta o de sus
+   resultados.
+
+5. Las copias de seguridad siguen siendo imprescindibles
+   Para los datos importantes, no confie unicamente en
+   S-IT-3Copiar. Cree con regularidad copias de seguridad
+   independientes de sus datos, al margen de esta herramienta.
+
+----------------------------------------------------------------------
+Contacto:         tool-entwicklung@sattler-it.de
+Pagina del proyecto: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
