@@ -521,7 +521,7 @@
 
   <!-- DOWNLOAD -->
   <div class="section-title">⬇ Download &amp; Dokumentation</div>
-  <p style="font-size:14px; margin-bottom:16px;">Die aktuelle Version und die Hilfe-Dateien findest du im <a href="https://github.com/SattlerIT/sit-3kopier/releases" style="color:var(--blue)">Release-Bereich auf GitHub</a>. Die Hilfe gibt es in vier Sprachen – siehe <a href="#" onclick="document.querySelectorAll('.section-title')[1].scrollIntoView({behavior:'smooth'});return false;" style="color:var(--blue)">Vier Sprachen</a>.</p>
+  <p style="font-size:14px; margin-bottom:16px;">Die aktuelle Version und die Hilfe-Datei findest du im <a href="https://github.com/SattlerIT/sit-3kopier/releases" style="color:var(--blue)">Release-Bereich auf GitHub</a>.</p>
 
   <div class="ok-box">
     <strong>Portabel:</strong> Einfach die ZIP entpacken – kein Installer erforderlich. Das Tool läuft direkt aus dem entpackten Verzeichnis oder von einem USB-Stick. Die INI-Datei und Profile werden automatisch im Programmverzeichnis angelegt.
@@ -566,54 +566,15 @@
         <li>Verbessert: Neues Setup – es erkennt die Windows-Sprache und stellt sich darauf ein; oben rechts lässt sich eine andere wählen</li>
       </ul>
     </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v3.3.2.8 <span>August 2026</span></div>
-      <ul>
-        <li>Neu: Zeitstempel-Toleranz gegen Drift auf NAS- und Netzlaufwerken – im Modus „nur wenn neuer" werden unveränderte Dateien nicht mehr durch Sekunden-Abweichungen der Zeitstempel fälschlich als neuer erkannt und bei jedem Lauf neu kopiert (Toleranz von 2 Sekunden, wie bei Robocopy /FFT)</li>
-        <li>Neu: 🛡-Symbol je Profil (neben 🚫) – stellt diese Toleranz ein (Automatisch / Immer / Aus); „Automatisch" wirkt nur bei <code>\\</code>-Netzwerkpfaden und ist voreingestellt, „Immer" hilft bei als Laufwerksbuchstabe eingebundenen Netzlaufwerken (<code>X:</code>, <code>Y:</code> …)</li>
-        <li>Verbessert: Pfade in der Auftragsübersicht werden nicht mehr am Rand abgeschnitten, sondern sauber gekürzt angezeigt (Anfang…Ende); der vollständige Pfad steht im Tooltip</li>
-        <li>Behoben: Das Aktionsfenster ließ sich beim Start aus dem geöffneten Zeitsteuerungs-Fenster nicht minimieren; das Schließen-Kreuz (X) wirkt jetzt wie ⏹ Stop und bricht nur diesen einen Lauf sauber ab</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v3.3.2 <span>Juli 2026</span></div>
-      <ul>
-        <li>Neu: Geschwindigkeitsanzeige – die Statuszeile zeigt während des Kopierens die aktuelle Übertragungsrate (z. B. <code>157.4 MB/s</code>), auch im Fortschrittsfenster der Zeitsteuerung</li>
-        <li>Neu: Auftragsfilter (🔰) je Auftrag – zusätzliche Ausschlüsse nur für diesen Auftrag oder eine NUR-Regel („nur bestimmte Dateitypen kopieren"), z. B. Auftrag 1 nur <code>*.pdf</code>. Das 🔰-Symbol wird grün, sobald eine Regel gesetzt ist; profilweite Ausschlüsse gelten weiterhin zusätzlich</li>
-        <li>Neu: Protokoll-Umfang wählbar (⚙) – <strong>Kompakt</strong> (Voreinstellung) mit einer Summenzeile je Auftrag, <strong>Ausführlich</strong> mit einer Zeile je Verzeichnis; Fehler stehen immer vollständig im Protokoll</li>
-        <li>Neu: Warteschlange für die Zeitsteuerung – kollidierende Läufe gehen nicht mehr verloren, sondern laufen nacheinander; Ergebnisfenster blockieren den nächsten Lauf nicht, ⏹ Stop bricht nur den laufenden ab. Das Aktionsfenster erscheint auch im Tray-Betrieb und lässt sich minimieren; Abbrüche stehen im Protokoll als „FAZIT (ABGEBROCHEN)"</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v3.3.1 <span>Juli 2026 &middot; Wechsel auf Python</span></div>
-      <ul>
-        <li>Kompletter Wechsel von AutoIt auf Python – Bedienung und Ablauf unverändert, bestehende <code>3Kopier.ini</code>- und <code>.3ko</code>-Profildateien funktionieren ohne Anpassung weiter</li>
-        <li>Kopiervorgänge laufen im Hintergrund – die Oberfläche bleibt auch bei sehr vielen Dateien oder langsamen Netzlaufwerken reaktionsfähig; blockweise Kopie, „Stop" wirkt sofort</li>
-        <li>Neu: automatische Zeitsteuerung – Profile nach Zeitplan im Hintergrund ausführen, inklusive Silent-Modus und Tray-Betrieb mit Autostart</li>
-        <li>Neu: Ausschluss-Liste – Dateien und ganze Ordner (Browser-Caches, temporäre Dateien, große Image-Formate) vom Kopieren ausnehmen; mit Vorgaben ab Werk, pro Profil anpassbar</li>
-        <li>Neu: Ruhemodus nach dem Kopieren als Alternative zum Herunterfahren (beide Optionen schließen sich gegenseitig aus)</li>
-        <li>Neue Einstellungen (⚙): Skalierung 90–200 %, Protokoll-Aufbewahrung (1 Tag bis unbegrenzt) mit Sofort-Aufräumen; Protokolle jetzt als eigene Datei je Lauf im Ordner <code>Logs</code></li>
-        <li>Ergebnisfenster überarbeitet (eigene Spalte je Auftrag); Profil-Dropdown lädt sofort ohne „Laden"-Knopf; sehr lange Pfade werden verkürzt angezeigt (Anfang…Ende), voller Pfad im Tooltip</li>
-        <li>Netzwerk-/NAS-Pfade (UNC) verbessert, Datenmengen-Berechnung ohne Einfrieren; Ergebnis-Fazit steht jetzt oben; kleinere Layout-Korrekturen; <code>Lizenz.txt</code> liegt bei</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v3.2.1 <span>AutoIt-Version</span></div>
-      <ul>
-        <li>Automatische Behandlung langer Pfade (MAX_PATH): Zielpfade ab 260 Zeichen werden automatisch gekürzt – zuerst der Dateiname, bei Bedarf auch der letzte Unterordner. Gekürzte Namen erhalten die Markierung <code>-3k</code></li>
-        <li>Datenmenge auch bei langen Pfaden korrekt in Anzeige und Fortschrittsbalken berücksichtigt</li>
-        <li>Log-Größe automatisch auf 512 KB begrenzt – älteste Einträge werden entfernt, aktuelle Läufe bleiben erhalten</li>
-      </ul>
-    </div>
-    <div class="changelog-entry">
-      <div class="changelog-version">v3.2.0 <span>AutoIt-Version</span></div>
-      <ul>
-        <li>Überschreiben/Verschieben-Optionen je Auftrag werden jetzt sowohl in der INI als auch in <code>.3ko</code>-Profilen gesichert</li>
-        <li>Zielverzeichnisse werden vor der Prüfung angelegt; Netzwerkpfade werden bei der Datenmengenberechnung übersprungen, ohne einzufrieren</li>
-        <li>Optische Korrekturen: Header-Abstände, Label-Breiten und Checkbox-Positionen überarbeitet</li>
-      </ul>
-    </div>
   </div>
+
+  <p style="font-size:13px; color:var(--muted); margin:-8px 0 24px 0;">
+    Alle früheren Versionen stehen im vollständigen Änderungsverlauf –
+    <a href="CHANGELOG.md" style="color:var(--blue)">Deutsch</a> ·
+    <a href="CHANGELOG-en.md" style="color:var(--blue)">English</a> ·
+    <a href="CHANGELOG-fr.md" style="color:var(--blue)">Français</a> ·
+    <a href="CHANGELOG-es.md" style="color:var(--blue)">Español</a>
+  </p>
 
   <!-- ERWÄHNUNGEN -->
   <div class="section-title" style="margin-top:32px">🏆 Erwähnungen &amp; Reviews</div>
@@ -730,6 +691,37 @@
                   font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
                   text-decoration:none">
           → Zum Artikel auf MSN
+        </a>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:6px;
+                padding:22px 24px;display:flex;align-items:center;gap:24px;
+                box-shadow:0 2px 8px rgba(0,0,0,.06)">
+      <div style="flex-shrink:0;text-align:center;width:88px">
+        <div style="font-size:30px;line-height:1">🖧</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.3">
+          Fachmagazin<br>Administration
+        </div>
+      </div>
+      <div style="flex:1;border-left:3px solid var(--border);padding-left:20px">
+        <div style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px">
+          IT-Administrator
+        </div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+          Im Downloadbereich des Magazins für professionelle System- und
+          Netzwerkadministration vorgestellt. Hervorgehoben werden die drei unabhängigen
+          Quelle-Ziel-Paare, die Warteschlange bei sich überschneidenden Zeitplänen und
+          dass 3Kopier ohne proprietäre Archive arbeitet: „Dadurch bleiben die gesicherten
+          Daten auch ohne S-IT-3Kopier unmittelbar zugänglich.“ Eingeordnet wird das Tool
+          dort als schlankes Werkzeug für automatisierte Dateiübertragungen.
+        </div>
+        <a href="https://www.it-administrator.de/downloads/3Kopier"
+           target="_blank"
+           style="display:inline-block;background:var(--blue);color:#fff;
+                  font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
+                  text-decoration:none">
+          → Zum Eintrag beim IT-Administrator
         </a>
       </div>
     </div>
