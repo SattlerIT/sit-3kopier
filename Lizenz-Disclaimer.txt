@@ -1,13 +1,14 @@
 ======================================================================
- S-IT-3Kopier / 3Copy / 3Copier / 3Copiar
+ S-IT-3Kopier / 3Copy / 3Copier / 3Copiar / 3Kopieer / 3Copia
  Lizenz und Haftungsausschluss
  License and disclaimer - Licence et clause de non-responsabilite
  Licencia y aviso legal
  (c) 2026 Sattler IT-Service, Greifenstein - Hans Udo Sattler
 ======================================================================
 
- DEUTSCH .... Seite 1        FRANCAIS ... Seite 3
- ENGLISH .... Seite 2        ESPANOL .... Seite 4
+ DEUTSCH .... Seite 1        ESPANOL .... Seite 4
+ ENGLISH .... Seite 2        NEDERLANDS . Seite 5
+ FRANCAIS ... Seite 3        ITALIANO ... Seite 6
 
 
 ======================================================================
@@ -253,4 +254,124 @@ configuraciones.
 ----------------------------------------------------------------------
 Contacto:         tool-entwicklung@sattler-it.de
 Pagina del proyecto: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ NEDERLANDS
+======================================================================
+
+LICENTIE - S-IT-3Kopieer
+(c) 2026 Sattler IT-Service, Greifenstein
+Auteur: Hans Udo Sattler
+
+Freeware - gratis gebruik en verspreiding toegestaan.
+Commercieel hergebruik of wijziging zonder toestemming is niet
+toegestaan.
+Contact: tool-entwicklung@sattler-it.de
+
+
+DISCLAIMER
+
+Alle gegevens onder voorbehoud. Vergissingen voorbehouden.
+
+S-IT-3Kopieer is een gratis hulpprogramma voor het kopieren van
+bestanden en mappen, met de hand of automatisch volgens een schema.
+Het programma werkt naar beste weten betrouwbaar; een foutloze
+werking op elk systeem en in elke situatie kan echter niet worden
+gegarandeerd.
+
+1. Geen garantie op volledigheid
+   Kopieertaken, en zeker geplande taken die vanzelf lopen, zijn
+   geen garantie dat alle bestanden volledig, ongewijzigd en
+   foutloos zijn overgezet. Netwerkproblemen, onbereikbare
+   schijven, vergrendelde bestanden of systeemfouten kunnen
+   afzonderlijke taken verstoren of verhinderen.
+
+2. Geen vervanging van een backupstrategie
+   S-IT-3Kopieer kopieert bestanden, maar is geen volwaardig
+   backupprogramma met versiebeheer of garantie op herstel. Het
+   vervangt geen doordachte, redundante backupstrategie.
+
+3. Gebruik op eigen verantwoordelijkheid
+   Het gebruik van het programma, en in het bijzonder het
+   instellen van schema's die bestanden automatisch overschrijven
+   of verplaatsen, gebeurt op eigen verantwoordelijkheid. Voor
+   resultaten en beslissingen op basis van de kopieertaken of de
+   logboeken wordt geen verantwoordelijkheid aanvaard.
+
+4. Uitsluiting van aansprakelijkheid
+   Aansprakelijkheid voor schade, gegevensverlies of financieel
+   nadeel die voortkomen uit het gebruik van het programma of van
+   de resultaten ervan is uitgesloten, voor zover de wet dat
+   toelaat.
+
+5. Backups blijven onmisbaar
+   Vertrouw bij belangrijke gegevens niet alleen op
+   S-IT-3Kopieer. Maak daarnaast regelmatig zelfstandige
+   reservekopieen van uw gegevens.
+
+----------------------------------------------------------------------
+Contact:        tool-entwicklung@sattler-it.de
+Projectpagina:  https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ ITALIANO
+======================================================================
+
+LICENZA - S-IT-3Copia
+(c) 2026 Sattler IT-Service, Greifenstein
+Autore: Hans Udo Sattler
+
+Software gratuito - uso e distribuzione liberi e gratuiti.
+Non e consentito il riutilizzo commerciale ne la modifica senza
+autorizzazione.
+Contatto: tool-entwicklung@sattler-it.de
+
+
+ESCLUSIONE DI RESPONSABILITA
+
+Tutti i dati sono forniti senza garanzia. Salvo errori.
+
+S-IT-3Copia e uno strumento gratuito per copiare file e cartelle,
+a mano oppure in automatico secondo una pianificazione. Il
+programma funziona in modo affidabile secondo scienza e coscienza;
+non e tuttavia possibile garantire un funzionamento privo di errori
+su ogni sistema e in ogni configurazione.
+
+1. Nessuna garanzia di completezza
+   Le copie, e in particolare le esecuzioni automatiche
+   pianificate, non garantiscono che tutti i file siano stati
+   trasferiti in modo completo, immutato e senza errori. Problemi
+   di rete, unita non raggiungibili, file bloccati o guasti del
+   sistema possono compromettere o impedire singole copie.
+
+2. Non sostituisce un piano di backup
+   S-IT-3Copia copia file, ma non e un programma di backup
+   completo con versionamento o garanzia di ripristino. Non
+   sostituisce un piano di sicurezza ponderato e ridondante.
+
+3. Uso sotto la propria responsabilita
+   L'uso del programma, e in particolare la creazione di
+   pianificazioni che sovrascrivono o spostano file in automatico,
+   avviene sotto la propria responsabilita. Non si assume alcuna
+   responsabilita per i risultati e per le decisioni prese in base
+   alle copie o ai registri.
+
+4. Esclusione di responsabilita
+   E esclusa, nei limiti consentiti dalla legge, ogni
+   responsabilita per danni, perdite di dati o pregiudizi
+   economici derivanti dall'uso del programma o dei suoi
+   risultati.
+
+5. Le copie di sicurezza restano indispensabili
+   Per i dati importanti non si affidi soltanto a S-IT-3Copia.
+   Crei con regolarita copie di sicurezza indipendenti dei suoi
+   dati.
+
+----------------------------------------------------------------------
+Contatto:  tool-entwicklung@sattler-it.de
+Progetto:  https://sattlerit.github.io/sit-3kopier/
 ----------------------------------------------------------------------
