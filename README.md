@@ -1,60 +1,74 @@
 # S-IT-3Kopier
 
-**Portabler Dreifach-Kopierer mit Profilen, Protokoll und Zeitsteuerung für Windows**
+**Portable triple copy tool with profiles, logging and a scheduler — for Windows**
 
-Bis zu drei unabhängige Kopier- oder Verschiebe-Aufträge in einem einzigen Durchlauf –
-ideal zum Verteilen von Dateien auf NAS-Laufwerke, USB-Sticks oder Cloud-Verzeichnisse.
-Beliebig viele Profile lassen sich zusätzlich automatisch nach Zeitplan im Hintergrund
-ausführen – effektiv unbegrenzt viele automatisierte Kopieraufgaben.
+Up to three independent copy or move jobs in a single run — ideal for distributing files
+to NAS drives, USB sticks or cloud folders. On top of that, any number of profiles can
+run automatically in the background on a schedule, which means the number of automated
+copy tasks is effectively unlimited.
+
+🇩🇪 **[Diese Seite auf Deutsch](README_DE.md)**
+
+---
+
+![S-IT-3Kopier screenshot](screenshot-3kopier.png)
 
 ---
 
-![S-IT-3Kopier Screenshot](screenshot-3kopier.png)
+## Six languages
 
----
+The interface, all dialogs, the scheduler, the logs and the help pages are available in
+**German, English, French, Spanish, Dutch and Italian**. The language is chosen during
+installation and can be changed at any time under ⚙. The program name changes with it:
+3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia.
+
+File names and settings stay the same in every language (`3Kopier.ini`, profiles as
+`.3ko`, folder `Logs`), so switching language leaves your profiles, filters and settings
+untouched.
 
 ## Features
 
-- 📋 **Drei Aufträge** – Quelle, Ziel und Optionen je Auftrag unabhängig konfigurierbar
-- ⚙️ **Optionen pro Auftrag** – Überschreiben (immer oder nur wenn neuer) und Verschieben
-- 💾 **Profile** – Konfigurationen als `.3ko`-Dateien speichern, Auswahl im Dropdown lädt sofort
-- 📊 **Blockweise Kopie & echter Fortschritt** – Fortschrittsbalken bewegt sich auch innerhalb einer einzelnen großen Datei, „Stop" wirkt sofort
-- 🕐 **Automatische Zeitsteuerung** – Profile nach Zeitplan (täglich, an bestimmten Wochentagen oder im Intervall) im Hintergrund ausführen
-- 🔇 **Silent-Modus** – automatische Läufe komplett ohne Fenster, Meldung nur bei echten Fehlern
-- 🗔 **Eigenständiges Aktionsfenster** – Hauptfenster bleibt während automatischer Läufe unberührt
-- 📌 **Tray & Autostart** – läuft bei aktivem Zeitplan im Hintergrund weiter, startet bei Bedarf automatisch mit Windows
-- 🖥 **Skalierbare Oberfläche** – feste Stufen von 90–200 %, einstellbare Protokoll-Aufbewahrung
-- 💻 **Herunterfahren** – optional nach fehlerfreiem Abschluss
-- 🔄 **Einstellungen merken** – alle Pfade und Optionen werden beim Beenden gespeichert
+- 📋 **Three jobs** — source, target and options configurable independently for each job
+- ⚙️ **Options per job** — overwrite (always or only if newer) and move
+- 💾 **Profiles** — save configurations as `.3ko` files; picking one from the list loads it straight away
+- 📊 **Block-wise copying and real progress** — the progress bar keeps moving even inside a single large file, and "Stop" takes effect immediately
+- 🕐 **Scheduler** — run profiles in the background on a schedule (daily, on selected weekdays or at an interval)
+- 🔇 **Silent mode** — automatic runs without any window at all; a message appears only on real errors
+- 🗔 **Separate run window** — the main window stays untouched while a scheduled run is in progress
+- 📌 **Tray and autostart** — keeps running in the background while a schedule is active, and starts with Windows when needed
+- 🖥 **Scalable interface** — fixed steps from 90 % to 200 %, adjustable log retention
+- 💻 **Shut down** — optional, after a run that finished without errors
+- 🔄 **Settings remembered** — all paths and options are stored when the program closes
 
 ## Download
 
-➡️ **[Aktuelle Version herunterladen](https://github.com/SattlerIT/sit-3kopier/releases)**
+➡️ **[Download the current version](https://github.com/SattlerIT/sit-3kopier/releases)**
 
-ZIP entpacken – kein Installer erforderlich. Läuft direkt aus dem Verzeichnis oder vom USB-Stick.
+Unpack the ZIP — no installer required. Runs straight from the folder or from a USB stick.
+A setup version is available as well if you prefer an entry in the Windows program list.
 
-## Systemanforderungen
+## System requirements
 
-- Windows 10 / Windows 11 (64-Bit)
-- Keine Administratorrechte erforderlich
-- Keine Installation – ZIP entpacken und starten
+- Windows 10 / Windows 11 (64-bit)
+- No administrator rights required
+- No installation — unpack the ZIP and start
 
-## Weitere Informationen
+## More information
 
-📄 **[Zur Projektseite](https://sattlerit.github.io/sit-3kopier/)**
+📄 **[Project page](https://sattlerit.github.io/sit-3kopier/)**
 
-## Sicherheitshinweis
+## Security note
 
-Windows SmartScreen oder Virenscanner können die EXE beim ersten Start als unbekannt einstufen.
-Bitte als vertrauenswürdig bzw. Ausnahme hinzufügen.
-Alle Dateien stammen ausschließlich von **Sattler IT-Service** über diese GitHub-Seite.
+Windows SmartScreen or virus scanners may flag the EXE as unknown on first launch.
+Please mark it as trusted or add an exception.
+All files come exclusively from **Sattler IT-Service** via this GitHub page.
 
-## Spende / Donate
+## Donate
 
-Die S-IT-Tools werden kostenlos entwickelt und gepflegt.
-Eine kleine Spende hilft dabei, die Entwicklung fortzuführen – herzlichen Dank! 🙏
+The S-IT tools are developed and maintained free of charge.
+A small donation helps to keep the work going — thank you! 🙏
 
-[![Spende via PayPal](https://img.shields.io/badge/Spende-PayPal-blue?logo=paypal)](https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR)
+[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue?logo=paypal)](https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR)
 
 ---
 
