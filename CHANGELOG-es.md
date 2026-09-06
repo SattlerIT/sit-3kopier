@@ -2,6 +2,13 @@
 
 Todos los cambios reseñables de S-IT-3Copiar, los más recientes primero.
 
+## v3.3.2.10 — septiembre de 2026 · Neerlandés e italiano
+
+- **Nuevo:** dos idiomas más: **neerlandés** e **italiano**. La herramienta habla ahora seis idiomas. El nombre del programa cambia con ellos: 3Kopieer y 3Copia.
+- Están traducidos, como siempre, la interfaz, los cuadros de diálogo, los mensajes, el programador y los registros; ambos idiomas vienen con su propia página de ayuda.
+- La barra de idiomas de todas las páginas de ayuda ofrece ahora seis idiomas.
+- El programa en sí no ha cambiado: los perfiles, filtros y ajustes existentes se mantienen igual.
+
 ## v3.3.2.9 — agosto de 2026 · Edición internacional
 
 - **Nuevo:** la herramienta habla cuatro idiomas: alemán, inglés, francés y español. El idioma se elige durante la instalación y puede cambiarse en cualquier momento en ⚙; la selección muestra la bandera correspondiente a cada idioma. El nombre del programa cambia con él: 3Kopier, 3Copy, 3Copier, 3Copiar.
