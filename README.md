@@ -15,16 +15,25 @@ copy tasks is effectively unlimited.
 
 ---
 
-## Six languages
+## Eighteen languages
 
 The interface, all dialogs, the scheduler, the logs and the help pages are available in
-**German, English, French, Spanish, Dutch and Italian**. The language is chosen during
-installation and can be changed at any time under ⚙. The program name changes with it:
-3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia.
+**German, English, French, Spanish, Dutch, Italian, Croatian, Slovenian, Serbian, Bosnian,
+Montenegrin, Bulgarian, Macedonian, Albanian, Romanian, Turkish, Polish and Danish**. The
+language is chosen during installation and can be changed at any time under ⚙. The program
+name changes with it: 3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia, 3Kopiraj,
+3Copiază, 3Kopyala, 3Kopiuj.
 
 File names and settings stay the same in every language (`3Kopier.ini`, profiles as
 `.3ko`, folder `Logs`), so switching language leaves your profiles, filters and settings
 untouched.
+
+## A tidy program folder
+
+Language files, help pages, settings and profiles each live in a folder of their own —
+`Lang`, `Help`, `Config` and `Profile`. Only the program itself and `_internal` remain at
+the top. An existing installation sorts itself out on first start; nothing needs to be
+moved by hand.
 
 ## Features
 

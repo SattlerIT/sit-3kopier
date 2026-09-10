@@ -15,15 +15,24 @@ ausführen – effektiv unbegrenzt viele automatisierte Kopieraufgaben.
 
 ---
 
-## Sechs Sprachen
+## Achtzehn Sprachen
 
 Oberfläche, alle Dialoge, die Zeitsteuerung, die Protokolle und die Hilfeseiten gibt es auf
-**Deutsch, Englisch, Französisch, Spanisch, Niederländisch und Italienisch**. Die Sprache wird
-bei der Installation gewählt und lässt sich jederzeit unter ⚙ umstellen. Der Programmname
-wechselt mit: 3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia.
+**Deutsch, Englisch, Französisch, Spanisch, Niederländisch, Italienisch, Kroatisch,
+Slowenisch, Serbisch, Bosnisch, Montenegrinisch, Bulgarisch, Mazedonisch, Albanisch,
+Rumänisch, Türkisch, Polnisch und Dänisch**. Die Sprache wird bei der Installation gewählt
+und lässt sich jederzeit unter ⚙ umstellen. Der Programmname wechselt mit: 3Kopier, 3Copy,
+3Copier, 3Copiar, 3Kopieer, 3Copia, 3Kopiraj, 3Copiază, 3Kopyala, 3Kopiuj.
 
 Dateinamen und Einstellungen bleiben in allen Sprachen gleich (`3Kopier.ini`, Profile als
 `.3ko`, Ordner `Logs`) – ein Sprachwechsel lässt Profile, Filter und Einstellungen unberührt.
+
+## Aufgeräumtes Programmverzeichnis
+
+Sprachdateien, Hilfeseiten, Einstellungen und Profile liegen jeweils in einem eigenen
+Ordner – `Lang`, `Help`, `Config` und `Profile`. Oben bleiben nur das Programm selbst und
+`_internal`. Eine vorhandene Installation ordnet sich beim ersten Start von selbst; es muss
+nichts von Hand verschoben werden.
 
 ## Features
 
