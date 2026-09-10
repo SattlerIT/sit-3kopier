@@ -1,5 +1,6 @@
 ======================================================================
  S-IT-3Kopier / 3Copy / 3Copier / 3Copiar / 3Kopieer / 3Copia
+ 3Kopiraj / 3Kopiuj / 3Copiaza / 3Kopyala
  Lizenz und Haftungsausschluss
  License and disclaimer - Licence et clause de non-responsabilite
  Licencia y aviso legal
@@ -9,6 +10,12 @@
  DEUTSCH .... Seite 1        ESPANOL .... Seite 4
  ENGLISH .... Seite 2        NEDERLANDS . Seite 5
  FRANCAIS ... Seite 3        ITALIANO ... Seite 6
+ BOSANSKI ... Seite 7        HRVATSKI ... Seite 10
+ BULGARSKI .. Seite 8        MAKEDONSKI . Seite 11
+ DANSK ...... Seite 9        CRNOGORSKI . Seite 12
+ POLSKI ..... Seite 13       SLOVENSCINA  Seite 16
+ ROMANA ..... Seite 14       SHQIP ...... Seite 17
+ SRPSKI ..... Seite 15       TURKCE ..... Seite 18
 
 
 ======================================================================
@@ -374,4 +381,685 @@ su ogni sistema e in ogni configurazione.
 ----------------------------------------------------------------------
 Contatto:  tool-entwicklung@sattler-it.de
 Progetto:  https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ BOSANSKI
+======================================================================
+
+LICENCA - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - dozvoljeno besplatno korištenje i daljnje dijeljenje.
+Komercijalna daljnja upotreba ili izmjena bez dozvole nije
+dozvoljena.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ODRICANJE OD ODGOVORNOSTI (DISCLAIMER)
+
+Sve informacije su date bez garancije. Moguće su greške.
+
+S-IT-3Kopiraj je besplatan alat za kopiranje datoteka i mapa,
+ručno ili automatski po rasporedu. Alat radi pouzdano prema
+najboljem znanju, ali se ne može garantirati potpuno ispravan
+rad na svakom sistemu i u svakoj konfiguraciji.
+
+1. Bez garancije potpunosti
+   Kopiranje, a posebno automatski pokrenuti procesi po rasporedu,
+   ne garantiraju da su sve datoteke prenesene u potpunosti,
+   nepromijenjene i bez grešaka. Mrežni problemi, nedostupni diskovi,
+   zaključane datoteke ili sistemske greške mogu utjecati na pojedine
+   procese kopiranja ili ih spriječiti.
+
+2. Nije zamjena za backup strategiju
+   S-IT-3Kopiraj kopira datoteke, ali nije potpuni backup program
+   sa verzioniranjem niti garancijom oporavka. Ne zamjenjuje
+   promišljen, redundantan sistem sigurnosnog kopiranja.
+
+3. Korištenje na vlastitu odgovornost
+   Korištenje alata, posebno postavljanje rasporeda koji automatski
+   prepisuju ili premještaju datoteke, vrši se na vlastitu
+   odgovornost. Za rezultate i odluke donesene na osnovu kopiranja
+   ili evidencija ne preuzima se odgovornost.
+
+4. Isključenje odgovornosti
+   Odgovornost za štetu, gubitak podataka ili financijsku štetu
+   koja proizlazi iz korištenja alata ili njegovih rezultata
+   isključena je u mjeri dopuštenoj zakonom.
+
+5. Backup ostaje neophodan
+   Ne oslanjajte se isključivo na S-IT-3Kopiraj za važne podatke.
+   Redovito izrađujte nezavisne sigurnosne kopije svojih podataka.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Stranica projekta: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ BULGARSKI
+======================================================================
+
+ЛИЦЕНЗ - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Автор: Hans Udo Sattler
+
+Безплатен софтуер - безплатно използване и разпространение.
+Търговска повторна употреба или модификация без разрешение не са
+разрешени.
+Контакт: tool-entwicklung@sattler-it.de
+
+
+ОТКАЗ ОТ ОТГОВОРНОСТ (DISCLAIMER)
+
+Всички данни се предоставят без гаранция. Допускат се грешки.
+
+S-IT-3Kopiraj е безплатен инструмент за копиране на файлове и папки,
+ръчно или автоматично по разписание. Инструментът работи надеждно
+според най-добрите познания, но не може да се гарантира безгрешна
+работа на всяка система и във всяка конфигурация.
+
+1. Без гаранция за пълнота
+   Копирането, и по-специално автоматизираните процеси по разписание,
+   не гарантират, че всички файлове са прехвърлени изцяло,
+   непроменени и без грешки. Мрежови проблеми, недостъпни устройства,
+   заключени файлове или системни грешки могат да повлияят или
+   възпрепятстват отделни копирания.
+
+2. Не замества стратегия за архивиране
+   S-IT-3Kopiraj копира файлове, но не е пълноценна програма за
+   архивиране с версии или гаранция за възстановяване. Той не
+   заменя добре обмислена, излишна стратегия за архивиране.
+
+3. Използване на собствена отговорност
+   Използването на инструмента, и по-специално настройването на
+   разписания, които автоматично презаписват или преместват файлове,
+   е на собствена отговорност. Не се носи отговорност за резултати
+   и решения, взети въз основа на копиранията или регистрите.
+
+4. Изключване на отговорността
+   Отговорност за вреди, загуба на данни или финансови загуби,
+   произтичащи от използването на инструмента или неговите резултати,
+   се изключва в рамките, позволени от закона.
+
+5. Архивите остават задължителни
+   Не разчитайте само на S-IT-3Kopiraj за важни данни. Създавайте
+   редовно независими резервни копия на вашите данни.
+
+----------------------------------------------------------------------
+Контакт:        tool-entwicklung@sattler-it.de
+Страница на проекта: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ DANSK
+======================================================================
+
+LICENS - S-IT-3Kopier
+(c) 2026 Sattler IT-Service, Greifenstein
+Forfatter: Hans Udo Sattler
+
+Freeware - gratis brug og videresalg tilladt.
+Kommerciel genbrug eller ændring uden tilladelse er ikke
+tilladt.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ANSVARSFRASKRIVELSE (DISCLAIMER)
+
+Alle oplysninger gives uden garanti. Tager forbehold for fejl.
+
+S-IT-3Kopier er et gratis værktøj til kopiering af filer og mapper,
+enten manuelt eller automatisk efter tidsplan. Værktøjet arbejder
+pålideligt efter bedste overbevisning, men fejlfri funktion på
+ethvert system og i enhver konfiguration kan dog ikke garanteres.
+
+1. Ingen garanti for fuldstændighed
+   Kopieringer, især automatiserede kørsler efter tidsplan, er
+   ingen garanti for, at alle filer er overført fuldstændigt,
+   uændret og fejlfrit. Netværksproblemer, utilgængelige drev,
+   låste filer eller systemfejl kan forringe eller forhindre
+   enkelte kopieringer.
+
+2. Ingen erstatning for en backup-strategi
+   S-IT-3Kopier kopierer filer, men er ikke et fuldgyldigt
+   backup-program med versionering eller garanti for gendannelse.
+   Det erstatter ikke en gennemtænkt, redundant backup-strategi.
+
+3. Brug på eget ansvar
+   Brug af værktøjet, især opsætning af tidsplaner, der automatisk
+   overskriver eller flytter filer, sker på eget ansvar. Der påtages
+   intet ansvar for resultater eller beslutninger truffet på grundlag
+   af kopieringerne eller logfilerne.
+
+4. Ansvarsfraskrivelse
+   Ethvert ansvar for skader, datatab eller økonomiske tab, der
+   opstår ved brug af værktøjet eller dets resultater, er udelukket
+   i det omfang, loven tillader det.
+
+5. Backups forbliver uundværlige
+   Stol ikke kun på S-IT-3Kopier til vigtige data. Opret regelmæssigt
+   uafhængige sikkerhedskopier af dine data.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Projektside:    https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ HRVATSKI
+======================================================================
+
+LICENCA - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - dozvoljeno besplatno korištenje i daljnje dijeljenje.
+Komercijalna daljnja upotreba ili izmjena bez dozvole nije
+dozvoljena.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ODRICANJE OD ODGOVORNOSTI (DISCLAIMER)
+
+Sve informacije su dane bez jamstva. Moguće su greške.
+
+S-IT-3Kopiraj je besplatni alat za kopiranje datoteka i mapa,
+ručno ili automatski po rasporedu. Alat radi pouzdano prema
+najboljem saznanju, ali se ne može jamčiti potpuno ispravan rad
+na svakom sustavu i u svakoj konfiguraciji.
+
+1. Bez jamstva potpunosti
+   Kopiranje, a posebno automatski pokrenuti procesi po rasporedu,
+   ne jamče da su sve datoteke prenesene u potpunosti, nepromijenjene
+   i bez grešaka. Mrežni problemi, nedostupni diskovi, zaključane
+   datoteke ili sistemske greške mogu utjecati na pojedine procese
+   kopiranja ili ih spriječiti.
+
+2. Nije zamjena za backup strategiju
+   S-IT-3Kopiraj kopira datoteke, ali nije potpuni backup program
+   s verzioniranjem niti jamstvom oporavka. Ne zamjenjuje
+   promišljen, redundantni sustav sigurnosnog kopiranja.
+
+3. Korištenje na vlastitu odgovornost
+   Korištenje alata, posebno postavljanje rasporeda koji automatski
+   prepisuju ili premještaju datoteke, vrši se na vlastitu
+   odgovornost. Za rezultate i odluke donesene na temelju kopiranja
+   ili evidencija ne preuzima se odgovornost.
+
+4. Isključenje odgovornosti
+   Odgovornost za štetu, gubitak podataka ili financijsku štetu
+   koja proizlazi iz korištenja alata ili njegovih rezultata
+   isključena je u mjeri dopuštenoj zakonom.
+
+5. Backup ostaje neophodan
+   Ne oslanjajte se isključivo na S-IT-3Kopiraj za važne podatke.
+   Redovito izrađujte nezavisne sigurnosne kopije svojih podataka.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Stranica projekta: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ MAKEDONSKI
+======================================================================
+
+ЛИЦЕНЦА - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Автор: Hans Udo Sattler
+
+Бесплатен софтвер - дозволено е бесплатно користење и дистрибуција.
+Комерцијална повторна употреба или модификација без дозвола не е
+дозволена.
+Контакт: tool-entwicklung@sattler-it.de
+
+
+ОДРИЦАЊЕ ОД ОДГОВОРНОСТ (DISCLAIMER)
+
+Сите податоци се дадени без гаранција. Можни се грешки.
+
+S-IT-3Kopiraj е бесплатен алат за копирање на датотеки и папки,
+рачно или автоматски по распоред. Алатот работи сигурно според
+најдоброто знаење, но не може да се гарантира совршена работа на
+секој систем и во секоја конфигурација.
+
+1. Без гаранција за целосност
+   Копирањето, а особено автоматизираните процеси по распоред,
+   не гарантираат дека сите датотеки се пренесени целосно,
+   непроменети и без грешки. Мрежни проблеми, недостапни уреди,
+   заклучени датотеки или системски грешки можат да влијаат на
+   поединечни копирања или да ги спречат.
+
+2. Не е замена за стратегија за резервни копии
+   S-IT-3Kopiraj копира датотеки, но не е целосна програма за
+   резервно копирање со верзии или гаранција за обновување. Тој
+   не заменува добро осмислена, редундантна стратегија за
+   резервно копирање.
+
+3. Користење на сопствена одговорност
+   Користењето на алатот, а особено поставувањето распореди кои
+   автоматски препишуваат или преместуваат датотеки, е на сопствена
+   одговорност. Не се презема одговорност за резултати и одлуки
+   донесени врз основа на копирањата или евиденциите.
+
+4. Исклучување на одговорност
+   Одговорноста за штета, загуба на податоци или финансиска штета
+   која произлегува од користењето на алатот или неговите резултати
+   е исклучена во рамките дозволени со закон.
+
+5. Резервните копии остануваат неопходни
+   Не се потпирајте само на S-IT-3Kopiraj за важни податоци.
+   Редовно правете независни резервни копии на вашите податоци.
+
+----------------------------------------------------------------------
+Контакт:        tool-entwicklung@sattler-it.de
+Страница на проектот: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ CRNOGORSKI
+======================================================================
+
+LICENCA - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - dozvoljeno besplatno korišćenje i dalje dijeljenje.
+Komercijalna dalja upotreba ili izmjena bez dozvole nije
+dozvoljena.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ODRICANJE OD ODGOVORNOSTI (DISCLAIMER)
+
+Sve informacije su date bez garancije. Moguće su greške.
+
+S-IT-3Kopiraj je besplatan alat za kopiranje fajlova i fascikli,
+ručno ili automatski po rasporedu. Alat radi pouzdano prema
+najboljem znanju, ali se ne može garantovati potpuno ispravan rad
+na svakom sistemu i u svakoj konfiguraciji.
+
+1. Bez garancije potpunosti
+   Kopiranje, a posebno automatski pokrenuti procesi po rasporedu,
+   ne garantuju da su svi fajlovi preneseni u potpunosti,
+   nepromijenjeni i bez grešaka. Mrežni problemi, nedostupni diskovi,
+   zaključani fajlovi ili sistemske greške mogu uticati na pojedine
+   procese kopiranja ili ih spriječiti.
+
+2. Nije zamjena za backup strategiju
+   S-IT-3Kopiraj kopira fajlove, ali nije potpuni backup program
+   sa verzioniranjem niti garancijom oporavka. Ne zamjenjuje
+   promišljen, redundantan sistem sigurnosnog kopiranja.
+
+3. Korišćenje na vlastitu odgovornost
+   Korišćenje alata, posebno postavljanje rasporeda koji automatski
+   prepisuju ili premještaju fajlove, vrši se na vlastitu
+   odgovornost. Za rezultate i odluke donesene na osnovu kopiranja
+   ili evidencija ne preuzima se odgovornost.
+
+4. Isključenje odgovornosti
+   Odgovornost za štetu, gubitak podataka ili finansijsku štetu
+   koja proizlazi iz korišćenja alata ili njegovih rezultata
+   isključena je u mjeri dopuštenoj zakonom.
+
+5. Backup ostaje neophodan
+   Ne oslanjajte se isključivo na S-IT-3Kopiraj za važne podatke.
+   Redovno izrađujte nezavisne sigurnosne kopije svojih podataka.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Stranica projekta: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ POLSKI
+======================================================================
+
+LICENCJA - S-IT-3Kopiuj
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - dozwolone bezpłatne użytkowanie i rozpowszechnianie.
+Komercyjne ponowne wykorzystanie lub modyfikacja bez zgody jest
+zabronione.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ZRZECZENIE SIĘ ODPOWIEDZIALNOŚCI (DISCLAIMER)
+
+Wszystkie dane są podawane bez gwarancji. Zastrzega się możliwość
+błędów.
+
+S-IT-3Kopiuj to darmowe narzędzie do kopiowania plików i folderów,
+ręcznie lub automatycznie według harmonogramu. Narzędzie działa
+niezawodnie zgodnie z najlepszą wiedzą, ale nie można zagwarantować
+bezbłędnego działania na każdym systemie i w każdej konfiguracji.
+
+1. Brak gwarancji kompletności
+   Kopiowanie, a zwłaszcza automatyczne uruchomienia według
+   harmonogramu, nie są gwarancją, że wszystkie pliki zostały
+   przeniesione w całości, bez zmian i bez błędów. Problemy sieciowe,
+   niedostępne dyski, zablokowane pliki lub błędy systemowe mogą
+   zakłócić lub uniemożliwić poszczególne kopiowania.
+
+2. Nie zastępuje strategii tworzenia kopii zapasowych
+   S-IT-3Kopiuj kopiuje pliki, ale nie jest pełnoprawnym programem
+   do tworzenia kopii zapasowych z wersjonowaniem ani gwarancją
+   przywracania. Nie zastępuje przemyślanej, nadmiarowej strategii
+   tworzenia kopii zapasowych.
+
+3. Użytkowanie na własną odpowiedzialność
+   Korzystanie z narzędzia, a w szczególności ustawianie harmonogramów
+   automatycznie nadpisujących lub przenoszących pliki, odbywa się na
+   własną odpowiedzialność. Nie ponosi się odpowiedzialności za wyniki
+   i decyzje podjęte na podstawie kopiowań lub logów.
+
+4. Wyłączenie odpowiedzialności
+   Odpowiedzialność za szkody, utratę danych lub straty finansowe
+   wynikające z korzystania z narzędzia lub jego wyników jest
+   wyłączona w zakresie dozwolonym przez prawo.
+
+5. Tworzenie kopii zapasowych pozostaje niezbędne
+   Nie polegaj wyłącznie na S-IT-3Kopiuj w przypadku ważnych danych.
+   Regularnie twórz niezależne kopie zapasowe swoich danych.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Strona projektu: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ ROMANA
+======================================================================
+
+LICENTA - S-IT-3Copiaza
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - utilizare și distribuire gratuită permise.
+Reutilizarea comercială sau modificarea fără permisiune nu este
+permisă.
+Contact: tool-entwicklung@sattler-it.de
+
+
+CLAUZA DE RENUNTARE LA RASPUNDERE (DISCLAIMER)
+
+Toate informațiile sunt furnizate fără garanție. Se rezervă dreptul
+la erori.
+
+S-IT-3Copiaza este un instrument gratuit pentru copierea fișierelor
+și dosarelor, manual sau automat conform unui program. Instrumentul
+funcționează fiabil după cele mai bune cunoștințe, dar nu poate fi
+garantată o funcționare fără erori pe orice sistem și în orice
+configurație.
+
+1. Fără garanția completitudinii
+   Copierile, și în special execuțiile automate programate, nu
+   garantează că toate fișierele au fost transferate complet,
+   nemodificate și fără erori. Probleme de rețea, unități
+   inaccesibile, fișiere blocate sau erori de sistem pot afecta
+   sau împiedica copieri individuale.
+
+2. Nu înlocuiește o strategie de backup
+   S-IT-3Copiaza copiază fișiere, dar nu este un program complet
+   de backup cu versionare sau garanție de restaurare. Nu înlocuiește
+   o strategie de backup bine gândită și redundantă.
+
+3. Utilizare pe propria răspundere
+   Utilizarea instrumentului, și în special configurarea programelor
+   care suprascriu sau mută automat fișiere, se face pe propria
+   răspundere. Nu se acceptă nicio răspundere pentru rezultatele sau
+   deciziile luate pe baza copierilor sau a jurnalelor.
+
+4. Excluderea răspunderii
+   Răspunderea pentru daune, pierderi de date sau prejudicii
+   financiare rezultate din utilizarea instrumentului sau a
+   rezultatelor acestuia este exclusă în măsura permisă de lege.
+
+5. Backup-urile rămân esențiale
+   Nu vă bazați doar pe S-IT-3Copiaza pentru date importante.
+   Creați în mod regulat copii de rezervă independente ale datelor
+   dumneavoastră.
+
+----------------------------------------------------------------------
+Contact:        tool-entwicklung@sattler-it.de
+Pagina proiectului: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ SRPSKI
+======================================================================
+
+LICENCA - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Autor: Hans Udo Sattler
+
+Freeware - dozvoljeno besplatno korišćenje i dalje deljenje.
+Komercijalna dalja upotreba ili izmena bez dozvole nije
+dozvoljena.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ODRICANJE OD ODGOVORNOSTI (DISCLAIMER)
+
+Sve informacije su date bez garancije. Moguće su greške.
+
+S-IT-3Kopiraj je besplatan alat za kopiranje fajlova i fascikli,
+ručno ili automatski po rasporedu. Alat radi pouzdano prema
+najboljem znanju, ali se ne može garantovati potpuno ispravan rad
+na svakom sistemu i u svakoj konfiguraciji.
+
+1. Bez garancije potpunosti
+   Kopiranje, a posebno automatski pokrenuti procesi po rasporedu,
+   ne garantuju da su svi fajlovi preneseni u potpunosti,
+   nepromijenjeni i bez grešaka. Mrežni problemi, nedostupni diskovi,
+   zaključani fajlovi ili sistemske greške mogu uticati na pojedine
+   procese kopiranja ili ih spriječiti.
+
+2. Nije zamena za backup strategiju
+   S-IT-3Kopiraj kopira fajlove, ali nije potpuni backup program
+   sa verzioniranjem niti garancijom oporavka. Ne zamenjuje
+   promišljen, redundantni sistem sigurnosnog kopiranja.
+
+3. Korišćenje na vlastitu odgovornost
+   Korišćenje alata, posebno postavljanje rasporeda koji automatski
+   prepisuju ili premještaju fajlove, vrši se na vlastitu
+   odgovornost. Za rezultate i odluke donesene na osnovu kopiranja
+   ili evidencija ne preuzima se odgovornost.
+
+4. Isključenje odgovornosti
+   Odgovornost za štetu, gubitak podataka ili finansijsku štetu
+   koja proizlazi iz korišćenja alata ili njegovih rezultata
+   isključena je u mjeri dopuštenoj zakonom.
+
+5. Backup ostaje neophodan
+   Ne oslanjajte se isključivo na S-IT-3Kopiraj za važne podatke.
+   Redovno izrađujte nezavisne sigurnosne kopije svojih podataka.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Stranica projekta: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ SLOVENSCINA
+======================================================================
+
+LICENCA - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Avtor: Hans Udo Sattler
+
+Freeware - dovoljena brezplačna uporaba in razširjanje.
+Komercialna nadaljnja uporaba ali sprememba brez dovoljenja ni
+dovoljena.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+ODREK ODGOVORNOSTI (DISCLAIMER)
+
+Vse informacije so podane brez jamstva. Pridržujemo si pravico do
+napak.
+
+S-IT-3Kopiraj je brezplačno orodje za kopiranje datotek in map,
+ročno ali samodejno po urniku. Orodje deluje zanesljivo po najboljšem
+vedenju, vendar ni mogoče zagotoviti brezhibnega delovanja na vsakem
+sistemu in v vsaki konfiguraciji.
+
+1. Brez jamstva popolnosti
+   Kopiranja, zlasti samodejni zagoni po urniku, niso jamstvo, da so
+   bile vse datoteke prenesene v celoti, nespremenjene in brez napak.
+   Težave z omrežjem, nedostopni pogoni, zaklenjene datoteke ali
+   sistemske napake lahko posamezna kopiranja poslabšajo ali
+   preprečijo.
+
+2. Ni nadomestilo za strategijo varnostnega kopiranja
+   S-IT-3Kopiraj kopira datoteke, vendar ni popoln program za
+   varnostno kopiranje z različicami ali garancijo obnovitve. Ne
+   nadomešča premišljene, redundantne strategije varnostnega
+   kopiranja.
+
+3. Uporaba na lastno odgovornost
+   Uporaba orodja, zlasti nastavljanje urnikov, ki samodejno
+   prepišejo ali premaknejo datoteke, je na lastno odgovornost. Za
+   rezultate in odločitve, sprejete na podlagi kopiranj ali dnevnikov,
+   ne prevzemamo odgovornosti.
+
+4. Izključitev odgovornosti
+   Odgovornost za škodo, izgubo podatkov ali finančno škodo, ki
+   nastane zaradi uporabe orodja ali njegovih rezultatov, je
+   izključena v obsegu, ki ga dovoljuje zakon.
+
+5. Varnostne kopije ostajajo nujne
+   Ne zanašajte se samo na S-IT-3Kopiraj za pomembne podatke.
+   Redno ustvarjajte neodvisne varnostne kopije svojih podatkov.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Spletna stran projekta: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ SHQIP
+======================================================================
+
+LICENCA - S-IT-3Kopiraj
+(c) 2026 Sattler IT-Service, Greifenstein
+Autori: Hans Udo Sattler
+
+Freeware - lejohet përdorimi dhe shpërndarja falas.
+Ripërdorimi komercial ose modifikimi pa leje nuk lejohet.
+Kontakt: tool-entwicklung@sattler-it.de
+
+
+DEKLARATË PËR MOHIM PËRGJEGJËSIE (DISCLAIMER)
+
+Të gjitha të dhënat jepen pa garanci. Gabimet janë të mundshme.
+
+S-IT-3Kopiraj është një mjet falas për kopjimin e skedarëve dhe
+dosjeve, manualisht ose automatikisht sipas një plani. Mjeti punon
+në mënyrë të besueshme sipas dijeve më të mira, por nuk mund të
+garantohet funksionimi pa gabime në çdo sistem dhe në çdo
+konfigurim.
+
+1. Pa garanci për plotësinë
+   Kopjimet, dhe veçanërisht ekzekutimet automatike të planifikuara,
+   nuk janë garanci që të gjithë skedarët janë transferuar plotësisht,
+   të pandryshuar dhe pa gabime. Problemet e rrjetit, disqet e
+   paarritshme, skedarët e bllokuar ose defektet e sistemit mund të
+   dëmtojnë ose pengojnë kopjime të veçanta.
+
+2. Nuk zëvendëson një strategji rezervë
+   S-IT-3Kopiraj kopjon skedarë, por nuk është një program i plotë
+   rezervë me versionim ose garanci rikthimi. Nuk zëvendëson një
+   strategji rezervë të mirëmenduar dhe të tepërt.
+
+3. Përdorimi në përgjegjësinë tuaj
+   Përdorimi i mjetit, dhe veçanërisht vendosja e planeve që
+   mbishkruajnë ose lëvizin automatikisht skedarë, bëhet në
+   përgjegjësinë tuaj. Nuk merret përgjegjësi për rezultatet dhe
+   vendimet e marra në bazë të kopjimeve ose regjistrave.
+
+4. Përjashtimi i përgjegjësisë
+   Përgjegjësia për dëme, humbje të dhënash ose dëme financiare që
+   rrjedhin nga përdorimi i mjetit ose rezultateve të tij është e
+   përjashtuar në masën e lejuar nga ligji.
+
+5. Kopjet rezervë mbeten thelbësore
+   Mos u mbështetni vetëm në S-IT-3Kopiraj për të dhëna të
+   rëndësishme.
+   Krijoni rregullisht kopje rezervë të pavarura të të dhënave tuaja.
+
+----------------------------------------------------------------------
+Kontakt:        tool-entwicklung@sattler-it.de
+Faqja e projektit: https://sattlerit.github.io/sit-3kopier/
+----------------------------------------------------------------------
+
+
+======================================================================
+ TURKCE
+======================================================================
+
+LISANS - S-IT-3Kopyala
+(c) 2026 Sattler IT-Service, Greifenstein
+Yazar: Hans Udo Sattler
+
+Freeware - ücretsiz kullanım ve dağıtım izinlidir.
+Ticari yeniden kullanım veya izinsiz değişiklik yapılması
+yasaktır.
+İletişim: tool-entwicklung@sattler-it.de
+
+
+SORUMLULUK REDDİ (DISCLAIMER)
+
+Tüm bilgiler garanti olmaksızın verilir. Hatalar saklıdır.
+
+S-IT-3Kopyala, dosyaları ve klasörleri manuel veya otomatik olarak
+programa göre kopyalamak için ücretsiz bir araçtır. Araç, en iyi
+bilgiye göre güvenilir şekilde çalışır; ancak her sistemde ve her
+konfigürasyonda hatasız çalışma garanti edilemez.
+
+1. Tamamlık garantisi yoktur
+   Kopyalama işlemleri, özellikle otomatik programlı çalıştırmalar,
+   tüm dosyaların eksiksiz, değiştirilmemiş ve hatasız aktarıldığının
+   garantisi değildir. Ağ sorunları, erişilemeyen sürücüler, kilitli
+   dosyalar veya sistem arızaları, bireysel kopyalama işlemlerini
+   bozabilir veya engelleyebilir.
+
+2. Bir yedekleme stratejisinin yerini tutmaz
+   S-IT-3Kopyala dosyaları kopyalar, ancak sürümleme veya geri yükleme
+   garantisi olan tam teşekküllü bir yedekleme programı değildir.
+   İyi düşünülmüş, yedekli bir yedekleme stratejisinin yerini almaz.
+
+3. Kullanım kendi sorumluluğunuzdadır
+   Aracın kullanımı ve özellikle dosyaları otomatik olarak üzerine
+   yazan veya taşıyan programların ayarlanması, kendi sorumluluğunuzda
+   gerçekleşir. Kopyalama işlemlerine veya günlüklere dayanarak
+   alınan sonuçlar ve kararlar için hiçbir sorumluluk kabul edilmez.
+
+4. Sorumluluk reddi
+   Aracın veya sonuçlarının kullanılmasından kaynaklanan hasarlar,
+   veri kayıpları veya maddi zararlar için sorumluluk, yasanın
+   izin verdiği ölçüde hariç tutulmuştur.
+
+5. Yedeklemeler vazgeçilmezdir
+   Önemli veriler için yalnızca S-IT-3Kopyala'ya güvenmeyin.
+   Verilerinizin bağımsız yedeklerini düzenli olarak oluşturun.
+
+----------------------------------------------------------------------
+İletişim:       tool-entwicklung@sattler-it.de
+Proje sayfası:  https://sattlerit.github.io/sit-3kopier/
 ----------------------------------------------------------------------
