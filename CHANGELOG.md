@@ -2,6 +2,16 @@
 
 Alle nennenswerten Änderungen an S-IT-3Kopier, neueste zuerst.
 
+## v3.3.2.15 — September 2026 · Achtzehn Sprachen und aufgeräumtes Programmverzeichnis
+
+- **Neu:** Zwölf weitere Sprachen – **Kroatisch, Slowenisch, Serbisch, Bosnisch, Montenegrinisch, Bulgarisch, Mazedonisch, Albanisch, Rumänisch, Türkisch, Polnisch und Dänisch**. Damit spricht das Tool achtzehn Sprachen. Der Programmname wechselt mit: 3Kopiraj, 3Copiază, 3Kopyala, 3Kopiuj.
+- Übersetzt sind wie gewohnt Oberfläche, Dialoge, Meldungen, Zeitsteuerung und Protokolle; zu jeder Sprache gehört eine eigene Hilfeseite.
+- **Neu:** Das Programmverzeichnis ist aufgeräumt. Sprachdateien, Hilfeseiten, Einstellungen und Profile liegen jetzt in eigenen Ordnern (`Lang`, `Help`, `Config`, `Profile`); oben bleiben nur das Programm und `_internal`. Bestehende Installationen ordnen sich beim ersten Start selbst – Profile, Zeitpläne und Einstellungen bleiben dabei erhalten und müssen nicht angefasst werden.
+- **Neu:** Auch das Setup spricht achtzehn Sprachen. Seine Sprachdateien liegen jetzt neben der Setup-Datei statt darin, sodass weitere Sprachen ohne neue Programmfassung dazukommen können.
+- **Verbessert:** Die Sprachauswahl unter ⚙ ordnet sich nach der Anzahl der gefundenen Sprachen – zwei, drei oder vier Spalten. Die Flaggen stehen linksbündig untereinander, das gibt auch bei achtzehn Einträgen ein ruhiges Bild.
+- **Verbessert:** Die Hilfeseiten verweisen nicht mehr untereinander. Stattdessen folgt die Hilfe der Sprache, die unter ⚙ eingestellt ist – so führt kein Verweis mehr ins Leere, wenn ein Paket nicht alle Sprachen enthält.
+- Am Funktionsumfang hat sich nichts geändert – bestehende Profile, Filter und Einstellungen bleiben unverändert.
+
 ## v3.3.2.10 — September 2026 · Niederländisch und Italienisch
 
 - **Neu:** Zwei weitere Sprachen – **Niederländisch** und **Italienisch**. Damit spricht das Tool sechs Sprachen. Der Programmname wechselt mit: 3Kopieer und 3Copia.
