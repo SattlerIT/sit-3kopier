@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Copia – Aiuto</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Copia &ndash; Aiuto e documentazione</h1>
+  <p>Versione v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Lingua:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#CE2B37"/><rect width="14" height="14" fill="#FFFFFF"/><rect width="7" height="14" fill="#009246"/></svg> Italiano</span>
+  <span class="lb-note">La lingua si cambia nel programma in ⚙; l'aiuto segue poi la lingua scelta.</span>
+</div>
+
+<nav>
+  <a href="#panoramica">Panoramica</a>
+  <a href="#attivita">Attività</a>
+  <a href="#opzioni">Opzioni</a>
+  <a href="#esclusioni">Esclusioni</a>
+  <a href="#profili">Profili</a>
+  <a href="#impostazioni">Impostazioni</a>
+  <a href="#svolgimento">Svolgimento</a>
+  <a href="#pianificatore">Pianificatore</a>
+  <a href="#secondopiano">Secondo piano</a>
+  <a href="#percorsilunghi">Percorsi lunghi</a>
+  <a href="#risultato">Risultato</a>
+  <a href="#registri">Registri</a>
+</nav>
+
+<main>
+
+  <h2 id="panoramica">Panoramica</h2>
+  <p><strong>S-IT-3Copia</strong> è un copiatore triplo con registro e pianificatore. Esegue fino a tre attività indipendenti di copia o spostamento in un solo passaggio &ndash; ideale per distribuire file su unità NAS, cartelle nel cloud (per esempio pCloud) o altre destinazioni. Inoltre i profili possono essere eseguiti automaticamente secondo una pianificazione, in secondo piano e senza alcun intervento.</p>
+
+  <div class="note">
+    <strong>Uso tipico:</strong> copiare i dati di una cartella locale verso più destinazioni contemporaneamente &ndash; per esempio NAS 1, NAS 2 e pCloud &ndash; con un clic oppure automaticamente ogni sera a un'ora fissa.
+  </div>
+
+  <div class="ok">
+    <strong>💡 Nella pratica non è davvero limitato a tre attività:</strong> una singola esecuzione elabora al massimo tre coppie origine/destinazione alla volta, ma il numero di <strong>profili</strong> è illimitato e ogni profilo può avere <strong>la sua pianificazione</strong> (vedere la sezione <a href="#pianificatore">Pianificatore</a>). In pratica: tutte le attività di copia indipendenti che si desidera, ciascuna con le sue tre coppie origine/destinazione, ciascuna alla propria ora o con il proprio intervallo &ndash; tutte eseguite automaticamente in secondo piano, senza doverle avviare una per una. Per esempio: un profilo «Foto» ogni giorno alle 20, un profilo «Contabilità» ogni 4 ore, un profilo «Copia settimanale» solo il sabato &ndash; tutti impostati insieme e attivi in modo indipendente.
+  </div>
+
+  <div class="ok">
+    <strong>Versione Python:</strong> 3Copia si basa su una tecnologia moderna (Python al posto di AutoIt). Le copie avvengono in secondo piano e la finestra resta sempre reattiva, anche con moltissimi file o con unità di rete lente (non si blocca). I file di grandi dimensioni vengono copiati a blocchi: la barra di avanzamento procede quindi visibilmente anche all'interno di un singolo file molto grande, e <strong>⏹ Stop</strong> ha effetto immediato, pure a metà di un file grande.
+  </div>
+
+  <h2 id="attivita">Impostare le attività</h2>
+  <p>Il programma gestisce tre attività di copia indipendenti (A1, A2, A3). Ogni attività è formata da una cartella di origine e una di destinazione e può essere attivata o disattivata singolarmente.</p>
+
+  <h3>La casella «attiva»</h3>
+  <p>All'avvio vengono elaborate soltanto le attività contrassegnate come <strong>attiva</strong>. Le attività disattivate vengono completamente ignorate, ma i loro percorsi restano salvati.</p>
+
+  <h3>🔰 Filtro dell'attività</h3>
+  <p>A destra nell'intestazione di ogni scheda si trova il simbolo <strong>🔰</strong>. Permette di impostare filtri validi <strong>solo per quella attività</strong>: esclusioni aggiuntive e la regola SOLO («copiare unicamente determinati tipi di file»). Il simbolo diventa verde non appena per l'attività è stata definita una regola &ndash; se è in grigio, non ci sono filtri propri attivi. I particolari nella sezione <a href="#esclusioni">Esclusioni</a>.</p>
+
+  <h3>Scegliere l'origine</h3>
+  <p>Fare clic su <strong>📁 Origine</strong> per scegliere la cartella di origine dell'attività. La finestra ricorda l'ultima cartella di origine separatamente dalla scelta della destinazione &ndash; al clic successivo su <strong>Origine</strong> (in qualunque attività) la scelta riparte da lì.</p>
+
+  <h3>Scegliere la destinazione</h3>
+  <p>Fare clic su <strong>📁 Destinazione</strong> per impostare la cartella di destinazione. Non è necessario che esista già: viene creata automaticamente durante la copia. Anche qui la finestra ricorda l'ultima cartella di destinazione separatamente dalla scelta dell'origine.</p>
+
+  <div class="note">
+    <strong>Visualizzazione dei percorsi lunghi:</strong> se un percorso non entra per intero nel campo, viene accorciato in modo pulito (inizio&hellip;fine) invece di essere tagliato al bordo. Il <strong>percorso completo</strong> compare fermando il mouse sopra di esso (suggerimento); internamente 3Copia lavora sempre con il percorso intero.
+  </div>
+
+  <div class="note">
+    <strong>Quantità di dati:</strong> il riquadro <em>Dati</em> mostra la dimensione attuale di ogni cartella di origine attiva. Fare clic su <strong>🔄 Aggiorna</strong> per rinfrescare l'indicazione dopo delle modifiche. Il calcolo avviene in secondo piano &ndash; nel frattempo appare <em>(calcolo in corso…)</em> e la finestra resta utilizzabile.
+  </div>
+
+  <div class="note">
+    <strong>Percorsi di rete e NAS:</strong> i percorsi UNC nella forma <code>\\Server\Condivisione</code> sono pienamente supportati, sia come origine sia come destinazione. Per le origini in rete la quantità di dati non viene calcolata in anticipo di proposito (su condivisioni grandi può richiedere molto tempo); al suo posto compare <em>(rete)</em>. La copia vera e propria si svolge del tutto normalmente.
+  </div>
+
+  <h2 id="opzioni">Opzioni</h2>
+
+  <h3>Sovrascrivere (per attività)</h3>
+  <p>Con questa opzione attiva i file già presenti nella destinazione vengono <strong>sempre</strong> sovrascritti, indipendentemente dalla loro data. Senza di essa i file di destinazione vengono sovrascritti solo se il file di origine è <em>più recente</em>. Se il file di destinazione ha la stessa data o è più recente, viene ignorato.</p>
+  <div class="note">
+    <strong>Tolleranza sulle date con le unità di rete:</strong> fra unità NAS e unità di rete le date dei file differiscono spesso di uno o due secondi per motivi tecnici. Senza tolleranza, nella modalità «solo se più recente» i file immutati risulterebbero quindi più recenti per errore e verrebbero ricopiati a ogni esecuzione. 3Copia lo evita con una tolleranza di due secondi &ndash; regolabile per profilo tramite il <a href="#profili">simbolo 🛡</a>.
+  </div>
+
+  <h3>Spostare (per attività)</h3>
+  <p>Con questa opzione attiva i file vengono <strong>spostati</strong> invece che copiati. Il file di origine viene eliminato solo dopo essere arrivato nella destinazione completo e integro. Le cartelle di origine rimaste vuote vengono eliminate automaticamente dopo lo spostamento.</p>
+
+  <div class="warn">
+    <strong>Attenzione con lo spostamento:</strong> i file vengono tolti dalla cartella di origine. Prima del primo utilizzo verificare che sia davvero quello che si vuole. In caso di errore o di interruzione a metà, il file di origine resta garantito intatto: l'eliminazione avviene solo dopo un trasferimento pienamente riuscito.
+  </div>
+
+  <h3>Dopo la copia: arrestare o sospendere</h3>
+  <p>Il riquadro <strong>💻 Dopo la copia</strong> offre due possibilità: <strong>Arresta</strong> e <strong>Sospendi</strong>. Se una delle due è attiva e la copia si è conclusa <strong>senza errori</strong>, il programma chiede se il computer debba essere arrestato o sospeso. Dopo errori o un'interruzione la domanda non compare.</p>
+  <p>Le due possibilità <strong>si escludono a vicenda</strong>: attivandone una si disattiva l'altra. La sospensione usa il risparmio energetico di Windows; se il computer entri in sospensione o in ibernazione dipende dalle impostazioni di alimentazione di Windows.</p>
+  <div class="note">
+    Queste due possibilità non valgono per le esecuzioni automatiche del pianificatore: agiscono solo sulle copie avviate a mano.
+  </div>
+
+  <h2 id="esclusioni">Escludere file e cartelle</h2>
+  <p>Il pulsante <strong>🚫</strong> nella barra dei profili (accanto a <strong>🗑 Elimina</strong>) consente di tenere determinati file e intere cartelle fuori dalla copia. È particolarmente utile per non copiare affatto i file temporanei, i file di sistema e le cartelle di cache dei browser, spesso enormi &ndash; oppure per tenere lontani grandi file di backup e di immagine, così che nella destinazione non si accumulino dati inutili.</p>
+
+  <div class="note">
+    <strong>Due tipi di voci:</strong> i <em>modelli di file</em> con caratteri jolly (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) riguardano singoli file. I <em>nomi di cartella</em> (<code>cache2</code>, <code>GPUCache</code>) escludono un'intera cartella con tutte le sottocartelle &ndash; durante la copia non vi si entra nemmeno, il che fa anche risparmiare tempo con grandi strutture di cache.
+  </div>
+
+  <h3>Esclusioni predefinite</h3>
+  <p>Al primo avvio il programma crea il file <code>3Kopier-Ausschluss.ini</code> con valori iniziali sensati: file temporanei (Windows, Office, LibreOffice/OpenOffice), file di sistema di Windows, le cartelle di cache dei browser più diffusi (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) e i formati di immagine di grandi dimensioni come <code>*.iso</code>, <code>*.nrg</code> o <code>*.tib</code>. Questo elenco predefinito vale inizialmente per tutti i profili. Con il pulsante <strong>Apri l'elenco predefinito</strong> nella finestra delle esclusioni lo si può modificare in qualsiasi momento.</p>
+
+  <h3>Adattare per profilo</h3>
+  <p>La finestra delle esclusioni si riferisce sempre al profilo caricato in quel momento (per un'esecuzione senza profilo è «Manuell»). Sono possibili due adattamenti:</p>
+  <ul>
+    <li><strong>Disattivare una voce predefinita:</strong> togliere il segno di spunta nell'elenco delle esclusioni predefinite &ndash; quella voce non vale più per questo profilo. Esempio: in un profilo di backup che deve invece includere i file ISO, togliere il segno di spunta a <code>*.iso</code>.</li>
+    <li><strong>Aggiungere esclusioni proprie:</strong> inserire altre voci nel campo di testo sottostante, una per riga &ndash; modelli di file e nomi di cartella insieme (per esempio <code>*.mp4</code> oppure <code>Downloads</code>).</li>
+  </ul>
+  <p>L'elenco che vale davvero risulta quindi da: <em>elenco predefinito &minus; voci disattivate per questo profilo + le proprie aggiunte</em>.</p>
+
+  <h3>Adattare per attività: il simbolo 🔰</h3>
+  <p>Oltre alle regole valide per l'intero profilo, ciascuna delle tre attività può avere filtri <strong>propri</strong>. Un clic sul simbolo <strong>🔰</strong> nell'intestazione di una scheda apre una piccola finestra con due campi (separare più voci con <code>|</code>):</p>
+  <ul>
+    <li><strong>Esclusioni aggiuntive solo per questa attività:</strong> per esempio <code>*.iso | cache2</code> &ndash; funziona come una voce in più nella finestra delle esclusioni, ma vale soltanto per questa attività. I nomi di cartella si scrivono senza carattere jolly, come al solito.</li>
+    <li><strong>Regola SOLO («tutto tranne»):</strong> se questo campo contiene dei modelli, l'attività copia <strong>esclusivamente</strong> i file corrispondenti &ndash; tutto il resto viene escluso. Esempio: attività&nbsp;1 <code>*.pdf</code>, attività&nbsp;2 <code>*.jpg</code>, attività&nbsp;3 <code>*.mp4</code> &ndash; così una sola esecuzione smista una cartella mista per tipo di file verso tre destinazioni. Un campo vuoto disattiva la regola. Comodo: basta <code>pdf</code> oppure <code>.pdf</code>, il programma lo completa da sé in <code>*.pdf</code>.</li>
+  </ul>
+  <p>La regola SOLO vale unicamente per i file: la struttura delle cartelle viene percorsa normalmente, così i file corrispondenti si trovano anche nelle sottocartelle. I file scartati in questo modo rientrano nel risultato sotto la voce <em>Esclusi</em>.</p>
+
+  <div class="note">
+    <strong>Precedenza:</strong> le esclusioni valide per l'intero profilo si applicano sempre in aggiunta. Un file <code>*.tmp</code> resta quindi escluso anche con «solo <code>*.tmp</code>», finché la voce predefinita <code>*.tmp</code> non è stata disattivata per il profilo.
+  </div>
+
+  <div class="note">
+    <strong>Nel registro:</strong> i file e le cartelle esclusi vengono contati in una voce propria, <em>Esclusi</em> &ndash; separata dai file ignorati &ndash; e compaiono come tali nel bilancio, nel riepilogo per cartella e nella finestra dei risultati.
+  </div>
+
+  <h2 id="profili">Profili</h2>
+  <p>Un profilo salva sotto un nome l'intera impostazione delle tre attività (origine, destinazione, opzioni, stato attivo), così da poterla richiamare in qualsiasi momento &ndash; e da usare come base per il pianificatore.</p>
+
+  <h3>Scegliere un profilo</h3>
+  <p>Un clic su una voce dell'elenco a discesa carica il profilo <strong>subito</strong> &ndash; non serve più un pulsante «Carica» separato.</p>
+
+  <div class="warn">
+    <strong>Attenzione alle modifiche non salvate:</strong> poiché la scelta carica immediatamente, le modifiche ai campi delle attività non ancora salvate vanno perse quando si passa a un altro profilo. Salvarle prima con <strong>💾 Salva</strong> se si desidera conservarle.
+  </div>
+
+  <h3>Salvare / nuovo / eliminare</h3>
+  <p><strong>💾 Salva</strong> memorizza l'impostazione attuale con il nome scelto. <strong>➕ Nuovo</strong> chiede un nome e svuota poi completamente le tre attività &ndash; così un nuovo profilo parte sempre da zero, senza residui di un profilo caricato in precedenza. <strong>🗑 Elimina</strong> cancella definitivamente il profilo selezionato.</p>
+
+  <div class="warn">
+    <strong>Profilo usato dal pianificatore:</strong> salvando un profilo che compare in una pianificazione attiva, il programma lo segnala. Il motivo: il pianificatore ricorda soltanto il <strong>nome del profilo</strong> e lo ricarica a ogni esecuzione. Le modifiche appena salvate (origini, destinazioni, opzioni) valgono quindi anche per le esecuzioni pianificate di quel profilo. Il messaggio si può annullare, se non era questa l'intenzione.
+  </div>
+
+  <h3>🛡 Rete e date dei file</h3>
+  <p>Il <strong>simbolo 🛡</strong> nella barra dei profili (accanto a 🚫) apre l'impostazione delle date del profilo corrente. Essa stabilisce come la modalità <em>«solo se più recente»</em> (casella Sovrascrivi non spuntata) decide se un file è davvero più nuovo &ndash; ed evita che file immutati su unità NAS e di rete vengano ricopiati a ogni esecuzione a causa di differenze nelle date.</p>
+  <ul>
+    <li><strong>Automatico</strong> (predefinito): la tolleranza di due secondi si applica solo se l'origine o la destinazione è un percorso di rete nella forma <code>\\Server\Condivisione</code>. Le copie puramente locali vengono confrontate in modo esatto.</li>
+    <li><strong>Sempre</strong>: la tolleranza si applica sempre, anche in locale. Utile per le <strong>unità di rete con lettera assegnata</strong> (per esempio <code>X:</code>), che la modalità «Automatico» non riconosce come rete.</li>
+    <li><strong>Disattivato</strong>: confronto esatto, senza tolleranza.</li>
+  </ul>
+  <p>L'impostazione viene salvata per profilo. La finestra mostra inoltre quali delle tre attività stiano usando un percorso di rete.</p>
+
+  <h2 id="impostazioni">Impostazioni</h2>
+  <p>L'ingranaggio <strong>⚙</strong> in alto a destra nella finestra del programma (accanto a <strong>? GUIDA</strong>) apre la finestra delle impostazioni.</p>
+
+  <h3>Lingua</h3>
+  <p>3Copia parla più lingue. Di norma la lingua viene scelta già durante l'installazione; qui si può cambiare in qualsiasi momento. Vengono proposte tutte le lingue per le quali accanto al programma si trova un file di lingua &ndash; ciascuna con la sua bandiera, così che la scelta resti chiara anche quando la finestra è in una lingua che non si legge.</p>
+
+  <p>Nell'edizione tedesca il programma si chiama <strong>3Kopier</strong>. Il nome sullo schermo cambia dunque con la lingua; i file sul disco mantengono i loro nomi (<code>3Kopier.ini</code>, profili con estensione <code>.3ko</code>, registri nella cartella <code>Logs</code>). Cambiare lingua non modifica quindi impostazioni, profili e filtri.</p>
+
+  <div class="note">
+    <strong>Ha effetto dopo un riavvio:</strong> come per l'ingrandimento, la lingua entra in vigore solo quando la finestra del programma viene ricostruita. Una copia in corso non viene mai interrotta &ndash; la nuova lingua compare allora al successivo avvio normale.
+  </div>
+
+  <p>Le altre lingue arrivano come pacchetti linguistici verificati di Sattler IT-Service e compaiono da sé nella scelta una volta installati. I file di lingua forniti sono cifrati, come il modulo del pianificatore: così è certo che i testi letti nel programma siano esattamente quelli consegnati.</p>
+
+  <h3>Ingrandimento dell'interfaccia</h3>
+  <p>Sono previsti passi fissi dal <strong>90&nbsp;%</strong> al <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Il passo attuale è evidenziato. Dopo un clic su <strong>Applica</strong> la finestra viene ricostruita nella nuova dimensione.</p>
+
+  <div class="note">
+    <strong>Dimensione della finestra fissa:</strong> la finestra del programma non si può ridimensionare con il mouse dagli angoli, ed è voluto. In questo modo si evitano rappresentazioni deformate o tagliate. Per una vista più grande basta scegliere un passo superiore.
+  </div>
+
+  <h3>Conservare i registri per</h3>
+  <p>Stabilisce per quanto tempo i file di registro conclusi (vedere la sezione <a href="#registri">Registri</a>) vengono conservati automaticamente prima di essere eliminati al successivo avvio. Sono previsti passi fissi da <strong>1 giorno</strong> a <strong>365 giorni</strong>, oltre a <strong>∞ (illimitato)</strong> &ndash; in tal caso non viene eliminato nulla automaticamente.</p>
+
+  <p>Il pulsante <strong>🗑 Pulisci adesso</strong> applica subito il termine scelto, senza attendere il prossimo avvio.</p>
+
+  <h3>Dettaglio del registro</h3>
+  <p>Stabilisce quanto sia dettagliato il file di registro di un'esecuzione:</p>
+  <ul>
+    <li><strong>Compatto</strong> (predefinito): <strong>una riga riepilogativa</strong> per attività nel registro (copiati, sovrascritti, ignorati e così via, con la quantità di dati) &ndash; nessuna riga per le singole cartelle. Insieme al bilancio all'inizio del file, il registro resta così un riepilogo breve e leggibile, per quante migliaia di file e cartelle siano state elaborate.</li>
+    <li><strong>Dettagliato</strong>: viene scritta in più una riga per ogni cartella (numero di file, azioni, quantità di dati) &ndash; utile nella ricerca di un errore, quando si vuole capire che cosa sia successo in una determinata cartella o perché un file non sia stato copiato.</li>
+  </ul>
+  <p>L'impostazione ha effetto già dall'esecuzione successiva, anche per quelle pianificate. Gli errori vengono sempre registrati per intero in entrambe le modalità, così come gli accorciamenti automatici dei percorsi (MAX_PATH).</p>
+
+  <h2 id="svolgimento">Eseguire una copia a mano</h2>
+
+  <h3>1. Impostare le attività</h3>
+  <p>Per ogni attività desiderata impostare origine, destinazione e le relative opzioni. Attivarla con la casella <strong>attiva</strong>.</p>
+
+  <h3>2. Premere Avvia</h3>
+  <p>Il programma conta dapprima tutti i file nelle cartelle di origine attive, così da riempire correttamente la barra di avanzamento. Questa fase di conteggio si può già interrompere con <strong>⏹ Stop</strong> e, quando i file sono moltissimi, mostra un dato intermedio invece di sembrare bloccata. Poi le attività vengono elaborate una dopo l'altra (A1, A2, A3).</p>
+
+  <h3>3. Seguire l'avanzamento</h3>
+  <p>Barra di avanzamento, riga di stato e conteggi vengono aggiornati di continuo durante l'esecuzione. Con un singolo file molto grande la barra continua ad avanzare visibilmente all'interno di quel file, invece di restare ferma fino alla fine. La riga di stato indica inoltre un tempo restante stimato non appena i dati lo consentono, e la velocità di copia del momento (per esempio <code>157.4 MB/s</code>) &ndash; calcolata come media degli ultimi secondi, così che il numero resti stabile quando le dimensioni dei file variano. Entrambe valgono anche per la finestra di avanzamento del pianificatore. Nella simulazione l'indicazione della velocità non compare, perché lì non viene copiato nulla per davvero.</p>
+
+  <h3>4. Interrompere</h3>
+  <p>Con <strong>⏹ Stop</strong> o il tasto <strong>ESC</strong> si interrompe l'esecuzione in modo pulito in qualsiasi momento &ndash; anche a metà di un file grande. I file già elaborati per intero restano; un file di destinazione appena iniziato e ancora incompleto viene eliminato automaticamente, così non resta mai un frammento.</p>
+
+  <h3>5. Finestra dei risultati</h3>
+  <p>Al termine si apre una finestra dei risultati con i dati per ciascuna attività &ndash; i particolari nella sezione <a href="#risultato">Risultato</a>.</p>
+
+  <h2 id="pianificatore">Pianificatore</h2>
+  <p>Il pulsante <strong>🕐 Pianificatore</strong> nella finestra principale apre una finestra a parte in cui un numero qualsiasi di profili può essere eseguito automaticamente secondo una pianificazione &ndash; più volte al giorno o a intervalli fissi.</p>
+
+  <h3>Creare una pianificazione</h3>
+  <p>Con <strong>➕ Nuovo</strong> scegliere un profilo e stabilire un'attivazione:</p>
+  <ul>
+    <li><strong>Ogni giorno</strong> &ndash; a un'ora fissa, tutti i giorni</li>
+    <li><strong>Giorni della settimana</strong> &ndash; a un'ora fissa, solo nei giorni scelti</li>
+    <li><strong>Intervallo</strong> &ndash; ogni X ore, indipendentemente dall'ora</li>
+  </ul>
+  <p>Con <strong>✏</strong> si modifica una pianificazione esistente, con <strong>🗑</strong> la si elimina. La casella <strong>Attiva</strong> nella finestra di modifica mette una pianificazione in pausa senza cancellarla.</p>
+
+  <h3>🔍 Simulazione / ▶ Avvia (prova manuale)</h3>
+  <p>Ogni riga dell'elenco ha due pulsanti per una prova immediata, indipendentemente dalla pianificazione stessa:</p>
+  <ul>
+    <li><strong>🔍 Simulazione</strong> &ndash; mostra esattamente che cosa accadrebbe (quali file verrebbero copiati, sovrascritti, ignorati&hellip;) <strong>senza</strong> modificare nulla. Non viene copiato, spostato né eliminato niente.</li>
+    <li><strong>▶ Avvia</strong> &ndash; esegue subito l'attività per davvero.</li>
+  </ul>
+  <div class="note">
+    Questi due pulsanti mostrano <strong>sempre</strong> la finestra di avanzamento e poi quella dei risultati &ndash; che la modalità silenziosa sia attiva o meno per quella pianificazione. La modalità silenziosa (vedere sotto) riguarda solo le esecuzioni avviate automaticamente, mai le prove manuali.
+  </div>
+
+  <h3>🔇 Modalità silenziosa</h3>
+  <p>Nella finestra di modifica (✏, oppure creando con ➕ Nuovo) si può attivare la <strong>modalità silenziosa</strong> per singola pianificazione. Quando è attiva, un'esecuzione avviata <strong>automaticamente</strong> si svolge senza alcuna finestra:</p>
+  <ul>
+    <li>Se è andato tutto bene (anche se non c'era nulla da copiare), il programma resta <strong>del tutto silenzioso</strong>: nessuna finestra, nessun messaggio.</li>
+    <li>Se si è verificato un <strong>errore vero</strong> (per esempio origine o destinazione irraggiungibile), compare un breve messaggio discreto che rimanda al registro corrispondente.</li>
+  </ul>
+  <p>Una pianificazione in modalità silenziosa è riconoscibile nell'elenco dal simbolo <strong>🔇</strong>.</p>
+
+  <h3>Una finestra di avanzamento autonoma</h3>
+  <p>Quando una pianificazione viene eseguita (al di fuori della modalità silenziosa, sia avviata automaticamente sia provata a mano con Simulazione/Avvia), si apre una <strong>piccola finestra a parte</strong> con barra di avanzamento, conteggi e un proprio pulsante <strong>⏹ Stop</strong>. Questa finestra compare anche se 3Copia è solo in secondo piano (area di notifica), ha una <strong>propria voce nella barra delle applicazioni</strong> e può essere <strong>ridotta a icona</strong> se dà fastidio &ndash; l'esecuzione prosegue allora senza essere visibile. Lo stesso vale se si avvia l'esecuzione dalla finestra del pianificatore.</p>
+  <p>La <strong>crocetta di chiusura (X)</strong> di quella finestra agisce come <strong>⏹ Stop</strong>: interrompe in modo pulito solo quella esecuzione &ndash; che quindi non prosegue invisibile in secondo piano.</p>
+  <div class="ok">
+    <strong>Importante:</strong> la finestra principale con le schede delle attività resta <strong>del tutto intatta</strong> &ndash; il lavoro non ancora salvato non viene mai sovrascritto né disturbato da una pianificazione che parte da sé.
+  </div>
+
+  <h3>La coda quando le esecuzioni si sovrappongono</h3>
+  <p>Viene eseguita <strong>una sola</strong> copia alla volta. Se una pianificazione scade mentre è ancora in corso un'altra esecuzione (un'altra pianificazione o una copia avviata a mano), quel turno <strong>non va perduto</strong>: entra in una <strong>coda</strong> e parte automaticamente non appena l'esecuzione in corso è terminata. Più pianificazioni fissate alla stessa ora vengono così <strong>svolte una dopo l'altra, ciascuna per intero</strong>. L'attesa e l'avvio successivo sono documentati nel registro degli errori (<code>3Kopier-Fehler.log</code>); un'esecuzione che proviene dalla coda si riconosce nella sua finestra di avanzamento dall'aggiunta <em>(dalla coda)</em>.</p>
+  <p>Perché questo funzioni anche <strong>senza sorveglianza</strong> (per esempio di notte), la finestra dei risultati di un'esecuzione pianificata <strong>non</strong> attende un «OK»: resta semplicemente aperta e la successiva esecuzione in coda parte da sé. Al mattino le finestre dei risultati rimaste aperte mostrano, una dopo l'altra, che cosa è accaduto durante la notte.</p>
+  <div class="note">
+    <strong>L'interruzione riguarda solo l'esecuzione in corso:</strong> se un'esecuzione viene fermata con <strong>⏹ Stop</strong>, quelle in attesa nella coda proseguono poi del tutto normalmente &ndash; ciascuna nella propria finestra di avanzamento con il proprio pulsante <strong>⏹ Stop</strong>. Un'esecuzione interrotta si riconosce dall'indicazione <strong>«FAZIT (ABGEBROCHEN)»</strong> all'inizio del suo file di registro.
+  </div>
+
+  <h2 id="secondopiano">Funzionamento in secondo piano, area di notifica e avvio automatico</h2>
+
+  <h3>Chiudere la finestra</h3>
+  <p>Se esiste almeno una pianificazione <strong>attiva</strong>, il pulsante (X) della finestra principale non chiude il programma &ndash; sparisce solo la finestra e il programma prosegue in secondo piano (riconoscibile dall'icona nell'area di notifica della barra delle applicazioni di Windows). Così il pianificatore resta attivo anche se nessuno tiene aperta la finestra.</p>
+  <p>Se <strong>non</strong> esiste alcuna pianificazione attiva, il pulsante (X) chiude normalmente il programma.</p>
+
+  <h3>Riaprirla</h3>
+  <p>Un clic con il tasto destro sull'icona nell'area di notifica apre un piccolo menu con <strong>Apri</strong> (mostra di nuovo la finestra) ed <strong>Esci</strong> (chiude definitivamente il programma, anche con una pianificazione attiva).</p>
+
+  <h3>Avvio automatico</h3>
+  <p>Non appena esiste almeno una pianificazione attiva, 3Copia si inserisce automaticamente nell'avvio di Windows &ndash; parte allora ridotto a icona in secondo piano all'accesso, senza mostrare la finestra. Quando l'ultima pianificazione attiva viene eliminata o disattivata, l'inserimento nell'avvio viene rimosso altrettanto automaticamente.</p>
+
+  <h3>Una sola istanza alla volta</h3>
+  <p>Se 3Copia viene avviato una seconda volta mentre è già in esecuzione (anche invisibile in secondo piano), <strong>non</strong> si apre una seconda finestra. Al suo posto viene resa visibile l'istanza già in funzione.</p>
+
+  <h2 id="percorsilunghi">Percorsi lunghi (MAX_PATH)</h2>
+  <p>Come impostazione predefinita Windows non consente percorsi di file più lunghi di 260 caratteri (il <strong>limite MAX_PATH</strong>). I file il cui percorso di destinazione è troppo lungo non possono essere copiati né spostati &ndash; ciò riguarda soprattutto i file in cartelle molto annidate con nomi lunghi, come capita spesso nelle cartelle dei download.</p>
+
+  <p>3Copia riconosce da sé questi file e accorcia il nome del file nella destinazione quanto basta perché l'operazione riesca ugualmente.</p>
+
+  <div class="ok">
+    <strong>Accorciamento automatico:</strong> se il percorso di destinazione è troppo lungo, viene accorciato per primo il nome del file nella destinazione &ndash; quel tanto che basta perché il percorso resti sotto i 260 caratteri. Se non basta, viene accorciata anche l'ultima sottocartella del percorso di destinazione. L'estensione del file è sempre conservata. I nomi accorciati ricevono il contrassegno <code>-3k</code>, per esempio <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Il file di origine resta intatto:</strong> viene adattato solo il percorso di destinazione. Il file originale mantiene il suo nome. Nel registro sono documentati sia il percorso di destinazione originale sia quello accorciato.
+  </div>
+
+  <div class="note">
+    <strong>Da non confondere con l'accorciamento a schermo:</strong> con percorsi di origine o destinazione molto lunghi, la visualizzazione nei campi delle attività viene accorciata (inizio&hellip;fine), per esempio <code>H:\Download\&hellip;\Archivio</code>. È solo un fatto visivo: internamente si usa sempre il percorso completo. Il percorso intero compare come suggerimento passando sopra con il mouse.
+  </div>
+
+  <h2 id="risultato">Finestra dei risultati</h2>
+  <p>Dopo ogni esecuzione conclusa (o interrotta) si apre una finestra dei risultati &ndash; con una colonna per ogni attività attiva, così da vedere a colpo d'occhio che cosa è andato dove:</p>
+
+  <ul>
+    <li>Ogni colonna mostra <strong>origine e destinazione</strong> di quell'attività e i suoi dati</li>
+    <li>Sotto, un <strong>riepilogo complessivo</strong> di tutte le attività (quantità di dati, tempo, numero di errori)</li>
+    <li>In una simulazione ogni riga è formulata al condizionale («sarebbero&hellip;»), con un avviso chiaro che non è stato modificato nulla per davvero</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Voce</th>
+      <th>Significato</th>
+    </tr>
+    <tr>
+      <td><strong>Copiati</strong></td>
+      <td>File nuovi che non erano ancora nella destinazione e sono stati copiati</td>
+    </tr>
+    <tr>
+      <td><strong>Sovrascritti</strong></td>
+      <td>File già presenti nella destinazione che sono stati aggiornati</td>
+    </tr>
+    <tr>
+      <td><strong>Spostati</strong></td>
+      <td>File trasferiti dall'origine alla destinazione (opzione «Sposta»)</td>
+    </tr>
+    <tr>
+      <td><strong>Ignorati</strong></td>
+      <td>File che nella destinazione erano già più recenti e sono stati lasciati invariati</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Accorciati</strong></td>
+      <td>File il cui percorso di destinazione superava il limite MAX_PATH ed è stato accorciato automaticamente (contrassegno <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Esclusi</strong></td>
+      <td>File e cartelle ignorati in base all'elenco delle esclusioni (vedere la sezione <a href="#esclusioni">Esclusioni</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Errori</strong></td>
+      <td>File o attività che non è stato possibile elaborare (particolari in fondo al registro corrispondente)</td>
+    </tr>
+    <tr>
+      <td><strong>Dati</strong></td>
+      <td>Quantità di dati elaborata (per attività e in totale)</td>
+    </tr>
+    <tr>
+      <td><strong>Tempo</strong></td>
+      <td>Durata complessiva della copia (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="registri">Registri</h2>
+  <p>Per ogni esecuzione &ndash; manuale o pianificata, reale o simulata &ndash; viene creato un <strong>file di registro proprio</strong> nella sottocartella <code>Logs</code>, invece di un unico file che crescerebbe all'infinito.</p>
+
+  <h3>Nome del file</h3>
+  <p>Ogni file di registro si chiama <code>NomeProfilo_dataOra_tipo.log</code>, per esempio:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; un'esecuzione reale del profilo «MMDownload»</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; una simulazione del profilo «3Test»</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; un'esecuzione senza profilo caricato</li>
+  </ul>
+  <p>Con <strong>📋 Registro</strong> nella finestra principale si apre la cartella <code>Logs</code> direttamente in Esplora file di Windows.</p>
+
+  <div class="note">
+    <strong>I nomi dei file sono uguali in tutte le lingue:</strong> un'esecuzione senza profilo viene sempre archiviata come <code>Manuell</code>, e anche i file delle impostazioni mantengono i loro nomi tedeschi. È voluto: la stessa installazione ritrova così impostazioni, profili e filtri dopo un cambio di lingua, e un registro che si invia è leggibile subito.
+  </div>
+
+  <h3>Contenuto di un file di registro</h3>
+  <ul>
+    <li>Il <strong>bilancio</strong>, con i totali e la durata, si trova in cima &ndash; il risultato è quindi visibile senza scorrere</li>
+    <li>Data, ora e nome del profilo dell'esecuzione</li>
+    <li>Origine e destinazione di ogni attività e le opzioni scelte</li>
+    <li>Una <strong>riga riepilogativa per attività</strong> (azioni e quantità di dati); nella modalità <em>Dettagliato</em> anche un <strong>riepilogo per cartella</strong> al posto di una riga per file (vedere <a href="#impostazioni">Impostazioni &rarr; Dettaglio del registro</a>)</li>
+    <li>Se si sono verificati errori, questi compaiono inoltre in un blocco a parte <strong>«=== FEHLER ===»</strong> in fondo al file &ndash; per intero, in entrambe le modalità</li>
+  </ul>
+
+  <div class="note">
+    <strong>Conservazione:</strong> per quanto tempo i registri restano prima di essere eliminati automaticamente si imposta in <a href="#impostazioni">Impostazioni</a> (da 1 giorno a 365 giorni, oppure illimitato).
+  </div>
+
+  <h3>⚠ Registro degli errori (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Questo file a parte nella cartella del programma (raggiungibile con <strong>⚠ Errori</strong>) contiene soltanto <strong>errori del programma</strong> che non appartengono a nessuna copia in particolare &ndash; per esempio quando non è stato possibile caricare il modulo del pianificatore. Gli errori avvenuti durante una copia si trovano, come descritto sopra, in fondo al registro di quell'esecuzione.</p>
+
+  <div class="ok">
+    <strong>File INI (<code>3Kopier.ini</code>):</strong> tutte le impostazioni vengono salvate automaticamente alla chiusura del programma e ripristinate al successivo avvio &ndash; fra queste i percorsi di origine e destinazione, lo stato attivo delle tre attività, le opzioni <em>Sovrascrivi</em> e <em>Sposta</em> di ciascuna attività, l'opzione <em>Arresta</em>, le ultime cartelle di origine e destinazione usate nelle finestre di scelta, il <em>passo di ingrandimento</em> scelto, la <em>lingua</em> impostata, il termine di conservazione dei registri e il <em>dettaglio del registro</em> (compatto/dettagliato). Non serve alcuna configurazione manuale.
+  </div>
+
+  <div class="note">
+    <strong>Profili (file <code>.3ko</code>):</strong> salvando un profilo si conservano tutti i percorsi, lo stato attivo e le opzioni <em>Sovrascrivi</em> e <em>Sposta</em> di ciascuna attività. L'opzione <em>Arresta</em> è un'impostazione generale: viene salvata solo nel file INI, non nel profilo.
+  </div>
+
+  <div class="note">
+    <strong>File delle pianificazioni (<code>3Kopier-Zeitplan.ini</code>):</strong> tutte le pianificazioni create (profilo, attivazione, modalità silenziosa, stato attivo) vengono salvate qui e ricaricate da sé al successivo avvio.
+  </div>
+
+  <h3>Panoramica: file e cartelle nella cartella del programma</h3>
+  <p>Tutti i file e le cartelle seguenti nascono da sé durante l'uso &ndash; nessuno va creato a mano e nessuno fa parte della fornitura:</p>
+
+  <table>
+    <tr>
+      <th>File / cartella</th>
+      <th>Contenuto</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Impostazioni generali: campi delle attività, opzioni, ultime cartelle usate, ingrandimento, lingua, termine di conservazione</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Tutte le pianificazioni create, con profilo, attivazione, modalità silenziosa e stato attivo</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Errori del programma che non appartengono a nessuna copia in particolare</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (cartella)</td>
+      <td>Un file di registro per esecuzione &ndash; vedere <a href="#registri">Registri</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>I profili che si creano (un file per ogni nome di profilo)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Questo strumento le è stato utile?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Copia è sviluppato e mantenuto gratuitamente.<br>
+      Una piccola donazione aiuta a migliorarlo ancora. Grazie di cuore! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Donare con PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Copia &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autore: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

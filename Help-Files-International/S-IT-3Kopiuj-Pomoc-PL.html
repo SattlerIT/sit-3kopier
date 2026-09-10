@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopiuj – Pomoc</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopiuj &ndash; Pomoc i dokumentacja</h1>
+  <p>Wersja v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Język:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#FFFFFF"/><rect width="21" height="7" y="0" fill="#FFFFFF"/><rect width="21" height="7" y="7" fill="#DC143C"/></svg> Polski</span>
+  <span class="lb-note">Język wybierasz w programie pod ⚙; pomoc dopasowuje się do wybranego języka.</span>
+</div>
+
+<nav>
+  <a href="#przeglad">Przegląd</a>
+  <a href="#zadania">Zadania</a>
+  <a href="#opcje">Opcje</a>
+  <a href="#wykluczenia">Wykluczenia</a>
+  <a href="#profile">Profile</a>
+  <a href="#ustawienia">Ustawienia</a>
+  <a href="#przebieg">Przebieg</a>
+  <a href="#harmonogram">Harmonogram</a>
+  <a href="#tlo">Tło</a>
+  <a href="#dlugiesciezki">Długie ścieżki</a>
+  <a href="#wynik">Wynik</a>
+  <a href="#logi">Logi</a>
+</nav>
+
+<main>
+
+  <h2 id="przeglad">Przegląd</h2>
+  <p><strong>S-IT-3Kopiuj</strong> to potrójna kopiarka z logowaniem i harmonogramem. Umożliwia wykonanie do trzech niezależnych zadań kopiowania lub przenoszenia w jednym przebiegu &ndash; idealne do rozsyłania plików na dyski NAS, foldery w chmurze (np. pCloud) lub inne miejsca docelowe. Dodatkowo profile mogą działać automatycznie według harmonogramu w tle, bez żadnej interwencji użytkownika.</p>
+
+  <div class="note">
+    <strong>Typowe zastosowanie:</strong> skopiuj dane z jednego lokalnego folderu jednocześnie do kilku miejsc docelowych &ndash; np. NAS 1, NAS 2 i pCloud &ndash; albo za pomocą przycisku, albo automatycznie każdego wieczoru o stałej porze.
+  </div>
+
+  <div class="ok">
+    <strong>💡 Praktycznie nieograniczone do trzech zadań:</strong> jeden przebieg obsługuje co najwyżej trzy pary źródło-cel, ale liczba <strong>profili</strong> jest nieograniczona, a każdy profil może mieć <strong>własny harmonogram</strong> (patrz sekcja <a href="#harmonogram">Harmonogram</a>). W praktyce oznacza to: tyle niezależnych zadań kopiowania, ile chcesz, każde z własnymi trzema parami źródło-cel, każde o własnej porze lub w własnym interwale &ndash; i wszystkie działają automatycznie w tle, bez konieczności uruchamiania ich pojedynczo. Przykład: profil &bdquo;Zdjęcia&rdquo; codziennie o 20:00, profil &bdquo;Księgowość&rdquo; co 4 godziny, profil &bdquo;Backup tygodniowy&rdquo; tylko w soboty &ndash; wszystko skonfigurowane jednocześnie i niezależnie aktywne.
+  </div>
+
+  <div class="ok">
+    <strong>Wersja Python:</strong> 3Kopiuj opiera się na nowoczesnym podłożu technicznym (Python zamiast AutoIt). Kopiowanie odbywa się w tle, interfejs pozostaje responsywny przez cały przebieg &ndash; nawet przy bardzo dużej liczbie plików lub wolnych dyskach sieciowych (nie zamarza). Duże pojedyncze pliki są kopiowane blok po bloku, dzięki czemu pasek postępu przesuwa się widocznie nawet wewnątrz jednego bardzo dużego pliku, a <strong>⏹ Stop</strong> działa natychmiast, także w środku dużego pliku.
+  </div>
+
+  <h2 id="zadania">Konfiguracja zadań</h2>
+  <p>Program obsługuje trzy niezależne zadania kopiowania (A1, A2, A3). Każde zadanie składa się z folderu źródłowego i docelowego i może być włączane lub wyłączane indywidualnie.</p>
+
+  <h3>Pole wyboru &bdquo;aktywne&rdquo;</h3>
+  <p>Tylko zadania oznaczone jako <strong>aktywne</strong> są przetwarzane po naciśnięciu Start. Wyłączone zadania są całkowicie pomijane, ale ich ścieżki pozostają zapisane.</p>
+
+  <h3>🔰 Filtr zadania</h3>
+  <p>Po prawej stronie nagłówka każdej karty zadania znajduje się symbol <strong>🔰</strong>. Umożliwia on ustawienie filtrów, które <strong>dotyczą tylko tego jednego zadania</strong>: dodatkowe wykluczenia oraz reguła TYLKO (&bdquo;kopiuj tylko te typy plików&rdquo;). Symbol świeci na zielono, gdy dla zadania ustawiono regułę &ndash; szary oznacza brak aktywnych filtrów specyficznych dla zadania. Szczegóły w sekcji <a href="#wykluczenia">Wykluczenia</a>.</p>
+
+  <h3>Wybór źródła</h3>
+  <p>Kliknij <strong>📁 Źródło</strong>, aby wybrać folder źródłowy dla danego zadania. Okno dialogowe zapamiętuje ostatnio wybrany folder źródłowy oddzielnie od wyboru celu &ndash; następne kliknięcie <strong>Źródło</strong> (w dowolnym zadaniu) rozpoczyna wybór ponownie w tym miejscu.</p>
+
+  <h3>Wybór celu</h3>
+  <p>Kliknij <strong>📁 Cel</strong>, aby ustawić folder docelowy. Nie musi on istnieć wcześniej &ndash; zostanie utworzony automatycznie podczas kopiowania. Również tutaj okno zapamiętuje ostatni wybrany folder docelowy oddzielnie od wyboru źródła.</p>
+
+  <div class="note">
+    <strong>Wyświetlanie długich ścieżek:</strong> jeśli ścieżka nie mieści się w polu wyświetlania, jest skracana (początek&hellip;koniec) zamiast być obcinana na krawędzi. <strong>Pełna ścieżka</strong> pojawia się po najechaniu myszą (tooltip); wewnętrznie 3Kopiuj zawsze pracuje z pełną ścieżką.
+  </div>
+
+  <div class="note">
+    <strong>Ilość danych:</strong> obszar <em>Ilości danych</em> pokazuje bieżący rozmiar każdego aktywnego folderu źródłowego. Kliknij <strong>🔄 Odśwież</strong>, aby zaktualizować wyświetlanie po zmianach. Obliczenia działają w tle &ndash; w trakcie trwania pojawia się <em>(obliczanie…)</em>, a interfejs pozostaje w pełni używalny.
+  </div>
+
+  <div class="note">
+    <strong>Ścieżki sieciowe i NAS:</strong> Ścieżki UNC w postaci <code>\\serwer\udział</code> są w pełni obsługiwane &ndash; zarówno jako źródło, jak i cel. W przypadku źródeł sieciowych ilość danych <strong>nie</strong> jest celowo zliczana z wyprzedzeniem (przy dużych udziałach może to trwać długo); zamiast tego pojawia się <em>(sieć)</em>. Samo kopiowanie przebiega normalnie.
+  </div>
+
+  <h2 id="opcje">Opcje</h2>
+
+  <h3>Nadpisz (dla zadania)</h3>
+  <p>Gdy ta opcja jest włączona, istniejące pliki w miejscu docelowym są <strong>zawsze</strong> nadpisywane, niezależnie od daty. Bez tej opcji pliki docelowe są nadpisywane tylko wtedy, gdy plik źródłowy jest <em>nowszy</em>. Jeśli plik docelowy jest równy lub nowszy, jest pomijany.</p>
+  <div class="note">
+    <strong>Tolerancja znaczników czasu na dyskach sieciowych:</strong> W przypadku dysków NAS i sieciowych znaczniki czasu plików często różnią się o sekundę lub dwie. Bez tolerancji niezmienione pliki w trybie &bdquo;tylko jeśli nowszy&rdquo; zostałyby błędnie uznane za nowsze i kopiowane przy każdym uruchomieniu. 3Kopiuj wyrównuje to tolerancją dwóch sekund &ndash; ustawianą dla profilu za pomocą <a href="#profile">🛡</a>.
+  </div>
+
+  <h3>Przenieś (dla zadania)</h3>
+  <p>Gdy ta opcja jest włączona, pliki są <strong>przenoszone</strong> zamiast kopiowane. Plik źródłowy jest usuwany dopiero po pełnym i bezbłędnym dotarciu do celu. Puste foldery źródłowe są usuwane automatycznie po przeniesieniu.</p>
+
+  <div class="warn">
+    <strong>Uwaga przy przenoszeniu:</strong> pliki są usuwane z folderu źródłowego. Sprawdź przed pierwszym użyciem, czy to zamierzony efekt. W przypadku błędów lub przerwania w połowie plik źródłowy pozostaje nienaruszony &ndash; usuwanie następuje dopiero po w pełni udanym transferze.
+  </div>
+
+  <h3>Po kopiowaniu: zamknij lub tryb uśpienia</h3>
+  <p>Obszar <strong>💻 Po kopiowaniu</strong> oferuje dwie opcje: <strong>Zamknij</strong> i <strong>Tryb uśpienia</strong>. Jeśli jedna z nich jest włączona, a kopiowanie zakończyło się <strong>bez błędów</strong>, program pyta, czy komputer ma zostać zamknięty lub uśpiony. Po błędach lub przerwanym przebiegu pytanie nie jest wyświetlane.</p>
+  <p>Te dwie opcje <strong>wykluczają się wzajemnie</strong> &ndash; włączenie jednej automatycznie wyłącza drugą. Tryb uśpienia korzysta z zarządzania energią Windows; czy komputer przejdzie w stan gotowości czy hibernacji zależy od ustawień zasilania Windows.</p>
+  <div class="note">
+    Te dwie opcje nie dotyczą automatycznych przebiegów uruchamianych przez harmonogram &ndash; działają tylko przy ręcznie rozpoczętych kopiowaniach.
+  </div>
+
+  <h2 id="wykluczenia">Wykluczanie plików i folderów</h2>
+  <p>Przycisk <strong>🚫</strong> na pasku profilu (obok <strong>🗑 Usuń</strong>) pozwala wykluczyć z kopiowania określone pliki i całe foldery. Jest to szczególnie przydatne, aby nie kopiować plików tymczasowych, plików systemowych oraz często ogromnych folderów pamięci podręcznej przeglądarek &ndash; lub aby trzymać z dala duże pliki backupowe i obrazowe, aby w miejscu docelowym nie gromadziła się niepotrzebna masa danych.</p>
+
+  <div class="note">
+    <strong>Dwa rodzaje wpisów:</strong> <em>wzorce plików</em> z symbolami zastępczymi (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) dotyczą pojedynczych plików. <em>Nazwy folderów</em> (np. <code>cache2</code>, <code>GPUCache</code>) wykluczają cały folder wraz ze wszystkimi podfolderami &ndash; nie jest on w ogóle odwiedzany podczas kopiowania, co oszczędza czas przy dużych drzewach pamięci podręcznej.
+  </div>
+
+  <h3>Wykluczenia standardowe</h3>
+  <p>Przy pierwszym uruchomieniu program tworzy plik <code>3Kopier-Ausschluss.ini</code> z rozsądnymi ustawieniami domyślnymi: pliki tymczasowe (Windows, Office, LibreOffice/OpenOffice), pliki systemowe Windows, foldery pamięci podręcznej popularnych przeglądarek (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) oraz duże formaty obrazów, takie jak <code>*.iso</code>, <code>*.nrg</code> czy <code>*.tib</code>. Ta standardowa lista obowiązuje początkowo dla wszystkich profili. Przycisk <strong>Otwórz listę standardową</strong> w oknie wykluczeń umożliwia jej edycję w dowolnym momencie.</p>
+
+  <h3>Dostosowanie dla profilu</h3>
+  <p>Okno wykluczeń zawsze dotyczy aktualnie załadowanego profilu (przebieg bez profilu to &bdquo;Manuell&rdquo;). Możliwe są dwie zmiany:</p>
+  <ul>
+    <li><strong>Wyłącz wpis standardowy:</strong> odznacz pole w liście standardowych wykluczeń &ndash; wtedy ten wpis przestaje obowiązywać dla tego profilu. Przykład: w profilu backupowym, który ma właśnie uwzględniać pliki ISO, odznacz <code>*.iso</code>.</li>
+    <li><strong>Dodaj własne wykluczenia:</strong> wpisz dodatkowe pozycje w polu tekstowym poniżej, jedną na linię &ndash; mieszane wzorce plików i nazwy folderów (np. <code>*.mp4</code> lub <code>Downloads</code>).</li>
+  </ul>
+  <p>Lista faktycznie obowiązująca to: <em>lista standardowa &minus; dla tego profilu usunięte wpisy + własne dodatki</em>.</p>
+
+  <h3>Dostosowanie dla zadania: symbol 🔰</h3>
+  <p>Oprócz reguł dla całego profilu, każde z trzech zadań może mieć <strong>własne</strong> filtry. Kliknięcie symbolu <strong>🔰</strong> w nagłówku karty zadania otwiera małe okno dialogowe z dwoma polami (oddziel wiele wpisów <code>|</code>):</p>
+  <ul>
+    <li><strong>Dodatkowe wykluczenia tylko dla tego zadania:</strong> np. <code>*.iso | cache2</code> &ndash; działa jak dodatkowy wpis w oknie wykluczeń, ale dotyczy tylko tego zadania. Nazwy folderów można podawać bez symboli wieloznacznych.</li>
+    <li><strong>Reguła TYLKO (&bdquo;wszystko oprócz&rdquo;):</strong> jeśli w tym polu znajdują się wzorce, zadanie kopiuje <strong>wyłącznie</strong> pasujące pliki &ndash; wszystko inne jest wykluczane. Przykład: zadanie&nbsp;1 <code>*.pdf</code>, zadanie&nbsp;2 <code>*.jpg</code>, zadanie&nbsp;3 <code>*.mp4</code> &ndash; w ten sposób jeden przebieg sortuje mieszany folder według typów plików do trzech celów. Puste pole wyłącza regułę. Wygodnie: <code>pdf</code> lub <code>.pdf</code> wystarczy, program sam uzupełni do <code>*.pdf</code>.</li>
+  </ul>
+  <p>Reguła TYLKO dotyczy tylko plików &ndash; struktura folderów jest nadal przeglądana normalnie, więc pasujące pliki są znajdowane również w podfolderach. Pliki odfiltrowane w ten sposób liczą się w wyniku jako <em>Wykluczone</em>.</p>
+
+  <div class="note">
+    <strong>Pierwszeństwo:</strong> wykluczenia na poziomie profilu zawsze obowiązują dodatkowo. Plik <code>*.tmp</code> pozostaje więc wykluczony nawet przy &bdquo;tylko <code>*.tmp</code>&rdquo;, o ile standardowy wpis <code>*.tmp</code> nie został wyłączony dla profilu.
+  </div>
+
+  <div class="note">
+    <strong>W logu:</strong> wykluczone pliki i foldery są liczone jako osobna kategoria <em>Wykluczone</em> &ndash; oddzielnie od pominiętych plików &ndash; i pojawiają się jako takie w podsumowaniu, w przeglądzie folderów i w oknie wyników.
+  </div>
+
+  <h2 id="profile">Profile</h2>
+  <p>Profil zapisuje pełną konfigurację wszystkich trzech zadań (źródło, cel, opcje, status aktywności) pod nazwą, aby można było go przywołać w dowolnym momencie &ndash; także jako podstawę dla harmonogramu.</p>
+
+  <h3>Wybór profilu</h3>
+  <p>Kliknięcie nazwy na liście rozwijanej <strong>natychmiast</strong> ładuje profil &ndash; osobny przycisk &bdquo;Załaduj&rdquo; nie jest już potrzebny.</p>
+
+  <div class="warn">
+    <strong>Uwaga na niezapisane zmiany:</strong> ponieważ wybór ładuje od razu, niezapisane zmiany w polach zadań zostaną utracone przy przejściu na inny profil. Najpierw zapisz je <strong>💾 Zapisz</strong>, jeśli chcesz je zachować.
+  </div>
+
+  <h3>Zapisz / nowy / usuń</h3>
+  <p><strong>💾 Zapisz</strong> zapisuje bieżącą konfigurację pod wybraną nazwą. <strong>➕ Nowy</strong> pyta o nazwę, a następnie czyści wszystkie trzy zadania &ndash; nowy profil zaczyna od zera, bez pozostałości po poprzednio załadowanym profilu. <strong>🗑 Usuń</strong> trwale usuwa wybrany profil.</p>
+
+  <div class="warn">
+    <strong>Profil używany przez harmonogram:</strong> jeśli zapiszesz profil, który występuje w aktywnym harmonogramie, program wyświetli komunikat. Powód: harmonogram zapamiętuje tylko <strong>nazwę profilu</strong> i ładuje profil na nowo przy każdym uruchomieniu. Zmiany, które właśnie zapisałeś (źródła, cele, opcje), obowiązują zatem również dla zaplanowanych przebiegów tego profilu. Komunikat można anulować, jeśli nie było to zamierzone.
+  </div>
+
+  <h3>🛡 Sieć i znaczniki czasu</h3>
+  <p><strong>Symbol 🛡</strong> na pasku profilu (obok 🚫) otwiera ustawienie znaczników czasu dla bieżącego profilu. Określa ono, jak w trybie <em>&bdquo;tylko jeśli nowszy&rdquo;</em> (pole Nadpisz nie zaznaczone) decyduje się, czy plik rzeczywiście jest nowszy &ndash; i zapobiega niepotrzebnemu kopiowaniu niezmienionych plików na dyskach NAS i sieciowych z powodu różnic w znacznikach czasu.</p>
+  <ul>
+    <li><strong>Automatycznie</strong> (domyślnie): tolerancja dwóch sekund działa tylko wtedy, gdy źródło lub cel jest ścieżką sieciową w postaci <code>\\serwer\udział</code>. Kopie lokalne są porównywane dokładnie.</li>
+    <li><strong>Zawsze</strong>: tolerancja działa zawsze, także lokalnie. Przydatne dla <strong>dysków sieciowych z literą</strong> (np. <code>X:</code>), które &bdquo;Automatycznie&rdquo; nie rozpoznaje jako sieci.</li>
+    <li><strong>Wyłączone</strong>: dokładne porównanie bez tolerancji.</li>
+  </ul>
+  <p>Ustawienie jest zapisywane dla profilu. Okno pokazuje również, które z trzech zadań aktualnie używają ścieżki sieciowej.</p>
+
+  <h2 id="ustawienia">Ustawienia</h2>
+  <p>Ikona koła zębatego <strong>⚙</strong> w prawym górnym rogu okna programu (obok <strong>? POMOC</strong>) otwiera okno ustawień.</p>
+
+  <h3>Język</h3>
+  <p>3Kopiuj obsługuje wiele języków. Język jest zwykle wybierany podczas instalacji; tutaj można go zmienić w dowolnym momencie. Dostępne są wszystkie języki, dla których plik językowy znajduje się obok programu &ndash; każdy z flagą, dzięki czemu wybór jest jednoznaczny, nawet gdy interfejs jest aktualnie w języku, którego nie czytasz.</p>
+
+  <p>Nazwa programu zmienia się wraz z językiem: <strong>3Kopiuj</strong> po niemiecku, <strong>3Copy</strong> po angielsku, <strong>3Copier</strong> po francusku, <strong>3Copiar</strong> po hiszpańsku. Nazwa na ekranie zmienia się, ale pliki na dysku zachowują swoje nazwy (<code>3Kopier.ini</code>, profile z rozszerzeniem <code>.3ko</code>, logi w folderze <code>Logs</code>). Zmiana języka nie wpływa zatem na Twoje ustawienia, profile i filtry.</p>
+
+  <div class="note">
+    <strong>Działa po restarcie:</strong> podobnie jak skalowanie, język zaczyna obowiązywać po odbudowaniu okna programu. Trwające kopiowanie nigdy nie jest przerywane &ndash; nowy język pojawi się przy następnym zwykłym uruchomieniu.
+  </div>
+
+  <p>Dodatkowe języki są dostępne jako sprawdzone pakiety językowe od Sattler IT-Service i pojawiają się automatycznie w wyborze po ich zainstalowaniu. Dostarczone pliki językowe są szyfrowane, podobnie jak moduł harmonogramu: gwarantuje to, że teksty wyświetlane w programie są tymi, które zostały dostarczone.</p>
+
+  <h3>Skalowanie interfejsu</h3>
+  <p>Dostępne są stałe kroki od <strong>90&nbsp;%</strong> do <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Aktualnie wybrany krok jest podświetlony. Po kliknięciu <strong>Zastosuj</strong> interfejs jest odbudowywany w nowym rozmiarze.</p>
+
+  <div class="note">
+    <strong>Stały rozmiar okna:</strong> okno programu celowo nie może być zmieniane za pomocą przeciągania krawędzi. Zapobiega to zniekształceniom lub obcinaniu wyświetlania. Jeśli chcesz większy widok, wybierz wyższy poziom skalowania.
+  </div>
+
+  <h3>Przechowuj logi przez</h3>
+  <p>Określa, jak długo zakończone pliki logów (patrz sekcja <a href="#logi">Logi</a>) są automatycznie przechowywane, zanim zostaną usunięte przy następnym uruchomieniu programu. Dostępne są stałe kroki od <strong>1 dzień</strong> do <strong>365 dni</strong> oraz <strong>∞ (nieograniczony)</strong> &ndash; wtedy nic nie jest usuwane automatycznie.</p>
+
+  <p>Przycisk <strong>🗑 Posprzątaj teraz</strong> stosuje wybrany okres natychmiast, bez czekania na następne uruchomienie.</p>
+
+  <h3>Szczegółowość logów</h3>
+  <p>Określa, jak szczegółowy jest plik logu dla danego przebiegu:</p>
+  <ul>
+    <li><strong>Kompaktowy</strong> (domyślnie): <strong>jedna linia podsumowująca</strong> na zadanie w logu (skopiowane, nadpisane, pominięte itd. wraz z ilością danych) &ndash; brak linii dla poszczególnych folderów. Razem z podsumowaniem na górze pliku log pozostaje krótkim, czytelnym przeglądem, niezależnie od liczby przetworzonych plików i folderów.</li>
+    <li><strong>Szczegółowy:</strong> dodatkowo zapisywana jest jedna linia na folder (liczba plików, akcje, ilość danych) &ndash; przydatna do diagnozowania, gdy chcesz sprawdzić, co stało się w danym folderze lub dlaczego plik nie został skopiowany.</li>
+  </ul>
+  <p>Ustawienie obowiązuje od następnego przebiegu, również zaplanowanych. Błędy są zawsze rejestrowane w całości w obu trybach, podobnie jak automatyczne skracanie ścieżek (MAX_PATH).</p>
+
+  <h2 id="przebieg">Ręczne uruchamianie kopiowania</h2>
+
+  <h3>1. Skonfiguruj zadania</h3>
+  <p>Dla każdego pożądanego zadania ustaw źródło, cel i odpowiednie opcje. Włącz zadanie polem <strong>aktywne</strong>.</p>
+
+  <h3>2. Naciśnij Start</h3>
+  <p>Program najpierw zlicza wszystkie pliki w aktywnych folderach źródłowych, aby poprawnie wypełnić pasek postępu. Tę fazę zliczania można już przerwać przyciskiem <strong>⏹ Stop</strong>; przy bardzo dużej liczbie plików wyświetlana jest bieżąca informacja pośrednia, zamiast sprawiać wrażenie zawieszenia. Następnie zadania są przetwarzane kolejno (A1, A2, A3).</p>
+
+  <h3>3. Obserwuj postęp</h3>
+  <p>Pasek postępu, linia statusu i statystyki są aktualizowane na bieżąco podczas przebiegu. W przypadku jednego bardzo dużego pliku pasek przesuwa się widocznie wewnątrz tego pliku, zamiast stać w miejscu do jego zakończenia. Linia statusu pokazuje również szacowany pozostały czas, gdy tylko jest wystarczająco dużo danych, oraz bieżącą prędkość kopiowania (np. <code>157,4 MB/s</code>) &ndash; obliczaną jako średnią ruchomą z ostatnich sekund, aby liczba pozostawała stabilna przy zmieniających się rozmiarach plików. Dotyczy to również okna postępu harmonogramu. W symulacji prędkość nie jest wyświetlana, ponieważ nic nie jest rzeczywiście kopiowane.</p>
+
+  <h3>4. Przerwanie</h3>
+  <p>Przycisk <strong>⏹ Stop</strong> lub klawisz <strong>ESC</strong> bezpiecznie przerywa przebieg w dowolnym momencie &ndash; także w środku dużego pliku. W pełni przetworzone pliki pozostają; właśnie rozpoczęty, jeszcze niekompletny plik docelowy jest automatycznie usuwany, aby nigdy nie pozostał niedokończony fragment.</p>
+
+  <h3>5. Okno wyników</h3>
+  <p>Po zakończeniu otwiera się okno wyników ze statystykami dla każdego zadania &ndash; szczegóły w sekcji <a href="#wynik">Wynik</a>.</p>
+
+  <h2 id="harmonogram">Harmonogram</h2>
+  <p>Przycisk <strong>🕐 Harmonogram</strong> w oknie głównym otwiera osobne okno, w którym dowolna liczba profili może działać automatycznie według harmonogramu &ndash; nawet kilka razy dziennie lub w stałych odstępach.</p>
+
+  <h3>Tworzenie harmonogramu</h3>
+  <p>Użyj <strong>➕ Nowy</strong>, aby wybrać profil i ustawić wyzwalacz:</p>
+  <ul>
+    <li><strong>Codziennie</strong> &ndash; stała godzina, każdego dnia</li>
+    <li><strong>Dni tygodnia</strong> &ndash; stała godzina, tylko w wybrane dni tygodnia</li>
+    <li><strong>Interwał</strong> &ndash; co X godzin, niezależnie od pory dnia</li>
+  </ul>
+  <p><strong>✏</strong> umożliwia edycję istniejącego harmonogramu, <strong>🗑</strong> usuwa go. Pole <strong>Aktywny</strong> w oknie edycji tymczasowo wstrzymuje harmonogram bez jego usuwania.</p>
+
+  <h3>🔍 Symulacja / ▶ Start (testowanie ręczne)</h3>
+  <p>Każdy wiersz harmonogramu ma dwa przyciski do natychmiastowego, ręcznego testowania &ndash; niezależnie od samego harmonogramu:</p>
+  <ul>
+    <li><strong>🔍 Symulacja</strong> &ndash; pokazuje dokładnie, co by się stało (które pliki zostałyby skopiowane, nadpisane, pominięte&hellip;) <strong>bez</strong> faktycznego wprowadzania zmian. Nic nie jest kopiowane, przenoszone ani usuwane.</li>
+    <li><strong>▶ Start</strong> &ndash; wykonuje zadanie od razu na rzeczywiście.</li>
+  </ul>
+  <div class="note">
+    Te dwa przyciski <strong>zawsze</strong> pokazują okno postępu, a następnie okno wyników &ndash; niezależnie od tego, czy dla tego harmonogramu włączony jest tryb cichy. Tryb cichy (patrz niżej) dotyczy tylko automatycznie wyzwalanych przebiegów, nigdy testów ręcznych.
+  </div>
+
+  <h3>🔇 Tryb cichy</h3>
+  <p>W oknie edycji (✏ lub przy tworzeniu ➕ Nowy) można włączyć <strong>tryb cichy</strong> dla harmonogramu. Gdy jest włączony, <strong>automatycznie</strong> (przez harmonogram) uruchomiony przebieg odbywa się całkowicie bez okna:</p>
+  <ul>
+    <li>Jeśli wszystko było w porządku (również gdy nie było nic do skopiowania), pozostaje <strong>całkowicie cicho</strong> &ndash; bez okna, bez komunikatu.</li>
+    <li>Jeśli wystąpił <strong>prawdziwy błąd</strong> (np. źródło lub cel niedostępny), pojawia się krótki, dyskretny komunikat wskazujący odpowiedni log.</li>
+  </ul>
+  <p>Harmonogram z włączonym trybem cichym jest w liście oznaczony symbolem <strong>🔇</strong>.</p>
+
+  <h3>Samodzielne okno postępu</h3>
+  <p>Gdy harmonogram działa (nie-cichy, automatycznie lub testowany ręcznie przez Symulację/Start), otwiera się <strong>małe osobne okno</strong> z paskiem postępu, statystykami i własnym przyciskiem <strong>⏹ Stop</strong>. Okno pojawia się również, gdy 3Kopiuj działa tylko w tle (zasobnik systemowy), ma <strong>własny wpis na pasku zadań</strong> i można je <strong>minimalizować</strong>, jeśli przeszkadza &ndash; przebieg kontynuuje w tle. To samo dotyczy uruchomienia z otwartego okna harmonogramu.</p>
+  <p>Przycisk zamykania (X) w oknie postępu działa jak <strong>⏹ Stop</strong>: bezpiecznie przerywa tylko ten jeden przebieg &ndash; nie kontynuuje on później w tle.</p>
+  <div class="ok">
+    <strong>Ważne:</strong> okno główne z kartami zadań pozostaje <strong>całkowicie nienaruszone</strong> &ndash; Twoje niezapisane zmiany w oknie głównym nigdy nie są nadpisywane ani zakłócane przez automatycznie uruchamiający się harmonogram.
+  </div>
+
+  <h3>Kolejka przy nakładających się przebiegach</h3>
+  <p>W danym momencie działa tylko <strong>jeden</strong> przebieg kopiowania. Jeśli harmonogram zostanie uruchomiony, gdy inny przebieg jeszcze trwa (inny harmonogram lub ręcznie uruchomiony), ten przebieg <strong>nie jest tracony</strong>: trafia do <strong>kolejki</strong> i uruchamia się automatycznie, gdy bieżący przebieg się zakończy. Wiele harmonogramów ustawionych na tę samą godzinę jest w ten sposób <strong>przetwarzanych jeden po drugim, każdy w całości</strong>. Oczekiwanie i późniejsze uruchomienie jest rejestrowane w logu błędów (<code>3Kopier-Fehler.log</code>); przebieg uruchomiony z kolejki jest w oknie postępu oznaczony <em>(z kolejki)</em>.</p>
+  <p>Aby to działało również <strong>bez nadzoru</strong> (np. w nocy), okno wyników dla zaplanowanego przebiegu <strong>nie</strong> czeka na &bdquo;OK&rdquo;: pozostaje otwarte, a następny przebieg z kolejki uruchamia się automatycznie. Rano pozostawione okna wyników pokazują po kolei, co wydarzyło się w nocy.</p>
+  <div class="note">
+    <strong>Przerwanie dotyczy tylko bieżącego przebiegu:</strong> jeśli przebieg zostanie przerwany <strong>⏹ Stop</strong>, oczekujące w kolejce przebiegi kontynuują normalnie &ndash; każde we własnym oknie postępu z własnym przyciskiem <strong>⏹ Stop</strong>. Przerwany przebieg jest rozpoznawalny po nagłówku <strong>&bdquo;PODSUMOWANIE (PRZERWANE)&ldquo;</strong> w jego pliku logu.
+  </div>
+
+  <h2 id="tlo">Praca w tle, zasobnik systemowy i autostart</h2>
+
+  <h3>Zamykanie okna</h3>
+  <p>Jeśli istnieje co najmniej jeden <strong>aktywny</strong> harmonogram, przycisk (X) w oknie głównym <strong>nie</strong> zamyka programu &ndash; znika tylko okno, program działa w tle (rozpoznawalny po ikonie w obszarze powiadomień paska zadań Windows). Dzięki temu harmonogram pozostaje aktywny, nawet gdy nikt nie trzyma okna otwartego.</p>
+  <p>Jeśli <strong>nie</strong> ma aktywnego harmonogramu, przycisk (X) zamyka program normalnie.</p>
+
+  <h3>Ponowne otwarcie</h3>
+  <p>Kliknięcie prawym przyciskiem myszy na ikonie w zasobniku otwiera małe menu z <strong>Otwórz</strong> (pokazuje okno ponownie) i <strong>Zakończ</strong> (kończy program definitywnie, nawet przy aktywnym harmonogramie).</p>
+
+  <h3>Autostart</h3>
+  <p>Gdy istnieje co najmniej jeden aktywny harmonogram, 3Kopiuj dodaje się do autostartu Windows &ndash; przy logowaniu uruchamia się zminimalizowany w tle, bez wyświetlania okna. Gdy ostatni aktywny harmonogram zostanie usunięty lub wyłączony, wpis autostartu również automatycznie znika.</p>
+
+  <h3>Tylko jedna instancja naraz</h3>
+  <p>Jeśli 3Kopiuj zostanie uruchomiony po raz drugi, gdy już działa instancja (również w tle), <strong>nie</strong> otwiera się drugie okno. Zamiast tego już działająca instancja zostaje przywrócona na widok.</p>
+
+  <h2 id="dlugiesciezki">Długie ścieżki (MAX_PATH)</h2>
+  <p>Domyślnie Windows nie pozwala na ścieżki plików dłuższe niż 260 znaków (tzw. <strong>limit MAX_PATH</strong>). Pliki, których ścieżki docelowe są zbyt długie, nie mogą być kopiowane ani przenoszone &ndash; dotyczy to szczególnie plików w głęboko zagnieżdżonych folderach z długimi nazwami, często spotykanych w folderach pobierania.</p>
+
+  <p>3Kopiuj automatycznie wykrywa takie pliki i skraca nazwę pliku w miejscu docelowym na tyle, na ile to konieczne, aby przebieg się powiódł.</p>
+
+  <div class="ok">
+    <strong>Automatyczne skracanie:</strong> jeśli ścieżka docelowa jest zbyt długa, najpierw skraca się nazwę pliku w miejscu docelowym &ndash; tylko tyle, aby ścieżka zmieściła się w 260 znakach. Jeśli to nie wystarcza, dodatkowo skraca się ostatni podfolder w ścieżce docelowej. Rozszerzenie pliku jest zawsze zachowywane. Skrócone nazwy otrzymują oznaczenie <code>-3k</code>, np. <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Plik źródłowy pozostaje nietknięty:</strong> dostosowywana jest tylko ścieżka docelowa. Oryginalny plik zachowuje swoją nazwę. Zarówno oryginalna, jak i skrócona ścieżka docelowa są rejestrowane w logu.
+  </div>
+
+  <div class="note">
+    <strong>Nie mylić ze skracaniem wyświetlania:</strong> w przypadku bardzo długich ścieżek źródłowych/docelowych w polach zadań wyświetlanie jest skracane (początek&hellip;koniec), np. <code>H:\Download\&hellip;\Ablage</code>. To tylko wizualne: wewnętrznie zawsze używana jest pełna ścieżka. Pełna ścieżka pojawia się jako podpowiedź po najechaniu myszą na pole.
+  </div>
+
+  <h2 id="wynik">Okno wyników</h2>
+  <p>Po każdym zakończonym (lub przerwanym) przebiegu otwiera się okno wyników &ndash; z osobną kolumną dla każdego aktywnego zadania, aby od razu widać było, co trafiło gdzie:</p>
+
+  <ul>
+    <li>Każda kolumna pokazuje <strong>źródło i cel</strong> danego zadania oraz jego własne statystyki</li>
+    <li>Poniżej <strong>podsumowanie ogólne</strong> dla wszystkich zadań (ilość danych, czas, liczba błędów)</li>
+    <li>W symulacji każdy wiersz jest sformułowany jako &bdquo;zostałoby&hellip;&rdquo; z wyraźną informacją, że nic nie zostało faktycznie zmienione</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Wpis</th>
+      <th>Znaczenie</th>
+    </tr>
+    <tr>
+      <td><strong>Skopiowane</strong></td>
+      <td>Nowe pliki, które nie istniały w miejscu docelowym i zostały skopiowane</td>
+    </tr>
+    <tr>
+      <td><strong>Nadpisane</strong></td>
+      <td>Pliki, które już istniały w miejscu docelowym i zostały zaktualizowane</td>
+    </tr>
+    <tr>
+      <td><strong>Przeniesione</strong></td>
+      <td>Pliki przeniesione ze źródła do celu (opcja &bdquo;Przenieś&rdquo;)</td>
+    </tr>
+    <tr>
+      <td><strong>Pominięte</strong></td>
+      <td>Pliki, które w miejscu docelowym były już nowsze i pozostawiono je bez zmian</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Skrócone</strong></td>
+      <td>Pliki, których ścieżka docelowa przekroczyła limit MAX_PATH i została automatycznie skrócona (oznaczenie <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Wykluczone</strong></td>
+      <td>Pliki i foldery pominięte zgodnie z listą wykluczeń (patrz sekcja <a href="#wykluczenia">Wykluczenia</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Błędy</strong></td>
+      <td>Pliki lub zadania, których nie można było przetworzyć (szczegóły na końcu odpowiedniego logu)</td>
+    </tr>
+    <tr>
+      <td><strong>Dane</strong></td>
+      <td>Ilość przetworzonych danych (na zadanie i ogółem)</td>
+    </tr>
+    <tr>
+      <td><strong>Czas</strong></td>
+      <td>Całkowity czas trwania kopiowania (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="logi">Logi</h2>
+  <p>Dla każdego przebiegu &ndash; ręcznego lub zaplanowanego, rzeczywistego lub symulowanego &ndash; tworzony jest <strong>oddzielny plik logu</strong> w podfolderze <code>Logs</code>, zamiast jednego pliku zbiorczego, który rosnąłby bez końca.</p>
+
+  <h3>Nazwa pliku</h3>
+  <p>Każdy plik logu ma nazwę <code>NazwaProfilu_znacznikCzasu_typ.log</code>, np.:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; rzeczywisty przebieg profilu &bdquo;MMDownload&rdquo;</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; symulacja profilu &bdquo;3Test&rdquo;</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; przebieg bez załadowanego profilu</li>
+  </ul>
+  <p><strong>📋 Log</strong> w oknie głównym otwiera folder <code>Logs</code> bezpośrednio w Eksploratorze Windows.</p>
+
+  <div class="note">
+    <strong>Nazwy plików są takie same we wszystkich językach:</strong> przebieg bez profilu jest zawsze zapisywany jako <code>Manuell</code>, a pliki ustawień zachowują swoje niemieckie nazwy. To celowe: ta sama instalacja po zmianie języka odszukuje swoje ustawienia, profile i filtry, a przesłany log można od razu odczytać.
+  </div>
+
+  <h3>Zawartość pliku logu</h3>
+  <ul>
+    <li><strong>Podsumowanie</strong> z ogólnymi statystykami i czasem trwania znajduje się na samej górze &ndash; wynik jest widoczny bez przewijania</li>
+    <li>Data, godzina i nazwa profilu przebiegu</li>
+    <li>Źródło i cel każdego zadania wraz z wybranymi opcjami</li>
+    <li><strong>Linia podsumowująca dla każdego zadania</strong> (akcje i ilość danych); w trybie <em>Szczegółowy</em> dodatkowo <strong>podsumowanie dla każdego folderu</strong> zamiast jednej linii na plik (patrz <a href="#ustawienia">Ustawienia &rarr; Szczegółowość logów</a>)</li>
+    <li>Jeśli wystąpiły błędy, są one dodatkowo wypisane w osobnej sekcji <strong>&bdquo;=== BŁĘDY ===&ldquo;</strong> na samym końcu pliku &ndash; w całości, w obu trybach</li>
+  </ul>
+
+  <div class="note">
+    <strong>Przechowywanie:</strong> jak długo logi są przechowywane przed automatycznym usunięciem, ustawia się w <a href="#ustawienia">Ustawieniach</a> (od 1 dnia do 365 dni lub nieograniczenie).
+  </div>
+
+  <h3>⚠ Log błędów (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Ten oddzielny plik w folderze programu (dostępny przez <strong>⚠ Błędy</strong>) zawiera <strong>błędy programu</strong>, które nie należą do żadnego konkretnego przebiegu kopiowania &ndash; na przykład, gdy moduł harmonogramu nie mógł zostać załadowany. Błędy w trakcie kopiowania znajdują się, jak opisano powyżej, na końcu pliku logu tego przebiegu.</p>
+
+  <div class="ok">
+    <strong>Plik INI (<code>3Kopier.ini</code>):</strong> wszystkie ustawienia są automatycznie zapisywane przy zamykaniu programu i przywracane przy następnym uruchomieniu &ndash; w tym ścieżki źródłowe i docelowe, status aktywności trzech zadań, opcje <em>Nadpisz</em> i <em>Przenieś</em> dla każdego zadania, opcja <em>Zamknij</em>, ostatnio używane foldery źródłowe/docelowe w oknach wyboru, wybrany <em>poziom skalowania</em>, ustawiony <em>język</em>, okres przechowywania logów oraz <em>szczegółowość logów</em> (kompaktowy/szczegółowy). Konfiguracja ręczna nie jest potrzebna.
+  </div>
+
+  <div class="note">
+    <strong>Profile (<code>.3ko</code>):</strong> przy zapisie profilu zapisywane są wszystkie ścieżki, status aktywności oraz opcje <em>Nadpisz</em> i <em>Przenieś</em> dla każdego zadania. Opcja <em>Zamknij</em> jest ustawieniem globalnym i jest przechowywana tylko w pliku INI, nie w profilu.
+  </div>
+
+  <div class="note">
+    <strong>Plik harmonogramu (<code>3Kopier-Zeitplan.ini</code>):</strong> wszystkie utworzone harmonogramy (profil, wyzwalacz, tryb cichy, status aktywności) są przechowywane tutaj i ładowane automatycznie przy następnym uruchomieniu.
+  </div>
+
+  <h3>Przegląd: pliki i foldery w folderze programu</h3>
+  <p>Wszystkie poniższe pliki i foldery są tworzone automatycznie podczas pracy &ndash; żaden z nich nie musi być tworzony ręcznie ani dostarczany z programem:</p>
+
+  <table>
+    <tr>
+      <th>Plik / folder</th>
+      <th>Zawartość</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Ustawienia ogólne: pola zadań, opcje, ostatnio używane foldery, skalowanie, język, okres przechowywania</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Wszystkie utworzone harmonogramy z profilem, wyzwalaczem, trybem cichym i statusem aktywności</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Błędy programu niezwiązane z konkretnym przebiegiem kopiowania</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (folder)</td>
+      <td>Jeden plik logu na przebieg &ndash; patrz <a href="#logi">Logi</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Utworzone przez Ciebie profile (jeden plik na nazwę profilu)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Czy to narzędzie okazało się przydatne?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Kopiuj jest rozwijany i utrzymywany za darmo.<br>
+      Mała darowizna pomoże w jego dalszym rozwoju. Bardzo dziękujemy! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Przekaż darowiznę przez PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Kopiuj &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

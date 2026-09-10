@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopyala – Yardım</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopyala &ndash; Yardım ve belgeler</h1>
+  <p>Sürüm v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Dil:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#E30A17"/><circle cx="8" cy="7" r="3.8" fill="#FFFFFF"/><circle cx="9.4" cy="7" r="3.0" fill="#E30A17"/><polygon points="13.4,7 12.2,7.9 12.6,6.5 11.5,5.6 12.9,5.6 13.4,4.3 13.9,5.6 15.3,5.6 14.2,6.5 14.6,7.9" fill="#FFFFFF"/></svg> Türkçe</span>
+  <span class="lb-note">Dili programda ⚙ altından değiştirirsiniz; yardım sonra seçilen dili izler.</span>
+</div>
+
+<nav>
+  <a href="#genel">Genel bakış</a>
+  <a href="#isler">İşler</a>
+  <a href="#secenekler">Seçenekler</a>
+  <a href="#haric">Hariç tutma</a>
+  <a href="#profiller">Profiller</a>
+  <a href="#ayarlar">Ayarlar</a>
+  <a href="#akis">Akış</a>
+  <a href="#zamanlayici">Zamanlayıcı</a>
+  <a href="#arkaplan">Arka plan</a>
+  <a href="#uzun-yollar">Uzun yollar</a>
+  <a href="#sonuc">Sonuç</a>
+  <a href="#gunlukler">Günlükler</a>
+</nav>
+
+<main>
+
+  <h2 id="genel">Genel bakış</h2>
+  <p><strong>S-IT-3Kopyala</strong>, günlük ve zamanlayıcı ile çalışan üçlü bir kopyalama aracıdır. Program tek bir geçişte üç bağımsız kopyalama veya taşıma işini yürütür &ndash; dosyaları NAS aygıtlarına, buluttaki klasörlere (örneğin pCloud) veya başka hedeflere dağıtmak için biçilmiş kaftan. Bunun yanında profiller bir plana göre kendiliğinden, arka planda ve sizin hiçbir müdahaleniz olmadan çalışabilir.</p>
+
+  <div class="note">
+    <strong>Alışılmış kullanım:</strong> yerel bir klasördeki verileri aynı anda birden çok hedefe kopyalamak &ndash; örneğin NAS 1, NAS 2 ve pCloud &ndash; tek tıklamayla ya da her akşam aynı saatte kendiliğinden.
+  </div>
+
+  <div class="ok">
+    <strong>💡 Uygulamada gerçekte üç işle sınırlı değildir:</strong> bir geçiş aynı anda en çok üç kaynak-hedef çiftini işler, ancak <strong>profil</strong> sayısı sınırsızdır ve her profilin <strong>kendi planı</strong> olabilir (bkz. <a href="#zamanlayici">Zamanlayıcı</a> bölümü). Uygulamada bu şu demektir: istediğiniz kadar bağımsız kopyalama işi, her biri kendi üç kaynak-hedef çiftiyle, her biri kendi saatinde veya kendi aralığıyla &ndash; ve hepsi arka planda kendiliğinden çalışır, tek tek başlatmanıza gerek kalmadan. Örneğin: &bdquo;Fotoğraflar&ldquo; profili her gün saat 20'de, &bdquo;Muhasebe&ldquo; profili her 4 saatte bir, &bdquo;Haftalık kopya&ldquo; profili yalnızca cumartesi günleri &ndash; hepsi bir defada kurulur ve birbirinden bağımsız olarak işler.
+  </div>
+
+  <div class="ok">
+    <strong>Python sürümü:</strong> 3Kopyala çağdaş bir teknik temele dayanır (AutoIt yerine Python). Kopyalama arka planda akar; pencere her zaman yanıt verir, çok sayıda dosyada da, yavaş ağ sürücülerinde de (donmaz). Büyük dosyalar blok blok kopyalanır: ilerleme çubuğu bu yüzden tek bir çok büyük dosyanın içinde bile görünür biçimde ilerler, <strong>⏹ Durdur</strong> ise böyle bir dosyanın ortasında bile anında etki eder.
+  </div>
+
+  <h2 id="isler">İşlerin ayarlanması</h2>
+  <p>Program üç bağımsız kopyalama işi tanır (A1, A2, A3). Her iş bir kaynak klasör ile bir hedef klasörden oluşur ve tek tek açılıp kapatılabilir.</p>
+
+  <h3>&bdquo;aktif&ldquo; işareti</h3>
+  <p>Başlatıldığında yalnızca <strong>aktif</strong> olarak işaretlenmiş işler işlenir. Kapatılmış işler bütünüyle atlanır, ama yolları saklı kalır.</p>
+
+  <h3>🔰 İşin süzgeci</h3>
+  <p>Her iş kartının başlığında sağda <strong>🔰</strong> işareti bulunur. Onunla <strong>yalnızca o iş için</strong> geçerli süzgeçler koyarsınız: ek hariç tutmalar ve YALNIZCA kuralı (&bdquo;yalnızca belirli dosya türlerini kopyala&ldquo;). İş için bir kural konur konmaz işaret yeşile döner &ndash; gri ise kendine ait süzgeç yoktur. Ayrıntılar <a href="#haric">Hariç tutma</a> bölümündedir.</p>
+
+  <h3>Kaynağın seçilmesi</h3>
+  <p>İşin kaynak klasörünü seçmek için <strong>📁 Kaynak</strong> düğmesine basın. Pencere son kaynak klasörü hedef seçiminden ayrı olarak anımsar &ndash; <strong>Kaynak</strong> düğmesine bir sonraki basışta (hangi işte olursa olsun) seçim oradan başlar.</p>
+
+  <h3>Hedefin seçilmesi</h3>
+  <p>Hedef klasörü belirlemek için <strong>📁 Hedef</strong> düğmesine basın. Bu klasörün önceden var olması gerekmez &ndash; kopyalama sırasında kendiliğinden oluşturulur. Burada da pencere son hedef klasörü kaynak seçiminden ayrı anımsar.</p>
+
+  <div class="note">
+    <strong>Uzun yolların gösterimi:</strong> bir yol alana bütünüyle sığmıyorsa, kenardan kesilmek yerine düzgünce kısaltılır (baş&hellip;son). <strong>Yolun tamamı</strong>, fareyle üzerinde durur durmaz görünür (ipucu); içeride 3Kopyala her zaman yolun tamamıyla çalışır.
+  </div>
+
+  <div class="note">
+    <strong>Veri miktarı:</strong> <em>Veri</em> alanı her etkin kaynak klasörün o anki büyüklüğünü gösterir. Değişikliklerden sonra göstergeyi tazelemek için <strong>🔄 Yenile</strong> düğmesine basın. Hesaplama arka planda akar &ndash; sürdüğü sürece <em>(hesaplanıyor…)</em> yazar ve pencere kullanılabilir kalır.
+  </div>
+
+  <div class="note">
+    <strong>Ağ yolları ve NAS:</strong> <code>\\Sunucu\Paylaşım</code> biçimindeki UNC yolları bütünüyle desteklenir &ndash; hem kaynak hem hedef olarak. Ağdaki kaynaklar için veri miktarı bilerek <strong>önceden hesaplanmaz</strong> (büyük paylaşımlarda bu uzun sürebilir); onun yerine <em>(ağ)</em> yazar. Kopyalamanın kendisi bütünüyle olağan biçimde akar.
+  </div>
+
+  <h2 id="secenekler">Seçenekler</h2>
+
+  <h3>Üzerine yaz (her iş için)</h3>
+  <p>Bu seçenek açıkken hedefteki var olan dosyaların üzerine tarihlerine bakılmaksızın <strong>her zaman</strong> yazılır. O olmadan hedefteki dosyaların üzerine yalnızca kaynak dosya <em>daha yeniyse</em> yazılır. Hedefteki dosya aynı yaşta ya da daha yeniyse atlanır.</p>
+  <div class="note">
+    <strong>Ağ sürücülerinde zaman damgası payı:</strong> NAS ile ağ sürücüleri arasında dosyaların zaman damgaları çoğu kez bir ila iki saniye ayrılır. Pay olmadan &bdquo;yalnızca daha yeniyse&ldquo; kipinde değişmemiş dosyalar yanlışlıkla daha yeni sayılır ve her geçişte yeniden kopyalanırdı. 3Kopyala bunu iki saniyelik bir payla önler &ndash; her profil için <a href="#profiller">🛡 işaretiyle</a> ayarlanabilir.
+  </div>
+
+  <h3>Taşı (her iş için)</h3>
+  <p>Bu seçenek açıkken dosyalar kopyalanmak yerine <strong>taşınır</strong>. Kaynak dosya, ancak hedefe eksiksiz ve zarar görmeden ulaştıktan sonra silinir. Bu sırada boş kalan kaynak klasörler taşıma sonrasında kendiliğinden kaldırılır.</p>
+
+  <div class="warn">
+    <strong>Taşırken dikkat:</strong> dosyalar kaynak klasörden yok olur. İlk kullanımdan önce bunun gerçekten istenen şey olup olmadığını denetleyin. Bir hata olur ya da yarı yolda kesilirse, kaynak dosya güvenceyle el değmemiş kalır &ndash; silme ancak tümüyle başarılı bir aktarımdan sonra gelir.
+  </div>
+
+  <h3>Kopyalamadan sonra: kapatma veya uyku</h3>
+  <p><strong>💻 Kopyalamadan sonra</strong> alanı iki seçenek sunar: <strong>Kapat</strong> ve <strong>Uyku modu</strong>. Biri açıksa ve kopyalama <strong>hatasız</strong> bittiyse, program bilgisayarın kapatılıp kapatılmayacağını ya da uykuya alınıp alınmayacağını sorar. Hatalardan veya bir kesintiden sonra bu soru sorulmaz.</p>
+  <p>İki seçenek <strong>birbirini dışlar</strong> &ndash; birini açarsanız öteki kapanır. Uyku, Windows'un güç yönetimini kullanır; bilgisayarın uykuya mı yoksa derin uykuya mı geçeceği güç ayarlarınıza bağlıdır.</p>
+  <div class="note">
+    Bu iki seçenek zamanlayıcının kendiliğinden yaptığı çalıştırmalar için geçerli değildir &ndash; yalnızca elle başlatılan kopyalamalarda etkilidir.
+  </div>
+
+  <h2 id="haric">Dosya ve klasörleri hariç tutma</h2>
+  <p>Profil çubuğundaki <strong>🚫</strong> düğmesiyle (<strong>🗑 Sil</strong> düğmesinin yanında) belirli dosyaları ve bütün klasörleri kopyalamanın dışında tutarsınız. Bu özellikle geçici dosyaların, sistem dosyalarının ve tarayıcıların çoğu kez devasa önbellek klasörlerinin hiç kopyalanmaması için yararlıdır &ndash; ya da büyük yedek ve imaj dosyalarının bir yana bırakılması, böylece hedefte gereksiz bir veri yığını birikmez.</p>
+
+  <div class="note">
+    <strong>İki tür kural:</strong> joker imli <em>dosya kalıpları</em> (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) tek tek dosyalarla ilgilidir. <em>Klasör adları</em> (<code>cache2</code>, <code>GPUCache</code>) bütün bir klasörü tüm alt klasörleriyle dışarıda bırakır &ndash; kopyalama sırasında oraya girilmez bile, bu da büyük önbellek yapılarında zaman kazandırır.
+  </div>
+
+  <h3>Öntanımlı hariç tutmalar</h3>
+  <p>İlk başlatmada program <code>3Kopier-Ausschluss.ini</code> dosyasını akla yatkın başlangıç değerleriyle oluşturur: geçici dosyalar (Windows, Office, LibreOffice/OpenOffice), Windows sistem dosyaları, yaygın tarayıcıların önbellek klasörleri (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) ve <code>*.iso</code>, <code>*.nrg</code> ya da <code>*.tib</code> gibi büyük imaj biçimleri. Bu öntanımlı liste başlangıçta bütün profiller için geçerlidir. Hariç tutma penceresindeki <strong>Öntanımlı listeyi aç</strong> düğmesiyle onu her zaman değiştirebilirsiniz.</p>
+
+  <h3>Her profil için uyarlama</h3>
+  <p>Hariç tutma penceresi her zaman o an yüklü olan profille ilgilidir (profilsiz bir çalıştırmada bu &bdquo;Manuell&ldquo;dir). İki uyarlama olanaklıdır:</p>
+  <ul>
+    <li><strong>Öntanımlı bir kuralı kapatmak:</strong> öntanımlı hariç tutmalar listesinde işareti kaldırın &ndash; o kural artık bu profil için geçerli olmaz. Örnek: ISO dosyalarını tam da içine almak isteyen bir yedek profilinde <code>*.iso</code> yanındaki işareti kaldırın.</li>
+    <li><strong>Kendi hariç tutmalarını eklemek:</strong> alttaki metin alanına her satıra bir tane olmak üzere başka kurallar yazın &ndash; dosya kalıpları ile klasör adları karışık (örneğin <code>*.mp4</code> ya da <code>Downloads</code>).</li>
+  </ul>
+  <p>Sonunda geçerli olan liste şudur: <em>öntanımlı liste &minus; bu profil için kapatılan kurallar + sizin eklemeleriniz</em>.</p>
+
+  <h3>Her iş için uyarlama: 🔰 işareti</h3>
+  <p>Bütün profil için geçerli kuralların yanında üç işten her biri <strong>kendi</strong> süzgeçlerine sahip olabilir. Kart başlığındaki <strong>🔰</strong> işaretine tıklamak iki alanlı küçük bir pencere açar (birden çok kuralı <code>|</code> imiyle ayırın):</p>
+  <ul>
+    <li><strong>Yalnızca bu iş için ek hariç tutmalar:</strong> örneğin <code>*.iso | cache2</code> &ndash; hariç tutma penceresinde bir kural daha gibi etki eder, ama yalnızca bu iş için geçerlidir. Klasör adları her zamanki gibi jokersiz yazılır.</li>
+    <li><strong>YALNIZCA kuralı (&bdquo;bunun dışında her şey&ldquo;):</strong> bu alanda kalıplar varsa, iş <strong>yalnızca</strong> onlara uyan dosyaları kopyalar &ndash; geri kalan her şey düşer. Örnek: iş&nbsp;1 <code>*.pdf</code>, iş&nbsp;2 <code>*.jpg</code>, iş&nbsp;3 <code>*.mp4</code> &ndash; böylece tek bir geçiş karışık bir klasörü dosya türüne göre üç hedefe ayırır. Boş alan kuralı kapatır. Kolaylık: <code>pdf</code> ya da <code>.pdf</code> yeter, program kendisi <code>*.pdf</code> yapar.</li>
+  </ul>
+  <p>YALNIZCA kuralı yalnızca dosyalar için geçerlidir &ndash; klasör yapısı içinde her zamanki gibi dolaşılır, böylece uygun dosyalar alt klasörlerde de bulunur. Böylece düşen dosyalar sonuçta <em>Hariç tutulan</em> altında sayılır.</p>
+
+  <div class="note">
+    <strong>Öncelik:</strong> bütün profil için geçerli hariç tutmalar her zaman ayrıca geçerlidir. <code>*.tmp</code> uzantılı bir dosya bu yüzden &bdquo;yalnızca <code>*.tmp</code>&ldquo; durumunda da dışarıda kalır, ta ki <code>*.tmp</code> öntanımlı kuralı profil için kapatılana dek.
+  </div>
+
+  <div class="note">
+    <strong>Günlükte:</strong> hariç tutulan dosya ve klasörler kendi başlığı altında <em>Hariç tutulan</em> olarak sayılır &ndash; atlanan dosyalardan ayrı &ndash; ve böylece sonuç bilançosunda, klasör bazlı dökümde ve sonuç penceresinde görünür.
+  </div>
+
+  <h2 id="profiller">Profiller</h2>
+  <p>Bir profil, üç işin bütün ayarını (kaynak, hedef, seçenekler, aktif işareti) tek bir ad altında saklar; böylece onu her zaman yeniden çağırabilirsiniz &ndash; ve zamanlayıcı için temel olarak kullanabilirsiniz.</p>
+
+  <h3>Bir profilin seçilmesi</h3>
+  <p>Açılır listedeki bir ada tıklamak profili <strong>hemen</strong> yükler &ndash; ayrı bir &bdquo;Yükle&ldquo; düğmesine artık gerek yoktur.</p>
+
+  <div class="warn">
+    <strong>Kaydedilmemiş değişikliklere dikkat:</strong> seçim hemen yüklediği için, iş alanlarında henüz kaydetmediğiniz değişiklikler başka bir profile geçer geçmez yiter. Onları saklamak istiyorsanız önce <strong>💾 Kaydet</strong> ile kaydedin.
+  </div>
+
+  <h3>Kaydetme / yeni / silme</h3>
+  <p><strong>💾 Kaydet</strong> o anki ayarı seçilen ad altında saklar. <strong>➕ Yeni</strong> bir ad sorar ve ardından üç işi bütünüyle boşaltır &ndash; böylece yeni bir profil her zaman sıfırdan başlar, daha önce yüklenmiş profilden kalıntı olmadan. <strong>🗑 Sil</strong> seçilen profili kalıcı olarak kaldırır.</p>
+
+  <div class="warn">
+    <strong>Zamanlayıcının kullandığı profil:</strong> etkin bir planda yer alan bir profili kaydederseniz, program bunu bildirir. Nedeni: zamanlayıcı yalnızca <strong>profilin adını</strong> anımsar ve her çalıştırmada onu yeniden yükler. Az önce kaydettiğiniz değişiklikler (kaynaklar, hedefler, seçenekler) böylece o profilin planlanmış çalıştırmaları için de geçerli olur. Amaç bu değildiyse ileti iptal edilebilir.
+  </div>
+
+  <h3>🛡 Ağ ve zaman damgaları</h3>
+  <p>Profil çubuğundaki <strong>🛡 işareti</strong> (🚫 yanında) o anki profilin zaman damgası ayarını açar. Bu ayar, <em>&bdquo;yalnızca daha yeniyse&ldquo;</em> kipinin (Üzerine yaz işareti kapalı) bir dosyanın gerçekten daha yeni olup olmadığına nasıl karar vereceğini belirler &ndash; ve NAS ile ağ sürücülerindeki değişmemiş dosyaların zaman damgası farkları yüzünden her geçişte yeniden kopyalanmasını engeller.</p>
+  <ul>
+    <li><strong>Otomatik</strong> (öntanımlı): iki saniyelik pay yalnızca kaynak ya da hedef <code>\\Sunucu\Paylaşım</code> biçiminde bir ağ yolu ise geçerlidir. Bütünüyle yerel kopyalamalar tam olarak karşılaştırılır.</li>
+    <li><strong>Her zaman</strong>: pay her zaman geçerlidir, yerelde de. &bdquo;Otomatik&ldquo; kipinin ağ olarak tanımadığı, <strong>harf atanmış ağ sürücülerinde</strong> (örneğin <code>X:</code>) yararlıdır.</li>
+    <li><strong>Kapalı</strong>: paysız, tam karşılaştırma.</li>
+  </ul>
+  <p>Ayar her profil için ayrı saklanır. Pencere ayrıca üç işten hangilerinin o an ağ yolu kullandığını gösterir.</p>
+
+  <h2 id="ayarlar">Ayarlar</h2>
+  <p>Program penceresinin sağ üstündeki <strong>⚙</strong> dişlisi (<strong>? YARDIM</strong> yanında) ayarlar penceresini açar.</p>
+
+  <h3>Dil</h3>
+  <p>3Kopyala birkaç dil konuşur. Dil kural olarak daha kurulumda seçilir; burada onu her zaman değiştirebilirsiniz. Programın yanında dil dosyası bulunan bütün diller sunulur &ndash; her biri kendi bayrağıyla, böylece pencere okuyamadığınız bir dilde olsa bile seçim açık kalır.</p>
+
+  <p>Almanca sürümde program <strong>3Kopier</strong> adını taşır. Ekrandaki ad demek ki dili izler; diskteki dosyalar adlarını korur (<code>3Kopier.ini</code>, <code>.3ko</code> uzantılı profiller, <code>Logs</code> klasöründeki günlükler). Dil değişimi bu yüzden ayarlarınıza, profillerinize ve süzgeçlerinize dokunmaz.</p>
+
+  <div class="note">
+    <strong>Yeniden başlatmadan sonra etkilidir:</strong> büyütme gibi dil de ancak program penceresi yeniden kurulduğunda yürürlüğe girer. Süren bir kopyalama bu yüzden asla kesilmez &ndash; yeni dil o zaman bir sonraki olağan başlatmada görünür.
+  </div>
+
+  <p>Öteki diller Sattler IT-Service'ten denetlenmiş dil paketleri olarak gelir ve programın yanına konur konmaz seçimde kendiliğinden görünür. Birlikte verilen dil dosyaları, zamanlayıcı modülü gibi şifrelidir: böylece programda okuduğunuz metinlerin tam olarak teslim edilenler olduğu güvencededir.</p>
+
+  <h3>Arayüz ölçekleme</h3>
+  <p><strong>%&nbsp;90</strong> ile <strong>%&nbsp;200</strong> arasında sabit basamaklar öngörülmüştür (90, 100, 125, 150, 175, 200). O anki basamak vurgulanmıştır. <strong>Uygula</strong> düğmesine bastıktan sonra pencere yeni boyutta yeniden kurulur.</p>
+
+  <div class="note">
+    <strong>Pencere boyutu sabittir:</strong> program penceresi bilerek fareyle köşelerinden çekilemez. Böylece bozuk ya da kesik bir görüntü önlenir. Daha büyük bir görüntü isterseniz, yalnızca daha yüksek bir basamak seçin.
+  </div>
+
+  <h3>Günlüklerin saklanması</h3>
+  <p>Tamamlanmış günlük dosyalarının (bkz. <a href="#gunlukler">Günlükler</a> bölümü) bir sonraki başlatmada kaldırılmadan önce ne kadar süre saklanacağını belirler. <strong>1 gün</strong> ile <strong>365 gün</strong> arasında sabit basamaklar, ayrıca <strong>∞ (sınırsız)</strong> öngörülmüştür &ndash; o zaman kendiliğinden hiçbir şey kaldırılmaz.</p>
+
+  <p><strong>🗑 Şimdi temizle</strong> düğmesi seçilen süreyi bir sonraki başlatmayı beklemeden hemen uygular.</p>
+
+  <h3>Günlük ayrıntısı</h3>
+  <p>Bir çalıştırmanın günlük dosyasının ne kadar ayrıntılı olacağını belirler:</p>
+  <ul>
+    <li><strong>Kompakt</strong> (öntanımlı): her iş için <strong>tek bir özet satır</strong> (kopyalanan, üzerine yazılan, atlanan vb., veri miktarıyla birlikte) &ndash; tek tek klasörler için satır yok. Dosyanın başındaki sonuç bilançosuyla birlikte günlük böylece kısa ve okunur bir döküm olarak kalır, kaç bin dosya ve klasör işlenmiş olursa olsun.</li>
+    <li><strong>Ayrıntılı</strong>: bunun yanında her klasör için bir satır yazılır (dosya sayısı, işlemler, veri miktarı) &ndash; bir hata ararken, belirli bir klasörde ne olduğunu ya da bir dosyanın neden kopyalanmadığını anlamak istediğinizde yararlıdır.</li>
+  </ul>
+  <p>Ayar bir sonraki çalıştırmadan başlayarak etkilidir, planlananlarda da. Hatalar her iki kipte de her zaman eksiksiz kaydedilir, yolların kendiliğinden kısaltılması (MAX_PATH) da öyle.</p>
+
+  <h2 id="akis">Bir kopyalamayı elle başlatmak</h2>
+
+  <h3>1. İşlerin ayarlanması</h3>
+  <p>İstediğiniz her işte kaynağı, hedefi ve seçenekleri belirleyin. <strong>aktif</strong> işaretiyle açın.</p>
+
+  <h3>2. Başlat'a basmak</h3>
+  <p>Program önce etkin kaynak klasörlerdeki bütün dosyaları sayar, böylece ilerleme çubuğu doğru olur. Bu sayma evresi daha <strong>⏹ Durdur</strong> düğmesiyle kesilebilir; çok sayıda dosyada takılmış gibi görünmek yerine bir ara durum gösterir. Sonra işler birbiri ardına işlenir (A1, A2, A3).</p>
+
+  <h3>3. İlerlemenin izlenmesi</h3>
+  <p>İlerleme çubuğu, durum satırı ve sayaçlar çalıştırma boyunca durmadan tazelenir. Tek bir çok büyük dosyada çubuk, sonuna dek kıpırdamadan durmak yerine o dosyanın içinde görünür biçimde ilerler. Durum satırı ayrıca yeterli veri olur olmaz tahmini kalan süreyi ve o anki kopyalama hızını gösterir (örneğin <code>157.4 MB/s</code>) &ndash; son saniyelerin ortalaması olarak hesaplanır, böylece dosya boyutları değişirken sayı sakin kalır. İkisi de zamanlayıcının ilerleme penceresi için de geçerlidir. Benzetimde hız görünmez, çünkü o zaman gerçekten hiçbir şey kopyalanmaz.</p>
+
+  <h3>4. Kesme</h3>
+  <p><strong>⏹ Durdur</strong> düğmesiyle ya da <strong>ESC</strong> tuşuyla çalıştırmayı her an düzgünce kesersiniz &ndash; büyük bir dosyanın ortasında bile. Tümüyle işlenmiş dosyalar kalır; yeni başlamış, henüz eksik hedef dosya kendiliğinden kaldırılır, böylece hiçbir zaman yarım bir kalıntı kalmaz.</p>
+
+  <h3>5. Sonuç penceresi</h3>
+  <p>Sonunda her iş için sayıları gösteren bir sonuç penceresi açılır &ndash; bkz. <a href="#sonuc">Sonuç</a> bölümü.</p>
+
+  <h2 id="zamanlayici">Zamanlayıcı</h2>
+  <p>Ana penceredeki <strong>🕐 Zamanlayıcı</strong> düğmesi ayrı bir pencere açar; orada istenildiği kadar profil bir plana göre kendiliğinden çalışabilir &ndash; günde birkaç kez ya da sabit aralıklarla.</p>
+
+  <h3>Bir plan oluşturmak</h3>
+  <p><strong>➕ Yeni</strong> düğmesiyle bir profil seçin ve tetikleyiciyi belirleyin:</p>
+  <ul>
+    <li><strong>Her gün</strong> &ndash; sabit bir saatte, her gün</li>
+    <li><strong>Haftanın günleri</strong> &ndash; sabit bir saatte, yalnızca seçilen günlerde</li>
+    <li><strong>Aralık</strong> &ndash; her X saatte bir, saatten bağımsız</li>
+  </ul>
+  <p><strong>✏</strong> düğmesiyle var olan bir planı değiştirir, <strong>🗑</strong> düğmesiyle kaldırırsınız. Düzenleme penceresindeki <strong>Etkin</strong> işareti planı silmeden geçici olarak durdurur.</p>
+
+  <h3>🔍 Benzetim / ▶ Başlat (elle deneme)</h3>
+  <p>Listenin her satırında, planın kendisinden bağımsız olarak hemen denemek için iki düğme vardır:</p>
+  <ul>
+    <li><strong>🔍 Benzetim</strong> &ndash; ne olacağını tam olarak gösterir (hangi dosyalar kopyalanır, üzerine yazılır, atlanırdı&hellip;) <strong>hiçbir</strong> değişiklik yapmadan. Hiçbir şey kopyalanmaz, taşınmaz ve silinmez.</li>
+    <li><strong>▶ Başlat</strong> &ndash; işi hemen ve gerçekten çalıştırır.</li>
+  </ul>
+  <div class="note">
+    Bu iki düğme <strong>her zaman</strong> ilerleme penceresini ve ardından sonuç penceresini gösterir &ndash; o plan için sessiz kip açık olsa da olmasa da. Sessiz kip (aşağıya bakın) yalnızca kendiliğinden başlatılan çalıştırmalar için geçerlidir, elle denemeler için asla.
+  </div>
+
+  <h3>🔇 Sessiz kip</h3>
+  <p>Düzenleme penceresinde (✏ ya da ➕ Yeni ile oluştururken) her plan için <strong>sessiz kip</strong> açılabilir. Açık olduğunda, <strong>kendiliğinden</strong> başlatılan bir çalıştırma tek bir pencere olmadan akar:</p>
+  <ul>
+    <li>Her şey yolunda gittiyse (kopyalanacak bir şey olmadığında da), program <strong>bütünüyle sessiz</strong> kalır &ndash; pencere yok, ileti yok.</li>
+    <li><strong>Gerçek bir hata</strong> olduysa (örneğin kaynak ya da hedef erişilemez), ilgili günlüğe yönlendiren kısa, rahatsız etmeyen bir ileti görünür.</li>
+  </ul>
+  <p>Sessiz kipli bir plan listede <strong>🔇</strong> işaretinden tanınır.</p>
+
+  <h3>Kendi başına bir ilerleme penceresi</h3>
+  <p>Bir plan çalışırken (sessiz kipin dışında, kendiliğinden başlatılmış ya da Benzetim/Başlat ile elle denenmiş), ilerleme çubuğu, sayaçlar ve kendi <strong>⏹ Durdur</strong> düğmesi olan <strong>ayrı küçük bir pencere</strong> açılır. Bu pencere, 3Kopyala yalnızca arka planda çalışıyorken de (bildirim alanı) görünür, <strong>görev çubuğunda kendi yeri</strong> vardır ve engel olursa <strong>küçültülebilir</strong> &ndash; çalıştırma o zaman görünmeden sürer. Çalıştırmayı zamanlayıcı penceresinden başlattığınızda da aynısı geçerlidir.</p>
+  <p>O pencerenin <strong>kapatma çarpısı (X)</strong> <strong>⏹ Durdur</strong> gibi etki eder: yalnızca o çalıştırmayı düzgünce keser &ndash; yani arka planda görünmeden sürmez.</p>
+  <div class="ok">
+    <strong>Önemli:</strong> iş kartlarının bulunduğu ana pencere <strong>bütünüyle el değmemiş</strong> kalır &ndash; henüz kaydetmediğiniz çalışmanızın üzerine kendiliğinden başlayan bir plan asla yazmaz ve onu rahatsız etmez.
+  </div>
+
+  <h3>Çakışmalarda bekleme sırası</h3>
+  <p>Aynı anda <strong>yalnızca bir</strong> kopyalama çalışır. Başka bir çalıştırma sürerken (başka bir plan ya da elle başlatılmış bir kopyalama) bir planın sırası gelirse, o sıra <strong>yitmez</strong>: bir <strong>bekleme sırasına</strong> girer ve süren çalıştırma biter bitmez kendiliğinden başlar. Aynı saatteki birden çok plan böylece <strong>birbiri ardına ve her biri eksiksiz</strong> yerine getirilir. Bekleme ve sonraki başlatma hata günlüğüne (<code>3Kopier-Fehler.log</code>) kaydedilir; bekleme sırasından gelen bir çalıştırma kendi ilerleme penceresinde <em>(bekleme sırasından)</em> ekinden tanınır.</p>
+  <p>Bunun <strong>gözetimsiz</strong> de işlemesi için (örneğin geceleyin), planlanmış bir çalıştırmanın sonuç penceresi bir &bdquo;Tamam&ldquo; <strong>beklemez</strong>: yalnızca açık kalır, sıradaki bir sonraki çalıştırma ise kendiliğinden başlar. Sabahleyin açık kalan sonuç pencereleri birbiri ardına gece boyunca ne olduğunu gösterir.</p>
+  <div class="note">
+    <strong>Kesme yalnızca süren çalıştırmayı ilgilendirir:</strong> bir çalıştırmayı <strong>⏹ Durdur</strong> ile durdurursanız, bekleme sırasındakiler bütünüyle olağan biçimde sürer &ndash; her biri kendi ilerleme penceresinde kendi <strong>⏹ Durdur</strong> düğmesiyle. Kesilmiş bir çalıştırma, günlük dosyasının başındaki <strong>&bdquo;FAZIT (ABGEBROCHEN)&ldquo;</strong> imiyle tanınır.
+  </div>
+
+  <h2 id="arkaplan">Arka planda çalışma, bildirim alanı ve kendiliğinden başlatma</h2>
+
+  <h3>Pencerenin kapatılması</h3>
+  <p>En az bir <strong>etkin</strong> plan varsa, ana pencerenin (X) düğmesi programı kapatmaz &ndash; yalnızca pencere yiter, program arka planda çalışmayı sürdürür (Windows görev çubuğunun bildirim alanındaki simgeden tanınır). Böylece pencereyi kimse açık tutmasa da zamanlayıcı etkin kalır.</p>
+  <p>Etkin plan <strong>yoksa</strong>, (X) düğmesi programı her zamanki gibi kapatır.</p>
+
+  <h3>Yeniden açmak</h3>
+  <p>Bildirim alanındaki simgeye sağ tıklamak, <strong>Aç</strong> (pencereyi yeniden gösterir) ve <strong>Çıkış</strong> (programı, etkin bir plan olsa da kalıcı olarak kapatır) seçeneklerini içeren küçük bir menü açar.</p>
+
+  <h3>Kendiliğinden başlatma</h3>
+  <p>En az bir etkin plan olur olmaz 3Kopyala kendini Windows'un başlangıcına yazar &ndash; oturum açılışında o zaman penceresiz, küçültülmüş olarak arka planda başlar. Son etkin plan kaldırıldığında ya da kapatıldığında bu kayıt da aynı şekilde kendiliğinden yiter.</p>
+
+  <h3>Yalnızca tek bir örnek</h3>
+  <p>3Kopyala zaten çalışırken (arka planda görünmeden de olsa) ikinci kez başlatılırsa, ikinci bir pencere <strong>açılmaz</strong>. Onun yerine zaten çalışan örnek görünür kılınır.</p>
+
+  <h2 id="uzun-yollar">Uzun yollar (MAX_PATH)</h2>
+  <p>Windows kural olarak 260 imden uzun dosya yollarına izin vermez (<strong>MAX_PATH sınırı</strong>). Hedef yolu çok uzun olan dosyalar ne kopyalanabilir ne de taşınabilir &ndash; bu özellikle indirme klasörlerinde sık rastlandığı gibi, uzun adlı ve derin iç içe klasörlerdeki dosyaları ilgilendirir.</p>
+
+  <p>3Kopyala böyle dosyaları kendisi tanır ve işlemin yine de başarılı olması için hedefteki dosya adını gerektiği kadar kısaltır.</p>
+
+  <div class="ok">
+    <strong>Kendiliğinden kısaltma:</strong> hedef yolu çok uzunsa, önce hedefteki dosya adı kısaltılır &ndash; yolun 260 imin altında kalmasına tam yetecek kadar. Bu yetmezse, ayrıca hedef yolunun son alt klasörü de kısaltılır. Dosya uzantısı her zaman korunur. Kısaltılan adlar <code>-3k</code> imini alır, örneğin <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Kaynak dosya el değmemiş kalır:</strong> yalnızca hedef yolu uyarlanır. İlk dosya adını korur. Günlükte hem ilk hem de kısaltılmış hedef yolu kaydedilir.
+  </div>
+
+  <div class="note">
+    <strong>Ekrandaki kısaltmayla karıştırılmamalı:</strong> çok uzun kaynak ya da hedef yollarında iş alanlarındaki gösterim kısaltılır (baş&hellip;son), örneğin <code>H:\Download\&hellip;\Arşiv</code>. Bu yalnızca görüntüdeki bir kısaltmadır: içeride her zaman yolun tamamı kullanılır. Fareyle üzerinde durur durmaz yolun tamamı ipucu olarak görünür.
+  </div>
+
+  <h2 id="sonuc">Sonuç penceresi</h2>
+  <p>Tamamlanan (ya da kesilen) her çalıştırmadan sonra bir sonuç penceresi açılır &ndash; her etkin iş için kendi sütunuyla, böylece neyin nereye gittiği bir bakışta görülür:</p>
+
+  <ul>
+    <li>Her sütun o işin <strong>kaynağını ve hedefini</strong> ve sayılarını gösterir</li>
+    <li>Altta bütün işlerin <strong>toplu dökümü</strong> bulunur (veri miktarı, süre, hata sayısı)</li>
+    <li>Benzetimde her satır koşul kipindedir (&bdquo;kopyalanacaktı&hellip;&ldquo;), gerçekten hiçbir şeyin değişmediğini belirten açık bir notla</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Başlık</th>
+      <th>Anlamı</th>
+    </tr>
+    <tr>
+      <td><strong>Kopyalanan</strong></td>
+      <td>Hedefte henüz bulunmayan ve kopyalanan yeni dosyalar</td>
+    </tr>
+    <tr>
+      <td><strong>Üzerine yazılan</strong></td>
+      <td>Hedefte zaten bulunan ve yenilenen dosyalar</td>
+    </tr>
+    <tr>
+      <td><strong>Taşınan</strong></td>
+      <td>Kaynaktan hedefe aktarılan dosyalar (&bdquo;Taşı&ldquo; seçeneği)</td>
+    </tr>
+    <tr>
+      <td><strong>Atlanan</strong></td>
+      <td>Hedefte zaten daha yeni olan ve değiştirilmeden bırakılan dosyalar</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Kısaltılan</strong></td>
+      <td>Hedef yolu MAX_PATH sınırını aşan ve kendiliğinden kısaltılan dosyalar (<code>-3k</code> imi)</td>
+    </tr>
+    <tr>
+      <td><strong>Hariç tutulan</strong></td>
+      <td>Hariç tutma listesine göre atlanan dosya ve klasörler (bkz. <a href="#haric">Hariç tutma</a> bölümü)</td>
+    </tr>
+    <tr>
+      <td><strong>Hatalar</strong></td>
+      <td>İşlenemeyen dosyalar ya da işler (ayrıntılar ilgili günlüğün sonunda)</td>
+    </tr>
+    <tr>
+      <td><strong>Veri</strong></td>
+      <td>İşlenen veri miktarı (her iş için ve toplam)</td>
+    </tr>
+    <tr>
+      <td><strong>Süre</strong></td>
+      <td>Kopyalamanın toplam süresi (dd:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="gunlukler">Günlükler</h2>
+  <p>Her çalıştırma için &ndash; elle ya da planlanmış, gerçek ya da benzetilmiş &ndash; sonsuza dek büyüyecek tek bir toplu dosya yerine <code>Logs</code> alt klasöründe <strong>kendine ait bir günlük dosyası</strong> oluşturulur.</p>
+
+  <h3>Dosyanın adı</h3>
+  <p>Her günlük dosyası <code>ProfilAdı_zamanDamgası_tür.log</code> biçiminde adlandırılır, örneğin:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; &bdquo;MMDownload&ldquo; profilinin gerçek bir çalıştırması</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; &bdquo;3Test&ldquo; profilinin bir benzetimi</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; profil yüklenmeden yapılan bir çalıştırma</li>
+  </ul>
+  <p>Ana penceredeki <strong>📋 Günlük</strong> düğmesiyle <code>Logs</code> klasörünü doğrudan Explorer'da açarsınız.</p>
+
+  <div class="note">
+    <strong>Dosya adları bütün dillerde aynıdır:</strong> profilsiz bir çalıştırma her zaman <code>Manuell</code> altında saklanır, ayar dosyaları da Almanca adlarını korur. Bu bilinçlidir: aynı kurulum böylece dil değişiminden sonra da ayarlarını, profillerini ve süzgeçlerini bulur, gönderilen bir günlük ise hemen okunabilir olur.
+  </div>
+
+  <h3>Bir günlük dosyasının içeriği</h3>
+  <ul>
+    <li>Toplam sayıları ve süreyi içeren <strong>sonuç bilançosu</strong> en üstte durur &ndash; sonuç böylece kaydırmadan görünür</li>
+    <li>Çalıştırmanın tarihi, saati ve profil adı</li>
+    <li>Her işin kaynağı ile hedefi ve seçilen seçenekler</li>
+    <li>Her iş için bir <strong>özet satır</strong> (işlemler ve veri miktarı); <em>Ayrıntılı</em> kipte ayrıca dosya başına satır yerine <strong>klasör bazlı bir döküm</strong> (bkz. <a href="#ayarlar">Ayarlar &rarr; Günlük ayrıntısı</a>)</li>
+    <li>Hatalar oluştuysa, bunlar ayrıca dosyanın sonunda ayrı bir <strong>&bdquo;=== FEHLER ===&ldquo;</strong> bloğunda durur &ndash; eksiksiz, her iki kipte de</li>
+  </ul>
+
+  <div class="note">
+    <strong>Saklama:</strong> günlüklerin kendiliğinden kaldırılmadan önce ne kadar kalacağını <a href="#ayarlar">Ayarlar</a> bölümünde belirlersiniz (1 günden 365 güne kadar ya da sınırsız).
+  </div>
+
+  <h3>⚠ Hata günlüğü (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Program klasöründeki bu ayrı dosya (<strong>⚠ Hatalar</strong> düğmesiyle erişilir) yalnızca hiçbir kopyalamaya ait olmayan <strong>program hatalarını</strong> içerir &ndash; örneğin zamanlayıcı modülü yüklenemediğinde. Bir kopyalama sırasında oluşan hatalar, yukarıda anlatıldığı gibi, o çalıştırmanın günlüğünün sonunda bulunur.</p>
+
+  <div class="ok">
+    <strong>INI dosyası (<code>3Kopier.ini</code>):</strong> bütün ayarlar program kapatılırken kendiliğinden saklanır ve bir sonraki başlatmada yeniden kurulur &ndash; bunların arasında kaynak ve hedef yolları, üç işin aktif işareti, her iş için <em>Üzerine yaz</em> ve <em>Taşı</em> seçenekleri, <em>Kapat</em> seçeneği, seçim pencerelerinde en son kullanılan kaynak ve hedef klasörler, seçilen <em>ölçekleme basamağı</em>, ayarlanan <em>dil</em>, günlüklerin saklanma süresi ve <em>günlük ayrıntısı</em> (kompakt/ayrıntılı). Elle ayarlama gerekmez.
+  </div>
+
+  <div class="note">
+    <strong>Profiller (<code>.3ko</code> dosyaları):</strong> bir profil kaydedilirken her işin bütün yolları, aktif işareti ve <em>Üzerine yaz</em> ile <em>Taşı</em> seçenekleri korunur. <em>Kapat</em> seçeneği genel bir ayardır: yalnızca INI dosyasında bulunur, profilde değil.
+  </div>
+
+  <div class="note">
+    <strong>Plan dosyası (<code>3Kopier-Zeitplan.ini</code>):</strong> oluşturulan bütün planlar (profil, tetikleyici, sessiz kip, Etkin işareti) burada saklanır ve bir sonraki başlatmada kendiliğinden yeniden yüklenir.
+  </div>
+
+  <h3>Döküm: program klasöründeki dosya ve klasörler</h3>
+  <p>Aşağıdaki bütün dosya ve klasörler kullanım sırasında kendiliğinden oluşur &ndash; hiçbirini oluşturmanız gerekmez ve hiçbiri teslimata dahil değildir:</p>
+
+  <table>
+    <tr>
+      <th>Dosya / klasör</th>
+      <th>İçerik</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Genel ayarlar: iş alanları, seçenekler, son kullanılan klasörler, ölçekleme, dil, saklama süresi</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Oluşturulan bütün planlar; profil, tetikleyici, sessiz kip ve Etkin işaretiyle</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Hiçbir kopyalamaya ait olmayan program hataları</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (klasör)</td>
+      <td>Her çalıştırma için bir günlük dosyası &ndash; bkz. <a href="#gunlukler">Günlükler</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Oluşturduğunuz profiller (her profil adı için bir dosya)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Bu araç size yardımcı oldu mu?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Kopyala ücretsiz olarak geliştirilir ve bakımı yapılır.<br>
+      Küçük bir bağış onun daha da iyi olmasına yardım eder. Yürekten teşekkürler! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ PayPal ile bağış yap
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Kopyala &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Yazar: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Copiază – Ajutor</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Copiază &ndash; Ajutor și documentație</h1>
+  <p>Versiunea v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Limba:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#CE1126"/><rect width="14" height="14" fill="#FCD116"/><rect width="7" height="14" fill="#002B7F"/></svg> Română</span>
+  <span class="lb-note">Limba se schimbă în program la ⚙; ajutorul urmează apoi limba aleasă.</span>
+</div>
+
+<nav>
+  <a href="#prezentare">Prezentare</a>
+  <a href="#sarcini">Sarcini</a>
+  <a href="#optiuni">Opțiuni</a>
+  <a href="#excluderi">Excluderi</a>
+  <a href="#profiluri">Profiluri</a>
+  <a href="#setari">Setări</a>
+  <a href="#desfasurare">Desfășurare</a>
+  <a href="#planificator">Planificator</a>
+  <a href="#fundal">Fundal</a>
+  <a href="#cai-lungi">Căi lungi</a>
+  <a href="#rezultat">Rezultat</a>
+  <a href="#jurnale">Jurnale</a>
+</nav>
+
+<main>
+
+  <h2 id="prezentare">Prezentare</h2>
+  <p><strong>S-IT-3Copiază</strong> este un instrument de copiere triplă cu jurnal și planificator. Programul execută până la trei sarcini independente de copiere sau mutare într-o singură trecere &ndash; ideal pentru repartizarea fișierelor pe dispozitive NAS, foldere în cloud (de exemplu pCloud) sau alte destinații. În plus, profilurile pot rula automat după un plan, în fundal și fără nicio intervenție din partea dumneavoastră.</p>
+
+  <div class="note">
+    <strong>Utilizare obișnuită:</strong> datele dintr-un folder local să fie copiate simultan către mai multe destinații &ndash; de exemplu NAS 1, NAS 2 și pCloud &ndash; cu un clic sau automat în fiecare seară la aceeași oră.
+  </div>
+
+  <div class="ok">
+    <strong>💡 În practică nu este într-adevăr limitat la trei sarcini:</strong> o trecere prelucrează cel mult trei perechi sursă-destinație deodată, însă numărul de <strong>profiluri</strong> este nelimitat și fiecare profil poate avea <strong>planul său</strong> (vedeți secțiunea <a href="#planificator">Planificator</a>). În practică aceasta înseamnă: oricâte sarcini independente de copiere doriți, fiecare cu cele trei perechi sursă-destinație ale ei, fiecare la ora ei sau cu intervalul ei &ndash; și toate rulează automat în fundal, fără să le porniți una câte una. De exemplu: profilul &bdquo;Fotografii&rdquo; în fiecare zi la ora 20, profilul &bdquo;Contabilitate&rdquo; la fiecare 4 ore, profilul &bdquo;Copie săptămânală&rdquo; doar sâmbăta &ndash; toate stabilite dintr-o dată și active independent unele de altele.
+  </div>
+
+  <div class="ok">
+    <strong>Realizare în Python:</strong> 3Copiază se sprijină pe o bază tehnică modernă (Python în loc de AutoIt). Copierea se desfășoară în fundal; fereastra rămâne mereu receptivă, și la un număr foarte mare de fișiere, și la unități de rețea lente (nu îngheață). Fișierele mari se copiază bloc cu bloc: bara de progres înaintează de aceea vizibil chiar și în interiorul unui singur fișier foarte mare, iar <strong>⏹ Oprește</strong> are efect imediat, chiar și în mijlocul unui asemenea fișier.
+  </div>
+
+  <h2 id="sarcini">Configurarea sarcinilor</h2>
+  <p>Programul cunoaște trei sarcini de copiere independente (A1, A2, A3). Fiecare sarcină se compune dintr-un folder sursă și un folder destinație și poate fi pornită sau oprită separat.</p>
+
+  <h3>Bifa &bdquo;activă&rdquo;</h3>
+  <p>La pornire se prelucrează numai sarcinile marcate ca <strong>activă</strong>. Sarcinile oprite sunt sărite complet, dar căile lor rămân păstrate.</p>
+
+  <h3>🔰 Filtrul sarcinii</h3>
+  <p>În dreapta, în antetul fiecărei fișe de sarcină, se află semnul <strong>🔰</strong>. Cu el stabiliți filtre valabile <strong>numai pentru acea sarcină</strong>: excluderi suplimentare și regula DOAR (&bdquo;copiază numai anumite tipuri de fișiere&rdquo;). Semnul devine verde de îndată ce pentru sarcină a fost stabilită o regulă &ndash; dacă este gri, filtre proprii nu există. Amănuntele sunt în secțiunea <a href="#excluderi">Excluderi</a>.</p>
+
+  <h3>Alegerea sursei</h3>
+  <p>Apăsați <strong>📁 Sursa</strong> pentru a alege folderul sursă al sarcinii. Fereastra reține ultimul folder sursă separat de alegerea destinației &ndash; la următoarea apăsare pe <strong>Sursa</strong> (în oricare sarcină) alegerea pornește de acolo.</p>
+
+  <h3>Alegerea destinației</h3>
+  <p>Apăsați <strong>📁 Destinație</strong> pentru a stabili folderul destinație. Acesta nu trebuie să existe deja &ndash; se creează singur în timpul copierii. Și aici fereastra reține ultimul folder destinație separat de alegerea sursei.</p>
+
+  <div class="note">
+    <strong>Afișarea căilor lungi:</strong> dacă o cale nu încape întreagă în câmp, ea este scurtată îngrijit (început&hellip;sfârșit) în loc să fie tăiată la margine. <strong>Calea completă</strong> apare de îndată ce vă opriți cu mausul deasupra ei (indiciu); în interior 3Copiază lucrează întotdeauna cu calea întreagă.
+  </div>
+
+  <div class="note">
+    <strong>Cantitatea de date:</strong> câmpul <em>Date</em> arată mărimea actuală a fiecărui folder sursă activ. Apăsați <strong>🔄 Reîmprospătează</strong> pentru a reîmprospăta afișarea după modificări. Calculul se desfășoară în fundal &ndash; cât timp durează, scrie <em>(se calculează…)</em> și fereastra rămâne utilizabilă.
+  </div>
+
+  <div class="note">
+    <strong>Căi de rețea și NAS:</strong> căile UNC de forma <code>\\Server\Partajare</code> sunt pe deplin acceptate &ndash; și ca sursă, și ca destinație. Pentru surse din rețea cantitatea de date <strong>nu</strong> se calculează dinainte, în mod intenționat (la partajări mari aceasta poate dura mult); în locul ei scrie <em>(rețea)</em>. Copierea propriu-zisă se desfășoară cu totul obișnuit.
+  </div>
+
+  <h2 id="optiuni">Opțiuni</h2>
+
+  <h3>Suprascriere (pentru fiecare sarcină)</h3>
+  <p>Când această opțiune este pornită, fișierele existente în destinație sunt suprascrise <strong>întotdeauna</strong>, indiferent de data lor. Fără ea, fișierele din destinație sunt suprascrise numai dacă fișierul sursă este <em>mai nou</em>. Dacă fișierul din destinație este la fel de vechi sau mai nou, el este sărit.</p>
+  <div class="note">
+    <strong>Toleranța marcajelor de timp la unitățile de rețea:</strong> între NAS și unitățile de rețea marcajele de timp ale fișierelor diferă adesea cu una până la două secunde. Fără toleranță, în modul &bdquo;doar dacă este mai nou&rdquo; fișierele nemodificate ar trece din greșeală drept mai noi și s-ar copia din nou la fiecare trecere. 3Copiază previne aceasta cu o toleranță de două secunde &ndash; reglabilă pentru fiecare profil prin <a href="#profiluri">semnul 🛡</a>.
+  </div>
+
+  <h3>Mutare (pentru fiecare sarcină)</h3>
+  <p>Când această opțiune este pornită, fișierele sunt <strong>mutate</strong> în loc să fie copiate. Fișierul sursă se șterge abia după ce a ajuns complet și nevătămat în destinație. Folderele sursă rămase goale sunt înlăturate automat după mutare.</p>
+
+  <div class="warn">
+    <strong>Atenție la mutare:</strong> fișierele dispar din folderul sursă. Înainte de prima folosire verificați dacă aceasta este într-adevăr intenția. Dacă apare o eroare sau o întrerupere la jumătatea drumului, fișierul sursă rămâne garantat neatins &ndash; ștergerea urmează abia după un transfer pe deplin reușit.
+  </div>
+
+  <h3>După copiere: închidere sau repaus</h3>
+  <p>Câmpul <strong>💻 După copiere</strong> oferă două posibilități: <strong>Închidere</strong> și <strong>Mod repaus</strong>. Dacă una este pornită și copierea s-a încheiat <strong>fără erori</strong>, programul întreabă dacă să se închidă calculatorul sau să fie pus în repaus. După erori sau o întrerupere această întrebare nu se pune.</p>
+  <p>Cele două posibilități <strong>se exclud reciproc</strong> &ndash; dacă o porniți pe una, cealaltă se oprește. Repausul folosește gestionarea energiei din Windows; dacă va trece calculatorul în repaus sau în hibernare depinde de setările dumneavoastră de alimentare.</p>
+  <div class="note">
+    Aceste două posibilități nu sunt valabile pentru execuțiile automate ale planificatorului &ndash; ele acționează numai la copierile pornite manual.
+  </div>
+
+  <h2 id="excluderi">Excluderea fișierelor și a folderelor</h2>
+  <p>Cu butonul <strong>🚫</strong> din bara profilurilor (lângă <strong>🗑 Șterge</strong>) țineți anumite fișiere și foldere întregi în afara copierii. Aceasta este deosebit de utilă pentru ca fișierele temporare, fișierele de sistem și folderele adesea uriașe de cache ale navigatoarelor să nu fie copiate deloc &ndash; sau pentru ca fișierele mari de copii de siguranță și de imagine să rămână deoparte, astfel încât în destinație să nu se adune un morman inutil de date.</p>
+
+  <div class="note">
+    <strong>Două feluri de reguli:</strong> <em>tiparele de fișiere</em> cu caractere de înlocuire (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) privesc fișiere singulare. <em>Numele de foldere</em> (<code>cache2</code>, <code>GPUCache</code>) exclud un folder întreg cu toate subfolderele &ndash; în el nici măcar nu se intră în timpul copierii, ceea ce la structuri mari de cache economisește și timp.
+  </div>
+
+  <h3>Excluderi implicite</h3>
+  <p>La prima pornire programul creează fișierul <code>3Kopier-Ausschluss.ini</code> cu valori inițiale rezonabile: fișiere temporare (Windows, Office, LibreOffice/OpenOffice), fișiere de sistem Windows, folderele de cache ale navigatoarelor obișnuite (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) și formate mari de imagine precum <code>*.iso</code>, <code>*.nrg</code> sau <code>*.tib</code>. Această listă implicită este valabilă la început pentru toate profilurile. Cu butonul <strong>Deschide lista implicită</strong> din fereastra excluderilor o puteți modifica oricând.</p>
+
+  <h3>Adaptarea pentru fiecare profil</h3>
+  <p>Fereastra excluderilor se referă întotdeauna la profilul încărcat în acel moment (la o execuție fără profil acesta este &bdquo;Manuell&rdquo;). Sunt posibile două adaptări:</p>
+  <ul>
+    <li><strong>Oprirea unei reguli implicite:</strong> scoateți bifa din lista excluderilor implicite &ndash; acea regulă nu mai este atunci valabilă pentru acest profil. Exemplu: într-un profil de copie de siguranță care tocmai trebuie să cuprindă fișierele ISO, scoateți bifa de la <code>*.iso</code>.</li>
+    <li><strong>Adăugarea de excluderi proprii:</strong> scrieți reguli suplimentare în câmpul de text de dedesubt, câte una pe rând &ndash; tipare de fișiere și nume de foldere amestecate (de exemplu <code>*.mp4</code> sau <code>Downloads</code>).</li>
+  </ul>
+  <p>Lista valabilă în cele din urmă este deci: <em>lista implicită &minus; regulile oprite pentru acest profil + adăugirile dumneavoastră</em>.</p>
+
+  <h3>Adaptarea pentru fiecare sarcină: semnul 🔰</h3>
+  <p>Pe lângă regulile valabile pentru întregul profil, fiecare dintre cele trei sarcini poate avea filtrele <strong>ei</strong>. Un clic pe semnul <strong>🔰</strong> din antetul fișei deschide o fereastră mică cu două câmpuri (mai multe reguli despărțiți-le cu semnul <code>|</code>):</p>
+  <ul>
+    <li><strong>Excluderi suplimentare numai pentru această sarcină:</strong> de exemplu <code>*.iso | cache2</code> &ndash; acționează ca o regulă în plus în fereastra excluderilor, dar este valabilă numai pentru această sarcină. Numele de foldere se scriu ca întotdeauna fără caracter de înlocuire.</li>
+    <li><strong>Regula DOAR (&bdquo;totul în afară de&rdquo;):</strong> dacă în acest câmp există tipare, sarcina copiază <strong>exclusiv</strong> fișierele care le corespund &ndash; tot restul cade. Exemplu: sarcina&nbsp;1 <code>*.pdf</code>, sarcina&nbsp;2 <code>*.jpg</code>, sarcina&nbsp;3 <code>*.mp4</code> &ndash; astfel o singură trecere sortează un folder amestecat după tipul fișierului către trei destinații. Un câmp gol oprește regula. Comod: este de ajuns <code>pdf</code> sau <code>.pdf</code>, programul face singur <code>*.pdf</code>.</li>
+  </ul>
+  <p>Regula DOAR este valabilă numai pentru fișiere &ndash; prin structura folderelor se trece ca de obicei, astfel încât fișierele potrivite se găsesc și în subfoldere. Fișierele care cad astfel intră în rezultat la <em>Excluse</em>.</p>
+
+  <div class="note">
+    <strong>Întâietate:</strong> excluderile pentru întregul profil sunt valabile întotdeauna pe deasupra. Un fișier <code>*.tmp</code> rămâne deci lăsat afară și la &bdquo;doar <code>*.tmp</code>&rdquo;, atâta timp cât regula implicită <code>*.tmp</code> nu a fost oprită pentru profil.
+  </div>
+
+  <div class="note">
+    <strong>În jurnal:</strong> fișierele și folderele excluse sunt numărate într-o rubrică proprie <em>Excluse</em> &ndash; separat de fișierele sărite &ndash; și apar ca atare în bilanțul final, în privirea de ansamblu pe foldere și în fereastra rezultatului.
+  </div>
+
+  <h2 id="profiluri">Profiluri</h2>
+  <p>Un profil păstrează sub un nume întreaga configurare a celor trei sarcini (sursă, destinație, opțiuni, bifa activă), pentru a o putea rechema oricând &ndash; și ca temei pentru planificator.</p>
+
+  <h3>Alegerea unui profil</h3>
+  <p>Un clic pe un nume din lista derulantă încarcă profilul <strong>imediat</strong> &ndash; un buton separat &bdquo;Încarcă&rdquo; nu mai este necesar.</p>
+
+  <div class="warn">
+    <strong>Atenție la modificările nesalvate:</strong> fiindcă alegerea încarcă imediat, modificările din câmpurile sarcinilor pe care nu le-ați salvat încă se pierd de îndată ce treceți la alt profil. Salvați-le înainte cu <strong>💾 Salvează</strong>, dacă doriți să le păstrați.
+  </div>
+
+  <h3>Salvare / nou / ștergere</h3>
+  <p><strong>💾 Salvează</strong> păstrează configurarea actuală sub numele ales. <strong>➕ Nou</strong> cere un nume și golește apoi complet cele trei sarcini &ndash; astfel un profil nou pornește întotdeauna de la zero, fără resturi de la profilul încărcat mai devreme. <strong>🗑 Șterge</strong> înlătură definitiv profilul ales.</p>
+
+  <div class="warn">
+    <strong>Profil folosit de planificator:</strong> dacă salvați un profil care se află într-un plan activ, programul semnalează aceasta. Motivul: planificatorul reține numai <strong>numele profilului</strong> și îl încarcă din nou la fiecare execuție. Modificările tocmai salvate (surse, destinații, opțiuni) sunt astfel valabile și pentru execuțiile planificate ale acelui profil. Mesajul poate fi anulat, dacă nu aceasta a fost intenția.
+  </div>
+
+  <h3>🛡 Rețea și marcaje de timp</h3>
+  <p><strong>Semnul 🛡</strong> din bara profilurilor (lângă 🚫) deschide setarea marcajelor de timp pentru profilul actual. Ea hotărăște cum modul <em>&bdquo;doar dacă este mai nou&rdquo;</em> (bifa Suprascriere oprită) decide dacă un fișier este într-adevăr mai nou &ndash; și împiedică fișierele nemodificate de pe NAS și de pe unități de rețea să fie copiate din nou la fiecare trecere din pricina diferențelor de marcaj de timp.</p>
+  <ul>
+    <li><strong>Automat</strong> (implicit): toleranța de două secunde este valabilă numai dacă sursa sau destinația este o cale de rețea de forma <code>\\Server\Partajare</code>. Copierile cu totul locale se compară exact.</li>
+    <li><strong>Întotdeauna</strong>: toleranța este valabilă mereu, și local. Utilă la <strong>unitățile de rețea cu literă atribuită</strong> (de exemplu <code>X:</code>), pe care modul &bdquo;Automat&rdquo; nu le recunoaște drept rețea.</li>
+    <li><strong>Oprit</strong>: comparare exactă, fără toleranță.</li>
+  </ul>
+  <p>Setarea se păstrează pentru fiecare profil în parte. Fereastra arată pe deasupra care dintre cele trei sarcini folosesc în acel moment o cale de rețea.</p>
+
+  <h2 id="setari">Setări</h2>
+  <p>Rotița <strong>⚙</strong> din dreapta sus a ferestrei programului (lângă <strong>? AJUTOR</strong>) deschide fereastra setărilor.</p>
+
+  <h3>Limba</h3>
+  <p>3Copiază vorbește mai multe limbi. Limba se alege de regulă încă de la instalare; aici o puteți schimba oricând. Sunt oferite toate limbile pentru care lângă program se află un fișier de limbă &ndash; fiecare cu steagul ei, astfel încât alegerea rămâne limpede și atunci când fereastra este într-o limbă pe care nu o citiți.</p>
+
+  <p>În ediția germană programul se numește <strong>3Kopier</strong>. Numele de pe ecran urmează așadar limba; fișierele de pe disc își păstrează numele (<code>3Kopier.ini</code>, profilurile cu terminația <code>.3ko</code>, jurnalele în folderul <code>Logs</code>). Schimbarea limbii nu vă atinge deci setările, profilurile și filtrele.</p>
+
+  <div class="note">
+    <strong>Are efect după o repornire:</strong> ca și mărirea, limba intră în vigoare abia când fereastra programului este construită din nou. O copiere în curs nu este niciodată întreruptă din această pricină &ndash; limba nouă apare atunci la următoarea pornire obișnuită.
+  </div>
+
+  <p>Celelalte limbi vin ca pachete de limbă verificate de la Sattler IT-Service și apar singure în alegere de îndată ce le așezați lângă program. Fișierele de limbă livrate sunt criptate, la fel ca modulul planificatorului: astfel este sigur că textele pe care le citiți în program sunt tocmai cele livrate.</p>
+
+  <h3>Mărirea interfeței</h3>
+  <p>Sunt prevăzute trepte fixe de la <strong>90&nbsp;%</strong> până la <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Treapta actuală este scoasă în evidență. După un clic pe <strong>Aplică</strong> fereastra este construită din nou la mărimea nouă.</p>
+
+  <div class="note">
+    <strong>Mărimea ferestrei este fixă:</strong> fereastra programului nu poate fi trasă cu mausul de colțuri, în mod intenționat. Astfel se evită o afișare deformată sau tăiată. Dacă doriți o afișare mai mare, alegeți pur și simplu o treaptă mai înaltă.
+  </div>
+
+  <h3>Păstrarea jurnalelor</h3>
+  <p>Hotărăște cât timp sunt păstrate fișierele de jurnal încheiate (vedeți secțiunea <a href="#jurnale">Jurnale</a>) înainte de a fi înlăturate la următoarea pornire. Sunt prevăzute trepte fixe de la <strong>1 zi</strong> până la <strong>365 de zile</strong>, pe lângă acestea <strong>∞ (nelimitat)</strong> &ndash; atunci nu se înlătură nimic de la sine.</p>
+
+  <p>Butonul <strong>🗑 Curăță acum</strong> aplică termenul ales imediat, fără a aștepta următoarea pornire.</p>
+
+  <h3>Cuprinsul jurnalului</h3>
+  <p>Hotărăște cât de amănunțit este fișierul de jurnal al unei execuții:</p>
+  <ul>
+    <li><strong>Compact</strong> (implicit): <strong>un singur rând de sinteză</strong> pentru fiecare sarcină (copiate, suprascrise, sărite și așa mai departe, cu cantitatea de date) &ndash; fără rânduri pentru folderele singulare. Împreună cu bilanțul final din capul fișierului, jurnalul rămâne astfel o privire de ansamblu scurtă și lizibilă, oricâte mii de fișiere și foldere ar fi fost prelucrate.</li>
+    <li><strong>Detaliat</strong>: pe deasupra se scrie un rând pentru fiecare folder (număr de fișiere, acțiuni, cantitate de date) &ndash; util la căutarea unei erori, când doriți să înțelegeți ce s-a petrecut într-un anumit folder sau de ce un fișier nu a fost copiat.</li>
+  </ul>
+  <p>Setarea are efect încă de la execuția următoare, și la cele planificate. Erorile sunt consemnate întotdeauna în întregime în ambele moduri, la fel și scurtarea de la sine a căilor (MAX_PATH).</p>
+
+  <h2 id="desfasurare">Pornirea manuală a unei copieri</h2>
+
+  <h3>1. Configurarea sarcinilor</h3>
+  <p>La fiecare sarcină dorită stabiliți sursa, destinația și opțiunile. Porniți-o cu bifa <strong>activă</strong>.</p>
+
+  <h3>2. Apăsarea pe Pornește</h3>
+  <p>Programul numără mai întâi toate fișierele din folderele sursă active, pentru ca bara de progres să fie corectă. Această fază de numărare poate fi întreruptă încă cu butonul <strong>⏹ Oprește</strong>, iar la un număr foarte mare de fișiere arată o stare intermediară, în loc să pară că s-a blocat. Apoi sarcinile sunt prelucrate una după alta (A1, A2, A3).</p>
+
+  <h3>3. Urmărirea progresului</h3>
+  <p>Bara de progres, rândul de stare și contoarele se reîmprospătează neîntrerupt în timpul execuției. La un singur fișier foarte mare bara înaintează vizibil în interiorul acelui fișier, în loc să stea pe loc până la sfârșit. Rândul de stare arată pe deasupra un timp rămas estimat de îndată ce există destule date pentru aceasta, și viteza de copiere a clipei (de exemplu <code>157.4 MB/s</code>) &ndash; calculată ca medie a ultimelor secunde, astfel încât numărul rămâne liniștit când mărimile fișierelor se schimbă. Amândouă sunt valabile și pentru fereastra de progres a planificatorului. La o simulare viteza nu apare, fiindcă atunci nu se copiază nimic cu adevărat.</p>
+
+  <h3>4. Întreruperea</h3>
+  <p>Cu butonul <strong>⏹ Oprește</strong> sau cu tasta <strong>ESC</strong> întrerupeți execuția îngrijit în orice clipă &ndash; chiar și în mijlocul unui fișier mare. Fișierele prelucrate deja în întregime rămân; fișierul destinație abia început, încă neîntreg, este înlăturat de la sine, astfel încât nu rămâne niciodată o rămășiță pe jumătate.</p>
+
+  <h3>5. Fereastra rezultatului</h3>
+  <p>La sfârșit se deschide o fereastră a rezultatului cu cifrele pentru fiecare sarcină &ndash; vedeți secțiunea <a href="#rezultat">Rezultat</a>.</p>
+
+  <h2 id="planificator">Planificator</h2>
+  <p>Butonul <strong>🕐 Planificator</strong> din fereastra principală deschide o fereastră separată, în care oricâte profiluri pot rula automat după un plan &ndash; de mai multe ori pe zi sau la răstimpuri fixe.</p>
+
+  <h3>Crearea unui plan</h3>
+  <p>Cu butonul <strong>➕ Nou</strong> alegeți un profil și stabiliți prilejul:</p>
+  <ul>
+    <li><strong>Zilnic</strong> &ndash; la o oră fixă, în fiecare zi</li>
+    <li><strong>Zile ale săptămânii</strong> &ndash; la o oră fixă, numai în zilele alese</li>
+    <li><strong>Interval</strong> &ndash; la fiecare X ore, indiferent de oră</li>
+  </ul>
+  <p>Cu butonul <strong>✏</strong> modificați un plan existent, cu butonul <strong>🗑</strong> îl înlăturați. Bifa <strong>Activ</strong> din fereastra de modificare oprește planul temporar, fără a-l șterge.</p>
+
+  <h3>🔍 Simulare / ▶ Pornește (probă manuală)</h3>
+  <p>Fiecare rând al listei are două butoane pentru o probă imediată, independent de planul însuși:</p>
+  <ul>
+    <li><strong>🔍 Simulare</strong> &ndash; arată exact ce s-ar întâmpla (care fișiere ar fi copiate, suprascrise, sărite&hellip;) <strong>fără</strong> nicio modificare. Nimic nu se copiază, nu se mută și nu se șterge.</li>
+    <li><strong>▶ Pornește</strong> &ndash; execută sarcina imediat și cu adevărat.</li>
+  </ul>
+  <div class="note">
+    Aceste două butoane arată <strong>întotdeauna</strong> fereastra de progres și apoi fereastra rezultatului &ndash; indiferent dacă pentru acel plan este pornit modul silențios. Modul silențios (vedeți mai jos) este valabil numai pentru execuțiile pornite automat, niciodată pentru probele manuale.
+  </div>
+
+  <h3>🔇 Mod silențios</h3>
+  <p>În fereastra de modificare (✏ sau la creare cu ➕ Nou) se poate porni pentru fiecare plan <strong>modul silențios</strong>. Când este pornit, o execuție pornită <strong>automat</strong> se desfășoară fără nicio fereastră:</p>
+  <ul>
+    <li>Dacă totul a mers bine (și atunci când nu a fost nimic de copiat), programul rămâne <strong>cu totul tăcut</strong> &ndash; fără fereastră, fără mesaj.</li>
+    <li>Dacă a apărut o <strong>eroare adevărată</strong> (de exemplu sursa sau destinația de neatins), apare un mesaj scurt, discret, care trimite la jurnalul potrivit.</li>
+  </ul>
+  <p>Un plan cu mod silențios se recunoaște în listă după semnul <strong>🔇</strong>.</p>
+
+  <h3>Fereastră de progres de sine stătătoare</h3>
+  <p>Când un plan rulează (în afara modului silențios, pornit automat sau încercat manual prin Simulare/Pornește), se deschide o <strong>fereastră mică separată</strong> cu bară de progres, contoare și un buton propriu <strong>⏹ Oprește</strong>. Această fereastră apare și atunci când 3Copiază lucrează numai în fundal (zona de notificare), are <strong>locul ei în bara de activități</strong> și poate fi <strong>micșorată</strong> dacă stă în cale &ndash; execuția continuă atunci nevăzută. La fel este dacă porniți execuția din fereastra planificatorului.</p>
+  <p><strong>Crucea de închidere (X)</strong> a acelei ferestre acționează ca <strong>⏹ Oprește</strong>: întrerupe îngrijit numai acea execuție &ndash; ea nu continuă deci nevăzută în fundal.</p>
+  <div class="ok">
+    <strong>Important:</strong> fereastra principală cu fișele sarcinilor rămâne <strong>cu totul neatinsă</strong> &ndash; munca dumneavoastră încă nesalvată nu este niciodată suprascrisă sau tulburată de un plan care pornește singur.
+  </div>
+
+  <h3>Rândul de așteptare la suprapuneri</h3>
+  <p>Deodată rulează <strong>numai o singură</strong> copiere. Dacă un plan îi vine rândul în timp ce mai rulează o altă execuție (un alt plan sau o copiere pornită manual), acel rând <strong>nu se pierde</strong>: intră într-un <strong>rând de așteptare</strong> și pornește singur de îndată ce execuția în curs s-a încheiat. Mai multe planuri la aceeași oră sunt astfel duse la capăt <strong>unul după altul și fiecare în întregime</strong>. Așteptarea și pornirea de mai târziu sunt consemnate în jurnalul erorilor (<code>3Kopier-Fehler.log</code>); o execuție venită din rândul de așteptare se recunoaște în fereastra ei de progres după adaosul <em>(din rândul de așteptare)</em>.</p>
+  <p>Pentru ca aceasta să meargă și <strong>fără supraveghere</strong> (de exemplu noaptea), fereastra rezultatului unei execuții planificate <strong>nu</strong> așteaptă un &bdquo;OK&rdquo;: ea rămâne pur și simplu deschisă, iar execuția următoare din rând pornește singură. Dimineața ferestrele rezultatelor rămase deschise arată una după alta ce s-a petrecut în timpul nopții.</p>
+  <div class="note">
+    <strong>Întreruperea privește numai execuția în curs:</strong> dacă opriți o execuție cu <strong>⏹ Oprește</strong>, cele din rândul de așteptare continuă cu totul obișnuit &ndash; fiecare în fereastra ei de progres cu butonul ei <strong>⏹ Oprește</strong>. O execuție întreruptă se recunoaște după însemnarea <strong>&bdquo;FAZIT (ABGEBROCHEN)&rdquo;</strong> din capul fișierului de jurnal.
+  </div>
+
+  <h2 id="fundal">Lucrul în fundal, zona de notificare și pornirea automată</h2>
+
+  <h3>Închiderea ferestrei</h3>
+  <p>Dacă există cel puțin un plan <strong>activ</strong>, butonul (X) al ferestrei principale nu închide programul &ndash; dispare numai fereastra, iar programul lucrează mai departe în fundal (se recunoaște după pictograma din zona de notificare a barei de activități). Astfel planificatorul rămâne activ și atunci când nimeni nu ține fereastra deschisă.</p>
+  <p>Dacă plan activ <strong>nu există</strong>, butonul (X) închide programul ca de obicei.</p>
+
+  <h3>Redeschiderea</h3>
+  <p>Un clic dreapta pe pictograma din zona de notificare deschide un mic meniu cu <strong>Deschide</strong> (arată din nou fereastra) și <strong>Ieșire</strong> (închide programul definitiv, și la un plan activ).</p>
+
+  <h3>Pornirea automată</h3>
+  <p>De îndată ce există cel puțin un plan activ, 3Copiază se înscrie singur în pornirea Windows &ndash; la conectare pornește atunci micșorat în fundal, fără fereastră. Când ultimul plan activ este înlăturat sau oprit, acea înscriere dispare tot atât de singură.</p>
+
+  <h3>Doar un singur exemplar</h3>
+  <p>Dacă 3Copiază este pornit a doua oară în timp ce rulează deja (și nevăzut în fundal), o a doua fereastră <strong>nu</strong> se deschide. În locul ei este făcut vizibil exemplarul care rulează deja.</p>
+
+  <h2 id="cai-lungi">Căi lungi (MAX_PATH)</h2>
+  <p>Windows nu îngăduie de regulă căi de fișiere mai lungi de 260 de semne (<strong>limita MAX_PATH</strong>). Fișierele a căror cale de destinație este prea lungă nu pot fi copiate și nici mutate &ndash; aceasta privește mai ales fișierele din foldere adânc împletite unele în altele, cu nume lungi, cum se întâlnesc adesea în folderele de descărcări.</p>
+
+  <p>3Copiază recunoaște singur asemenea fișiere și scurtează numele fișierului din destinație atât cât este nevoie pentru ca lucrarea să izbutească totuși.</p>
+
+  <div class="ok">
+    <strong>Scurtare de la sine:</strong> dacă o cale de destinație este prea lungă, se scurtează mai întâi numele fișierului din destinație &ndash; exact atât cât calea să rămână sub 260 de semne. Dacă aceasta nu ajută, se scurtează pe deasupra și ultimul subfolder al căii de destinație. Terminația fișierului se păstrează întotdeauna. Numele scurtate primesc însemnarea <code>-3k</code>, de exemplu <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Fișierul sursă rămâne neatins:</strong> se potrivește numai calea de destinație. Fișierul dintâi își păstrează numele. În jurnal sunt consemnate atât calea de destinație dintâi, cât și cea scurtată.
+  </div>
+
+  <div class="note">
+    <strong>A nu se încurca cu scurtarea de pe ecran:</strong> la căi de sursă sau de destinație foarte lungi, afișarea din câmpurile sarcinilor se scurtează (început&hellip;sfârșit), de exemplu <code>H:\Download\&hellip;\Arhivă</code>. Aceasta este doar o scurtare la vedere: în interior se folosește întotdeauna calea completă. Calea întreagă apare ca indiciu de îndată ce vă opriți cu mausul deasupra ei.
+  </div>
+
+  <h2 id="rezultat">Fereastra rezultatului</h2>
+  <p>După fiecare execuție încheiată (sau întreruptă) se deschide o fereastră a rezultatului &ndash; cu o coloană proprie pentru fiecare sarcină activă, astfel încât dintr-o privire se vede ce unde a ajuns:</p>
+
+  <ul>
+    <li>Fiecare coloană arată <strong>sursa și destinația</strong> acelei sarcini și cifrele ei</li>
+    <li>Dedesubt se află o <strong>privire de ansamblu</strong> a tuturor sarcinilor (cantitatea de date, timpul, numărul de erori)</li>
+    <li>La o simulare fiecare rând este la forma condițională (&bdquo;ar fi&hellip;&rdquo;), cu o însemnare limpede că într-adevăr nu s-a schimbat nimic</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Rubrica</th>
+      <th>Înțelesul</th>
+    </tr>
+    <tr>
+      <td><strong>Copiate</strong></td>
+      <td>Fișiere noi care nu se aflau încă în destinație și au fost copiate</td>
+    </tr>
+    <tr>
+      <td><strong>Suprascrise</strong></td>
+      <td>Fișiere care se aflau deja în destinație și au fost înnoite</td>
+    </tr>
+    <tr>
+      <td><strong>Mutate</strong></td>
+      <td>Fișiere duse de la sursă la destinație (opțiunea &bdquo;Mutare&rdquo;)</td>
+    </tr>
+    <tr>
+      <td><strong>Sărite</strong></td>
+      <td>Fișiere care în destinație erau deja mai noi și au fost lăsate nemodificate</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Scurtate</strong></td>
+      <td>Fișiere a căror cale de destinație a depășit limita MAX_PATH și a fost scurtată de la sine (însemnarea <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Excluse</strong></td>
+      <td>Fișiere și foldere sărite după lista excluderilor (vedeți secțiunea <a href="#excluderi">Excluderi</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Erori</strong></td>
+      <td>Fișiere sau sarcini care nu au putut fi prelucrate (amănuntele la sfârșitul jurnalului potrivit)</td>
+    </tr>
+    <tr>
+      <td><strong>Date</strong></td>
+      <td>Cantitatea de date prelucrată (pentru fiecare sarcină și în total)</td>
+    </tr>
+    <tr>
+      <td><strong>Timp</strong></td>
+      <td>Durata întreagă a copierii (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="jurnale">Jurnale</h2>
+  <p>Pentru fiecare execuție &ndash; manuală sau planificată, adevărată sau simulată &ndash; se creează un <strong>fișier de jurnal propriu</strong> în subfolderul <code>Logs</code>, în loc de un singur fișier adunat care ar crește la nesfârșit.</p>
+
+  <h3>Numele fișierului</h3>
+  <p>Fiecare fișier de jurnal se numește <code>NumeleProfilului_marcajDeTimp_felul.log</code>, de exemplu:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; o execuție adevărată a profilului &bdquo;MMDownload&rdquo;</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; o simulare a profilului &bdquo;3Test&rdquo;</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; o execuție fără profil încărcat</li>
+  </ul>
+  <p>Cu butonul <strong>📋 Jurnal</strong> din fereastra principală deschideți folderul <code>Logs</code> de-a dreptul în Explorer.</p>
+
+  <div class="note">
+    <strong>Numele fișierelor sunt aceleași în toate limbile:</strong> o execuție fără profil se păstrează întotdeauna sub <code>Manuell</code>, iar și fișierele de setări își păstrează numele germane. Aceasta este intenționat: aceeași instalare își găsește astfel setările, profilurile și filtrele și după o schimbare de limbă, iar un jurnal trimis este de îndată lizibil.
+  </div>
+
+  <h3>Cuprinsul unui fișier de jurnal</h3>
+  <ul>
+    <li><strong>Bilanțul final</strong>, cu cifrele întregi și durata, se află cu totul sus &ndash; rezultatul se vede așadar fără a derula</li>
+    <li>Data, ora și numele profilului execuției</li>
+    <li>Sursa și destinația fiecărei sarcini și opțiunile alese</li>
+    <li>Un <strong>rând de sinteză pentru fiecare sarcină</strong> (acțiunile și cantitatea de date); în modul <em>Detaliat</em> pe deasupra o <strong>privire de ansamblu pe foldere</strong> în loc de un rând pentru fiecare fișier (vedeți <a href="#setari">Setări &rarr; Cuprinsul jurnalului</a>)</li>
+    <li>Dacă au apărut erori, ele stau pe deasupra într-un bloc separat <strong>&bdquo;=== FEHLER ===&rdquo;</strong> la sfârșitul fișierului &ndash; în întregime, în ambele moduri</li>
+  </ul>
+
+  <div class="note">
+    <strong>Păstrarea:</strong> cât timp rămân jurnalele înainte de a fi înlăturate de la sine, stabiliți în <a href="#setari">Setări</a> (de la 1 zi până la 365 de zile sau nelimitat).
+  </div>
+
+  <h3>⚠ Jurnalul erorilor (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Acest fișier separat din folderul programului (de ajuns cu butonul <strong>⚠ Erori</strong>) cuprinde numai <strong>erori ale programului</strong> care nu țin de nicio copiere &ndash; de exemplu când modulul planificatorului nu a putut fi încărcat. Erorile ivite în timpul unei copieri se află, așa cum s-a arătat mai sus, la sfârșitul jurnalului acelei execuții.</p>
+
+  <div class="ok">
+    <strong>Fișierul INI (<code>3Kopier.ini</code>):</strong> toate setările se păstrează de la sine la închiderea programului și se așază din nou la următoarea pornire &ndash; printre ele căile surselor și ale destinațiilor, bifa activă a celor trei sarcini, opțiunile <em>Suprascriere</em> și <em>Mutare</em> pentru fiecare sarcină, opțiunea <em>Închidere</em>, ultimele foldere sursă și destinație folosite în ferestrele de alegere, <em>treapta de mărire</em> aleasă, <em>limba</em> stabilită, termenul de păstrare a jurnalelor și <em>cuprinsul jurnalului</em> (compact/detaliat). O stabilire manuală nu este necesară.
+  </div>
+
+  <div class="note">
+    <strong>Profiluri (fișiere <code>.3ko</code>):</strong> la salvarea unui profil se păstrează toate căile, bifa activă și opțiunile <em>Suprascriere</em> și <em>Mutare</em> ale fiecărei sarcini. Opțiunea <em>Închidere</em> este o setare generală: ea se află numai în fișierul INI, nu în profil.
+  </div>
+
+  <div class="note">
+    <strong>Fișierul planurilor (<code>3Kopier-Zeitplan.ini</code>):</strong> toate planurile create (profilul, prilejul, modul silențios, bifa Activ) se păstrează aici și se încarcă din nou de la sine la următoarea pornire.
+  </div>
+
+  <h3>Privire de ansamblu: fișiere și foldere în folderul programului</h3>
+  <p>Toate fișierele și folderele următoare se ivesc de la sine în timpul folosirii &ndash; pe niciunul nu trebuie să îl creați și niciunul nu ține de livrare:</p>
+
+  <table>
+    <tr>
+      <th>Fișier / folder</th>
+      <th>Cuprins</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Setări generale: câmpurile sarcinilor, opțiunile, ultimele foldere folosite, mărirea, limba, termenul de păstrare</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Toate planurile create, cu profil, prilej, mod silențios și bifa Activ</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Erori ale programului care nu țin de nicio copiere</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (folder)</td>
+      <td>Câte un fișier de jurnal pentru fiecare execuție &ndash; vedeți <a href="#jurnale">Jurnale</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Profilurile pe care le creați (câte un fișier pentru fiecare nume de profil)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      V-a ajutat acest instrument?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Copiază este dezvoltat și întreținut gratuit.<br>
+      O mică donație ajută ca el să devină și mai bun. Mulțumim din inimă! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Donează prin PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Copiază &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

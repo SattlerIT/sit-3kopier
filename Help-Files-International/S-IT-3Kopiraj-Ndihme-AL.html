@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopiraj – Ndihmë</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopiraj &ndash; Ndihmë dhe dokumentacion</h1>
+  <p>Versioni v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Gjuha:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#E41E20"/><path d="M7 4 L9 3 L10.5 5 L12 3 L14 4 L12.5 6 L14 8 L12 10 L10.5 8 L9 10 L7 8 L8.5 6 Z" fill="#000000"/></svg> Shqip</span>
+  <span class="lb-note">Gjuhën e ndryshoni në program te ⚙; ndihma ndjek pastaj gjuhën e zgjedhur.</span>
+</div>
+
+<nav>
+  <a href="#permbledhje">Përmbledhje</a>
+  <a href="#detyrat">Detyrat</a>
+  <a href="#opsionet">Opsionet</a>
+  <a href="#perjashtimet">Përjashtimet</a>
+  <a href="#profilet">Profilet</a>
+  <a href="#cilesimet">Cilësimet</a>
+  <a href="#rrjedha">Rrjedha</a>
+  <a href="#planifikimi">Planifikimi</a>
+  <a href="#sfondi">Sfondi</a>
+  <a href="#rruget-gjata">Rrugët e gjata</a>
+  <a href="#rezultati">Rezultati</a>
+  <a href="#regjistrat">Regjistrat</a>
+</nav>
+
+<main>
+
+  <h2 id="permbledhje">Përmbledhje</h2>
+  <p><strong>S-IT-3Kopiraj</strong> është një mjet për kopjim të trefishtë me regjistër dhe planifikues. Programi kryen deri në tre detyra të pavarura kopjimi ose zhvendosjeje në një kalim të vetëm &ndash; ideal për shpërndarjen e skedarëve në pajisje NAS, dosje në re (për shembull pCloud) ose destinacione të tjera. Përveç kësaj, profilet mund të kryhen automatikisht sipas një plani, në sfond dhe pa ndërhyrjen tuaj.</p>
+
+  <div class="note">
+    <strong>Përdorimi i zakonshëm:</strong> të dhënat nga një dosje vendore të kopjohen njëkohësisht në disa destinacione &ndash; për shembull NAS 1, NAS 2 dhe pCloud &ndash; me një klikim ose automatikisht çdo mbrëmje në të njëjtën orë.
+  </div>
+
+  <div class="ok">
+    <strong>💡 Në praktikë nuk është vërtet i kufizuar në tre detyra:</strong> një kalim përpunon më së shumti tre çifte burim-destinacion njëherësh, por numri i <strong>profileve</strong> është i pakufizuar dhe çdo profil mund të ketë <strong>planin e vet</strong> (shihni pjesën <a href="#planifikimi">Planifikimi</a>). Në praktikë kjo do të thotë: aq detyra të pavarura kopjimi sa të doni, secila me tre çiftet e veta burim-destinacion, secila në orën e vet ose me intervalin e vet &ndash; dhe të gjitha kryhen automatikisht në sfond, pa i nisur një nga një. Për shembull: profili &bdquo;Fotografitë&ldquo; çdo ditë në orën 20, profili &bdquo;Kontabiliteti&ldquo; çdo 4 orë, profili &bdquo;Kopja javore&ldquo; vetëm të shtunave &ndash; të gjitha të vendosura njëherësh dhe veprimtare pavarësisht nga njëra-tjetra.
+  </div>
+
+  <div class="ok">
+    <strong>Zbatimi në Python:</strong> 3Kopiraj mbështetet në një bazë teknike bashkëkohore (Python në vend të AutoIt). Kopjimi rrjedh në sfond; dritarja mbetet gjithmonë e përgjegjshme, edhe me shumë skedarë, edhe me disqe rrjeti të ngadaltë (nuk ngrin). Skedarët e mëdhenj kopjohen bllok pas blloku: shiriti i përparimit prandaj ecën dukshëm përpara edhe brenda një skedari të vetëm shumë të madh, ndërsa <strong>⏹ Ndalo</strong> vepron menjëherë, edhe në mes të një skedari të tillë.
+  </div>
+
+  <h2 id="detyrat">Vendosja e detyrave</h2>
+  <p>Programi njeh tre detyra kopjimi të pavarura (A1, A2, A3). Çdo detyrë përbëhet nga një dosje burim dhe një dosje destinacion dhe mund të ndizet ose fiket veç e veç.</p>
+
+  <h3>Shenja &bdquo;Aktive&ldquo;</h3>
+  <p>Në nisje përpunohen vetëm detyrat e shënuara si <strong>Aktive</strong>. Detyrat e fikura kapërcehen tërësisht, por rrugët e tyre mbeten të ruajtura.</p>
+
+  <h3>🔰 Filtri i detyrës</h3>
+  <p>Djathtas në krye të secilës kartë detyre qëndron shenja <strong>🔰</strong>. Me të vendosni filtra që vlejnë <strong>vetëm për atë detyrë</strong>: përjashtime shtesë dhe rregullin VETËM (&bdquo;kopjo vetëm disa lloje skedarësh&ldquo;). Shenja bëhet e gjelbër sapo për detyrën të jetë vendosur ndonjë rregull &ndash; nëse është gri, filtra të vetët nuk ka. Hollësitë janë në pjesën <a href="#perjashtimet">Përjashtimet</a>.</p>
+
+  <h3>Zgjedhja e burimit</h3>
+  <p>Klikoni <strong>📁 Burimi</strong> për të zgjedhur dosjen burim të detyrës. Dritarja e mban mend dosjen e fundit burim veçmas nga zgjedhja e destinacionit &ndash; në klikimin tjetër mbi <strong>Burimi</strong> (në cilëndo detyrë) zgjedhja niset që andej.</p>
+
+  <h3>Zgjedhja e destinacionit</h3>
+  <p>Klikoni <strong>📁 Destinacioni</strong> për të vendosur dosjen e destinacionit. Ajo nuk ka nevojë të ekzistojë që tani &ndash; krijohet vetë gjatë kopjimit. Edhe këtu dritarja e mban mend dosjen e fundit të destinacionit veçmas nga zgjedhja e burimit.</p>
+
+  <div class="note">
+    <strong>Shfaqja e rrugëve të gjata:</strong> nëse rruga nuk nxë e tëra në fushë, ajo shkurtohet me rregull (fillimi&hellip;fundi) në vend që të pritet në buzë. <strong>Rruga e plotë</strong> shfaqet sapo të ndaleni me miun mbi të (këshillë); brenda, 3Kopiraj punon gjithmonë me rrugën e plotë.
+  </div>
+
+  <div class="note">
+    <strong>Sasia e të dhënave:</strong> fusha <em>Të dhëna</em> tregon madhësinë e tanishme të secilës dosje burim aktive. Klikoni <strong>🔄 Rifresko</strong> për të rifreskuar pamjen pas ndryshimesh. Llogaritja rrjedh në sfond &ndash; sa kohë që zgjat, shkruhet <em>(duke llogaritur…)</em> dhe dritarja mbetet e përdorshme.
+  </div>
+
+  <div class="note">
+    <strong>Rrugët e rrjetit dhe NAS:</strong> rrugët UNC në formën <code>\\Server\Ndarje</code> mbështeten plotësisht &ndash; si burim dhe si destinacion. Për burime në rrjet sasia e të dhënave qëllimisht <strong>nuk</strong> llogaritet paraprakisht (te ndarjet e mëdha kjo mund të zgjasë gjatë); në vend të saj shkruhet <em>(rrjet)</em>. Vetë kopjimi rrjedh krejt si zakonisht.
+  </div>
+
+  <h2 id="opsionet">Opsionet</h2>
+
+  <h3>Mbishkrimi (për çdo detyrë)</h3>
+  <p>Kur ky opsion është i ndezur, skedarët ekzistues në destinacion mbishkruhen <strong>gjithmonë</strong>, pavarësisht nga data e tyre. Pa të, skedarët në destinacion mbishkruhen vetëm nëse skedari i burimit është <em>më i ri</em>. Nëse skedari në destinacion është po aq i vjetër ose më i ri, ai kapërcehet.</p>
+  <div class="note">
+    <strong>Toleranca e vulave kohore te disqet e rrjetit:</strong> midis NAS-it dhe disqeve të rrjetit vulat kohore të skedarëve shpesh ndryshojnë me një deri në dy sekonda. Pa tolerancë, në mënyrën &bdquo;vetëm nëse është më i ri&ldquo; skedarët e pandryshuar do të merreshin gabimisht për më të rinj dhe do të kopjoheshin sërish në çdo kalim. 3Kopiraj e parandalon këtë me një tolerancë prej dy sekondash &ndash; e rregullueshme për çdo profil me <a href="#profilet">shenjën 🛡</a>.
+  </div>
+
+  <h3>Zhvendosja (për çdo detyrë)</h3>
+  <p>Kur ky opsion është i ndezur, skedarët <strong>zhvendosen</strong> në vend që të kopjohen. Skedari i burimit fshihet vetëm pasi të ketë mbërritur i plotë dhe i padëmtuar në destinacion. Dosjet burim që mbeten bosh pas kësaj hiqen vetvetiu pas zhvendosjes.</p>
+
+  <div class="warn">
+    <strong>Kujdes me zhvendosjen:</strong> skedarët zhduken nga dosja burim. Para përdorimit të parë kontrolloni nëse ky është vërtet qëllimi. Nëse ndodh një gabim ose një ndërprerje në mes, skedari i burimit mbetet i garantuar i paprekur &ndash; fshirja vjen vetëm pas një transferimi plotësisht të suksesshëm.
+  </div>
+
+  <h3>Pas kopjimit: fikje ose gjumë</h3>
+  <p>Fusha <strong>💻 Pas kopjimit</strong> ofron dy mundësi: <strong>Fike</strong> dhe <strong>Gjumë</strong>. Nëse njëra është e ndezur dhe kopjimi ka përfunduar <strong>pa gabime</strong>, programi pyet nëse kompjuteri duhet fikur apo vënë në gjumë. Pas gabimesh ose ndërprerjeje kjo pyetje nuk bëhet.</p>
+  <p>Të dyja mundësitë <strong>përjashtojnë njëra-tjetrën</strong> &ndash; nëse ndizni njërën, tjetra fiket. Gjumi përdor menaxhimin e energjisë të Windows-it; nëse kompjuteri do të kalojë në gjumë apo në gjumë të thellë, varet nga cilësimet tuaja të energjisë.</p>
+  <div class="note">
+    Këto dy mundësi nuk vlejnë për kryerjet automatike të planifikuesit &ndash; veprojnë vetëm te kopjimet e nisura me dorë.
+  </div>
+
+  <h2 id="perjashtimet">Përjashtimi i skedarëve dhe i dosjeve</h2>
+  <p>Me butonin <strong>🚫</strong> në shiritin e profileve (pranë <strong>🗑 Fshi profilin</strong>) i mbani jashtë kopjimit disa skedarë dhe dosje të tëra. Kjo është veçanërisht e dobishme që skedarët e përkohshëm, skedarët e sistemit dhe dosjet shpesh të stërmëdha të fshehtinës së shfletuesve të mos kopjohen fare &ndash; ose që skedarët e mëdhenj të kopjeve rezervë dhe të imazheve të mbeten mënjanë, që në destinacion të mos grumbullohet një mal i panevojshëm të dhënash.</p>
+
+  <div class="note">
+    <strong>Dy lloje rregullash:</strong> <em>modelet e skedarëve</em> me shenja zëvendësuese (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) kanë të bëjnë me skedarë të veçantë. <em>Emrat e dosjeve</em> (<code>cache2</code>, <code>GPUCache</code>) përjashtojnë një dosje të tërë me të gjitha nëndosjet &ndash; në të nuk hyhet fare gjatë kopjimit, çka te struktura të mëdha fshehtine kursen edhe kohë.
+  </div>
+
+  <h3>Përjashtimet e parazgjedhura</h3>
+  <p>Në nisjen e parë programi krijon skedarin <code>3Kopier-Ausschluss.ini</code> me vlera fillestare të arsyeshme: skedarë të përkohshëm (Windows, Office, LibreOffice/OpenOffice), skedarë sistemi të Windows-it, dosjet e fshehtinës së shfletuesve të zakonshëm (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) dhe formate të mëdha imazhi si <code>*.iso</code>, <code>*.nrg</code> ose <code>*.tib</code>. Kjo listë e parazgjedhur vlen fillimisht për të gjitha profilet. Me butonin <strong>Hap listën e parazgjedhur</strong> në dritaren e përjashtimeve mund ta ndryshoni në çdo kohë.</p>
+
+  <h3>Përshtatja për çdo profil</h3>
+  <p>Dritarja e përjashtimeve i referohet gjithmonë profilit të ngarkuar në atë çast (te një kryerje pa profil ai është &bdquo;Manuell&ldquo;). Janë të mundshme dy përshtatje:</p>
+  <ul>
+    <li><strong>Fikja e një rregulli të parazgjedhur:</strong> hiqni shenjën në listën e përjashtimeve të parazgjedhura &ndash; ai rregull atëherë nuk vlen më për këtë profil. Shembull: në një profil kopjeje rezervë që pikërisht duhet t'i përfshijë skedarët ISO, hiqni shenjën te <code>*.iso</code>.</li>
+    <li><strong>Shtimi i përjashtimeve të veta:</strong> shkruani rregulla të tjera në fushën e tekstit poshtë, një për rresht &ndash; modele skedarësh dhe emra dosjesh të përzier (për shembull <code>*.mp4</code> ose <code>Downloads</code>).</li>
+  </ul>
+  <p>Lista që vlen në fund është pra: <em>lista e parazgjedhur &minus; rregullat e fikura për këtë profil + shtesat tuaja</em>.</p>
+
+  <h3>Përshtatja për çdo detyrë: shenja 🔰</h3>
+  <p>Përveç rregullave që vlejnë për tërë profilin, secila nga tri detyrat mund të ketë filtrat <strong>e vet</strong>. Një klikim mbi shenjën <strong>🔰</strong> në krye të kartës hap një dritare të vogël me dy fusha (disa rregulla ndajini me shenjën <code>|</code>):</p>
+  <ul>
+    <li><strong>Përjashtime shtesë vetëm për këtë detyrë:</strong> për shembull <code>*.iso | cache2</code> &ndash; vepron si një rregull më tepër në dritaren e përjashtimeve, por vlen vetëm për këtë detyrë. Emrat e dosjeve shkruhen si gjithmonë pa shenjë zëvendësuese.</li>
+    <li><strong>Rregulli VETËM (&bdquo;gjithçka përveç&ldquo;):</strong> nëse në këtë fushë ka modele, detyra kopjon <strong>vetëm</strong> skedarët që u përgjigjen atyre &ndash; gjithçka tjetër bie. Shembull: detyra&nbsp;1 <code>*.pdf</code>, detyra&nbsp;2 <code>*.jpg</code>, detyra&nbsp;3 <code>*.mp4</code> &ndash; kështu një kalim i vetëm rendit një dosje të përzier sipas llojit të skedarit në tre destinacione. Fusha bosh e fik rregullin. E leverdishme: mjafton <code>pdf</code> ose <code>.pdf</code>, programi e bën vetë <code>*.pdf</code>.</li>
+  </ul>
+  <p>Rregulli VETËM vlen vetëm për skedarët &ndash; nëpër strukturën e dosjeve kalohet si zakonisht, kështu që skedarët përkatës gjenden edhe në nëndosje. Skedarët që bien kështu hyjnë në rezultat te <em>Të përjashtuar</em>.</p>
+
+  <div class="note">
+    <strong>Përparësia:</strong> përjashtimet për tërë profilin vlejnë gjithmonë përveç kësaj. Një skedar <code>*.tmp</code> mbetet pra i lënë jashtë edhe me &bdquo;vetëm <code>*.tmp</code>&ldquo;, për sa kohë rregulli i parazgjedhur <code>*.tmp</code> nuk është fikur për profilin.
+  </div>
+
+  <div class="note">
+    <strong>Në regjistër:</strong> skedarët dhe dosjet e përjashtuara numërohen në një zë të veçantë <em>Të përjashtuar</em> &ndash; ndarazi nga skedarët e kapërcyer &ndash; dhe kështu shfaqen në bilancin përfundimtar, në pasqyrën sipas dosjeve dhe në dritaren e rezultatit.
+  </div>
+
+  <h2 id="profilet">Profilet</h2>
+  <p>Një profil ruan nën një emër tërë vendosjen e tri detyrave (burimi, destinacioni, opsionet, shenja Aktive), që ta thërrisni sërish në çdo kohë &ndash; dhe si bazë për planifikuesin.</p>
+
+  <h3>Zgjedhja e një profili</h3>
+  <p>Një klikim mbi një emër në listën rënëse e ngarkon profilin <strong>menjëherë</strong> &ndash; një buton i veçantë &bdquo;Ngarko&ldquo; nuk nevojitet më.</p>
+
+  <div class="warn">
+    <strong>Kujdes me ndryshimet e paruajtura:</strong> meqë zgjedhja ngarkon menjëherë, ndryshimet në fushat e detyrave që nuk i keni ruajtur ende humbin sapo të kaloni te një profil tjetër. Ruajini më parë me <strong>💾 Ruaj</strong>, nëse doni t'i mbani.
+  </div>
+
+  <h3>Ruajtja / i ri / fshirja</h3>
+  <p><strong>💾 Ruaj</strong> e ruan vendosjen e tanishme nën emrin e zgjedhur. <strong>➕ I ri</strong> pyet për një emër dhe pastaj i zbraz krejtësisht tri detyrat &ndash; kështu një profil i ri nis gjithmonë nga zeroja, pa mbetje nga profili i ngarkuar më parë. <strong>🗑 Fshi</strong> e heq përfundimisht profilin e zgjedhur.</p>
+
+  <div class="warn">
+    <strong>Profil që përdoret nga planifikuesi:</strong> nëse ruani një profil që gjendet në një plan veprues, programi e njofton këtë. Arsyeja: planifikuesi mban mend vetëm <strong>emrin e profilit</strong> dhe e ngarkon atë sërish në çdo kryerje. Ndryshimet që sapo ruajtët (burimet, destinacionet, opsionet) vlejnë kështu edhe për kryerjet e planifikuara të atij profili. Njoftimi mund të anulohet, nëse ky nuk ishte qëllimi.
+  </div>
+
+  <h3>🛡 Rrjeti dhe vulat kohore</h3>
+  <p><strong>Shenja 🛡</strong> në shiritin e profileve (pranë 🚫) hap cilësimin e vulave kohore për profilin e tanishëm. Ai përcakton se si mënyra <em>&bdquo;vetëm nëse është më i ri&ldquo;</em> (shenja Mbishkruaj e fikur) vendos nëse një skedar është vërtet më i ri &ndash; dhe pengon që skedarët e pandryshuar në NAS dhe në disqe rrjeti të kopjohen sërish në çdo kalim për shkak të dallimeve në vulat kohore.</p>
+  <ul>
+    <li><strong>Automatikisht</strong> (e parazgjedhur): toleranca prej dy sekondash vlen vetëm nëse burimi ose destinacioni është rrugë rrjeti në formën <code>\\Server\Ndarje</code>. Kopjimet krejtësisht vendore krahasohen saktësisht.</li>
+    <li><strong>Gjithmonë</strong>: toleranca vlen gjithmonë, edhe vendore. E dobishme te <strong>disqet e rrjetit me shkronjë të caktuar</strong> (për shembull <code>X:</code>), të cilat mënyra &bdquo;Automatikisht&ldquo; nuk i njeh si rrjet.</li>
+    <li><strong>Fikur</strong>: krahasim i saktë, pa tolerancë.</li>
+  </ul>
+  <p>Cilësimi ruhet për çdo profil veç. Dritarja tregon veç kësaj cilat nga tri detyrat përdorin për çastin një rrugë rrjeti.</p>
+
+  <h2 id="cilesimet">Cilësimet</h2>
+  <p>Ingranazhi <strong>⚙</strong> lart djathtas në dritaren e programit (pranë <strong>? NDIHMË</strong>) hap dritaren e cilësimeve.</p>
+
+  <h3>Gjuha</h3>
+  <p>3Kopiraj flet disa gjuhë. Gjuha si rregull zgjidhet që gjatë instalimit; këtu mund ta ndryshoni në çdo kohë. Ofrohen të gjitha gjuhët për të cilat pranë programit ndodhet një skedar gjuhe &ndash; secila me flamurin e vet, kështu që zgjedhja mbetet e qartë edhe kur dritarja është në një gjuhë që nuk e lexoni.</p>
+
+  <p>Në botimin gjerman programi quhet <strong>3Kopier</strong>. Emri në ekran pra ndjek gjuhën; skedarët në disk i ruajnë emrat e tyre (<code>3Kopier.ini</code>, profilet me prapashtesën <code>.3ko</code>, regjistrat në dosjen <code>Logs</code>). Ndërrimi i gjuhës prandaj nuk i prek cilësimet, profilet dhe filtrat tuaj.</p>
+
+  <div class="note">
+    <strong>Vepron pas një rinisjeje:</strong> ashtu si zmadhimi, edhe gjuha hyn në fuqi vetëm kur dritarja e programit ndërtohet nga e para. Një kopjim në rrjedhë nuk ndërpritet kurrë për këtë &ndash; gjuha e re shfaqet atëherë në nisjen e ardhshme të zakonshme.
+  </div>
+
+  <p>Gjuhët e tjera vijnë si paketa gjuhësore të kontrolluara nga Sattler IT-Service dhe shfaqen vetë në zgjedhje sapo t'i vendosni pranë programit. Skedarët e gjuhëve të bashkangjitur janë të koduar, njësoj si moduli i planifikuesit: kështu është e sigurt se tekstet që lexoni në program janë pikërisht ato që u dorëzuan.</p>
+
+  <h3>Zmadhimi i pamjes</h3>
+  <p>Janë parashikuar hapa të përhershëm nga <strong>90&nbsp;%</strong> deri në <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Hapi i tanishëm është i theksuar. Pas një klikimi mbi <strong>Zbato</strong> dritarja ndërtohet nga e para në madhësinë e re.</p>
+
+  <div class="note">
+    <strong>Madhësia e dritares është e përhershme:</strong> dritarja e programit qëllimisht nuk mund të tërhiqet me miun nga cepat. Kështu shmanget një pamje e shtrembëruar ose e prerë. Nëse doni pamje më të madhe, thjesht zgjidhni një hap më të lartë.
+  </div>
+
+  <h3>Ruajtja e regjistrave</h3>
+  <p>Përcakton sa gjatë ruhen skedarët e përfunduar të regjistrit (shihni pjesën <a href="#regjistrat">Regjistrat</a>) para se të hiqen në nisjen e ardhshme. Janë parashikuar hapa të përhershëm nga <strong>1 ditë</strong> deri në <strong>365 ditë</strong>, si edhe <strong>∞ (pa kufi)</strong> &ndash; atëherë nuk hiqet asgjë vetvetiu.</p>
+
+  <p>Butoni <strong>🗑 Pastro tani</strong> e zbaton afatin e zgjedhur menjëherë, pa pritur nisjen e ardhshme.</p>
+
+  <h3>Shtrirja e regjistrit</h3>
+  <p>Përcakton sa i hollësishëm është skedari i regjistrit i një kryerjeje:</p>
+  <ul>
+    <li><strong>I shkurtër</strong> (i parazgjedhur): <strong>një rresht përmbledhës</strong> për çdo detyrë (të kopjuar, të mbishkruar, të kapërcyer e kështu me radhë, me sasinë e të dhënave) &ndash; pa rreshta për dosjet e veçanta. Së bashku me bilancin përfundimtar në krye të skedarit regjistri mbetet kështu një pasqyrë e shkurtër dhe e lexueshme, sado mijëra skedarë e dosje të jenë përpunuar.</li>
+    <li><strong>I plotë</strong>: përveç kësaj shkruhet një rresht për çdo dosje (numri i skedarëve, veprimet, sasia e të dhënave) &ndash; i dobishëm kur kërkohet një gabim, kur doni të kuptoni ç'ka ndodhur në një dosje të caktuar ose pse një skedar nuk u kopjua.</li>
+  </ul>
+  <p>Cilësimi vepron që nga kryerja e ardhshme, edhe te ato të planifikuara. Gabimet regjistrohen gjithmonë të plota në të dyja mënyrat, po ashtu edhe shkurtimi vetvetiu i rrugëve (MAX_PATH).</p>
+
+  <h2 id="rrjedha">Nisja e një kopjimi me dorë</h2>
+
+  <h3>1. Vendosja e detyrave</h3>
+  <p>Te çdo detyrë e dëshiruar vendosni burimin, destinacionin dhe opsionet. Ndizeni me shenjën <strong>Aktive</strong>.</p>
+
+  <h3>2. Shtypja e Nis</h3>
+  <p>Programi së pari numëron të gjithë skedarët në dosjet burim aktive, që shiriti i përparimit të jetë i saktë. Kjo fazë numërimi mund të ndërpritet që me butonin <strong>⏹ Ndalo</strong>, ndërsa me shumë skedarë tregon një gjendje të ndërmjetme, në vend që të duket sikur është ngecur. Pastaj detyrat përpunohen njëra pas tjetrës (A1, A2, A3).</p>
+
+  <h3>3. Ndjekja e përparimit</h3>
+  <p>Shiriti i përparimit, rreshti i gjendjes dhe numëruesit rifreskohen pa ndërprerje gjatë kryerjes. Te një skedar i vetëm shumë i madh shiriti ecën dukshëm përpara brenda atij skedari, në vend që të rrijë pa lëvizur deri në fund. Rreshti i gjendjes tregon veç kësaj një kohë të mbetur të përafërt sapo për të ketë mjaft të dhëna, dhe shpejtësinë e çastit të kopjimit (për shembull <code>157.4 MB/s</code>) &ndash; e llogaritur si mesatare e sekondave të fundit, që numri të mbetet i qetë kur madhësitë e skedarëve ndryshojnë. Të dyja vlejnë edhe për dritaren e përparimit të planifikuesit. Në simulim shpejtësia nuk shfaqet, sepse atëherë nuk kopjohet vërtet asgjë.</p>
+
+  <h3>4. Ndërprerja</h3>
+  <p>Me butonin <strong>⏹ Ndalo</strong> ose tastin <strong>ESC</strong> e ndërprisni kryerjen me rregull në çdo çast &ndash; edhe në mes të një skedari të madh. Skedarët e përpunuar tashmë plotësisht mbeten; skedari i sapofilluar, ende i paplotë në destinacion hiqet vetvetiu, kështu që nuk mbetet kurrë një mbetje përgjysmë.</p>
+
+  <h3>5. Dritarja e rezultatit</h3>
+  <p>Në fund hapet një dritare rezultati me shifrat për çdo detyrë &ndash; shihni pjesën <a href="#rezultati">Rezultati</a>.</p>
+
+  <h2 id="planifikimi">Planifikimi</h2>
+  <p>Butoni <strong>🕐 Planifikuesi</strong> në dritaren kryesore hap një dritare të veçantë, në të cilën një numër i çfarëdoshëm profilesh mund të kryhen automatikisht sipas një plani &ndash; disa herë në ditë ose në intervale të përhershme.</p>
+
+  <h3>Krijimi i një plani</h3>
+  <p>Me butonin <strong>➕ I ri</strong> zgjidhni një profil dhe përcaktoni shkakun:</p>
+  <ul>
+    <li><strong>Çdo ditë</strong> &ndash; në një orë të përhershme, çdo ditë</li>
+    <li><strong>Ditë të javës</strong> &ndash; në një orë të përhershme, vetëm në ditët e zgjedhura</li>
+    <li><strong>Interval</strong> &ndash; çdo X orë, pavarësisht nga ora</li>
+  </ul>
+  <p>Me butonin <strong>✏</strong> ndryshoni një plan ekzistues, me butonin <strong>🗑</strong> e hiqni atë. Shenja <strong>Aktiv</strong> në dritaren e ndryshimit e ndal planin përkohësisht, pa e fshirë.</p>
+
+  <h3>🔍 Simulim / ▶ Nis (provë me dorë)</h3>
+  <p>Çdo rresht i listës ka dy butona për provë të menjëhershme, pavarësisht nga vetë plani:</p>
+  <ul>
+    <li><strong>🔍 Simulim</strong> &ndash; tregon saktësisht ç'do të ndodhte (cilët skedarë do të kopjoheshin, mbishkruheshin, kapërceheshin&hellip;) <strong>pa</strong> asnjë ndryshim. Asgjë nuk kopjohet, nuk zhvendoset dhe nuk fshihet.</li>
+    <li><strong>▶ Nis</strong> &ndash; e kryen detyrën menjëherë dhe vërtet.</li>
+  </ul>
+  <div class="note">
+    Këta dy butona e shfaqin <strong>gjithmonë</strong> dritaren e përparimit dhe pastaj dritaren e rezultatit &ndash; pavarësisht nëse për atë plan është ndezur mënyra pa njoftime. Mënyra pa njoftime (shihni më poshtë) vlen vetëm për kryerjet e nisura automatikisht, kurrë për provat me dorë.
+  </div>
+
+  <h3>🔇 Mënyra pa njoftime</h3>
+  <p>Në dritaren e ndryshimit (✏ ose kur krijoni me ➕ I ri) për çdo plan mund të ndizet <strong>mënyra pa njoftime</strong>. Kur është e ndezur, një kryerje e nisur <strong>automatikisht</strong> rrjedh pa asnjë dritare:</p>
+  <ul>
+    <li>Nëse gjithçka shkoi mirë (edhe kur nuk kishte asgjë për të kopjuar), programi mbetet <strong>krejtësisht i heshtur</strong> &ndash; pa dritare, pa njoftim.</li>
+    <li>Nëse ndodhi një <strong>gabim i vërtetë</strong> (për shembull burimi ose destinacioni i paarritshëm), shfaqet një njoftim i shkurtër, jo i bezdisshëm, që udhëzon te regjistri përkatës.</li>
+  </ul>
+  <p>Një plan me mënyrë pa njoftime njihet në listë nga shenja <strong>🔇</strong>.</p>
+
+  <h3>Dritare e pavarur e përparimit</h3>
+  <p>Kur një plan kryhet (jashtë mënyrës pa njoftime, i nisur automatikisht ose i provuar me dorë përmes Simulimit/Nis), hapet një <strong>dritare e vogël e veçantë</strong> me shirit përparimi, numërues dhe buton të vetin <strong>⏹ Ndalo</strong>. Kjo dritare shfaqet edhe kur 3Kopiraj punon vetëm në sfond (zona e njoftimeve), ka <strong>vendin e vet në shiritin e detyrave</strong> dhe mund të <strong>zvogëlohet</strong> nëse pengon &ndash; kryerja atëherë vazhdon padukshëm. E njëjta gjë vlen nëse kryerjen e nisni nga dritarja e planifikuesit.</p>
+  <p><strong>Kryqi i mbylljes (X)</strong> i asaj dritareje vepron si <strong>⏹ Ndalo</strong>: e ndërpret me rregull vetëm atë kryerje &ndash; ajo pra nuk vazhdon padukshëm në sfond.</p>
+  <div class="ok">
+    <strong>E rëndësishme:</strong> dritarja kryesore me kartat e detyrave mbetet <strong>krejtësisht e paprekur</strong> &ndash; puna juaj ende e paruajtur nuk mbishkruhet dhe nuk trazohet kurrë nga një plan që niset vetë.
+  </div>
+
+  <h3>Radha kur kryerjet mbivendosen</h3>
+  <p>Njëkohësisht kryhet <strong>vetëm një</strong> kopjim. Nëse një plan vjen në radhë ndërsa ende rrjedh një kryerje tjetër (një plan tjetër ose një kopjim i nisur me dorë), ajo radhë <strong>nuk humbet</strong>: hyn në një <strong>radhë pritjeje</strong> dhe niset vetë sapo kryerja në rrjedhë të ketë përfunduar. Disa plane në të njëjtën orë kryhen kështu <strong>njëri pas tjetrit dhe secili i plotë</strong>. Pritja dhe nisja e mëvonshme shënohen në regjistrin e gabimeve (<code>3Kopier-Fehler.log</code>); një kryerje që vjen nga radha njihet në dritaren e vet të përparimit nga shtesa <em>(nga radha)</em>.</p>
+  <p>Që kjo të funksionojë edhe <strong>pa mbikëqyrje</strong> (për shembull natën), dritarja e rezultatit e një kryerjeje të planifikuar <strong>nuk</strong> pret një &bdquo;Në rregull&ldquo;: ajo thjesht mbetet e hapur, ndërsa kryerja tjetër nga radha niset vetë. Në mëngjes dritaret e hapura të rezultateve tregojnë njëra pas tjetrës ç'ka ndodhur gjatë natës.</p>
+  <div class="note">
+    <strong>Ndërprerja prek vetëm kryerjen në rrjedhë:</strong> nëse një kryerje e ndaloni me <strong>⏹ Ndalo</strong>, ato në radhë vazhdojnë krejt si zakonisht &ndash; secila në dritaren e vet të përparimit me butonin e vet <strong>⏹ Ndalo</strong>. Një kryerje e ndërprerë njihet nga shënimi <strong>&bdquo;FAZIT (ABGEBROCHEN)&ldquo;</strong> në krye të skedarit të regjistrit.
+  </div>
+
+  <h2 id="sfondi">Puna në sfond, zona e njoftimeve dhe nisja automatike</h2>
+
+  <h3>Mbyllja e dritares</h3>
+  <p>Nëse ekziston të paktën një plan <strong>veprues</strong>, butoni (X) i dritares kryesore nuk e mbyll programin &ndash; zhduket vetëm dritarja, ndërsa programi vazhdon të punojë në sfond (njihet nga ikona në zonën e njoftimeve të shiritit të detyrave). Kështu planifikuesi mbetet veprues edhe kur askush nuk e mban dritaren hapur.</p>
+  <p>Nëse plan veprues <strong>nuk ka</strong>, butoni (X) e mbyll programin si zakonisht.</p>
+
+  <h3>Hapja sërish</h3>
+  <p>Një klikim me të djathtën mbi ikonën në zonën e njoftimeve hap një meny të vogël me <strong>Hap</strong> (e shfaq sërish dritaren) dhe <strong>Dil</strong> (e mbyll programin përfundimisht, edhe me një plan veprues).</p>
+
+  <h3>Nisja automatike</h3>
+  <p>Sapo të ekzistojë të paktën një plan veprues, 3Kopiraj shkruhet vetë në nisjen e Windows-it &ndash; në hyrje niset atëherë i zvogëluar në sfond, pa dritare. Kur plani i fundit veprues hiqet ose fiket, ai shënim zhduket po aq vetvetiu.</p>
+
+  <h3>Vetëm një kopje</h3>
+  <p>Nëse 3Kopiraj niset për së dyti ndërsa punon tashmë (edhe padukshëm në sfond), një dritare e dytë <strong>nuk</strong> hapet. Në vend të kësaj bëhet e dukshme kopja që punon tashmë.</p>
+
+  <h2 id="rruget-gjata">Rrugët e gjata (MAX_PATH)</h2>
+  <p>Windows si rregull nuk lejon rrugë skedarësh më të gjata se 260 shenja (<strong>kufiri MAX_PATH</strong>). Skedarët rruga e destinacionit e të cilëve është shumë e gjatë nuk mund të kopjohen as të zhvendosen &ndash; kjo prek sidomos skedarët në dosje thellësisht të futura njëra brenda tjetrës me emra të gjatë, siç haset shpesh në dosjet e shkarkimeve.</p>
+
+  <p>3Kopiraj i njeh vetë skedarë të tillë dhe e shkurton emrin e skedarit në destinacion aq sa duhet që veprimi të ketë sukses gjithsesi.</p>
+
+  <div class="ok">
+    <strong>Shkurtimi vetvetiu:</strong> nëse rruga e destinacionit është shumë e gjatë, së pari shkurtohet emri i skedarit në destinacion &ndash; pikërisht aq sa rruga të mbetet nën 260 shenja. Nëse kjo nuk ndihmon, shkurtohet edhe nëndosja e fundit e rrugës së destinacionit. Prapashtesa e skedarit ruhet gjithmonë. Emrat e shkurtuar marrin shenjën <code>-3k</code>, për shembull <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Skedari i burimit mbetet i paprekur:</strong> përshtatet vetëm rruga e destinacionit. Skedari fillestar e ruan emrin e vet. Në regjistër shënohen si rruga fillestare, ashtu edhe ajo e shkurtuar e destinacionit.
+  </div>
+
+  <div class="note">
+    <strong>Të mos ngatërrohet me shkurtimin në ekran:</strong> te rrugë burimi ose destinacioni shumë të gjata, pamja në fushat e detyrave shkurtohet (fillimi&hellip;fundi), për shembull <code>H:\Download\&hellip;\Arkiva</code>. Ky është vetëm shkurtim i dukshëm: brenda përdoret gjithmonë rruga e plotë. Rruga e plotë shfaqet si këshillë sapo të ndaleni me miun mbi të.
+  </div>
+
+  <h2 id="rezultati">Dritarja e rezultatit</h2>
+  <p>Pas çdo kryerjeje të përfunduar (ose të ndërprerë) hapet një dritare rezultati &ndash; me një shtyllë të vetën për çdo detyrë aktive, kështu që me një vështrim shihet ç'ka shkuar ku:</p>
+
+  <ul>
+    <li>Çdo shtyllë tregon <strong>burimin dhe destinacionin</strong> e asaj detyre dhe shifrat e saj</li>
+    <li>Poshtë qëndron një <strong>pasqyrë e përgjithshme</strong> e të gjitha detyrave (sasia e të dhënave, koha, numri i gabimeve)</li>
+    <li>Në një simulim çdo rresht është në trajtë kushtore (&bdquo;do të ishin&hellip;&ldquo;), me një shënim të qartë se vërtet nuk u ndryshua asgjë</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Zëri</th>
+      <th>Kuptimi</th>
+    </tr>
+    <tr>
+      <td><strong>Të kopjuar</strong></td>
+      <td>Skedarë të rinj që nuk ishin ende në destinacion dhe u kopjuan</td>
+    </tr>
+    <tr>
+      <td><strong>Të mbishkruar</strong></td>
+      <td>Skedarë që ishin tashmë në destinacion dhe u përditësuan</td>
+    </tr>
+    <tr>
+      <td><strong>Të zhvendosur</strong></td>
+      <td>Skedarë të bartur nga burimi në destinacion (opsioni &bdquo;Zhvendos&ldquo;)</td>
+    </tr>
+    <tr>
+      <td><strong>Të kapërcyer</strong></td>
+      <td>Skedarë që në destinacion ishin tashmë më të rinj dhe u lanë të pandryshuar</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Të shkurtuar</strong></td>
+      <td>Skedarë rruga e destinacionit e të cilëve kaloi kufirin MAX_PATH dhe u shkurtua vetvetiu (shenja <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Të përjashtuar</strong></td>
+      <td>Skedarë dhe dosje të kapërcyera sipas listës së përjashtimeve (shihni pjesën <a href="#perjashtimet">Përjashtimet</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Gabime</strong></td>
+      <td>Skedarë ose detyra që nuk mundën të përpunohen (hollësitë në fund të regjistrit përkatës)</td>
+    </tr>
+    <tr>
+      <td><strong>Të dhëna</strong></td>
+      <td>Sasia e përpunuar e të dhënave (për çdo detyrë dhe gjithsej)</td>
+    </tr>
+    <tr>
+      <td><strong>Koha</strong></td>
+      <td>Kohëzgjatja e përgjithshme e kopjimit (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="regjistrat">Regjistrat</h2>
+  <p>Për çdo kryerje &ndash; me dorë ose të planifikuar, të vërtetë ose të simuluar &ndash; krijohet një <strong>skedar regjistri i vetin</strong> në nëndosjen <code>Logs</code>, në vend të një skedari të vetëm përmbledhës që do të rritej pa fund.</p>
+
+  <h3>Emri i skedarit</h3>
+  <p>Çdo skedar regjistri quhet <code>EmriIProfilit_vulaKohore_lloji.log</code>, për shembull:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; një kryerje e vërtetë e profilit &bdquo;MMDownload&ldquo;</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; një simulim i profilit &bdquo;3Test&ldquo;</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; një kryerje pa profil të ngarkuar</li>
+  </ul>
+  <p>Me butonin <strong>📋 Regjistri</strong> në dritaren kryesore e hapni dosjen <code>Logs</code> drejtpërdrejt në Explorer.</p>
+
+  <div class="note">
+    <strong>Emrat e skedarëve janë të njëjtë në të gjitha gjuhët:</strong> një kryerje pa profil ruhet gjithmonë nën <code>Manuell</code>, dhe edhe skedarët e cilësimeve i ruajnë emrat e tyre gjermanisht. Kjo është me qëllim: i njëjti instalim gjen kështu edhe pas një ndërrimi gjuhe cilësimet, profilet dhe filtrat e vet, ndërsa një regjistër i dërguar është menjëherë i lexueshëm.
+  </div>
+
+  <h3>Përmbajtja e një skedari regjistri</h3>
+  <ul>
+    <li><strong>Bilanci përfundimtar</strong> me shifrat e përgjithshme dhe kohëzgjatjen qëndron krejt lart &ndash; rezultati pra shihet pa lëvizur nëpër tekst</li>
+    <li>Data, ora dhe emri i profilit të kryerjes</li>
+    <li>Burimi dhe destinacioni i secilës detyrë dhe opsionet e zgjedhura</li>
+    <li>Një <strong>rresht përmbledhës për çdo detyrë</strong> (veprimet dhe sasia e të dhënave); në mënyrën <em>I plotë</em> përveç kësaj një <strong>pasqyrë sipas dosjeve</strong> në vend të një rreshti për çdo skedar (shihni <a href="#cilesimet">Cilësimet &rarr; Shtrirja e regjistrit</a>)</li>
+    <li>Nëse ndodhën gabime, ato qëndrojnë veç kësaj në një bllok të veçantë <strong>&bdquo;=== FEHLER ===&ldquo;</strong> në fund të skedarit &ndash; të plota, në të dyja mënyrat</li>
+  </ul>
+
+  <div class="note">
+    <strong>Ruajtja:</strong> sa gjatë mbeten regjistrat para se të hiqen vetvetiu, e vendosni te <a href="#cilesimet">Cilësimet</a> (nga 1 ditë deri në 365 ditë ose pa kufi).
+  </div>
+
+  <h3>⚠ Regjistri i gabimeve (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Ky skedar i veçantë në dosjen e programit (i arritshëm me butonin <strong>⚠ Gabime</strong>) përmban vetëm <strong>gabime të programit</strong> që nuk i përkasin asnjë kopjimi &ndash; për shembull kur moduli i planifikuesit nuk mundi të ngarkohej. Gabimet e ndodhura gjatë një kopjimi gjenden, siç u përshkrua më lart, në fund të regjistrit të asaj kryerjeje.</p>
+
+  <div class="ok">
+    <strong>Skedari INI (<code>3Kopier.ini</code>):</strong> të gjitha cilësimet ruhen vetvetiu kur mbyllet programi dhe vendosen sërish në nisjen e ardhshme &ndash; ndër to rrugët e burimeve dhe të destinacioneve, shenja Aktive e tri detyrave, opsionet <em>Mbishkruaj</em> dhe <em>Zhvendos</em> për çdo detyrë, opsioni <em>Fike</em>, dosjet e fundit të përdorura të burimit dhe të destinacionit në dritaret e zgjedhjes, <em>hapi i zmadhimit</em> i zgjedhur, <em>gjuha</em> e vendosur, afati i ruajtjes së regjistrave dhe <em>shtrirja e regjistrit</em> (i shkurtër/i plotë). Vendosje me dorë nuk nevojitet.
+  </div>
+
+  <div class="note">
+    <strong>Profilet (skedarë <code>.3ko</code>):</strong> kur ruhet një profil, mbahen të gjitha rrugët, shenja Aktive dhe opsionet <em>Mbishkruaj</em> dhe <em>Zhvendos</em> të secilës detyrë. Opsioni <em>Fike</em> është cilësim i përgjithshëm: ai qëndron vetëm në skedarin INI, jo në profil.
+  </div>
+
+  <div class="note">
+    <strong>Skedari i planeve (<code>3Kopier-Zeitplan.ini</code>):</strong> të gjitha planet e krijuara (profili, shkaku, mënyra pa njoftime, shenja Aktiv) ruhen këtu dhe ngarkohen vetvetiu sërish në nisjen e ardhshme.
+  </div>
+
+  <h3>Pasqyrë: skedarët dhe dosjet në dosjen e programit</h3>
+  <p>Të gjithë skedarët dhe dosjet e mëposhtme lindin vetvetiu gjatë përdorimit &ndash; asnjërin nuk keni nevojë ta krijoni dhe asnjëri nuk i përket dorëzimit:</p>
+
+  <table>
+    <tr>
+      <th>Skedari / dosja</th>
+      <th>Përmbajtja</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Cilësime të përgjithshme: fushat e detyrave, opsionet, dosjet e fundit të përdorura, zmadhimi, gjuha, afati i ruajtjes</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Të gjitha planet e krijuara, me profil, shkak, mënyrë pa njoftime dhe shenjë Aktiv</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Gabime të programit që nuk i përkasin asnjë kopjimi</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (dosje)</td>
+      <td>Nga një skedar regjistri për çdo kryerje &ndash; shihni <a href="#regjistrat">Regjistrat</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Profilet që krijoni (nga një skedar për çdo emër profili)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      A ju ndihmoi ky mjet?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Kopiraj zhvillohet dhe mirëmbahet falas.<br>
+      Një dhurim i vogël ndihmon që ai të bëhet edhe më i mirë. Faleminderit përzemërsisht! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Dhuro me PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Kopiraj &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

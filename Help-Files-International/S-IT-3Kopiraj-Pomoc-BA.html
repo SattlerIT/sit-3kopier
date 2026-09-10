@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopiraj – Pomoć</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopiraj &ndash; Pomoć i dokumentacija</h1>
+  <p>Verzija v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Jezik:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#002F6C"/><polygon points="6,0 21,0 21,14" fill="#FECB00"/><rect x="4" y="1" width="1" height="1" fill="#FFFFFF"/><rect x="7" y="4" width="1" height="1" fill="#FFFFFF"/><rect x="10" y="7" width="1" height="1" fill="#FFFFFF"/><rect x="13" y="10" width="1" height="1" fill="#FFFFFF"/></svg> Bosanski</span>
+  <span class="lb-note">Jezik mijenjate u programu pod ⚙; pomoć zatim prati odabrani jezik.</span>
+</div>
+
+<nav>
+  <a href="#pregled">Pregled</a>
+  <a href="#zadaci">Zadaci</a>
+  <a href="#opcije">Opcije</a>
+  <a href="#iskljucenja">Isključenja</a>
+  <a href="#profili">Profili</a>
+  <a href="#postavke">Postavke</a>
+  <a href="#tijek">Tijek</a>
+  <a href="#raspored">Raspored</a>
+  <a href="#pozadina">Pozadina</a>
+  <a href="#dugeputanje">Duge putanje</a>
+  <a href="#rezultat">Rezultat</a>
+  <a href="#zapisnici">Zapisnici</a>
+</nav>
+
+<main>
+
+  <h2 id="pregled">Pregled</h2>
+  <p><strong>S-IT-3Kopiraj</strong> je trostruki kopirni alat sa zapisnikom i raspoređivačem. Program izvodi do tri neovisna zadatka kopiranja ili premještanja u jednom prolazu &ndash; idealno za raspoređivanje datoteka na NAS uređaje, mape u oblaku (na primjer pCloud) ili druga odredišta. Uz to se profili mogu izvoditi automatski prema rasporedu, u pozadini i bez ikakve vaše intervencije.</p>
+
+  <div class="note">
+    <strong>Uobičajena primjena:</strong> podatke iz lokalne mape kopirati istodobno na više odredišta &ndash; na primjer NAS 1, NAS 2 i pCloud &ndash; jednim klikom ili automatski svake večeri u isto vrijeme.
+  </div>
+
+  <div class="ok">
+    <strong>💡 U praksi zapravo nije ograničeno na tri zadatka:</strong> jedan prolaz obrađuje najviše tri para izvor-odredište istodobno, ali broj <strong>profila</strong> je neograničen i svaki profil može imati <strong>vlastiti raspored</strong> (vidi odjeljak <a href="#raspored">Raspored</a>). U praksi to znači: onoliko neovisnih zadataka kopiranja koliko želite, svaki sa svoja tri para izvor-odredište, svaki u svoje vrijeme ili sa svojim razmakom &ndash; i svi se izvode automatski u pozadini, bez pokretanja jednog po jednog. Na primjer: profil &bdquo;Fotografije&ldquo; svaki dan u 20 sati, profil &bdquo;Knjigovodstvo&ldquo; svaka 4 sata, profil &bdquo;Sedmična kopija&ldquo; samo subotom &ndash; sve postavljeno odjednom i djelatno neovisno jedno o drugome.
+  </div>
+
+  <div class="ok">
+    <strong>Python-izvedba:</strong> 3Kopiraj počiva na suvremenoj tehničkoj osnovi (Python umjesto AutoIt-a). Kopiranje se odvija u pozadini; prozor uvijek ostaje odazivan, i kod vrlo velikog broja datoteka i kod sporih mrežnih pogona (ne zamrzava se). Velike datoteke kopiraju se blok po blok: traka napretka zato vidljivo napreduje čak i unutar jedne vrlo velike datoteke, a <strong>⏹ Zaustavi</strong> djeluje odmah, i usred takve datoteke.
+  </div>
+
+  <h2 id="zadaci">Postavljanje zadataka</h2>
+  <p>Program poznaje tri neovisna zadatka kopiranja (A1, A2, A3). Svaki se zadatak sastoji od izvorne i odredišne mape i može se pojedinačno uključiti ili isključiti.</p>
+
+  <h3>Kvačica &bdquo;aktivan&ldquo;</h3>
+  <p>Pri pokretanju obrađuju se samo zadaci označeni kao <strong>aktivan</strong>. Isključeni zadaci se potpuno preskaču, ali njihove putanje ostaju sačuvane.</p>
+
+  <h3>🔰 Filtar zadatka</h3>
+  <p>Desno u zaglavlju svake kartice zadatka nalazi se znak <strong>🔰</strong>. Njime postavljate filtre koji vrijede <strong>samo za taj jedan zadatak</strong>: dodatna isključenja i pravilo SAMO (&bdquo;kopiraj samo određene vrste datoteka&ldquo;). Znak postaje zelen čim je za zadatak postavljeno neko pravilo &ndash; ako je siv, vlastitih filtara nema. Pojedinosti u odjeljku <a href="#iskljucenja">Isključenja</a>.</p>
+
+  <h3>Odabir izvora</h3>
+  <p>Kliknite na <strong>📁 Izvor</strong> da odaberete izvornu mapu zadatka. Prozor pamti zadnju izvornu mapu odvojeno od odabira odredišta &ndash; pri sljedećem kliku na <strong>Izvor</strong> (u bilo kojem zadatku) odabir kreće odande.</p>
+
+  <h3>Odabir odredišta</h3>
+  <p>Kliknite na <strong>📁 Cilj</strong> da postavite odredišnu mapu. Ona ne mora već postojati &ndash; stvara se sama tijekom kopiranja. I ovdje prozor pamti zadnju odredišnu mapu odvojeno od odabira izvora.</p>
+
+  <div class="note">
+    <strong>Prikaz dugih putanja:</strong> ako putanja ne stane u polje, skraćuje se uredno (početak&hellip;kraj) umjesto da bude odrezana na rubu. <strong>Puna putanja</strong> pojavljuje se kad mišem zastanete iznad nje (oblačić); iznutra 3Kopiraj uvijek radi s cijelom putanjom.
+  </div>
+
+  <div class="note">
+    <strong>Količina podataka:</strong> okvir <em>Podaci</em> pokazuje trenutačnu veličinu svake djelatne izvorne mape. Kliknite na <strong>🔄 Osvježi</strong> da osvježite prikaz nakon promjena. Izračun teče u pozadini &ndash; dok traje, piše <em>(izračunavam…)</em> i prozor ostaje upotrebljiv.
+  </div>
+
+  <div class="note">
+    <strong>Mrežne putanje i NAS:</strong> UNC-putanje oblika <code>\\Poslužitelj\Dijeljenje</code> potpuno su podržane &ndash; i kao izvor i kao odredište. Za izvore na mreži količina podataka namjerno se <strong>ne</strong> računa unaprijed (kod velikih dijeljenja to može dugo trajati); umjesto toga piše <em>(mreža)</em>. Samo kopiranje teče potpuno uobičajeno.
+  </div>
+
+  <h2 id="opcije">Opcije</h2>
+
+  <h3>Prepiši (po zadatku)</h3>
+  <p>Kad je ova opcija uključena, postojeće datoteke na odredištu <strong>uvijek</strong> se prepisuju, bez obzira na njihov datum. Bez nje se odredišne datoteke prepisuju samo ako je izvorna datoteka <em>novija</em>. Ako je odredišna datoteka jednako stara ili novija, preskače se.</p>
+  <div class="note">
+    <strong>Tolerancija vremenskih oznaka kod mrežnih pogona:</strong> između NAS-a i mrežnih pogona vremenske oznake datoteka često se razlikuju za jednu do dvije sekunde. Bez tolerancije bi se u načinu &bdquo;samo ako je novija&ldquo; neizmijenjene datoteke pogrešno smatrale novijima i pri svakom se prolazu ponovno kopirale. 3Kopiraj to sprječava tolerancijom od dvije sekunde &ndash; podesivom po profilu preko <a href="#profili">znaka 🛡</a>.
+  </div>
+
+  <h3>Premjesti (po zadatku)</h3>
+  <p>Kad je ova opcija uključena, datoteke se <strong>premještaju</strong> umjesto da se kopiraju. Izvorna datoteka briše se tek nakon što je potpuna i neoštećena stigla na odredište. Izvorne mape koje pritom ostanu prazne uklanjaju se automatski nakon premještanja.</p>
+
+  <div class="warn">
+    <strong>Oprez kod premještanja:</strong> datoteke nestaju iz izvorne mape. Prije prve upotrebe provjerite je li to doista namjera. Dođe li do pogreške ili prekida na pola puta, izvorna datoteka zajamčeno ostaje netaknuta &ndash; brisanje slijedi tek nakon potpuno uspješnog prijenosa.
+  </div>
+
+  <h3>Nakon kopiranja: isključivanje ili stanje mirovanja</h3>
+  <p>Okvir <strong>💻 Nakon kopiranja</strong> nudi dvije mogućnosti: <strong>Isključi računalo</strong> i <strong>Stanje mirovanja</strong>. Ako je jedna uključena i kopiranje je završilo <strong>bez pogrešaka</strong>, program pita treba li računalo isključiti ili staviti u stanje mirovanja. Nakon pogrešaka ili prekida to se pitanje ne postavlja.</p>
+  <p>Dvije se mogućnosti <strong>međusobno isključuju</strong> &ndash; uključite li jednu, druga se isključuje. Stanje mirovanja koristi upravljanje energijom sustava Windows; hoće li računalo prijeći u mirovanje ili u hibernaciju, ovisi o vašim postavkama napajanja.</p>
+  <div class="note">
+    Te dvije mogućnosti ne vrijede za automatske izvedbe raspoređivača &ndash; djeluju samo kod ručno pokrenutog kopiranja.
+  </div>
+
+  <h2 id="iskljucenja">Isključivanje datoteka i mapa</h2>
+  <p>Dugmeom <strong>🚫</strong> u traci profila (pokraj <strong>🗑 Izbriši</strong>) određene datoteke i cijele mape držite izvan kopiranja. To je osobito korisno da se privremene datoteke, sistemske datoteke i često golemi međuspremnici pretraživača uopće ne kopiraju &ndash; ili da se velike sigurnosne i slikovne datoteke ostave po strani, kako se na odredištu ne bi nakupila nepotrebna hrpa podataka.</p>
+
+  <div class="note">
+    <strong>Dvije vrste pravila:</strong> <em>uzorci datoteka</em> sa zamjenskim znakovima (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) odnose se na pojedinačne datoteke. <em>Imena mapa</em> (<code>cache2</code>, <code>GPUCache</code>) isključuju cijelu mapu sa svim podmapama &ndash; u nju se tijekom kopiranja niti ne ulazi, što kod velikih međuspremnika štedi i vrijeme.
+  </div>
+
+  <h3>Zadana isključenja</h3>
+  <p>Pri prvom pokretanju program stvara datoteku <code>3Kopier-Ausschluss.ini</code> s razumnim početnim vrijednostima: privremene datoteke (Windows, Office, LibreOffice/OpenOffice), sistemske datoteke sustava Windows, mape međuspremnika uobičajenih pretraživača (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) i veliki slikovni formati poput <code>*.iso</code>, <code>*.nrg</code> ili <code>*.tib</code>. Taj zadani popis najprije vrijedi za sve profile. Dugmeom <strong>Otvori zadani popis</strong> u prozoru isključenja možete ga promijeniti u svakom trenutku.</p>
+
+  <h3>Prilagodba po profilu</h3>
+  <p>Prozor isključenja uvijek se odnosi na profil koji je u tom trenutku učitan (kod izvedbe bez profila to je &bdquo;Manuell&ldquo;). Moguće su dvije prilagodbe:</p>
+  <ul>
+    <li><strong>Isključivanje zadanog pravila:</strong> uklonite kvačicu na popisu zadanih isključenja &ndash; to pravilo tada više ne vrijedi za ovaj profil. Primjer: u sigurnosnom profilu koji ISO-datoteke baš treba obuhvatiti, uklonite kvačicu kod <code>*.iso</code>.</li>
+    <li><strong>Dodavanje vlastitih isključenja:</strong> upišite dodatna pravila u tekstualno polje ispod, jedno po retku &ndash; uzorci datoteka i imena mapa izmiješano (na primjer <code>*.mp4</code> ili <code>Downloads</code>).</li>
+  </ul>
+  <p>Popis koji na kraju vrijedi glasi dakle: <em>zadani popis &minus; pravila isključena za ovaj profil + vaši dodaci</em>.</p>
+
+  <h3>Prilagodba po zadatku: znak 🔰</h3>
+  <p>Uz pravila koja vrijede za cijeli profil, svaki od tri zadatka može imati <strong>vlastite</strong> filtre. Klik na znak <strong>🔰</strong> u zaglavlju kartice otvara mali prozor s dva polja (više pravila odvojite znakom <code>|</code>):</p>
+  <ul>
+    <li><strong>Dodatna isključenja samo za ovaj zadatak:</strong> na primjer <code>*.iso | cache2</code> &ndash; djeluje kao još jedno pravilo u prozoru isključenja, ali vrijedi samo za ovaj zadatak. Imena mapa pišu se kao i uvijek bez zamjenskog znaka.</li>
+    <li><strong>Pravilo SAMO (&bdquo;sve osim&ldquo;):</strong> ako u ovom polju stoje uzorci, zadatak kopira <strong>isključivo</strong> datoteke koje im odgovaraju &ndash; sve ostalo otpada. Primjer: zadatak&nbsp;1 <code>*.pdf</code>, zadatak&nbsp;2 <code>*.jpg</code>, zadatak&nbsp;3 <code>*.mp4</code> &ndash; tako jedan prolaz razvrstava mješovitu mapu po vrsti datoteke na tri odredišta. Prazno polje isključuje pravilo. Zgodno: dovoljno je <code>pdf</code> ili <code>.pdf</code>, program sam napravi <code>*.pdf</code>.</li>
+  </ul>
+  <p>Pravilo SAMO vrijedi samo za datoteke &ndash; kroz strukturu mapa i dalje se prolazi, pa se odgovarajuće datoteke nalaze i u podmapama. Datoteke koje tako otpadnu ulaze u rezultat pod stavkom <em>Isključeno</em>.</p>
+
+  <div class="note">
+    <strong>Prednost:</strong> isključenja za cijeli profil uvijek vrijede uz to. Datoteka <code>*.tmp</code> ostaje dakle izostavljena i kod &bdquo;samo <code>*.tmp</code>&ldquo;, sve dok zadano pravilo <code>*.tmp</code> nije isključeno za profil.
+  </div>
+
+  <div class="note">
+    <strong>U zapisniku:</strong> isključene datoteke i mape broje se u vlastitoj stavci <em>Isključeno</em> &ndash; odvojeno od preskočenih datoteka &ndash; i tako se pojavljuju u završnoj bilanci, u pregledu po mapama i u prozoru rezultata.
+  </div>
+
+  <h2 id="profili">Profili</h2>
+  <p>Profil pod jednim imenom pohranjuje cjelokupnu postavu triju zadataka (izvor, odredište, opcije, kvačicu aktivan), tako da je možete u svakom trenutku ponovno pozvati &ndash; i kao osnovu za raspoređivač.</p>
+
+  <h3>Odabir profila</h3>
+  <p>Klik na ime u padajućem popisu učitava profil <strong>odmah</strong> &ndash; poseban dugme &bdquo;Učitaj&ldquo; više nije potreban.</p>
+
+  <div class="warn">
+    <strong>Pazite na nespremljene promjene:</strong> budući da odabir učitava odmah, promjene u poljima zadataka koje još niste spremili gube se čim prijeđete na drugi profil. Spremite ih prije toga dugmeom <strong>💾 Spremi</strong> ako ih želite zadržati.
+  </div>
+
+  <h3>Spremanje / novi / brisanje</h3>
+  <p><strong>💾 Spremi</strong> pohranjuje trenutačnu postavu pod odabranim imenom. <strong>➕ Novi</strong> traži ime i zatim potpuno prazni tri zadatka &ndash; tako novi profil uvijek kreće od nule, bez ostataka prethodno učitanog profila. <strong>🗑 Izbriši</strong> trajno uklanja odabrani profil.</p>
+
+  <div class="warn">
+    <strong>Profil koji koristi raspoređivač:</strong> spremite li profil koji se nalazi u djelatnom rasporedu, program to javlja. Razlog: raspoređivač pamti samo <strong>ime profila</strong> i učitava ga pri svakoj izvedbi. Promjene koje ste upravo spremili (izvori, odredišta, opcije) time vrijede i za planirane izvedbe tog profila. Poruku možete otkazati ako to nije bila namjera.
+  </div>
+
+  <h3>🛡 Mreža i vremenske oznake</h3>
+  <p><strong>Znak 🛡</strong> u traci profila (pokraj 🚫) otvara postavku vremenskih oznaka za trenutačni profil. Ona određuje kako način <em>&bdquo;samo ako je novija&ldquo;</em> (kvačica Prepiši isključena) odlučuje je li datoteka doista novija &ndash; i sprječava da se neizmijenjene datoteke na NAS-u i mrežnim pogonima zbog razlika u vremenskim oznakama ponovno kopiraju pri svakom prolazu.</p>
+  <ul>
+    <li><strong>Automatski</strong> (zadano): tolerancija od dvije sekunde vrijedi samo ako je izvor ili odredište mrežna putanja oblika <code>\\Poslužitelj\Dijeljenje</code>. Posve mjesna kopiranja uspoređuju se točno.</li>
+    <li><strong>Uvijek</strong>: tolerancija vrijedi uvijek, i mjesno. Korisno kod <strong>mrežnih pogona s dodijeljenim slovom</strong> (na primjer <code>X:</code>), koje način &bdquo;Automatski&ldquo; ne prepoznaje kao mrežu.</li>
+    <li><strong>Isključeno</strong>: točna usporedba, bez tolerancije.</li>
+  </ul>
+  <p>Postavka se pohranjuje po profilu. Prozor uz to pokazuje koji od tri zadatka trenutačno koriste mrežnu putanju.</p>
+
+  <h2 id="postavke">Postavke</h2>
+  <p>Zupčanik <strong>⚙</strong> gore desno u prozoru programa (pokraj <strong>? POMOĆ</strong>) otvara prozor postavki.</p>
+
+  <h3>Jezik</h3>
+  <p>3Kopiraj govori više jezika. Jezik se u pravilu bira već pri instalaciji; ovdje ga možete promijeniti u svakom trenutku. Nude se svi jezici za koje pokraj programa postoji jezična datoteka &ndash; svaki sa svojom zastavom, tako da odabir ostaje jasan i kad je prozor na jeziku koji ne čitate.</p>
+
+  <p>U njemačkom izdanju program se zove <strong>3Kopier</strong>. Ime na ekranu dakle prati jezik; datoteke na disku zadržavaju svoja imena (<code>3Kopier.ini</code>, profili s ekstenzijom <code>.3ko</code>, zapisnici u mapi <code>Logs</code>). Promjena jezika stoga ne dira vaše postavke, profile i filtre.</p>
+
+  <div class="note">
+    <strong>Djeluje nakon ponovnog pokretanja:</strong> kao i uvećanje, jezik stupa na snagu tek kad se prozor programa iznova izgradi. Kopiranje u tijeku pritom se nikada ne prekida &ndash; novi jezik pojavljuje se onda pri sljedećem uobičajenom pokretanju.
+  </div>
+
+  <p>Ostali jezici dolaze kao provjereni jezični paketi firme Sattler IT-Service i pojavljuju se u odabiru sami od sebe nakon što ih postavite. Priložene jezične datoteke su šifrirane, kao i modul raspoređivača: tako je sigurno da su tekstovi koje čitate u programu točno oni koji su isporučeni.</p>
+
+  <h3>Uvećanje sučelja</h3>
+  <p>Predviđeni su čvrsti koraci od <strong>90&nbsp;%</strong> do <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Trenutačni je korak istaknut. Nakon klika na <strong>Primijeni</strong> prozor se iznova izgrađuje u novoj veličini.</p>
+
+  <div class="note">
+    <strong>Veličina prozora je čvrsta:</strong> prozor programa namjerno se ne može mišem razvlačiti za uglove. Time se izbjegava izobličen ili odrezan prikaz. Želite li veći prikaz, jednostavno odaberite viši korak.
+  </div>
+
+  <h3>Čuvanje zapisnika</h3>
+  <p>Određuje koliko se dugo dovršene datoteke zapisnika (vidi odjeljak <a href="#zapisnici">Zapisnici</a>) čuvaju prije nego što se pri sljedećem pokretanju uklone. Predviđeni su čvrsti koraci od <strong>1 dana</strong> do <strong>365 dana</strong>, uz <strong>∞ (neograničeno)</strong> &ndash; tada se ništa ne uklanja samo od sebe.</p>
+
+  <p>Dugme <strong>🗑 Očisti sada</strong> primjenjuje odabrani rok odmah, bez čekanja na sljedeće pokretanje.</p>
+
+  <h3>Opseg zapisnika</h3>
+  <p>Određuje koliko je opširna datoteka zapisnika jedne izvedbe:</p>
+  <ul>
+    <li><strong>Sažeto</strong> (zadano): <strong>jedan zbirni redak</strong> po zadatku (kopirano, prepisano, preskočeno i tako dalje, s količinom podataka) &ndash; bez redaka za pojedinačne mape. Zajedno sa završnom bilancom na vrhu datoteke zapisnik tako ostaje kratak i čitljiv pregled, koliko god tisuća datoteka i mapa bilo obrađeno.</li>
+    <li><strong>Detaljno</strong>: uz to se piše redak za svaku mapu (broj datoteka, radnje, količina podataka) &ndash; korisno pri traženju pogreške, kad želite razumjeti što se dogodilo u određenoj mapi ili zašto datoteka nije kopirana.</li>
+  </ul>
+  <p>Postavka djeluje već od sljedeće izvedbe, i kod planiranih. Pogreške se u oba načina uvijek bilježe u cijelosti, kao i samostalno skraćivanje putanja (MAX_PATH).</p>
+
+  <h2 id="tijek">Ručno pokretanje kopiranja</h2>
+
+  <h3>1. Postavljanje zadataka</h3>
+  <p>Za svaki željeni zadatak postavite izvor, odredište i opcije. Uključite ga kvačicom <strong>aktivan</strong>.</p>
+
+  <h3>2. Pritisak na Pokreni</h3>
+  <p>Program najprije prebrojava sve datoteke u djelatnim izvornim mapama, kako bi traka napretka bila točna. Tu se fazu brojanja može prekinuti već dugmeom <strong>⏹ Zaustavi</strong>, a kod vrlo velikog broja datoteka pokazuje se međustanje umjesto da se čini kako se program zaglavio. Zatim se zadaci obrađuju jedan za drugim (A1, A2, A3).</p>
+
+  <h3>3. Praćenje napretka</h3>
+  <p>Traka napretka, statusni redak i brojači osvježavaju se neprekidno tijekom izvedbe. Kod jedne vrlo velike datoteke traka vidljivo napreduje unutar te datoteke, umjesto da miruje do kraja. Statusni redak uz to pokazuje procijenjeno preostalo vrijeme čim za to ima dovoljno podataka, i trenutačnu brzinu kopiranja (na primjer <code>157.4 MB/s</code>) &ndash; izračunatu kao prosjek posljednjih sekundi, tako da broj ostaje miran kad se veličine datoteka mijenjaju. Oboje vrijedi i za prozor napretka raspoređivača. Kod simulacije brzine nema, jer se tada ništa doista ne kopira.</p>
+
+  <h3>4. Prekid</h3>
+  <p>Dugmeom <strong>⏹ Zaustavi</strong> ili tipkom <strong>ESC</strong> izvedbu u svakom trenutku uredno prekidate &ndash; i usred velike datoteke. Datoteke koje su već potpuno obrađene ostaju; tek započeta, još nepotpuna odredišna datoteka uklanja se sama, tako da nikada ne ostane polovičan ostatak.</p>
+
+  <h3>5. Prozor rezultata</h3>
+  <p>Na kraju se otvara prozor rezultata s brojkama po zadatku &ndash; vidi odjeljak <a href="#rezultat">Rezultat</a>.</p>
+
+  <h2 id="raspored">Raspored</h2>
+  <p>Dugme <strong>🕐 Raspored</strong> u glavnom prozoru otvara poseban prozor u kojem se bilo koji broj profila može izvoditi automatski prema rasporedu &ndash; više puta na dan ili u čvrstim razmacima.</p>
+
+  <h3>Stvaranje rasporeda</h3>
+  <p>Dugmeom <strong>➕ Novi</strong> odaberite profil i odredite povod:</p>
+  <ul>
+    <li><strong>Svakodnevno</strong> &ndash; u čvrsto vrijeme, svaki dan</li>
+    <li><strong>Dani u sedmičnu</strong> &ndash; u čvrsto vrijeme, samo odabranim danima</li>
+    <li><strong>Razmak</strong> &ndash; svakih X sati, neovisno o dobu dana</li>
+  </ul>
+  <p>Dugmeom <strong>✏</strong> mijenjate postojeći raspored, dugmeom <strong>🗑</strong> ga uklanjate. Kvačica <strong>Aktivan</strong> u prozoru za uređivanje privremeno zaustavlja raspored bez brisanja.</p>
+
+  <h3>🔍 Simulacija / ▶ Pokreni (ručna proba)</h3>
+  <p>Svaki redak popisa ima dva dugmea za neposrednu probu, neovisno o samom rasporedu:</p>
+  <ul>
+    <li><strong>🔍 Simulacija</strong> &ndash; točno pokazuje što bi se dogodilo (koje bi datoteke bile kopirane, prepisane, preskočene&hellip;) <strong>bez</strong> ikakve promjene. Ništa se ne kopira, ne premješta i ne briše.</li>
+    <li><strong>▶ Pokreni</strong> &ndash; izvodi zadatak odmah i stvarno.</li>
+  </ul>
+  <div class="note">
+    Ta dva dugmea <strong>uvijek</strong> pokazuju prozor napretka i zatim prozor rezultata &ndash; bez obzira na to je li za taj raspored uključen tihi način. Tihi način (vidi niže) vrijedi samo za automatski pokrenute izvedbe, nikada za ručne probe.
+  </div>
+
+  <h3>🔇 Tihi način</h3>
+  <p>U prozoru za uređivanje (✏, ili pri stvaranju dugmeom ➕ Novi) može se za pojedini raspored uključiti <strong>tihi način</strong>. Kad je uključen, <strong>automatski</strong> pokrenuta izvedba teče bez ijednog prozora:</p>
+  <ul>
+    <li>Ako je sve prošlo dobro (i onda kad nije bilo ničega za kopirati), program ostaje <strong>potpuno tih</strong> &ndash; bez prozora, bez poruke.</li>
+    <li>Ako je nastupila <strong>prava pogreška</strong> (na primjer izvor ili odredište nedostupni), pojavljuje se kratka, nenametljiva poruka koja upućuje na pripadni zapisnik.</li>
+  </ul>
+  <p>Raspored s tihim načinom prepoznaje se na popisu po znaku <strong>🔇</strong>.</p>
+
+  <h3>Samostalan prozor napretka</h3>
+  <p>Kad se raspored izvodi (izvan tihog načina, automatski pokrenut ili ručno isproban preko Simulacije/Pokreni), otvara se <strong>zaseban mali prozor</strong> s trakom napretka, brojačima i vlastitim dugmeom <strong>⏹ Zaustavi</strong>. Taj se prozor pojavljuje i kad 3Kopiraj radi samo u pozadini (područje obavijesti), ima <strong>vlastitu stavku na programskoj traci</strong> i može se <strong>smanjiti</strong> ako smeta &ndash; izvedba tada teče nevidljivo dalje. Isto vrijedi kad izvedbu pokrenete iz prozora raspoređivača.</p>
+  <p><strong>Križić za zatvaranje (X)</strong> tog prozora djeluje kao <strong>⏹ Zaustavi</strong>: uredno prekida samo tu jednu izvedbu &ndash; ona dakle ne teče nevidljivo dalje u pozadini.</p>
+  <div class="ok">
+    <strong>Važno:</strong> glavni prozor s karticama zadataka ostaje <strong>potpuno netaknut</strong> &ndash; vaš još nespremljeni rad nikada ne prepisuje niti ometa raspored koji se pokrene sam od sebe.
+  </div>
+
+  <h3>Red čekanja kod preklapanja</h3>
+  <p>Istodobno se izvodi <strong>samo jedno</strong> kopiranje. Dođe li raspored na red dok još traje druga izvedba (drugi raspored ili ručno pokrenuto kopiranje), taj red <strong>ne propada</strong>: ulazi u <strong>red čekanja</strong> i kreće sam čim izvedba u tijeku završi. Više rasporeda u isto vrijeme tako se obavlja <strong>jedan za drugim i svaki u cijelosti</strong>. Čekanje i kasnije pokretanje bilježe se u zapisniku pogrešaka (<code>3Kopier-Fehler.log</code>); izvedba koja dolazi iz reda čekanja prepoznaje se u svom prozoru napretka po dodatku <em>(iz reda čekanja)</em>.</p>
+  <p>Da bi to radilo i <strong>bez nadzora</strong> (na primjer noću), prozor rezultata planirane izvedbe <strong>ne</strong> čeka na &bdquo;U redu&ldquo;: jednostavno ostaje otvoren, a sljedeća izvedba iz reda kreće sama. Ujutro otvoreni prozori rezultata jedan za drugim pokazuju što se noću dogodilo.</p>
+  <div class="note">
+    <strong>Prekid pogađa samo izvedbu u tijeku:</strong> prekinete li izvedbu dugmeom <strong>⏹ Zaustavi</strong>, one u redu čekanja nastavljaju potpuno uobičajeno &ndash; svaka u svom prozoru napretka s vlastitim dugmeom <strong>⏹ Zaustavi</strong>. Prekinuta izvedba prepoznaje se po oznaci <strong>&bdquo;FAZIT (ABGEBROCHEN)&ldquo;</strong> na početku datoteke zapisnika.
+  </div>
+
+  <h2 id="pozadina">Rad u pozadini, područje obavijesti i samostalno pokretanje</h2>
+
+  <h3>Zatvaranje prozora</h3>
+  <p>Postoji li barem jedan <strong>djelatan</strong> raspored, dugme (X) glavnog prozora ne zatvara program &ndash; nestaje samo prozor, a program radi dalje u pozadini (prepoznatljivo po ikoni u području obavijesti programske trake sustava Windows). Tako raspoređivač ostaje djelatan i kad nitko ne drži prozor otvorenim.</p>
+  <p>Ako djelatnog rasporeda <strong>nema</strong>, dugme (X) zatvara program uobičajeno.</p>
+
+  <h3>Ponovno otvaranje</h3>
+  <p>Desni klik na ikonu u području obavijesti otvara mali izbornik s <strong>Otvori</strong> (ponovno prikazuje prozor) i <strong>Izađi</strong> (trajno zatvara program, i kod djelatnog rasporeda).</p>
+
+  <h3>Samostalno pokretanje</h3>
+  <p>Čim postoji barem jedan djelatan raspored, 3Kopiraj se sam upisuje u pokretanje sustava Windows &ndash; kreće tada pri prijavi smanjen u pozadini, bez prozora. Kad se posljednji djelatan raspored ukloni ili isključi, taj upis jednako tako sam nestaje.</p>
+
+  <h3>Samo jedan primjerak</h3>
+  <p>Pokrene li se 3Kopiraj drugi put dok već radi (i nevidljivo u pozadini), drugi se prozor <strong>ne</strong> otvara. Umjesto toga vidljivim se čini primjerak koji već radi.</p>
+
+  <h2 id="dugeputanje">Duge putanje (MAX_PATH)</h2>
+  <p>Windows u pravilu ne dopušta putanje datoteka dulje od 260 znakova (<strong>granica MAX_PATH</strong>). Datoteke čija je odredišna putanja predugačka ne mogu se kopirati ni premjestiti &ndash; to pogađa osobito datoteke u duboko ugniježđenim mapama s dugim imenima, kakve se često nalaze u mapama preuzimanja.</p>
+
+  <p>3Kopiraj takve datoteke prepoznaje sam i skraćuje ime datoteke na odredištu onoliko koliko je potrebno da radnja ipak uspije.</p>
+
+  <div class="ok">
+    <strong>Samostalno skraćivanje:</strong> ako je odredišna putanja predugačka, najprije se skraćuje ime datoteke na odredištu &ndash; taman toliko da putanja ostane ispod 260 znakova. Ako to ne pomogne, skraćuje se uz to i posljednja podmapa odredišne putanje. Nastavak datoteke uvijek ostaje sačuvan. Skraćena imena dobivaju oznaku <code>-3k</code>, na primjer <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Izvorna datoteka ostaje netaknuta:</strong> prilagođava se samo odredišna putanja. Izvorna datoteka zadržava svoje ime. U zapisniku se bilježe i izvorna i skraćena odredišna putanja.
+  </div>
+
+  <div class="note">
+    <strong>Ne brkati sa skraćivanjem na ekranu:</strong> kod vrlo dugih izvornih ili odredišnih putanja prikaz u poljima zadataka se skraćuje (početak&hellip;kraj), na primjer <code>H:\Download\&hellip;\Arhiva</code>. To je samo vidljivo skraćivanje: iznutra se uvijek koristi puna putanja. Cijela putanja pojavljuje se kao oblačić kad mišem zastanete iznad nje.
+  </div>
+
+  <h2 id="rezultat">Prozor rezultata</h2>
+  <p>Nakon svake dovršene (ili prekinute) izvedbe otvara se prozor rezultata &ndash; s vlastitim stupcem za svaki djelatan zadatak, tako da se na prvi pogled vidi što je kamo otišlo:</p>
+
+  <ul>
+    <li>Svaki stupac pokazuje <strong>izvor i odredište</strong> tog zadatka i njegove brojke</li>
+    <li>Ispod je <strong>ukupan pregled</strong> svih zadataka (količina podataka, vrijeme, broj pogrešaka)</li>
+    <li>Kod simulacije svaki je redak u pogodbenom obliku (&bdquo;bilo bi&hellip;&ldquo;), uz jasnu napomenu da doista ništa nije promijenjeno</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Stavka</th>
+      <th>Značenje</th>
+    </tr>
+    <tr>
+      <td><strong>Kopirano</strong></td>
+      <td>Nove datoteke kojih na odredištu još nije bilo i koje su kopirane</td>
+    </tr>
+    <tr>
+      <td><strong>Prepisano</strong></td>
+      <td>Datoteke koje su već bile na odredištu i koje su osvježene</td>
+    </tr>
+    <tr>
+      <td><strong>Premješteno</strong></td>
+      <td>Datoteke prenesene s izvora na odredište (opcija &bdquo;Premjesti&ldquo;)</td>
+    </tr>
+    <tr>
+      <td><strong>Preskočeno</strong></td>
+      <td>Datoteke koje su na odredištu već bile novije i ostale su nepromijenjene</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Skraćeno</strong></td>
+      <td>Datoteke čija je odredišna putanja prelazila granicu MAX_PATH i koje su samostalno skraćene (oznaka <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Isključeno</strong></td>
+      <td>Datoteke i mape preskočene prema popisu isključenja (vidi odjeljak <a href="#iskljucenja">Isključenja</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Pogreške</strong></td>
+      <td>Datoteke ili zadaci koji se nisu mogli obraditi (pojedinosti na kraju pripadnog zapisnika)</td>
+    </tr>
+    <tr>
+      <td><strong>Podaci</strong></td>
+      <td>Obrađena količina podataka (po zadatku i ukupno)</td>
+    </tr>
+    <tr>
+      <td><strong>Vrijeme</strong></td>
+      <td>Ukupno trajanje kopiranja (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="zapisnici">Zapisnici</h2>
+  <p>Za svaku izvedbu &ndash; ručnu ili planiranu, stvarnu ili simuliranu &ndash; stvara se <strong>vlastita datoteka zapisnika</strong> u podmapi <code>Logs</code>, umjesto jedne zbirne datoteke koja bi beskonačno rasla.</p>
+
+  <h3>Ime datoteke</h3>
+  <p>Svaka se datoteka zapisnika zove <code>ImeProfila_vremenskaOznaka_vrsta.log</code>, na primjer:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; stvarna izvedba profila &bdquo;MMDownload&ldquo;</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; simulacija profila &bdquo;3Test&ldquo;</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; izvedba bez učitanog profila</li>
+  </ul>
+  <p>Dugmeom <strong>📋 Zapisnik</strong> u glavnom prozoru otvarate mapu <code>Logs</code> izravno u pretraživaču datoteka.</p>
+
+  <div class="note">
+    <strong>Imena datoteka jednaka su na svim jezicima:</strong> izvedba bez profila uvijek se pohranjuje pod <code>Manuell</code>, a i datoteke postavki zadržavaju svoja njemačka imena. To je namjerno: ista instalacija tako i nakon promjene jezika pronalazi svoje postavke, profile i filtre, a poslani je zapisnik odmah čitljiv.
+  </div>
+
+  <h3>Sadržaj datoteke zapisnika</h3>
+  <ul>
+    <li><strong>Završna bilanca</strong>, s ukupnim brojkama i trajanjem, nalazi se potpuno na vrhu &ndash; rezultat je dakle vidljiv bez pomicanja</li>
+    <li>Datum, vrijeme i ime profila izvedbe</li>
+    <li>Izvor i odredište svakog zadatka i odabrane opcije</li>
+    <li><strong>Zbirni redak po zadatku</strong> (radnje i količina podataka); u načinu <em>Detaljno</em> uz to i <strong>pregled po mapama</strong> umjesto retka po datoteci (vidi <a href="#postavke">Postavke &rarr; Opseg zapisnika</a>)</li>
+    <li>Ako je došlo do pogrešaka, one uz to stoje u zasebnom bloku <strong>&bdquo;=== FEHLER ===&ldquo;</strong> na kraju datoteke &ndash; u cijelosti, u oba načina</li>
+  </ul>
+
+  <div class="note">
+    <strong>Čuvanje:</strong> koliko dugo zapisnici ostaju prije nego što se sami uklone, postavljate u <a href="#postavke">Postavkama</a> (od 1 dana do 365 dana ili neograničeno).
+  </div>
+
+  <h3>⚠ Zapisnik pogrešaka (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Ta zasebna datoteka u mapi programa (dostupna dugmeom <strong>⚠ Pogreške</strong>) sadrži isključivo <strong>pogreške programa</strong> koje ne pripadaju nijednom kopiranju &ndash; na primjer kad se modul raspoređivača nije mogao učitati. Pogreške nastale tijekom kopiranja nalaze se, kako je opisano gore, na kraju zapisnika te izvedbe.</p>
+
+  <div class="ok">
+    <strong>Datoteka INI (<code>3Kopier.ini</code>):</strong> sve se postavke pri zatvaranju programa spremaju same i pri sljedećem pokretanju ponovno postavljaju &ndash; među njima izvorne i odredišne putanje, kvačica aktivan triju zadataka, opcije <em>Prepiši</em> i <em>Premjesti</em> po zadatku, opcija <em>Isključi računalo</em>, posljednje korištene izvorne i odredišne mape u prozorima za odabir, odabrani <em>korak uvećanja</em>, postavljeni <em>jezik</em>, rok čuvanja zapisnika i <em>opseg zapisnika</em> (sažeto/detaljno). Ručno postavljanje nije potrebno.
+  </div>
+
+  <div class="note">
+    <strong>Profili (datoteke <code>.3ko</code>):</strong> pri spremanju profila čuvaju se sve putanje, kvačica aktivan i opcije <em>Prepiši</em> i <em>Premjesti</em> svakog zadatka. Opcija <em>Isključi računalo</em> je opća postavka: nalazi se samo u datoteci INI, ne u profilu.
+  </div>
+
+  <div class="note">
+    <strong>Datoteka rasporeda (<code>3Kopier-Zeitplan.ini</code>):</strong> svi stvoreni rasporedi (profil, povod, tihi način, kvačica aktivan) pohranjuju se ovdje i pri sljedećem se pokretanju sami ponovno učitavaju.
+  </div>
+
+  <h3>Pregled: datoteke i mape u mapi programa</h3>
+  <p>Sve sljedeće datoteke i mape nastaju same tijekom upotrebe &ndash; nijednu ne morate stvarati i nijedna ne pripada isporuci:</p>
+
+  <table>
+    <tr>
+      <th>Datoteka / mapa</th>
+      <th>Sadržaj</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Opće postavke: polja zadataka, opcije, posljednje korištene mape, uvećanje, jezik, rok čuvanja</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Svi stvoreni rasporedi, s profilom, povodom, tihim načinom i kvačicom aktivan</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Pogreške programa koje ne pripadaju nijednom kopiranju</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (mapa)</td>
+      <td>Jedna datoteka zapisnika po izvedbi &ndash; vidi <a href="#zapisnici">Zapisnici</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Profili koje stvarate (jedna datoteka po imenu profila)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Je li vam ovaj alat pomogao?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Kopiraj se razvija i održava besplatno.<br>
+      Mala donacija pomaže da se i dalje poboljšava. Hvala od srca! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Doniraj putem PayPala
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Kopiraj &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Autor: Hans Udo Sattler
+</footer>
+
+</body>
+</html>

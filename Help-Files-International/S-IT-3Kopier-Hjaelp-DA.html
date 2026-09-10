@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-IT-3Kopier – Hjælp</title>
+<style>
+  :root {
+    --primary:    #2C3E50;
+    --success:    #27AE60;
+    --info:       #3498DB;
+    --warning:    #F39C12;
+    --danger:     #E74C3C;
+    --light:      #ECF0F1;
+    --white:      #FFFFFF;
+    --text:       #2C3E50;
+    --text-muted: #7F8C8D;
+    --border:     #BDC3C7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: #F7F9FA;
+    line-height: 1.65;
+  }
+  header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 22px 40px 18px;
+  }
+  header h1 { font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+  header p  { font-size: 13px; color: var(--light); margin-top: 4px; }
+  nav {
+    background: #34495E;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  nav a {
+    color: var(--light);
+    text-decoration: none;
+    padding: 11px 16px;
+    font-size: 13px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  nav a:hover { background: var(--primary); color: var(--white); }
+  .lb-note {
+    color: #7F8C8D;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  .langbar {
+    background: #22303C;
+    padding: 8px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid #1A252F;
+  }
+  .langbar .lb-label {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-right: 6px;
+  }
+  .langbar a, .langbar span.current, .langbar span.soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    font-size: 13px;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .langbar a { color: var(--light); }
+  .langbar a:hover { background: var(--primary); color: var(--white); }
+  .langbar span.current { color: var(--white); background: var(--primary); font-weight: 600; }
+  .langbar span.soon { color: #6B7C8C; cursor: default; }
+  .langbar span.soon svg { opacity: 0.45; }
+  .langbar svg { display: block; border: 1px solid #7F8C8D; }
+  main { max-width: 920px; margin: 0 auto; padding: 36px 40px 60px; }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--info);
+    padding-bottom: 6px;
+    margin: 36px 0 16px;
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 20px 0 8px;
+  }
+  p  { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 9px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td { padding: 8px 14px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #F0F3F4; }
+  .note {
+    background: #EBF5FB;
+    border-left: 4px solid var(--info);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .warn {
+    background: #FEF9E7;
+    border-left: 4px solid var(--warning);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .danger {
+    background: #FDEDEC;
+    border-left: 4px solid var(--danger);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  .ok {
+    background: #EAFAF1;
+    border-left: 4px solid var(--success);
+    padding: 12px 16px;
+    border-radius: 3px;
+    margin: 14px 0;
+    font-size: 13px;
+  }
+  code {
+    background: #ECF0F1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+  }
+  footer {
+    background: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 16px 40px;
+    font-size: 12px;
+    margin-top: 60px;
+    line-height: 1.8;
+  }
+  footer strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>S-IT-3Kopier &ndash; Hjælp &amp; dokumentation</h1>
+  <p>Version v3.3.2 &nbsp;&bull;&nbsp; &copy; 2026 Hans Udo Sattler &nbsp;&bull;&nbsp; Sattler IT-Service, Greifenstein</p>
+</header>
+
+<div class="langbar">
+  <span class="lb-label">Sprog:</span>
+  <span class="current"><svg width="21" height="14" viewBox="0 0 21 14"><rect width="21" height="14" fill="#C8102E"/><rect x="6" y="0" width="3" height="14" fill="#FFFFFF"/><rect x="0" y="5.5" width="21" height="3" fill="#FFFFFF"/></svg> Dansk</span>
+  <span class="lb-note">Sproget indstiller du i programmet under ⚙; hjælpen følger derefter det valgte sprog.</span>
+</div>
+
+<nav>
+  <a href="#oversigt">Oversigt</a>
+  <a href="#opgaver">Opgaver</a>
+  <a href="#indstillinger">Valg</a>
+  <a href="#udelukkelser">Udelukkelser</a>
+  <a href="#profiler">Profiler</a>
+  <a href="#indstillinger_prog">Indstillinger</a>
+  <a href="#forloeb">Forløb</a>
+  <a href="#tidsstyring">Tidsstyring</a>
+  <a href="#baggrund">Baggrund</a>
+  <a href="#langepfade">Lange stier</a>
+  <a href="#resultat">Resultat</a>
+  <a href="#log">Logfiler</a>
+</nav>
+
+<main>
+
+  <h2 id="oversigt">Oversigt</h2>
+  <p><strong>S-IT-3Kopier</strong> er en tredobbelt kopierer med logføring og tidsstyring. Den kan udføre op til tre uafhængige kopierings- eller flytteopgaver i ét enkelt forløb &ndash; ideel til at fordele filer til NAS-drev, cloud-mapper (f.eks. pCloud) eller andre destinationer. Derudover kan profiler køre automatisk efter en tidsplan i baggrunden, uden at du behøver at gøre noget.</p>
+
+  <div class="note">
+    <strong>Typisk brug:</strong> kopier data fra en lokal mappe til flere destinationer på én gang &ndash; f.eks. NAS 1, NAS 2 og pCloud &ndash; enten ved et tryk på en knap eller automatisk hver aften på et fast tidspunkt.
+  </div>
+
+  <div class="ok">
+    <strong>💡 I praksis ikke reelt begrænset til tre opgaver:</strong> ét forløb behandler højst tre kilde-mål-par ad gangen, men antallet af <strong>profiler</strong> er ubegrænset, og hver profil kan have sin <strong>egen tidsplan</strong> (se afsnittet <a href="#tidsstyring">Tidsstyring</a>). I praksis betyder det: så mange uafhængige kopieringsopgaver, du ønsker, hver med sine tre kilde-mål-par, hver til sit eget tidspunkt eller interval &ndash; og alle kører automatisk i baggrunden, uden at du behøver at starte dem én ad gangen. For eksempel: en profil &bdquo;Fotos&rdquo; dagligt kl. 20:00, en profil &bdquo;Regnskab&rdquo; hver 4. time, en profil &bdquo;Ugebackup&rdquo; kun om lørdagen &ndash; alle sat op på én gang og uafhængigt af hinanden aktive.
+  </div>
+
+  <div class="ok">
+    <strong>Python-version:</strong> 3Kopier er bygget på et moderne teknisk fundament (Python i stedet for AutoIt). Kopieringen foregår i baggrunden, så grænsefladen forbliver responsiv under hele forløbet &ndash; selv ved meget store antal filer eller langsomme netværksdrev (den fryser ikke). Store enkeltfiler kopieres blok for blok, så fremskridtslinjen bevæger sig synligt selv inden for én meget stor fil, og <strong>⏹ Stop</strong> virker øjeblikkeligt, også midt i en stor fil.
+  </div>
+
+  <h2 id="opgaver">Konfigurering af opgaver</h2>
+  <p>Programmet understøtter tre uafhængige kopieringsopgaver (A1, A2, A3). Hver opgave består af en kilde- og en destinationsmappe og kan aktiveres eller deaktiveres individuelt.</p>
+
+  <h3>Afkrydsningsfeltet &bdquo;aktiv&rdquo;</h3>
+  <p>Kun opgaver, der er markeret som <strong>aktive</strong>, behandles, når du trykker på Start. Deaktiverede opgaver springes helt over, men deres stier gemmes.</p>
+
+  <h3>🔰 Opgavefilter</h3>
+  <p>Tilhøjre i overskriften på hvert opgavekort sidder symbolet <strong>🔰</strong>. Det giver adgang til filtre, der <strong>kun gælder for denne ene opgave</strong>: yderligere udelukkelser og KUN-reglen (&bdquo;kun disse filtyper kopieres&rdquo;). Symbolet lyser grønt, så snart der er sat en regel for opgaven &ndash; er det gråt, er der ingen opgavespecifikke filtre aktive. Detaljer i afsnittet <a href="#udelukkelser">Udelukkelser</a>.</p>
+
+  <h3>Vælg kilde</h3>
+  <p>Klik på <strong>📁 Kilde</strong> for at vælge kildemappen til den pågældende opgave. Dialogen husker den sidst valgte kildemappe separat fra målvalget &ndash; næste gang du klikker på <strong>Kilde</strong> (i en hvilken som helst opgave) starter udvælgelsen der igen.</p>
+
+  <h3>Vælg mål</h3>
+  <p>Klik på <strong>📁 Mål</strong> for at angive destinationsmappen. Den behøver ikke at eksistere på forhånd &ndash; den oprettes automatisk under kopieringsforløbet. Også her husker dialogen den sidst valgte destinationsmappe separat fra kildevalget.</p>
+
+  <div class="note">
+    <strong>Visning af lange stier:</strong> Hvis en sti ikke passer helt ind i visningsfeltet, vises den afkortet (begyndelse&hellip;slutning) i stedet for at blive skåret af ved kanten. Den <strong>fulde sti</strong> vises, når du holder musen over den (tooltip); internt arbejder 3Kopier altid med hele stien.
+  </div>
+
+  <div class="note">
+    <strong>Datamængde:</strong> Området <em>Datamængder</em> viser den aktuelle størrelse af hver aktiv kildemappe. Klik på <strong>🔄 Opdater</strong> for at opdatere visningen efter ændringer. Beregningen kører i baggrunden &ndash; mens den kører, vises <em>(beregner…)</em>, og grænsefladen forbliver brugbar hele tiden.
+  </div>
+
+  <div class="note">
+    <strong>Netværks- og NAS-stier:</strong> UNC-stier af formen <code>\\server\deling</code> understøttes fuldt ud &ndash; både som kilde og som mål. For netværkskilder beregnes datamængden bevidst <strong>ikke</strong> på forhånd (det kan tage lang tid ved store delinger); i stedet vises <em>(netværk)</em>. Selve kopieringen forløber helt normalt.
+  </div>
+
+  <h2 id="indstillinger">Valg</h2>
+
+  <h3>Overskriv (per opgave)</h3>
+  <p>Med denne indstilling aktiveret, overskrives eksisterende filer i målet <strong>altid</strong>, uanset dato. Uden indstillingen overskrives målfiler kun, når kildefilen er <em>nyere</em>. Er målfilen lige så gammel eller nyere, springes den over.</p>
+  <div class="note">
+    <strong>Tidsstempel-tolerance på netværksdrev:</strong> På tværs af NAS- og netværksdrev afviger filernes tidsstempler ofte med et par sekunder. Uden tolerance ville uændrede filer i tilstanden &bdquo;kun hvis nyere&rdquo; fejlagtigt blive anset for nyere og kopieret igen ved hver kørsel. 3Kopier udjævner det med en tolerance på to sekunder &ndash; indstilles per profil via <a href="#profiler">🛡-symbolet</a>.
+  </div>
+
+  <h3>Flyt (per opgave)</h3>
+  <p>Med denne indstilling aktiveret, <strong>flyttes</strong> filer i stedet for at blive kopieret. Kildefilen slettes først, efter den er ankommet fuldstændigt og intakt til målet. Tomme kildemapper fjernes automatisk efter flytningen.</p>
+
+  <div class="warn">
+    <strong>Bemærk ved flytning:</strong> Filer fjernes fra kildemappen. Tjek inden første brug, om det er ønsket. Hvis der opstår fejl, eller forløbet afbrydes midtvejs, forbliver kildefilen garanteret uberørt &ndash; sletning sker først efter en fuldstændig vellykket overførsel.
+  </div>
+
+  <h3>Efter kopiering: Luk ned eller dvaletilstand</h3>
+  <p>Området <strong>💻 Efter kopiering</strong> tilbyder to muligheder: <strong>Luk ned</strong> og <strong>Dvaletilstand</strong>. Hvis en af dem er aktiveret, og kopieringen blev <strong>fejlfrit</strong> afsluttet, spørger programmet, om computeren skal lukkes ned eller sættes i dvale. Ved fejl eller afbrudt forløb vises spørgsmålet ikke.</p>
+  <p>De to muligheder <strong>udelukker hinanden</strong> &ndash; aktiveres den ene, fravælges den anden automatisk. Dvaletilstanden bruger Windows' strømstyring; om computeren går i standby eller dvale afhænger af dine Windows-strømindstillinger.</p>
+  <div class="note">
+    Disse to muligheder gælder ikke for automatiske forløb via tidsstyringen &ndash; de virker kun ved manuelt startede kopieringer.
+  </div>
+
+  <h2 id="udelukkelser">Udelukkelse af filer og mapper</h2>
+  <p>Med knappen <strong>🚫</strong> i profilbjælken (ved siden af <strong>🗑 Slet</strong>) kan du holde bestemte filer og hele mapper uden for kopieringen. Det er især nyttigt til at udelade midlertidige filer, systemfiler og de ofte enorme cache-mapper fra browsere helt fra starten &ndash; eller til at holde store backup- og imagefiler væk, så der ikke opbygges en unødvendig databunke i målet.</p>
+
+  <div class="note">
+    <strong>To slags indgange:</strong> <em>filmønstre</em> med jokertegn (<code>*.tmp</code>, <code>*.iso</code>, <code>~$*</code>) rammer enkeltfiler. <em>Mappenavne</em> (f.eks. <code>cache2</code>, <code>GPUCache</code>) udelukker en hel mappe med alle undermapper &ndash; den bliver slet ikke åbnet under kopieringen, hvilket sparer tid ved store cache-træer.
+  </div>
+
+  <h3>Standardudelukkelser</h3>
+  <p>Ved første start opretter programmet filen <code>3Kopier-Ausschluss.ini</code> med fornuftige standardindstillinger: midlertidige filer (Windows, Office, LibreOffice/OpenOffice), Windows-systemfiler, cache-mapper fra de gængse browsere (Firefox, Chrome, Edge, Opera, Brave, Vivaldi) samt store image-formater som <code>*.iso</code>, <code>*.nrg</code> eller <code>*.tib</code>. Denne standardliste gælder i første omgang for alle profiler. Knappen <strong>Åbn standardliste</strong> i udelukkelsesvinduet giver dig adgang til at redigere den når som helst.</p>
+
+  <h3>Tilpasning per profil</h3>
+  <p>Udelukkelsesvinduet henviser altid til den profil, der er indlæst (ved et forløb uden profil er det &bdquo;Manuell&rdquo;). To tilpasninger er mulige:</p>
+  <ul>
+    <li><strong>Deaktiver et standardindgang:</strong> fjern fluebenet i listen over standardudelukkelser &ndash; så gælder denne indgang ikke længere for denne profil. Eksempel: i en backupprofil, der netop skal inkludere ISO-filer, fjerner du fluebenet ved <code>*.iso</code>.</li>
+    <li><strong>Tilføj egne udelukkelser:</strong> skriv yderligere indgange i tekstfeltet nedenfor, én per linje &ndash; blandet af filmønstre og mappenavne (f.eks. <code>*.mp4</code> eller <code>Downloads</code>).</li>
+  </ul>
+  <p>Den liste, der faktisk gælder, er således: <em>standardlisten &minus; for denne profil fjernede indgange + dine egne tilføjelser</em>.</p>
+
+  <h3>Tilpasning per opgave: 🔰-symbolet</h3>
+  <p>Ud over profilens overordnede regler kan hver af de tre opgaver have <strong>sine egne</strong> filtre. Et klik på <strong>🔰</strong>-symbolet i overskriften på et opgavekort åbner en lille dialog med to felter (adskil flere indgange med <code>|</code>):</p>
+  <ul>
+    <li><strong>Yderligere udelukkelser kun for denne opgave:</strong> f.eks. <code>*.iso | cache2</code> &ndash; virker som en ekstra indgang i udelukkelsesvinduet, men gælder kun for denne opgave. Mappenavne skrives som sædvanligt uden jokertegn.</li>
+    <li><strong>KUN-reglen (&bdquo;alt undtagen&rdquo;):</strong> står der mønstre i dette felt, kopierer opgaven <strong>udelukkende</strong> filer, der matcher &ndash; alt andet udelukkes. Eksempel: opgave&nbsp;1 <code>*.pdf</code>, opgave&nbsp;2 <code>*.jpg</code>, opgave&nbsp;3 <code>*.mp4</code> &ndash; så sorterer ét forløb en blandet mappe efter filtype til tre mål. Et tomt felt slår reglen fra. Praktisk: <code>pdf</code> eller <code>.pdf</code> er nok, programmet udvider selv til <code>*.pdf</code>.</li>
+  </ul>
+  <p>KUN-reglen gælder kun for filer &ndash; mappestrukturen gennemløbes stadig normalt, så matchende filer findes også i undermapper. Filer, der sorteres fra på denne måde, tæller i resultatet under <em>Udelukket</em>.</p>
+
+  <div class="note">
+    <strong>Prioritet:</strong> profilens overordnede udelukkelser gælder altid oveni. En <code>*.tmp</code>-fil forbliver således udelukket selv med &bdquo;kun <code>*.tmp</code>&rdquo;, så længe standardindgangen <code>*.tmp</code> ikke er deaktiveret for profilen.
+  </div>
+
+  <div class="note">
+    <strong>I loggen:</strong> udelukkede filer og mapper tælles i deres egen kategori <em>Udelukket</em> &ndash; adskilt fra oversprungne filer &ndash; og vises således i oversigten, i mappeoversigten og i resultatvinduet.
+  </div>
+
+  <h2 id="profiler">Profiler</h2>
+  <p>En profil gemmer den fulde konfiguration af alle tre opgaver (kilde, mål, indstillinger, aktiv-status) under et navn, så du kan hente den frem igen når som helst &ndash; og som grundlag for tidsstyringen.</p>
+
+  <h3>Valg af profil</h3>
+  <p>Et klik på et navn i rullemenuen indlæser profilen <strong>med det samme</strong> &ndash; en separat &bdquo;Indlæs&rdquo;-knap er ikke længere nødvendig.</p>
+
+  <div class="warn">
+    <strong>Vær opmærksom på ikke-gemte ændringer:</strong> fordi valget indlæser med det samme, går ændringer i opgavefelterne, som du ikke har gemt, tabt, når du skifter til en anden profil. Gem dem først med <strong>💾 Gem</strong>, hvis du vil beholde dem.
+  </div>
+
+  <h3>Gem / ny / slet</h3>
+  <p><strong>💾 Gem</strong> gemmer den aktuelle konfiguration under det valgte navn. <strong>➕ Ny</strong> spørger efter et navn og tømmer derefter alle tre opgaver fuldstændigt &ndash; så en ny profil starter garanteret fra nul, uden rester fra en tidligere indlæst profil. <strong>🗑 Slet</strong> fjerner den valgte profil endeligt.</p>
+
+  <div class="warn">
+    <strong>Profil i brug af tidsstyringen:</strong> gemmer du en profil, der optræder i en aktiv tidsplan, påpeger programmet det med en besked. Årsagen: tidsstyringen husker kun <strong>profilnavnet</strong> og indlæser profilen frisk ved hvert forløb. De ændringer, du netop har gemt (kilder, mål, indstillinger), gælder derfor også for de tidsstyrede forløb af denne profil. Beskeden kan annulleres, hvis det ikke var hensigten.
+  </div>
+
+  <h3>🛡 Netværk og tidsstempler</h3>
+  <p><strong>🛡-symbolet</strong> i profilbjælken (ved siden af 🚫) åbner tidsstempelindstillingen for den aktuelle profil. Den styrer, hvordan tilstanden <em>&bdquo;kun hvis nyere&rdquo;</em> (flueben ved Overskriv ikke sat) afgør, om en fil virkelig er nyere &ndash; og forhindrer, at uændrede filer på NAS- og netværksdrev kopieres unødigt ved hver kørsel på grund af tidsstempelforskelle.</p>
+  <ul>
+    <li><strong>Automatisk</strong> (standard): tolerancen på to sekunder gælder kun, hvis kilde eller mål er en netværkssti af formen <code>\\server\deling</code>. Rent lokale kopier sammenlignes nøjagtigt.</li>
+    <li><strong>Altid</strong>: tolerancen gælder altid, også lokalt. Nyttigt til <strong>netværksdrev med drevbogstav</strong> (f.eks. <code>X:</code>), som &bdquo;Automatisk&rdquo; ikke genkender som netværk.</li>
+    <li><strong>Fra</strong>: nøjagtig sammenligning uden tolerance.</li>
+  </ul>
+  <p>Indstillingen gemmes per profil. Dialogen viser også, hvilke af de tre opgaver der aktuelt bruger en netværkssti.</p>
+
+  <h2 id="indstillinger_prog">Indstillinger</h2>
+  <p>Tandhjulet <strong>⚙</strong> øverst til højre i programvinduet (ved siden af <strong>? HJÆLP</strong>) åbner indstillingsdialogen.</p>
+
+  <h3>Sprog</h3>
+  <p>3Kopier taler flere sprog. Sproget vælges normalt allerede under installationen; her kan du ændre det når som helst. Tilbudt er alle sprog, for hvilke der ligger en sprogfil ved siden af programmet &ndash; hver med sit flag, så valget er klart, også når grænsefladen lige nu vises på et sprog, du ikke læser.</p>
+
+  <p>Programnavnet skifter med sproget: <strong>3Kopier</strong> på tysk, <strong>3Copy</strong> på engelsk, <strong>3Copier</strong> på fransk, <strong>3Copiar</strong> på spansk. Navnet på skærmen skifter altså med; filerne på disken bevarer deres navne (<code>3Kopier.ini</code>, profiler med endelsen <code>.3ko</code>, logfilerne i mappen <code>Logs</code>). Et sprogskifte ændrer således intet ved dine indstillinger, profiler og filtre.</p>
+
+  <div class="note">
+    <strong>Virker efter genstart:</strong> ligesom skaleringen træder sproget først i kraft, når programvinduet genopbygges. Et igangværende kopieringsforløb afbrydes aldrig &ndash; det nye sprog vises ved næste almindelige start.
+  </div>
+
+  <p>Yderligere sprog leveres som testede sprogpakker fra Sattler IT-Service og vises automatisk i valget, når de er installeret. De medfølgende sprogfiler er krypterede, ligesom tidsstyringsmodulet: dermed er det sikret, at de tekster, du læser i programmet, er de samme som dem, der blev leveret.</p>
+
+  <h3>Skalering af grænsefladen</h3>
+  <p>Der kan vælges faste trin fra <strong>90&nbsp;%</strong> til <strong>200&nbsp;%</strong> (90, 100, 125, 150, 175, 200). Det aktuelle trin er fremhævet. Efter klik på <strong>Anvend</strong> genopbygges grænsefladen i den nye størrelse.</p>
+
+  <div class="note">
+    <strong>Fast vinduesstørrelse:</strong> programvinduet kan med vilje ikke trækkes større eller mindre i hjørnerne. Det forhindrer forvrænget eller afskåret visning. Ønskes en større visning, vælg blot et højere skaleringsniveau.
+  </div>
+
+  <h3>Opbevar logfiler i</h3>
+  <p>Angiver, hvor længe færdige logfiler (se afsnittet <a href="#log">Logfiler</a>) automatisk opbevares, før de slettes ved næste programstart. Der kan vælges faste trin fra <strong>1 dag</strong> til <strong>365 dage</strong> samt <strong>∞ (ubegrænset)</strong> &ndash; så slettes intet automatisk.</p>
+
+  <p>Knappen <strong>🗑 Ryd op nu</strong> anvender den valgte periode med det samme, uden at vente på næste programstart.</p>
+
+  <h3>Logfilsomfang</h3>
+  <p>Bestemmer, hvor detaljeret en logfil for et forløb er:</p>
+  <ul>
+    <li><strong>Kompakt</strong> (standard): <strong>én oversigtslinje</strong> per opgave i loggen (kopieret, overskrevet, sprunget over osv. med datamængde) &ndash; ingen individuelle mappelinjer. Sammen med oversigten øverst i filen forbliver loggen en kort, læsbar oversigt, uanset hvor mange tusinde filer og mapper der er behandlet.</li>
+    <li><strong>Detaljeret:</strong> desuden skrives én linje per mappe (filantal, handlinger, datamængde) &ndash; nyttigt til fejlfinding, når du vil se, hvad der skete i en bestemt mappe, eller hvorfor en fil ikke blev kopieret.</li>
+  </ul>
+  <p>Indstillingen træder i kraft fra næste forløb, også tidsstyrede. Fejl logges altid fuldt ud i begge tilstande, ligesom automatiske stiforkortelser (MAX_PATH).</p>
+
+  <h2 id="forloeb">Manuel udførelse af et kopieringsforløb</h2>
+
+  <h3>1. Konfigurer opgaverne</h3>
+  <p>Angiv for hver ønsket opgave kilde, mål og de tilhørende indstillinger. Aktivér opgaven med afkrydsningsfeltet <strong>aktiv</strong>.</p>
+
+  <h3>2. Tryk Start</h3>
+  <p>Programmet tæller først alle filer i de aktive kildemapper, så fremskridtslinjen vises korrekt. Denne tællefase kan allerede afbrydes med <strong>⏹ Stop</strong> og viser ved meget mange filer en løbende statusbesked i stedet for at se frossen ud. Derefter behandles opgaverne i rækkefølge (A1, A2, A3).</p>
+
+  <h3>3. Følg fremskridtet</h3>
+  <p>Fremskridtslinjen, statuslinjen og statistikken opdateres løbende under forløbet. Ved en enkelt meget stor fil bevæger linjen sig synligt inden for den ene fil, i stedet for at stå stille indtil den er færdig. Statuslinjen viser desuden en estimeret resttid, så snart der er tilstrækkelige data, samt den aktuelle kopihastighed (f.eks. <code>157,4 MB/s</code>) &ndash; beregnet som et glidende gennemsnit over de seneste sekunder, så tallet forbliver stabilt ved skiftende filstørrelser. Begge dele gælder også for tidsstyringens fremskridtsvindue. I en simulation vises hastigheden ikke, da der ikke kopieres noget reelt.</p>
+
+  <h3>4. Afbryd</h3>
+  <p>Med <strong>⏹ Stop</strong> eller <strong>ESC</strong>-tasten kan du til enhver tid afbryde forløbet rent &ndash; også midt i en stor fil. Allerede fuldt behandlede filer bevares; en lige påbegyndt, endnu ufuldstændig målfjernes automatisk, så der aldrig efterlades et ufuldstændigt fragment.</p>
+
+  <h3>5. Resultatvindue</h3>
+  <p>Efter afslutningen åbnes et resultatvindue med statistikken per opgave &ndash; detaljer i afsnittet <a href="#resultat">Resultat</a>.</p>
+
+  <h2 id="tidsstyring">Tidsstyring</h2>
+  <p>Knappen <strong>🕐 Tidsstyring</strong> i hovedvinduet åbner et selvstændigt vindue, hvor et vilkårligt antal profiler kan køre automatisk efter en tidsplan &ndash; også flere gange dagligt eller med faste intervaller.</p>
+
+  <h3>Opret en tidsplan</h3>
+  <p>Med <strong>➕ Ny</strong> vælges en profil og en udløser angives:</p>
+  <ul>
+    <li><strong>Dagligt</strong> &ndash; fast tidspunkt, hver dag</li>
+    <li><strong>Ugedage</strong> &ndash; fast tidspunkt, kun på valgte ugedage</li>
+    <li><strong>Interval</strong> &ndash; hver X timer, uanset klokkeslæt</li>
+  </ul>
+  <p>Med <strong>✏</strong> kan en eksisterende tidsplan redigeres, med <strong>🗑</strong> slettes den. Afkrydsningsfeltet <strong>Aktiv</strong> i redigeringsdialogen kan midlertidigt sætte en tidsplan på pause uden at slette den.</p>
+
+  <h3>🔍 Simulation / ▶ Start (manuel test)</h3>
+  <p>Hver linje i tidsplanen har to knapper til øjeblikkelig manuel test &ndash; uafhængigt af selve tidsplanen:</p>
+  <ul>
+    <li><strong>🔍 Simulation</strong> &ndash; viser nøjagtigt, hvad der ville ske (hvilke filer der ville blive kopieret, overskrevet, sprunget over&hellip;) <strong>uden</strong> rent faktisk at ændre noget. Intet kopieres, flyttes eller slettes.</li>
+    <li><strong>▶ Start</strong> &ndash; udfører opgaven for alvor med det samme.</li>
+  </ul>
+  <div class="note">
+    Disse to knapper viser <strong>altid</strong> fremskridtsvinduet og derefter resultatvinduet &ndash; uanset om stille tilstand er aktiveret for den pågældende tidsplan. Stille tilstand (se nedenfor) gælder kun for automatisk udløste forløb, aldrig for manuel test.
+  </div>
+
+  <h3>🔇 Stille tilstand</h3>
+  <p>I redigeringsdialogen (✏ eller ved oprettelse med ➕ Ny) kan <strong>stille tilstand</strong> aktiveres per tidsplan. Når den er tændt, kører et <strong>automatisk</strong> (via tidsplanen) udløst forløb fuldstændig uden vindue:</p>
+  <ul>
+    <li>Hvis alt var i orden (også hvis der ikke var noget at kopiere), forbliver det <strong>helt stille</strong> &ndash; intet vindue, ingen besked.</li>
+    <li>Hvis der opstod en <strong>rigtig fejl</strong> (f.eks. kilde eller mål ikke tilgængelig), vises en kort, diskret besked med henvisning til den pågældende log.</li>
+  </ul>
+  <p>En tidsplan med stille tilstand er i listen markeret med symbolet <strong>🔇</strong>.</p>
+
+  <h3>Selvstændigt fremskridtsvindue</h3>
+  <p>Når en tidsplan kører (ikke-stille, automatisk eller manuelt testet med Simulation/Start), åbnes et <strong>lille selvstændigt vindue</strong> med fremskridtslinje, statistik og en egen <strong>⏹ Stop</strong>-knap. Vinduet vises også, når 3Kopier kun kører i baggrunden (systembakken), har sin <strong>egen knap i proceslinjen</strong> og kan <strong>minimeres</strong>, hvis det er i vejen &ndash; forløbet fortsætter usynligt. Det gælder også, når du starter forløbet fra det åbne tidsstyringsvindue.</p>
+  <p>Lukkeknappen (X) i fremskridtsvinduet virker som <strong>⏹ Stop</strong>: den afbryder kun dette ene forløb rent &ndash; forløbet fortsætter ikke usynligt i baggrunden bagefter.</p>
+  <div class="ok">
+    <strong>Vigtigt:</strong> hovedvinduet med opgavekortene forbliver <strong>fuldstændigt uberørt</strong> &ndash; dine egne ikke-gemte ændringer i hovedvinduet overskrives eller forstyrres aldrig af en automatisk startende tidsplan.
+  </div>
+
+  <h3>Kø ved overlappende forløb</h3>
+  <p>Der kører kun <strong>ét</strong> kopieringsforløb ad gangen. Hvis en tidsplan bliver aktuel, mens et andet forløb stadig kører (en anden tidsplan eller et manuelt startet forløb), går det aktuelle forløb <strong>ikke tabt</strong>: det sættes i en <strong>kø</strong> og starter automatisk, så snart det igangværende forløb er færdigt. Flere tidsplaner, der er sat til samme tid, bliver på denne måde <strong>afviklet efter hinanden og hver fuldstændigt</strong>. Ventetiden og senere start logges i fejlloggen (<code>3Kopier-Fehler.log</code>); et forløb startet fra køen er i sit fremskridtsvindue markeret med <em>(fra kø)</em>.</p>
+  <p>For at dette også kan fungere <strong>uden opsyn</strong> (f.eks. om natten), venter resultatvinduet for et tidsstyret forløb <strong>ikke</strong> på et &bdquo;OK&ldquo;: det forbliver blot åbent, og næste forløb fra køen starter automatisk. Om morgenen viser de efterladte resultatvinduer i rækkefølge, hvad der skete i løbet af natten.</p>
+  <div class="note">
+    <strong>Afbrydelse rammer kun det aktuelle forløb:</strong> stoppes et forløb med <strong>⏹ Stop</strong>, fortsætter de ventende forløb i køen helt normalt bagefter &ndash; hvert i sit eget fremskridtsvindue med sin egen <strong>⏹ Stop</strong>-knap. Et afbrudt forløb kan i sin logfil kendes på overskriften <strong>&bdquo;OVERSIGT (AFBRUDT)&ldquo;</strong>.
+  </div>
+
+  <h2 id="baggrund">Baggrundsdrift, bakke og automatisk start</h2>
+
+  <h3>Luk vinduet</h3>
+  <p>Hvis der findes mindst én <strong>aktiv</strong> tidsplan, lukker (X)-knappen i hovedvinduet <strong>ikke</strong> programmet &ndash; i stedet forsvinder kun vinduet, og programmet fortsætter i baggrunden (genkendeligt ved ikonet i Windows-proceslinjens meddelelsesområde, bakken). Således forbliver tidsstyringen aktiv, selv når ingen holder vinduet åbent.</p>
+  <p>Hvis der <strong>ikke</strong> findes nogen aktiv tidsplan, afslutter (X)-knappen programmet normalt.</p>
+
+  <h3>Åbn igen</h3>
+  <p>Højreklik på bakkeikonet åbner en lille menu med <strong>Åbn</strong> (viser vinduet igen) og <strong>Afslut</strong> (afslutter programmet endeligt, også med aktiv tidsplan).</p>
+
+  <h3>Automatisk start</h3>
+  <p>Så snart der findes mindst én aktiv tidsplan, tilføjer 3Kopier sig selv til Windows' automatiske start &ndash; det starter derefter ved logon direkte minimeret i baggrunden uden at vise vinduet. Når den sidste aktive tidsplan slettes eller deaktiveres, fjernes startindgangen ligeledes automatisk.</p>
+
+  <h3>Kun én instans ad gangen</h3>
+  <p>Hvis 3Kopier startes en anden gang, mens der allerede kører en instans (også usynlig i baggrunden), åbnes <strong>ikke</strong> et andet vindue. I stedet gøres den allerede kørende instans synlig igen.</p>
+
+  <h2 id="langepfade">Lange stier (MAX_PATH)</h2>
+  <p>Som standard tillader Windows ikke filstier, der er længere end 260 tegn (den såkaldte <strong>MAX_PATH-grænse</strong>). Filer med for lange destinationsstier kan hverken kopieres eller flyttes &ndash; det rammer især filer i dybt indlejrede mapper med lange navne, som ofte forekommer i downloadmapper.</p>
+
+  <p>3Kopier genkender sådanne filer automatisk og forkorter filnavnet i målet tilstrækkeligt til, at forløbet alligevel gennemføres.</p>
+
+  <div class="ok">
+    <strong>Automatisk forkortelse:</strong> er destinationsstien for lang, forkortes først filnavnet i målet &ndash; lige nok til at holde stien under 260 tegn. Hvis det ikke er tilstrækkeligt, forkortes derudover den sidste undermappe i destinationsstien. Filendelsen bevares altid. Forkortede navne får markeringen <code>-3k</code>, f.eks. <code>Secret.Service.2026.-3k.mkv</code>.
+  </div>
+
+  <div class="note">
+    <strong>Kilde- eller destinationsstien ændres ikke:</strong> kun destinationsstien tilpasses. Originalfilen bevarer sit navn. Både den oprindelige og den forkortede destinationssti logges.
+  </div>
+
+  <div class="note">
+    <strong>Ikke at forveksle med visningsforkortelse i grænsefladen:</strong> ved meget lange kilde- eller destiationsstier vises de i opgavefelterne forkortet (begyndelse&hellip;slutning), f.eks. <code>H:\Download\&hellip;\Ablage</code>. Det er rent visuelt: internt bruges altid den fulde sti. Hele stien vises som tooltip, når du holder musen over feltet.
+  </div>
+
+  <h2 id="resultat">Resultatvindue</h2>
+  <p>Efter hvert afsluttet (eller afbrudt) forløb åbnes et resultatvindue &ndash; med en separat kolonne per aktiv opgave, så det med ét blik er klart, hvad der er sket:</p>
+
+  <ul>
+    <li>Hver kolonne viser <strong>kilde og mål</strong> for den pågældende opgave samt dens egen statistik</li>
+    <li>Derunder en <strong>samlet oversigt</strong> over alle opgaver (datamængde, tid, antal fejl)</li>
+    <li>Ved en simulation er hver linje formuleret som &bdquo;ville blive&hellip;&rdquo; med en tydelig bemærkning om, at intet reelt er ændret</li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Angivelse</th>
+      <th>Betydning</th>
+    </tr>
+    <tr>
+      <td><strong>Kopieret</strong></td>
+      <td>Nye filer, der ikke fandtes i målet, og som blev kopieret</td>
+    </tr>
+    <tr>
+      <td><strong>Overskrevet</strong></td>
+      <td>Filer, der allerede fandtes i målet og blev opdateret</td>
+    </tr>
+    <tr>
+      <td><strong>Flyttet</strong></td>
+      <td>Filer, der blev flyttet fra kilden til målet (indstilling &bdquo;Flyt&rdquo;)</td>
+    </tr>
+    <tr>
+      <td><strong>Springet over</strong></td>
+      <td>Filer, der i målet allerede var nyere og derfor ikke ændret</td>
+    </tr>
+    <tr>
+      <td><strong>✂ Forkortet</strong></td>
+      <td>Filer, hvis destinationssti overskred MAX_PATH-grænsen og automatisk blev forkortet (markering <code>-3k</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>Udelukket</strong></td>
+      <td>Filer og mapper, der ifølge udelukkelseslisten blev sprunget over (se afsnittet <a href="#udelukkelser">Udelukkelser</a>)</td>
+    </tr>
+    <tr>
+      <td><strong>Fejl</strong></td>
+      <td>Filer eller opgaver, der ikke kunne behandles (detaljer nederst i den pågældende log)</td>
+    </tr>
+    <tr>
+      <td><strong>Data</strong></td>
+      <td>Behandlet datamængde (per opgave og samlet)</td>
+    </tr>
+    <tr>
+      <td><strong>Tid</strong></td>
+      <td>Samlet varighed af kopieringsforløbet (mm:ss)</td>
+    </tr>
+  </table>
+
+  <h2 id="log">Logfiler</h2>
+  <p>For hvert forløb &ndash; manuelt eller tidsstyret, ægte eller simuleret &ndash; oprettes en <strong>selvstændig logfil</strong> i undermappen <code>Logs</code>, i stedet for én enkelt samlefil, der vokser i det uendelige.</p>
+
+  <h3>Filnavn</h3>
+  <p>Hver logfil hedder <code>Profilnavn_tidsstempel_type.log</code>, f.eks.:</p>
+  <ul>
+    <li><code>MMDownload_2026-07-08_180000_START.log</code> &ndash; et reelt forløb af profilen &bdquo;MMDownload&rdquo;</li>
+    <li><code>3Test_2026-07-08_190000_SIMULATION.log</code> &ndash; en simulation af profilen &bdquo;3Test&rdquo;</li>
+    <li><code>Manuell_2026-07-08_201500_START.log</code> &ndash; et forløb uden indlæst profil</li>
+  </ul>
+  <p>Med <strong>📋 Log</strong> i hovedvinduet åbnes mappen <code>Logs</code> direkte i Windows Stifinder.</p>
+
+  <div class="note">
+    <strong>Filnavnene er de samme på alle sprog:</strong> et forløb uden profil gemmes altid under <code>Manuell</code>, og indstillingsfilerne bevarer deres tyske navne. Det er bevidst: den samme installation finder efter et sprogskifte sine indstillinger, profiler og filtre igen, og en log, du sender ind, kan læses med det samme.
+  </div>
+
+  <h3>Indhold af en logfil</h3>
+  <ul>
+    <li><strong>Oversigten</strong> med samlet statistik og varighed står øverst &ndash; resultatet er synligt uden at rulle</li>
+    <li>Dato, tid og profilnavn for forløbet</li>
+    <li>Kilde og mål for hver opgave samt de valgte indstillinger</li>
+    <li>En <strong>oversigtslinje per opgave</strong> (handlinger og datamængde); i tilstanden <em>Detaljeret</em> desuden en <strong>oversigt per mappe</strong> i stedet for én linje per fil (se <a href="#indstillinger_prog">Indstillinger &rarr; Logfilsomfang</a>)</li>
+    <li>Hvis der opstod fejl, står de desuden som et separat afsnit <strong>&bdquo;=== FEJL ===&ldquo;</strong> aller nederst i filen &ndash; fuldstændigt i begge tilstande</li>
+  </ul>
+
+  <div class="note">
+    <strong>Opbevaring:</strong> hvor længe logfiler bevares, før de slettes automatisk, indstilles under <a href="#indstillinger_prog">Indstillinger</a> (1 dag til 365 dage, eller ubegrænset).
+  </div>
+
+  <h3>⚠ Fejllog (<code>3Kopier-Fehler.log</code>)</h3>
+  <p>Denne separate fil i programmappen (tilgængelig via <strong>⚠ Fejl</strong>) indeholder udelukkende <strong>programfejl</strong>, der ikke hører til et bestemt kopieringsforløb &ndash; f.eks. hvis tidsstyringsmodulet ikke kunne indlæses. Fejl under et kopieringsforløb står som beskrevet ovenfor nederst i den pågældende logfil.</p>
+
+  <div class="ok">
+    <strong>INI-filen (<code>3Kopier.ini</code>):</strong> alle indstillinger gemmes automatisk ved programafslutning og gendannes ved næste start &ndash; herunder kilde- og destinationsstier, aktiv-status for de tre opgaver, indstillingerne <em>Overskriv</em> og <em>Flyt</em> per opgave, indstillingen <em>Luk ned</em>, de sidst anvendte kilde-/destinationsmapper i udvælgelsesdialogerne, den valgte <em>skaleringstrin</em>, den aktuelle <em>sprogindstilling</em>, opbevaringsperioden for logfiler samt <em>logfilsomfanget</em> (kompakt/detaljeret). Manuel konfiguration er ikke nødvendig.
+  </div>
+
+  <div class="note">
+    <strong>Profiler (<code>.3ko</code>-filer):</strong> ved lagring af en profil gemmes alle stier, aktiv-status samt indstillingerne <em>Overskriv</em> og <em>Flyt</em> per opgave. Indstillingen <em>Luk ned</em> er en global indstilling, der kun gemmes i INI-filen, ikke i profilen.
+  </div>
+
+  <div class="note">
+    <strong>Tidsplanfilen (<code>3Kopier-Zeitplan.ini</code>):</strong> alle oprettede tidsplaner (profil, udløser, stille tilstand, aktiv-status) gemmes her og indlæses automatisk ved næste start.
+  </div>
+
+  <h3>Oversigt: filer og mapper i programmappen</h3>
+  <p>Alle følgende filer og mapper oprettes automatisk under brug &ndash; du behøver ikke oprette nogen af dem selv, og de leveres ikke med programmet:</p>
+
+  <table>
+    <tr>
+      <th>Fil / mappe</th>
+      <th>Indhold</th>
+    </tr>
+    <tr>
+      <td><code>3Kopier.ini</code></td>
+      <td>Generelle indstillinger: opgavefelter, indstillinger, sidst anvendte mapper, skalering, sprog, opbevaringsperiode</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Zeitplan.ini</code></td>
+      <td>Alle oprettede tidsplaner med profil, udløser, stille tilstand og aktiv-status</td>
+    </tr>
+    <tr>
+      <td><code>3Kopier-Fehler.log</code></td>
+      <td>Programfejl, der ikke hører til et bestemt kopieringsforløb</td>
+    </tr>
+    <tr>
+      <td><code>Logs</code> (mappe)</td>
+      <td>Én logfil per forløb &ndash; se <a href="#log">Logfiler</a></td>
+    </tr>
+    <tr>
+      <td><code>*.3ko</code></td>
+      <td>Selv oprettede profiler (én fil per profilnavn)</td>
+    </tr>
+  </table>
+
+  <div style="background:#EBF5FB; border-radius:8px; padding:24px; text-align:center; margin-top:36px;">
+    <p style="font-size:15px; font-weight:600; color:#2C3E50; margin-bottom:8px;">
+      Har dette værktøj hjulpet dig?</p>
+    <p style="color:#7F8C8D; margin-bottom:16px;">
+      S-IT-3Kopier udvikles og vedligeholdes gratis.<br>
+      En lille donation er med til at holde det i live. Mange tak! 🙏</p>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       target="_blank"
+       style="display:inline-block; background:#009CDE; color:#fff; font-weight:700;
+              font-size:15px; padding:10px 28px; border-radius:6px; text-decoration:none;">
+      ☕ Donér via PayPal
+    </a>
+    <p style="margin-top:10px; font-size:11px; color:#95A5A6;">tool-entwicklung@sattler-it.de</p>
+  </div>
+
+</main>
+
+<footer>
+  S-IT-3Kopier &nbsp;&bull;&nbsp; &copy; 2026 Sattler IT-Service, Greifenstein &nbsp;&bull;&nbsp;
+  Forfatter: Hans Udo Sattler
+</footer>
+
+</body>
+</html>
