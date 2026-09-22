@@ -10,7 +10,7 @@
     <Address_1>Gartenstr. 4</Address_1>
     <Address_2/>
     <City_Town>Greifenstein</City_Town>
-    <State_Province/>
+    <State_Province>Hessen</State_Province>
     <Zip_Postal_Code>35753</Zip_Postal_Code>
     <Country>Germany</Country>
     <Company_WebSite_URL>https://sattlerit.github.io/sattlerit-tools/ueber-uns.html</Company_WebSite_URL>
@@ -49,7 +49,7 @@
     <Program_Change_Info>Version 3.3.2.15 - twelve more languages, eighteen in total.
 
 - Croatian, Slovenian, Serbian, Bosnian, Montenegrin, Bulgarian, Macedonian, Albanian, Romanian, Turkish, Polish and Danish have been added. Interface, dialogs, scheduler and logs are translated, and every language comes with its own help page.
-- The program name follows the language: 3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia, 3Kopiraj, 3Copiaza, 3Kopyala, 3Kopiuj.
+- The program name follows the language: 3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia, 3Kopiraj, 3Copiază, 3Kopyala, 3Kopiuj.
 - The program folder is tidy: language files, help pages, settings and profiles now live in folders of their own. An existing installation sorts itself out on first start.
 - The setup speaks eighteen languages too and picks the language of the Windows system on start.
 - Help follows the language chosen in the program.
