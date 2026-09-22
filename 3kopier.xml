@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>PadXml 1.1.0</MASTER_PAD_EDITOR>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Sattler IT-Service</Company_Name>
+    <Address_1>Gartenstr. 4</Address_1>
+    <Address_2/>
+    <City_Town>Greifenstein</City_Town>
+    <State_Province/>
+    <Zip_Postal_Code>35753</Zip_Postal_Code>
+    <Country>Germany</Country>
+    <Company_WebSite_URL>https://sattlerit.github.io/sattlerit-tools/ueber-uns.html</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Hans Udo</Author_First_Name>
+      <Author_Last_Name>Sattler</Author_Last_Name>
+      <Author_Email>tool-entwicklung@sattler-it.de</Author_Email>
+      <Contact_First_Name>Hans Udo</Contact_First_Name>
+      <Contact_Last_Name>Sattler</Contact_Last_Name>
+      <Contact_Email>tool-entwicklung@sattler-it.de</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email/>
+      <Support_Email>tool-entwicklung@sattler-it.de</Support_Email>
+      <General_Email>tool-entwicklung@sattler-it.de</General_Email>
+      <Sales_Phone/>
+      <Support_Phone/>
+      <General_Phone/>
+      <Fax_Phone/>
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>S-IT-3Kopier</Program_Name>
+    <Program_Version>3.3.2.15</Program_Version>
+    <Program_Release_Month>09</Program_Release_Month>
+    <Program_Release_Day>10</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
+    <Program_Cost_Other_Code/>
+    <Program_Cost_Other/>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Windows 10,Windows 11</Program_OS_Support>
+    <Program_Language>German,English,French,Spanish,Dutch,Italian,Croatian,Slovenian,Serbian,Bosnian,Montenegrin,Bulgarian,Macedonian,Albanian,Romanian,Turkish,Polish,Danish</Program_Language>
+    <Program_Change_Info>Version 3.3.2.15 - twelve more languages, eighteen in total.
+
+- Croatian, Slovenian, Serbian, Bosnian, Montenegrin, Bulgarian, Macedonian, Albanian, Romanian, Turkish, Polish and Danish have been added. Interface, dialogs, scheduler and logs are translated, and every language comes with its own help page.
+- The program name follows the language: 3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia, 3Kopiraj, 3Copiaza, 3Kopyala, 3Kopiuj.
+- The program folder is tidy: language files, help pages, settings and profiles now live in folders of their own. An existing installation sorts itself out on first start.
+- The setup speaks eighteen languages too and picks the language of the Windows system on start.
+- Help follows the language chosen in the program.
+
+An update keeps profiles, settings, schedules and logs, including the chosen language. Nothing has changed about what the program does.</Program_Change_Info>
+    <Program_Specific_Category>File &amp; Disk Management</Program_Specific_Category>
+    <Program_Category_Class>System Utilities</Program_Category_Class>
+    <Program_System_Requirements>Windows 10 or Windows 11 (64-bit)</Program_System_Requirements>
+    <File_Info>
+      <File_Size_Bytes>44923393</File_Size_Bytes>
+      <File_Size_K>43871</File_Size_K>
+      <File_Size_MB>43</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Count/>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Other_Info/>
+      <Expire_Month/>
+      <Expire_Day/>
+      <Expire_Year/>
+    </Expire_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>copy files, file copy, copy tool, backup, 3-2-1 rule, scheduler, scheduled copy, NAS, external drive, multilingual, portable, freeware, folder sync, unattended, Windows</Keywords>
+      <Char_Desc_45>Copy files to three destinations in one run</Char_Desc_45>
+      <Char_Desc_80>Multilingual copy tool with scheduler - three destinations in a single run</Char_Desc_80>
+      <Char_Desc_250>S-IT-3Kopier copies files to up to three destinations in a single run, manually or on a schedule. Backups stay ordinary files - no archive format, no account, no cloud. Speaks 18 languages. Freeware for Windows 10 and 11.</Char_Desc_250>
+      <Char_Desc_450>S-IT-3Kopier copies files to up to three destinations in one run - ideal for keeping copies on a NAS, an external disk and a cloud folder at the same time. Jobs run manually or on a schedule (daily, weekdays, intervals), with a silent mode and a queue for unattended operation. Copies remain ordinary files that open without any special software. Runs portably, speaks 18 languages, and is free of charge.</Char_Desc_450>
+      <Char_Desc_2000>S-IT-3Kopier is a Windows utility for recurring copy tasks. A single run handles up to three independent source-target pairs, which makes it easy to follow the 3-2-1 rule: keep the data on a NAS, on an external disk and in a cloud folder at the same time, with one click and one log.
+
+The number of profiles is unlimited, and every profile can have a schedule of its own - daily at a fixed time, on selected weekdays, or every few hours. Runs that overlap are queued instead of being lost. A silent mode keeps scheduled runs out of the way; the program can work from the notification area and start with Windows.
+
+What is copied stays an ordinary file. There is no archive format, no account and no cloud service in between - the copy can be opened, moved or restored with nothing but Explorer. Exclusion lists keep browser caches, temporary files and large image formats out of the way, and a per-job filter can limit a run to certain file types. Paths beyond the 260-character limit are shortened automatically instead of failing.
+
+The interface, all dialogs, the scheduler, the logs and the help pages are available in 18 languages: German, English, French, Spanish, Dutch, Italian, Croatian, Slovenian, Serbian, Bosnian, Montenegrin, Bulgarian, Macedonian, Albanian, Romanian, Turkish, Polish and Danish. The program name follows the language. File names and settings stay the same everywhere, so switching language leaves profiles and filters untouched.
+
+S-IT-3Kopier is freeware - no advertising, no time limit, no registration.</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://sattlerit.github.io/sit-3kopier/</Application_Info_URL>
+      <Application_Order_URL/>
+      <Application_Screenshot_URL>https://sattlerit.github.io/sit-3kopier/screenshot-3kopier.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://raw.githubusercontent.com/SattlerIT/sit-3kopier/main/Logos/S-IT-3-Logo_32x32.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://sattlerit.github.io/sit-3kopier/3kopier.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.2.15/sit-3kopier_setup.zip</Primary_Download_URL>
+      <Secondary_Download_URL>https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.2.15/sit-3kopier_latest.zip</Secondary_Download_URL>
+      <Additional_Download_URL_1/>
+      <Additional_Download_URL_2/>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>May be distributed freely and without charge, provided the package is passed on unchanged and complete. Inclusion on cover discs and download portals is welcome.</Distribution_Permissions>
+    <EULA>S-IT-3Kopier is freeware. It may be used free of charge, privately and commercially, and may be passed on unchanged and complete.
+
+The software is provided as is, without warranty of any kind. Use is at your own risk. The author accepts no liability for data loss or damage arising from the use of this software. Always keep an independent copy of important data.
+
+The software must not be sold, bundled with paid products or modified without written permission. The full licence text in 18 languages is included with the download as Lizenz-Disclaimer.txt.
+
+(c) 2026 Sattler IT-Service, Greifenstein - Hans Udo Sattler</EULA>
+  </Permissions>
+  <ASP>
+    <ASP_FORM>Y</ASP_FORM>
+    <ASP_Member>N</ASP_Member>
+    <ASP_Member_Number/>
+  </ASP>
+</XML_DIZ_INFO>
