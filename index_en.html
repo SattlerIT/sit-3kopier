@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S-IT-3Copy – Triple copier with logging (18 languages)</title>
+  <link rel="icon" type="image/x-icon" href="s-it-icon140.ico">
+  <style>
+    :root {
+      --primary:   #2C3E50;
+      --red:       #E74C3C;
+      --green:     #27AE60;
+      --blue:      #2980B9;
+      --orange:    #E67E22;
+      --yellow:    #F1C40F;
+      --light:     #ECF0F1;
+      --bg:        #F5F5F5;
+      --card:      #FFFFFF;
+      --border:    #BDC3C7;
+      --text:      #2C3E50;
+      --muted:     #7F8C8D;
+      --font:      'Segoe UI', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--primary);
+      padding: 28px 40px 24px;
+    }
+    .header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: baseline; gap: 0; }
+    .logo-sit  { color: var(--red);   font-size: 36px; font-weight: 700; line-height: 1; }
+    .logo-name { color: #fff;         font-size: 36px; font-weight: 300; line-height: 1; }
+    .header-sub {
+      color: var(--border);
+      font-size: 13px;
+      padding-bottom: 4px;
+    }
+    .lang-badge { background: #1F6FA8 !important; border-color: #1F6FA8 !important; }
+    .lang-switch { margin-left: 0; text-decoration: none; font-weight: 600; transition: background .2s; }
+    .lang-switch:hover { background: rgba(255,255,255,.2); }
+    .header-badge {
+      margin-left: auto;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.2);
+      color: var(--light);
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* Rote Trennlinie */
+    .divider { height: 3px; background: var(--red); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--primary);
+      padding: 0 40px 36px;
+    }
+    .hero-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding-top: 32px;
+    }
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .hero p {
+      color: var(--border);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .btn-download {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-download:hover { background: #219a52; }
+    .btn-download-alt {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-left: 12px;
+      transition: background .2s;
+    }
+    .btn-download-alt:hover { background: #219a52; }
+    .btn-row-download { display: flex; gap: 12px; }
+    .btn-row-download .btn-download,
+    .btn-row-download .btn-download-alt {
+      flex: 1 1 0;
+      margin-left: 0;
+      text-align: center;
+      max-width: 260px;
+    }
+    .btn-hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--light);
+      opacity: .75;
+    }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--light);
+      font-size: 13px;
+      padding: 12px 20px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 4px;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: border-color .2s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,.6); }
+
+    .hero-screenshot {
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+    .hero-screenshot img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+    }
+
+    /* ── FEATURE CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 22px;
+    }
+    .card-icon { font-size: 22px; margin-bottom: 10px; }
+    .card h3   { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .card p    { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── SCREENSHOT GALLERY ── */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .gallery-item {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      cursor: pointer;
+      transition: box-shadow .2s;
+    }
+    .gallery-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,.16); }
+    .gallery-item img   {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .gallery-caption {
+      background: var(--primary);
+      color: var(--light);
+      font-size: 11px;
+      padding: 6px 10px;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.85);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img  { max-width: 90vw; max-height: 90vh; border-radius: 4px; }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 28px;
+      color: #fff; font-size: 32px; cursor: pointer; line-height: 1;
+    }
+
+    /* ── INFO-BOX ── */
+    .info-box {
+      background: #EBF5FB;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      color: #1A5276;
+    }
+    .warn-box {
+      background: #FEF9E7;
+      border-left: 4px solid var(--yellow);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      color: #7D6608;
+    }
+    .ok-box {
+      background: #EAFAF1;
+      border-left: 4px solid var(--green);
+      border-radius: 0 4px 4px 0;
+      padding: 14px 18px;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      color: #1E7E45;
+    }
+
+    /* ── SYSREQ TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+      font-size: 13px;
+      background: var(--card);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    th {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 16px;
+      text-align: left;
+      font-weight: 600;
+    }
+    td { padding: 9px 16px; border-bottom: 1px solid var(--border); }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #F7F9FA; }
+
+    /* ── CHANGELOG ── */
+    .changelog {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+    .changelog-entry { margin-bottom: 20px; }
+    .changelog-entry:last-child { margin-bottom: 0; }
+    .changelog-version {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .changelog-version span {
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 8px;
+    }
+    .changelog-entry ul {
+      list-style: none;
+      padding: 0;
+    }
+    .changelog-entry ul li {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 2px 0 2px 16px;
+      position: relative;
+    }
+    .changelog-entry ul li::before {
+      content: "•";
+      position: absolute; left: 4px;
+      color: var(--blue);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--primary);
+      color: var(--border);
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 12px;
+    }
+    footer a { color: var(--border); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 640px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .gallery    { grid-template-columns: 1fr; }
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      header { padding: 20px; }
+      .hero  { padding: 0 20px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-sit">S-IT</span>
+      <span class="logo-name">&nbsp;3Copy</span>
+    </div>
+    <span class="header-sub">Triple copier with logging</span>
+    <span class="header-badge">Freeware · Portable · Windows</span>
+    <span class="header-badge lang-badge">🌍 🇩🇪 🇬🇧 18 languages</span>
+    <a href="index.html" class="header-badge lang-switch" hreflang="de" title="Deutsche Fassung">🇩🇪 Deutsch</a>
+  </div>
+</header>
+<div class="divider"></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>The universal copy tool<br>&ndash; Any number of targets in sets of three, fully automatic on a schedule</h1>
+      <p>S-IT-3Copy copies or moves files in up to three independent source/target pairs at the same time – ideal for NAS drives, USB sticks and cloud folders (pCloud, for example). With profiles, a progress display and a detailed log. On top of that, any number of profiles can run automatically on a schedule in the background – set up once, the copying then runs by itself.</p>
+      <div class="btn-row-download">
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.2.15/sit-3kopier_latest.zip" class="btn-download">⬇ Download (portable)</a>
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases/download/v3.3.2.15/sit-3kopier_setup.zip" class="btn-download-alt">⬇ Download (setup)</a>
+      </div>
+      <div style="margin-top:16px;">
+        <a href="https://github.com/SattlerIT/sit-3kopier/releases" class="btn-secondary" style="margin-left:0;">All versions</a>
+      </div>
+      <span class="btn-hint">Version 3.3.2.15 · “Portable”: just unzip and start, no setup needed · “Setup” installs 3Copy with an entry in the Windows program list and an uninstaller</span>
+    </div>
+    <div class="hero-screenshot">
+      <img src="Screenshots_en/screenshot-3copy.png" alt="S-IT-3Copy main window">
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- VIDEO -->
+  <div class="section-title">🎬 Video</div>
+  <video controls preload="none" poster="Video_en/S-IT-3Copy-Video.jpg"
+         style="width:100%;display:block;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:32px">
+    <source src="Video_en/S-IT-3Copy-Video.mp4" type="video/mp4">
+  </video>
+
+  <!-- FEATURES -->
+  <div class="section-title">⚙ Features</div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Three jobs</h3>
+      <p>Up to three independent copy or move jobs in a single run – ideal for NAS, USB sticks and cloud folders. Tip from practice: since the number of <strong>profiles</strong> is unlimited, any number of independent copy tasks is possible in effect – not just three.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚙️</div>
+      <h3>Options per job</h3>
+      <p>Overwrite (always, or only if newer) and Move can be set separately for each job. The 🔰 symbol on the job card also lets you exclude files per job or copy <strong>only</strong> selected file types (for example job&nbsp;1 only <code>*.pdf</code>, job&nbsp;2 only <code>*.jpg</code>).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚫</div>
+      <h3>Excluding files &amp; folders <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>Keep particular files (such as <code>*.tmp</code>, <code>*.iso</code>) and whole folders (such as browser caches) out of the copy. Comes with sensible defaults and can be adjusted per profile. Excluded cache folders are skipped entirely – which saves noticeable time with browser profiles.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛡</div>
+      <h3>Network &amp; timestamps <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>Across NAS and network drives, file timestamps often differ by one or two seconds for technical reasons. So that unchanged files are not needlessly copied again on every run in “only if newer” mode, 3Copy evens this out with a tolerance of two seconds – adjustable per profile via the 🛡 symbol (Automatic / Always / Off).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💾</div>
+      <h3>Profiles</h3>
+      <p>Save copy configurations as <code>.3ko</code> profiles. Selecting one in the drop-down loads it immediately – no separate “Load” click needed.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Block-wise copying &amp; real progress <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>Files are copied in blocks rather than in one go – so the progress bar moves visibly even <em>within</em> a single very large file, and “Stop” takes effect immediately instead of only after that file is finished.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🖥</div>
+      <h3>Scalable interface</h3>
+      <p>Fixed scaling steps from 90–200 % in the settings (⚙). Also adjustable: how long logs are kept (1 day up to unlimited), including a clean-up-now function.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💻</div>
+      <h3>Shut down or sleep <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>Optional: shut the PC down or send it to sleep automatically after an error-free run – with a confirmation dialog. The two options are mutually exclusive.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h3>Settings remembered</h3>
+      <p>All paths, active states and options are saved automatically when the program ends and restored at the next start.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🕐</div>
+      <h3>Automatic scheduler <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>Any number of profiles, each with a schedule of its own (daily, on selected weekdays or at a fixed interval) – in effect an unlimited number of automated copy tasks, without any manual intervention.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔇</div>
+      <h3>Silent mode <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>Automatic runs can take place entirely without a window in the background – only a real error (source or target not reachable, for example) brings up a short message.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗔</div>
+      <h3>Independent progress window <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>If a schedule runs without silent mode, a small progress window of its own opens – the main window with your current work stays completely untouched. The window has its own taskbar entry and can be minimised; its close button (X) acts like “Stop” and ends only that one run.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📌</div>
+      <h3>Tray &amp; autostart <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></h3>
+      <p>With an active schedule, 3Copy keeps running in the background instead of quitting when the window is closed, and starts with Windows automatically when needed.</p>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section-title">🌍 Eighteen languages <span style="font-size:10px;font-weight:700;color:#fff;background:var(--green);padding:1px 7px;border-radius:10px;vertical-align:middle">NEW</span></div>
+  <p style="font-size:14px; margin-bottom:12px;">
+    3Copy speaks <strong>German, English, French, Spanish, Dutch, Italian, Croatian,
+    Slovenian, Serbian, Bosnian, Montenegrin, Bulgarian, Macedonian, Albanian, Romanian,
+    Turkish, Polish and Danish</strong> – interface, dialogs, scheduler and logs. The
+    language is chosen during installation and can be changed at any time under ⚙. The
+    program name changes with it: 3Kopier, 3Copy, 3Copier, 3Copiar, 3Kopieer, 3Copia,
+    3Kopiraj, 3Copiază, 3Kopyala, 3Kopiuj.
+  </p>
+
+  <p style="font-size:14px; margin-bottom:16px;">
+    <strong>Every language has a help page of its own</strong> – it comes with the
+    download and opens in the program via the <strong>? Help</strong> button. All eighteen
+    versions can also be read here on this page.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🇬🇧</div>
+      <h3>English</h3>
+      <p style="color:var(--muted);margin-bottom:10px">Twelve chapters. Everything is
+         explained: the three jobs, filters and profiles, the scheduler, long paths
+         and the logs.</p>
+      <p><a href="Help-Files-International/S-IT-3Copy-Help.html" style="color:var(--blue)">📖 Help &amp; documentation</a><br>
+         <a href="CHANGELOG_EN.md" style="color:var(--blue)">📋 Changelog</a></p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🇩🇪</div>
+      <h3>Deutsch</h3>
+      <p style="color:var(--muted);margin-bottom:10px">Zwölf Kapitel. Erklärt wird
+         alles: die drei Aufträge, Filter und Profile, die Zeitsteuerung, lange
+         Pfade und die Protokolle.</p>
+      <p><a href="Help-Files-International/S-IT-3Kopier-Hilfe.html" style="color:var(--blue)">📖 Hilfe &amp; Dokumentation</a><br>
+         <a href="CHANGELOG.md" style="color:var(--blue)">📋 Änderungsverlauf</a></p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <h3>All other languages</h3>
+      <p style="color:var(--muted);margin-bottom:8px">Click a help page:</p>
+      <p style="display:flex;flex-wrap:wrap;gap:8px 10px;margin:0">
+           <a href="Help-Files-International/S-IT-3Copier-Aide.html" title="Français" style="text-decoration:none;font-size:20px;line-height:1.6">🇫🇷</a>
+           <a href="Help-Files-International/S-IT-3Copiar-Ayuda.html" title="Español" style="text-decoration:none;font-size:20px;line-height:1.6">🇪🇸</a>
+           <a href="Help-Files-International/S-IT-3Kopieer-NLHelp.html" title="Nederlands" style="text-decoration:none;font-size:20px;line-height:1.6">🇳🇱</a>
+           <a href="Help-Files-International/S-IT-3Copia-Aiuto.html" title="Italiano" style="text-decoration:none;font-size:20px;line-height:1.6">🇮🇹</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomoc-HR.html" title="Hrvatski" style="text-decoration:none;font-size:20px;line-height:1.6">🇭🇷</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomoc-SI.html" title="Slovenščina" style="text-decoration:none;font-size:20px;line-height:1.6">🇸🇮</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomoc-SR.html" title="Srpski" style="text-decoration:none;font-size:20px;line-height:1.6">🇷🇸</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomoc-BA.html" title="Bosanski" style="text-decoration:none;font-size:20px;line-height:1.6">🇧🇦</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomoc-ME.html" title="Crnogorski" style="text-decoration:none;font-size:20px;line-height:1.6">🇲🇪</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomosht-BG.html" title="Български" style="text-decoration:none;font-size:20px;line-height:1.6">🇧🇬</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Pomos-MK.html" title="Македонски" style="text-decoration:none;font-size:20px;line-height:1.6">🇲🇰</a>
+           <a href="Help-Files-International/S-IT-3Kopiraj-Ndihme-AL.html" title="Shqip" style="text-decoration:none;font-size:20px;line-height:1.6">🇦🇱</a>
+           <a href="Help-Files-International/S-IT-3Copiaza-Ajutor-RO.html" title="Română" style="text-decoration:none;font-size:20px;line-height:1.6">🇷🇴</a>
+           <a href="Help-Files-International/S-IT-3Kopyala-Yardim-TR.html" title="Türkçe" style="text-decoration:none;font-size:20px;line-height:1.6">🇹🇷</a>
+           <a href="Help-Files-International/S-IT-3Kopiuj-Pomoc-PL.html" title="Polski" style="text-decoration:none;font-size:20px;line-height:1.6">🇵🇱</a>
+           <a href="Help-Files-International/S-IT-3Kopier-Hjaelp-DA.html" title="Dansk" style="text-decoration:none;font-size:20px;line-height:1.6">🇩🇰</a>
+      </p>
+      <p style="color:var(--muted);font-size:12px;margin-top:10px">
+         The change history in all languages comes with the download.</p>
+    </div>
+  </div>
+
+  <!-- SCREENSHOTS -->
+  <div class="section-title">📸 Screenshots</div>
+  <div class="gallery">
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="Screenshots_en/screenshot-3copy.png" alt="S-IT-3Copy main window">
+      <div class="gallery-caption">Main window with three jobs, progress and log</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="Screenshots_en/screenshot-3copy-scheduler.png" alt="S-IT-3Copy scheduler">
+      <div class="gallery-caption">Scheduler: any number of profiles, each with a schedule of its own</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="Screenshots_en/screenshot-3copy-new-schedule.png" alt="S-IT-3Copy new schedule">
+      <div class="gallery-caption">New schedule: daily, on selected weekdays or at a fixed interval – optionally in silent mode</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="Screenshots_en/screenshot-3copy-exclusions.png" alt="S-IT-3Copy exclusion list">
+      <div class="gallery-caption">Exclusion list: standard exclusions and additional filters per profile</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="Screenshots_en/screenshot-3copy-timestamps.png" alt="S-IT-3Copy network &amp; timestamps">
+      <div class="gallery-caption">Network &amp; timestamps: drift tolerance per profile for NAS and network drives</div>
+    </div>
+    <div class="gallery-item" onclick="openLightbox(this)">
+      <img src="Screenshots_en/screenshot-3copy-settings.png" alt="S-IT-3Copy settings">
+      <div class="gallery-caption">Settings: eighteen languages, interface scaling and log retention</div>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD -->
+  <div class="section-title">⬇ Download &amp; documentation</div>
+  <p style="font-size:14px; margin-bottom:16px;">The current version and the help file are in the <a href="https://github.com/SattlerIT/sit-3kopier/releases" style="color:var(--blue)">release area on GitHub</a>.</p>
+
+  <div class="ok-box">
+    <strong>Portable:</strong> Simply unzip – no installer required. The tool runs directly from the unzipped folder or from a USB stick. The INI file and the profiles are created automatically in the program folder.
+  </div>
+
+  <!-- SYSTEM REQUIREMENTS -->
+  <div class="section-title">🖥 System requirements</div>
+  <table>
+    <tr><th>Component</th><th>Requirement</th></tr>
+    <tr><td>Operating system</td><td>Windows 10 / Windows 11 (64-bit)</td></tr>
+    <tr><td>Rights</td><td>No administrator rights required</td></tr>
+    <tr><td>Installation</td><td>None – unzip and start</td></tr>
+    <tr><td>Contents</td><td>EXE, help pages, change history and Lizenz-Disclaimer.txt</td></tr>
+  </table>
+
+  <!-- SECURITY NOTE -->
+  <div class="section-title">🛡 Note on virus scanners &amp; SmartScreen</div>
+  <div class="info-box">
+    As this is an independently developed Windows tool, Windows SmartScreen or installed
+    internet security programs may initially classify the file as unknown. In that case,
+    please add the program as <strong>trusted</strong> or as an <strong>exception</strong>
+    in your security software. If necessary, the Windows SmartScreen filter has to be
+    confirmed once or switched off temporarily.
+  </div>
+  <div class="warn-box">
+    All files provided come directly from <strong>Sattler IT-Service</strong> and are
+    published exclusively via the official GitHub page.
+    <strong>Tip:</strong> After it has been allowed once, the tool usually runs without
+    further warnings.
+  </div>
+
+  <!-- CHANGELOG -->
+  <div class="section-title">📋 Changelog</div>
+  <div class="changelog">
+    <div class="changelog-entry">
+      <div class="changelog-version">v3.3.2.15 <span>September 2026 · Eighteen languages and a tidy program folder</span></div>
+      <ul>
+        <li>New: twelve further languages – Croatian, Slovenian, Serbian, Bosnian, Montenegrin, Bulgarian, Macedonian, Albanian, Romanian, Turkish, Polish and Danish. The tool now speaks eighteen languages</li>
+        <li>New: every language has a help page and a change history of its own</li>
+        <li>New: tidy program folder – language files, help pages, settings and profiles are in the folders Lang, Help, Config and Profile; existing installations sort themselves at the first start</li>
+        <li>New: the setup speaks eighteen languages as well</li>
+        <li>The range of functions is unchanged – existing profiles, filters and settings stay as they are</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:var(--muted); margin:-8px 0 24px 0;">
+    All earlier versions are in the full change history –
+    <a href="CHANGELOG_EN.md" style="color:var(--blue)">English</a> ·
+    <a href="CHANGELOG.md" style="color:var(--blue)">Deutsch</a>.
+    In the other sixteen languages it comes with the download.
+  </p>
+
+  <!-- MENTIONS -->
+  <div class="section-title" style="margin-top:32px">🏆 Mentions &amp; reviews</div>
+  <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">
+    All reviews appeared in German; quotations are translated.
+  </p>
+  <div style="margin-bottom:32px;display:flex;flex-direction:column;gap:16px">
+    <div style="background:#fff;border:1px solid var(--border);border-radius:6px;
+                padding:22px 24px;display:flex;align-items:center;gap:24px;
+                box-shadow:0 2px 8px rgba(0,0,0,.06)">
+      <div style="flex-shrink:0;text-align:center;width:88px">
+        <div style="font-size:30px;line-height:1">📰</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.3">
+          Article &amp;<br>community
+        </div>
+      </div>
+      <div style="flex:1;border-left:3px solid var(--border);padding-left:20px">
+        <div style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px">
+          Deskmodder.de
+        </div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+          On Deskmodder – one of the most active German Windows blogs – S-IT-3Kopier was
+          presented as a portable copy tool “not just for NAS”. The article highlights the
+          three parallel jobs with profiles and schedule, the silent mode and operation
+          from the taskbar.
+        </div>
+        <a href="https://www.deskmodder.de/blog/2026/07/14/3kopier-universelles-und-portables-kopiertool-nicht-nur-fuer-nas/"
+           target="_blank"
+           style="display:inline-block;background:var(--blue);color:#fff;
+                  font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
+                  text-decoration:none">
+          → To the Deskmodder article
+        </a>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:6px;
+                padding:22px 24px;display:flex;align-items:center;gap:24px;
+                box-shadow:0 2px 8px rgba(0,0,0,.06)">
+      <div style="flex-shrink:0;text-align:center">
+        <div style="font-size:36px;font-weight:700;color:var(--primary);line-height:1">4.7</div>
+        <div style="font-size:20px;color:#F39C12;letter-spacing:2px">★★★★½</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">out of 5 points</div>
+      </div>
+      <div style="flex:1;border-left:3px solid var(--border);padding-left:20px">
+        <div style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px">
+          WinTotal.de
+        </div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+          Reviewed and rated by the WinTotal editorial team – one of the best-known German
+          software portals for Windows freeware. Recommended in particular for small
+          businesses, clubs and private use.
+        </div>
+        <a href="https://www.wintotal.de/download/s-it-3kopier/"
+           target="_blank"
+           style="display:inline-block;background:var(--blue);color:#fff;
+                  font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
+                  text-decoration:none">
+          → To the WinTotal entry
+        </a>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:6px;
+                padding:22px 24px;display:flex;align-items:center;gap:24px;
+                box-shadow:0 2px 8px rgba(0,0,0,.06)">
+      <div style="flex-shrink:0;text-align:center;width:88px">
+        <div style="font-size:28px;font-weight:700;color:var(--green);line-height:1.1">Good</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.3">
+          Rating by the<br>CHIP editors
+        </div>
+      </div>
+      <div style="flex:1;border-left:3px solid var(--border);padding-left:20px">
+        <div style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px">
+          CHIP.de
+        </div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+          Tested and rated by the CHIP editors – one of the largest German download
+          portals. As advantages, CHIP names the three simultaneous jobs, the automatic
+          execution via the scheduler and the exclusion lists for files and folders.
+          The verdict: “a powerful and easy-to-use solution”.
+        </div>
+        <a href="https://www.chip.de/downloads/S-IT-3Kopier_187195351.html"
+           target="_blank"
+           style="display:inline-block;background:var(--blue);color:#fff;
+                  font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
+                  text-decoration:none">
+          → To the CHIP entry
+        </a>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:6px;
+                padding:22px 24px;display:flex;align-items:center;gap:24px;
+                box-shadow:0 2px 8px rgba(0,0,0,.06)">
+      <div style="flex-shrink:0;text-align:center;width:88px">
+        <div style="font-size:30px;line-height:1">🌐</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.3">
+          Editorial<br>review
+        </div>
+      </div>
+      <div style="flex:1;border-left:3px solid var(--border);padding-left:20px">
+        <div style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px">
+          CHIP on MSN
+        </div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+          Under the title “Backups wie Profis” (“Backups like the pros”), CHIP editor
+          Joerg Geiger places S-IT-3Kopier within the well-known 3-2-1 backup rule: the
+          tool makes it easy to save to several targets at the same time. After their own
+          test, the article says: “When trying it out, we liked the fast and stable way it
+          works.” Deliberately kept lean – because even more functions would make it
+          harder to use.
+        </div>
+        <a href="https://www.msn.com/de-de/technik/software/backups-wie-profis-gratis-programm-sichert-ihre-dateien-gleichzeitig-an-drei-orten/ar-AA2822SJ"
+           target="_blank"
+           style="display:inline-block;background:var(--blue);color:#fff;
+                  font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
+                  text-decoration:none">
+          → To the article on MSN
+        </a>
+      </div>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:6px;
+                padding:22px 24px;display:flex;align-items:center;gap:24px;
+                box-shadow:0 2px 8px rgba(0,0,0,.06)">
+      <div style="flex-shrink:0;text-align:center;width:88px">
+        <div style="font-size:30px;line-height:1">🏅</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:6px;line-height:1.3">
+          Download<br>of the Week
+        </div>
+      </div>
+      <div style="flex:1;border-left:3px solid var(--border);padding-left:20px">
+        <div style="font-size:15px;font-weight:700;color:var(--primary);margin-bottom:4px">
+          IT-Administrator
+        </div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px">
+          Chosen as <strong>Download of the Week</strong> by the German magazine for
+          professional system and network administration. The article highlights the three
+          simultaneous jobs, the management of further jobs via profiles and schedules, and
+          the queue for overlapping schedules: “The saved copies remain ordinary files and
+          can be opened without special software.”
+        </div>
+        <a href="https://www.it-administrator.de/download-der-woche-3Kopier"
+           target="_blank"
+           style="display:inline-block;background:var(--blue);color:#fff;
+                  font-size:12px;font-weight:600;padding:6px 14px;border-radius:4px;
+                  text-decoration:none">
+          → To the “Download of the Week” article
+        </a>
+        <div style="font-size:12px;color:var(--muted);margin-top:10px">
+          Also in the magazine’s download section:
+          <a href="https://www.it-administrator.de/downloads/3Kopier" target="_blank"
+             style="color:var(--blue)">to the entry</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS CUSTOMERS -->
+  <div class="info-box" style="text-align:center; margin-top:20px; font-size:12px; color:var(--muted);">
+    Do you use 3Copy in your business and would like personal help with the setup?
+    <a href="mailto:tool-entwicklung@sattler-it.de?subject=Enquiry%20S-IT-3Copy%20for%20business&body=Hello%2C%0A%0AI%20am%20interested%20in%20personal%20support%20for%20S-IT-3Copy%20in%20my%20company.%0A%0AName%2FCompany%3A%20%0A%0ABest%20regards"
+       style="color:var(--blue)">A short e-mail</a> is all it takes.
+  </div>
+
+  <!-- DONATION -->
+  <div class="info-box" style="text-align:center">
+    <strong>☕ Do you like the S-IT tools?</strong><br>
+    A small contribution is always appreciated:<br><br>
+    <a href="https://www.paypal.com/donate/?business=tool-entwicklung%40sattler-it.de&currency_code=EUR"
+       style="background:#2980B9;color:#fff;padding:8px 20px;border-radius:4px;
+              text-decoration:none;font-size:13px;font-weight:600">
+      PayPal – tool-entwicklung@sattler-it.de
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Sattler IT-Service, Greifenstein &nbsp;•&nbsp; Author: Hans Udo Sattler &nbsp;•&nbsp;
+  <a href="Lizenz-Disclaimer.txt">Licence &amp; disclaimer</a> &nbsp;•&nbsp;
+  <a href="https://sattlerit.github.io/sattlerit-tools/index-en.html">Tool overview</a> &nbsp;•&nbsp;
+  <a href="https://sattlerit.github.io/sattlerit-tools/impressum.html">Legal notice</a>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(el) {
+    document.getElementById('lightbox-img').src = el.querySelector('img').src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
