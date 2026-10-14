@@ -46,6 +46,8 @@
       padding-bottom: 4px;
     }
     .lang-badge { background: #1F6FA8 !important; border-color: #1F6FA8 !important; }
+    .lang-switch { margin-left: 0; text-decoration: none; font-weight: 600; transition: background .2s; }
+    .lang-switch:hover { background: rgba(255,255,255,.2); }
     .header-badge {
       margin-left: auto;
       background: rgba(255,255,255,.08);
@@ -357,6 +359,7 @@
     <span class="header-sub">Dreifach-Kopierer mit Protokoll</span>
     <span class="header-badge">Freeware · Portable · Windows</span>
     <span class="header-badge lang-badge">🌍 🇩🇪 🇬🇧 18 Sprachen</span>
+    <a href="index_en.html" class="header-badge lang-switch" hreflang="en" title="English version">🇬🇧 English</a>
   </div>
 </header>
 <div class="divider"></div>
@@ -383,6 +386,13 @@
 </div>
 
 <main>
+
+  <!-- VIDEO -->
+  <div class="section-title">🎬 Video</div>
+  <video controls preload="none" poster="Video/S-IT-3Kopier-Video.jpg"
+         style="width:100%;display:block;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.15);margin-bottom:32px">
+    <source src="Video/S-IT-3Kopier-Video.mp4" type="video/mp4">
+  </video>
 
   <!-- FEATURES -->
   <div class="section-title">⚙ Funktionen</div>
